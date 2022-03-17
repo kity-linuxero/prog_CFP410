@@ -81,7 +81,7 @@
 							<li>Partes de una computadora</li>
 							<li>Programación, lenguajes y tipos</li>
 							<li>Algoritmos</li>
-							<li>Modularización</li>
+							<!-- <li>Modularización</li> -->
 						</ul>				
 					</ul>
 				</section>
@@ -264,7 +264,7 @@
 
 						<section>
 							<h4>Librerías</h4>
-								<p>Una libraría (library) es un conjunto de implementaciones funcionales, codificadas en un lenguaje de programación, que ofrece una interfaz bien definida para la funcionalidad que se invoca.</p>
+								<p>Una librería (library) es un conjunto de implementaciones funcionales, codificadas en un lenguaje de programación, que ofrece una interfaz bien definida para la funcionalidad que se invoca.</p>
 								<p>Pueden extender las capacidades estándar del lenguaje y/o ofrecer al desarrollador herramientas útiles.</p>
 						</section>
 						<section>
@@ -282,7 +282,7 @@
 								<div title="Algoritmos, datos y programas. De Giusti (2001)"><small>[3]</small></div>
 							</blockquote>
 
-							<p><small>"Una secuencia de pasos a seguir. Como si fuera una receta [yo]"</small></p>
+							<p><small>"Una secuencia de pasos a seguir. Como si fuera una receta."</small></p>
 
 						</section>
 
@@ -423,6 +423,54 @@
 							<p>Es una extensión de la estructura básia de decisión, para el caso de que las alternativas sean mas de dos:</p>
 							<img class="fragment" data-src="./static/clase1/fig4.gif" alt="Figura 1: Estructura decisión">
 							<p class="fragment"><small>Si mas de una condición es verdadera puede haber distintas formas de elegir cual caso tomar.</small></p>
+						</section>
+
+						<section>
+							<h3>Case en Python</h3>
+							<p>Agregado en Python 3.10</p>
+							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
+								match numero:
+									case 0:
+										print ("Cero")
+									case 1:
+										print ("Uno")
+									case 2:
+										print ("Dos")
+									else:
+										print ("Es otro número")
+							</code></pre>
+
+							<h4>Si el número es 0, 1 o 2 el resultado será:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers>
+								Cero, Uno o Dos (respectivamente)
+							</code></pre>
+
+							<h4>Si es otro número, el resultado será</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers>
+								Es otro número
+							</code></pre>
+
+						</section>
+
+						<section>
+							<h3>Case en Python (elif) </h3>
+							<p>Para usar en versiones anteriores a 3.10</p>
+							<h4>Se puede usar con elif anidados</h4>
+							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
+								numero= 4 # Asignamos el valor
+								if numero == 0:
+									print ("Cero")
+								elif numero == 1:
+									print ("Uno")
+								elif numero == 2
+									print ("Dos")
+								else:
+									print ("Es otro número")
+							</code></pre>
+							<h4>Si corremos el programa, el resultado será</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers="|1,2">
+								Es otro número
+							</code></pre>
 						</section>
 
 						<section>
@@ -589,6 +637,8 @@
 								<li>Instrucciones</li>
 								<li>Datos</li>
 							</ul>
+
+							<p>Estructuras y datos</p>
 
 						</section>
 						<section>
@@ -777,7 +827,7 @@
 						<a href="http://tic.taboadaleon.es/Unidad1-Programacion/Tema2_Lenguajes/contenido/5_estructura_de_un_programa_informtico.html#:~:text=Existen%20dos%20partes%20o%20bloques,para%20conseguir%20los%20resultados%20esperados.">taboadaleon.es</a>
 
 						<h3>Recursos</h3>
-						<a href="https://www.programiz.com/python-programming/online-compiler/"Interprete Python Online7></a>
+						<a href="https://www.online-python.com/">Interprete Python Online</a>
 
 					</section>
 
