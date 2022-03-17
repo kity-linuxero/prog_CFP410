@@ -8,7 +8,7 @@ _Escriban y prueben sus programas en: [Python Online](https://www.online-python.
 ### Ejercicio 1
 Escribir un programa que imprima en pantalla `¡Hola Mundo!`.
 
-[Pista](https://kity-linuxero.github.io/prog_CFP410/clase1.html#/6/4)
+[Pista](https://kity-linuxero.github.io/prog_CFP410/clase1.html#/6/4){:target="_blank"}
 
 ### Ejercicio 2
 Escribir un programa que imprima en pantalla `¡Hola Mundo!` tres veces.
