@@ -1,0 +1,686 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Programación</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section  data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					
+					<h2>Introducción a la programación</h2>
+				</section>
+
+				<section>
+					<h2>Clase 2</h2>
+					<h3>Contenido para hoy</h3>
+					<ul>
+						<li>Seguimos con conceptos básicos</li>
+						<ul>
+							<li>Repaso de la clase anterior</li>
+							<li>Tipos de datos</li>
+							<li>Operaciones entre tipos de datos</li>
+							<li>Práctica</li>
+						</ul>				
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Repaso de la clase anterior</h2>
+
+					</section>
+					<section>
+						<h3>Repaso: Partes de una computadora</h3>
+						<ul>
+							<li>CPU:</li><small>Procesa la información</small>
+							<li>Memoria (RAM):</li><small>Los programas que están corriendo en un momento determinado. Variables, objetos, etc.</small>
+							<li>Almacenamiento:</li><small>Donde se guardan los archivos. Los programas también, pero no es lo que está en ejecución.</small>
+							<li>Periféricos:</li><small>Como interactuamos con la computadora. Teclado, monitor... etc.</small>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Repaso: ¿Qué es programar?</h3>
+						<ul>
+							<li>Programa:</li><small>Un programa es un conjunto de instrucciones, ejecutables sobre una computadora, que permite cumplir una function específica.</small>
+							<li>Pseudocódigo:</li><small>Una forma "humana" de describir una secuencia de pasos que luego se traducirá a un programa.</small>
+							<li>Lenguajes de programación:</li><small>Una "forma" de escribir nuestros programas. Hay distintos tipos y para distintos propósitos.</small>
+							<li>Librerías:</li><small>Es código escrito por terceros que extiende las funcionalidades de las librerías estándar del lenguaje.</small>
+						</ul>
+					</section>
+					<section>
+						<h3>Repaso: Algoritmos</h3>
+						<ul>
+							<li>Algoritmo:</li><small>Es la especificación de la secuencia de instrucciones a realizar sobre una computadora para alcanzar un resultado deseado.</small>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Repaso: Estructuras de control</h3>
+						<ul>
+							<li>Secuencia:</li><small>Las instrucciones se ejecuta una tras otra en orden de arriba hacia abajo. <a href="./clase1.html#/6/3" target="_blank">Ref</a></small>
+							<li>Decisión (if):</li><small>Altera el flujo secuencial en base a una condición. <a href="./clase1.html#/6/5" target="_blank">Ref</a></small>
+							<li>Decisión múltiple (case/switch):</li><small>Útil cuando hay muchas condiciones. <a href="./clase1.html#/case" target="_blank">Ref</a></small>
+							<li>Iteración (while/for):</li><small>Se usa para ejecutar un bloque mas de una vez. <a href="./clase1.html#/6/11" target="_blank">Ref</a></small>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Repaso: Estructuras y datos</h3>
+
+						<ul>
+							<li>Instrucciones:</li><small>Las instrucciones se ejecuta una tras otra en orden de arriba hacia abajo. <a href="./clase1.html#/6/3" target="_blank">Ref</a></small>
+							<ul>
+								<li>Asignación</li>
+								<li>Decisión</li>
+								<li>...</li>
+
+							</ul>
+							<li>Datos:</li><small>Son valores de información que disponemos y podemos modificar. <a href="./clase1.html#/6/5" target="_blank">Ref</a></small>
+							<ul>
+								<li>Variables:</li><small>Los datos pueden cambiar, transformarse luego de la asignación. <a href="./clase1.html#/7/1" target="_blank">Ref</a></small>
+								<li>Constantes:</li><small>Los datos no cambian luego que fueran asignados. <a href="./clase1.html#/7/1" target="_blank">Ref</a></small>
+							</ul>
+							<li>Identificadores</li><small>Es el nombre que se conoce a una variable o constante. El nombre no puede repetirse en un mismo ámbito. <a href="./clase1.html#/7/1" target="_blank">Ref</a></small>
+			
+						</ul>
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+					
+				</section>
+
+
+				<!-- Sección Tipo de Datos -->
+				<section> 
+					<section>
+						<h2>Tipos de datos</h2>
+					</section>
+					<section>
+						<h2>Tipos de datos</h2>
+
+						<p>En los programas es necesario representar información del mundo real como números, letras, listas de nombres, etc.</p>
+						<p>Para poder representarlos aparecen los datos y los <strong>tipos de datos</strong>.</p>
+
+					</section>
+
+					<section>
+						<h2>Tipos de datos</h2>
+						<p>Los tipos de datos se caracterizan por:</p>
+						<ul>
+							<li>Un rango de valores posibles</li>
+							<li>Un conjunto de operaciones realizables sobre ese tipo</li>
+							<li>Su representación interna</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Tipos de datos simples</h2>
+						<p>Definiremos como tipos de datos simples a los:</p>
+						<ul>
+							<li>Numéricos:</li><small>
+							<ul>
+								<li>Enteros (-n,...-1,0,1....n)</li>
+								<li>Reales (-n,...-0.000001...,0.0,...,0.1,...n)</li>
+							</ul></small>
+							<li>Lógico:</li>
+							<ul><small>
+								<li>Verdadero</li>
+								<li>Falso</li>
+							</ul></small>
+							<li>Caracter o lista de caracteres</li><small>
+							<ul>
+								<li>Char: un solo caracter: ('a','b','c'...'z'...'&'...)</li>
+								<li>String: cadena de caracteres: ("aaa","aab","Hola"...)</li>
+							</ul></small>
+
+						</ul>
+					</section>
+
+					<section>
+						<h2>Rango de valores posibles</h2>
+						<p>Depende del lenguaje, de la computadora, del compilador, etc.</p>
+						<small>
+						<p>Para no entrar en mucho detalles, podemos decir que algunos lenguajes usan, por ejemplo para un número entero, una representación en 32 bits (32 dígitos binarios). </p>
+						<p>Eso nos daría un rango para números enteros desde el <strong>[-2147483648 al 2147483647]</strong></p>
+						<p>Debemos saber que puede haber algún caso en que el tipo de datos que estemos usando puede quedar fuera de rango y tenemos que usar otro tipo.</p>
+						<p>Por ejemplo en el lenguaje C tenemos varios tipos de datos para un entero:</p>
+						<ul>
+							<li>int (16 bits)</li>
+							<li>unsigned int (16 bits) pero solo para números positivos (sin signo)</li>
+							<li>long int(32 bits)</li>
+							<li>long long int</li>
+						</ul>
+
+						<p>En caso que hagamos una operación con dos números y el resultado se intente guardar en una variable que no es capaz de almacenar la cantidad dará un error de <strong>overflow</strong> u <strong>out of range</strong></p>
+	
+						</small>
+					</section>
+					<section>
+						<h2>Operaciones sobre tipos</h2>
+						<ul>
+							<li>Es posible aplicar operaciones para los distintos tipos de datos.</li>
+							<li>No en todos los casos será igual y el resultado puede variar dependiendo del tipo de datos usado.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Operaciones sobre tipos</h2>
+						<h4>Sumar dos enteros:</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							1+1
+						</code></pre>
+
+						<div class="fragment">
+							<h4>El resultado será:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								2
+							</code></pre>
+						</div>
+						<div class="fragment">
+						<h4>Sumar dos reales:</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							1.23+1.9
+						</code></pre>
+						<h4>El resultado será:</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							3.13
+						</code></pre>
+
+						</div>
+
+					</section>
+					<section>
+						<h2>Operaciones sobre tipos numéricos</h2>
+						<p>Hay muchísimas operaciones posibles. Vamos a mencionar las básicas:</p>
+						<ul>
+							<li>Suma (+)</li>
+							<li>Resta (-)</li>
+							<li>Multiplicación (*)</li>
+							<li>División (/)</li>
+							<li>División entera (//) - Sin decimales</li>
+							<li>Módulo (&) - El resto de la división</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipo de dato lógico</h2>
+						<p>También llamado <strong>booleano</strong> o <strong>bool</strong>. Es un dato que puede tomar un valor entre un conjunto formado por dos posibles:</p>
+						<ul>
+							<li>Verdadero (true)</li>
+							<li>Falso (false)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Operaciones sobre booleanos</h2>
+						<p>Los operadores booleanos básicos son:</p>
+						<ul>
+							<li>Negación (not)</li>
+							<li>Suma o disyunción (or)</li>
+							<li>Producto o conjunción (and)</li>
+						</ul>
+						<p>A continuación veremos ejemplos de lógica.</p>
+					</section>
+					<section>
+						<h3>Operaciones sobre booleanos</h3>
+						<h4>NOT</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>p</th>
+									<th>not p</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Verdadero (True)</td>
+									<td>Falso (False)</td>
+								</tr>
+								<tr>
+									<td>Falso (False)</td>
+									<td>Verdadero (True)</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>Básicamente invierte el valor.</p>
+					</section>
+
+					<section>
+						<h3>Operaciones sobre booleanos</h3>
+						<h4>AND</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>p</th>
+									<th>q</th>
+									<th>p and q</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>True</td>
+									<td>True</td>
+									<td>True</td>
+								</tr>
+								<tr>
+									<td>True</td>
+									<td>False</td>
+									<td>False</td>
+								</tr>
+								<tr>
+									<td>False</td>
+									<td>True</td>
+									<td>False</td>
+								</tr>
+								<tr>
+									<td>False</td>
+									<td>False</td>
+									<td>False</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>Si hay <strong>un valor en false</strong>, el resultado será siempre false.</p>
+					</section>
+
+					<section>
+						<h3>Operaciones sobre booleanos</h3>
+						<h4>OR</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>p</th>
+									<th>q</th>
+									<th>p or q</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>True</td>
+									<td>True</td>
+									<td>True</td>
+								</tr>
+								<tr>
+									<td>True</td>
+									<td>False</td>
+									<td>True</td>
+								</tr>
+								<tr>
+									<td>False</td>
+									<td>True</td>
+									<td>True</td>
+								</tr>
+								<tr>
+									<td>False</td>
+									<td>False</td>
+									<td>False</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>Si hay <strong>valor en true</strong>, el resultado será siempre true.</p>
+					</section>
+					<section>
+						<h2>Comparación entre tipos</h2>
+						
+						<p>Es posible hacer operaciones de comparación sobre los datos. La comparación nos dará como resultado un valor booleano (verdadero o falso).</p>
+					
+						<ul>
+							<li>Comparación (==)</li> <small>Compara si dos datos del mismo tipo tienen el mismo valor</small>
+							<li>Mayor que (>)</li><small>Verifica si un valor es mayor a otro (se lee desde izquierda a derecha)</small>
+							<li>Menor que (<)</li><small>Verifica si un valor es menor a otro (se lee desde izquierda a derecha)</small>
+							<li>Distinto que (!=)</li><small>Verifica si los valores a comparar son distintos</small>
+						</ul>
+					<small>
+						<p>Para poder realizar las comparaciones los datos tienen que ser del mismo tipo o compatibles con la operación.</p>
+					</small>			
+					</section>
+					<section>
+						<h2>Ejemplos de comparación</h2>
+
+					
+							<h4>Comparar dos números:</h4>
+							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|1|2|3|4|5|6|1,2,3,4,5,6">
+								1==2	# False
+								1==1 	# True
+								233<12	# False
+								210>1	# True
+								210!=210 # False
+								2.1<2	# False. Compatibilidad entre tipos entero y real
+							</code></pre>
+							<div class="fragment">
+							<h4>Comparaciones en otro tipo de datos:</h4>
+							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|1|2|3|4">
+								"Juan"=="Juan" # True
+								"A"<"B" # True
+								"A"<"a" # True
+								"Cristian" != "Beto" # True
+							</code></pre>
+							</div>
+
+	
+					</section>
+
+					<section>
+						<h2>Operaciones sobre string</h2>
+						<h4>Sumar dos caracteres:</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							'1'+'1'
+						</code></pre>
+
+						<div class="fragment">
+						<h4>El resultado será:</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							'11'
+						</code></pre>
+						</div>
+						<p class="fragment">¿Por qué '1'+'1' = '11'?. Porque '1' <strong>NO es un número</strong>, sino es un caracter <strong>(ver las comillas)</strong>. Si sumamos dos caracteres o cadena de caracteres en realidad los estamos "concatenando".</p>
+						
+					</section>
+
+					<section>
+						<h2>Operaciones sobre string</h2>
+						
+						<p>"Sumar" o concatenar cadenas de caracteres puede ser muy util.</p>					
+						
+						<div class="fragment">
+							<h4>Ejemplo:</h4>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								nombre= "Juan"
+								apellido= "Perez"
+								print(nombre+apellido)
+							</code></pre>
+						</div>
+						<div class="fragment">
+							<h4>El resultado será:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								JuanPerez
+							</code></pre>
+						</div>
+						<div class="fragment">
+						<p>De ahora en mas llamaremos a las cadenas de caracteres como <strong>String</strong>.</p>
+						</div>
+
+					</section>
+					<section>
+						<h2>Operaciones sobre String</h2>
+						<p>Podemos concatenar muchos strings</p>
+						
+						<div class="fragment">
+							<h4>Ejemplo:</h4>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								nombre= "Juan"
+								apellido= "Perez"
+								print("¡Hola " + nombre + " " + apellido + "!")
+							</code></pre>
+						</div>
+						
+						<div class="fragment">
+							<h4>El resultado será:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								¡Hola Juan Perez!
+							</code></pre>
+						</div>
+						<br>
+						<small class="fragment"><strong>Recomendación:</strong> Prueben copiar y pegar el código de mas arriba en el intérprete <a href="https://www.online-python.com/">Python Online</a> y jueguen cambiando el orden, agregando mas strings, palabras... lo que se les ocurra para entender como se comporta el concatenado de strings.</small>
+					</section>
+
+					<section>
+						<h2>Conversión de tipos</h2>
+						<ul>
+							<li>Puede presentarse la necesidad de convertir tipos. A veces esto es posible pero otras veces no.</li>
+							<li>Una de las conversiones mas comunes es convertir números a string y viceversa.</li>
+							<li>Existen instrucciones especiales para convertir tipos</li>
+						</ul>
+						<p></p>
+						<p></p>
+					</section>
+
+					<section>
+						<h2>Conversión de tipos</h2>
+						<h4>Conversión de número a string</h4>
+						<p>Se usa la instrucción str</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							>>> str(2)
+							'2' # Resultado
+						</code></pre>
+
+						<h4>Conversión de string a número entero</h4>
+						<p>Se usa la instrucción int</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							>>> int('2')
+							2 # Resultado
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Conversión de tipos</h2>
+						<h4>Conversión de número a string</h4>
+						<p>Se usa la instrucción str</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							var1= 233 # Se guarda en var1 un número entero
+							var2= str(numero) # Se convierte a string y se guarda en var2
+						</code></pre>
+
+						<h4>Conversión de string a número entero</h4>
+						<p>Se usa la instrucción int</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							var3= '512' # Se guarda en var3 un string.
+							var4= int(var3) # Se convierte a entero y se guarda en var4
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+					<section>
+						<h2>Práctica</h2>
+						<a href="https://www.online-python.com/" target="_blank">
+						<img data-src="./static/kun.jpg">
+						</a>
+					</section>
+				</section>
+
+				<!-- Sección Modularización -->
+				<!-- <section>
+					<section>
+						<h2>Modularización</h2>
+						<ul>
+							<li>Los problemas del mundo real suelen ser muy complejos.</li>
+							<li>Es necesario dividir el problema el sub-problemas mas simples. "Divide y vencerás"</li>
+							<li>Técnica: Top-Down <small>analizar el problema, dividirlo en sub-problemas y reiterar el método en cada subprograma</small></li>
+						</ul>
+						<img class="fragment fade-in" data-src="./static/clase1/fig6.jpg" alt="Figura 6: Top-Down">
+					</section>
+
+					<section>
+						<h3>Ventajas de la Modularización</h3>
+						<ul>
+							<li>Mayor legibilidad:<small> Nos podemos concentrar en solo una parte del problema y es mas fácil de entender y que otros entiendan el código.</small></li>
+							<li>Mayor productividad:<small> Es posible que se le asignen los subproblemas a diferentes personas, con lo que se podría llegar a la solución final de una forma más rápida</small></li>
+							<li>Calidad al programa:<small> Si tenemos bien modularizado nuestro programa da calidad al software y también es parte de las buenas prácticas de programación.</small></li>
+							<li>Mantenimiento:<small> Básicamente es corregir errores y modificar el código. Un programa modularizado será mas fácil de mantener</small></li>
+							<li>Reusabilidad:<small> Cuando se escribe un programa a menudo es deseable reutilizar el código ya escrito y probado.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Modulos</h2>
+						<p>Llamaremos módulos a cada "pedazo" de programa que resuelve una parte del problema. Como si fuera un <strong>sub-programa</strong> del programa entero.</p>
+						<p>Para hacerlo aún mas interesante, dotaremos a los módulos con instrucciones y datos propios (locales).</p>
+						<p>De esta manera tendremos <strong>módulos</strong> y el <strong>programa principal</strong> o (main).</p>
+
+					</section>
+
+					<section>
+						<h2>Modulos (cont)</h2>
+						<h3>Parámetros</h3>
+						<p>Son variables que tienen como característica principal <strong>transferir información</strong> entre los módulos.</p>
+						<ul>
+							<li>Por valor: <small>Se envía una copia del dato al módulo. Si el dato cambia en el módulo, el dato en el módulo que llamó no se verá afectado.</small></li>
+							<li>Referencia: <small>Se envía "el mismo dato" (una referencia). De manera que si hay un cambio en el módulo cambiará también el dato en el otro módulo.</small></li>
+							<li>Por defecto: <small>Algunos lenguajes permiten parámetros por defecto. En caso que no se envíen parámetros, puede definirse un valor por defecto.</small></li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Alcance de los datos</h2>
+						<p>Como vimos anteriormente, los datos pueden ser constantes o variables. Pero también hay que tener en cuenta el alcance de los mismos dentro del programa.</p>
+
+						<p></p>
+					</section>
+
+					<section>
+						<h2>Alcance de los datos (cont)</h2>
+						<p>En esta instancia <small>(para no complicarnos tanto)</small>, podemos diferenciar los datos como de alcance "global" o "local"</p>
+						<ul>
+							<li>Global: Será accesible desde todo el programa y los módulos</li>
+							<li>Local: Será solo accesible desde el módulo donde se declaró</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>¿Cómo modularizar en un programa?</h3>
+						<ul>
+							<li>Funciones/procedimientos:<small> Parte de código que resuelve una parte del problema. Opcionalmente puede tener datos de entradas y/o salida.(Parámetros, valor de retorno)</small></li>
+							<li>Archivos externos:<small> Es posible tener partes del código fuera de nuestro programa principal. Los archivos externos pueden importarse fácilmente.</small></li>
+							<li>Clases, objetos:<small> Con POO es posible dividir soluciones de un problema con las diferentes técnicas que ofrece el paradigma orientado a objetos.</small></li>
+							<li>Librerías externas:<small> Existen diversas librerías de aceso libre que pueden resolver una parte de nuestro problema.</small></li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+
+					<section>
+						<h2>Estructura de un programa informático</h2>
+						<p>Existen <strong>dos</strong> partes o <strong>bloques:</strong></p>
+						<ul>
+							<li>Bloque de declaraciones:<small> se detallan los objetos que se utiliza en el programa (constantes, variables, archivos, funciones, etc)</small></li>
+							<li>Bloque de instrucciones:<small> es el conjunto de acciones u operaciones que se llevan a cabo para la ejecución del programa</small></li>
+						</ul>
+
+
+					</section>
+					<section>
+						<h2>Estructura de un programa informatico (cont)</h2>
+						<p>El bloque de instrucciones está compuesto a su vez por tres partes. No siempre están perfectamente delimitadas y pueden aparecer entremezcladas en la secuencia del programa.</p>
+
+						<ul>
+							<li>Entrada de datos:<small> instrucciones que almacenen en la memoria interna datos</small></li>
+							<li>Proceso o algoritmo:<small> instrucciones que modifican o interactúan con la entrada de datos. En ocasiones creando nuevos datos.</small></li>
+							<li>Salida:<small> son los resultados o los datos transformados que son devuelto por el proceso del algoritmo.</small></li>
+
+						</ul>
+					</section>
+					<section>
+						<h3>Estructura de un programa informático</h3>
+
+						<img class="r-frame" style="background: rgba(255,255,255,0.1);"  data-src="./static/clase1/fig7.png" alt="Figura 7: Estructura de un programa informático">
+
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+
+
+				</section> -->
+
+					<section>
+						<h2>Bibliografia</h2>
+
+						<p>Algoritmos, datos y Programas (De Giusti)</p>
+						
+						<h3>Referencias</h3>
+						<p>Wikipedia</p>
+						<a href="https://python-reference.readthedocs.io/">Python-reference</a>
+						<a href="http://tic.taboadaleon.es/Unidad1-Programacion/Tema2_Lenguajes/contenido/5_estructura_de_un_programa_informtico.html#:~:text=Existen%20dos%20partes%20o%20bloques,para%20conseguir%20los%20resultados%20esperados.">taboadaleon.es</a>
+
+						<h3>Recursos</h3>
+						<a href="https://www.online-python.com/">Interprete Python Online</a>
+
+					</section>
+
+					<!-- <section>
+						<section>
+							<h3>Estructura de un programa</h3>
+
+							<p>Existen dos partes o bloques que componen un programa:</p>							
+							<ul>
+								<li>Declaraciones: Se define los objetos que utiliza el programa (constantes, variables, archivos)</li>
+								<li>Definición o instrucciones: El código que implementa las declaraciones</li>
+								<ul>
+									<li>Entrada: Entrada de datos</li>
+									<li>Proceso: Lo que hace con esos datosº</li>
+									<li>Salida: El resultado</li>
+								</ul>
+							</ul>
+						</section>
+
+						<section>
+							<h3>Ejemplo</h3>
+
+							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|1|2|4|5|6|4|5|6|4|8">
+									
+									# Cabecera. Importaciones de liberías, archivos
+									import "archivo.py"
+									# Variables globales
+									op1=5
+									op2=4
+									# Funciones 
+									def suma(op1, op2)->str: 	# Datos de entrada
+										res = op1 + op2 		# Proceso
+										return str (res) 		# Salida
+									# Función principal
+									def main():
+										print("Sumamos " + str(op1) + " y " + str(op2))
+									#Ejecución
+									if __name__ == "__main__":
+										main()
+							</code></pre>
+						</section>
+
+
+
+
+					</section> -->
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
