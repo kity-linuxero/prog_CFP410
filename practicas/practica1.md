@@ -1,4 +1,4 @@
-# Práctica 1
+# Práctica 1 - Parte I
 
 Esta práctica tiene como objetivo poder volcar en lo práctico en Python lo visto en las clases 1 y 2.
 
@@ -12,7 +12,7 @@ _Nota: Utilice la instrucción_ `print()`
 [Pista](https://kity-linuxero.github.io/prog_CFP410/clase2.html#/4)
 
 ## Ejercicio 2
-Escribir un programa que almacene el string `¡Hola mundo!`en una variable y luego muestre en pantalla el contenido de la variable.
+Escribir un programa que almacene el string `¡Hola mundo!` en una variable y luego muestre en pantalla el contenido de la variable.
 
 _Nota: Utilice la instrucción_ `print()`
 
@@ -73,7 +73,7 @@ El numero 1 es mayor
 
 Pruebe con todos los números que se les ocurra para ver que el programa funciona correctamente.
 
-Pista: Repase [Decisión](https://kity-linuxero.github.io/prog_CFP410/clase1.html#/6/7/1) y [Comparación]("https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/13")
+Pista: Repase [Decisión](https://kity-linuxero.github.io/prog_CFP410/clase1.html#/6/7/1) y [Comparaciones entre tipos]("https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/13")
 
 ## Ejercicio 8
 Escriba un programa que reciba por teclado dos números y los sume entre sí.
