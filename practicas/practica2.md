@@ -15,7 +15,7 @@ Pista:
 ## Ejercicio 2
 Escriba un programa que, ingresado un número diga si es par o impar.
 
-Pista: El [módulo](https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/7) debe ser 0.
+Pista: El [módulo](https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/7) del número y 2 debe ser 0.
 
 
 ## Ejercicio 3
@@ -97,7 +97,9 @@ Realizar dos versiones para este programa:
 
 - Hacerlo con iteraciones y teniendo un contador.
 
-- Mejorar el programa y realizar la suma de los primeros n números naturales fórmula matemática $\frac{n(n+1)}{2}$
+- Mejorar el programa y realizar la suma de los primeros n números naturales fórmula matemática: `(n*(n+1))/2`
+
+![Formula](https://static.wixstatic.com/media/2410c5_4a2f52e9c31740eba39ab8713e39ba2b~mv2.png/v1/fill/w_193,h_143,al_c,lg_1,enc_auto/2410c5_4a2f52e9c31740eba39ab8713e39ba2b~mv2.png)
 
 Pista: Las operaciones entre números soportan paréntesis para dividir términos.
 
