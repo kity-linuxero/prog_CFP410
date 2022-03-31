@@ -16,7 +16,7 @@ Pista:
 ## Ejercicio 2
 Escriba un programa que, ingresado un número diga si es par o impar.
 
-Pista: El [módulo](https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/7) del número y 2 debe ser 0.
+Pista: El [módulo](https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/6) del número y 2 debe ser 0.
 
 
 ## Ejercicio 3
@@ -182,6 +182,9 @@ Su opción: 3
 
 ¡Ganaste! Yo elegí papel :(
 ```
+
+# Ejercicio 10.1 (solo para valientes! XD)
+Modificar el programa anterior de piedra, papel y tijera de manera que se juegue varias veces (hasta que el usuario decida no jugar mas) y una vez terminado cuente la cantidad de victorias y derrotas que tuvo con respecto a la computadora.
 
 
 

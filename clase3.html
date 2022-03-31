@@ -23,14 +23,10 @@
 				</section>
 
 				<section>
-					<h2>Clase 3 (borrador)</h2>
+					<h2>Clase 3</h2>
 					<h3>Contenido para hoy</h3>
 					<ul>
-						<li>Seguimos con conceptos básicos</li>
-						<ul>
-							<li>Repaso de las clases anteriores</li>
-							<li>Práctica</li>
-						</ul>				
+						<li>Modularización</li>	
 					</ul>
 				</section>
 
@@ -78,6 +74,7 @@
 				</section> -->
 
 				<!-- Sección Modularización -->
+
 				<section>
 
 					<section>
@@ -191,6 +188,63 @@
 					</section>
 
 					<section>
+						<h3>Alcance de los datos (ejemplo)</h3s>
+						<h4>Variable global</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							nombre = "Cristian" # Variable de alcance global
+							# Modulos
+							def modulo():
+								print(nombre)
+							def modulo2():
+								print(f"Hola {nombre}")
+							# ...
+							# Programa principal
+							modulo()
+							modulo2()
+		
+						</code></pre>
+						<div class="fragment">
+
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								Cristian
+								Hola Cristian
+							</code></pre>
+						</div>
+
+					</section>
+
+					<section>
+						<h3>Alcance de los datos (ejemplo)</h3s>
+						<h4>Variable global</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							
+							# Modulos
+							def modulo():
+								nombre = "Cristian" # Variable de alcance local
+								print(nombre)
+							def modulo2():
+								print(f"Hola {nombre}")
+							# ...
+							# Programa principal
+							modulo()
+							modulo2()
+		
+						</code></pre>
+						<div class="fragment">
+
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								Cristian
+								NameError: name 'nombre' is not defined
+							</code></pre>
+						</div>
+
+					</section>
+
+					<section>
 						<h3>¿Cómo modularizar en un programa?</h3>
 						<ul>
 							<li>Funciones/procedimientos:<small> Parte de código que resuelve una parte del problema. Opcionalmente puede tener datos de entradas y/o salida.(Parámetros, valor de retorno)</small></li>
@@ -200,7 +254,7 @@
 						</ul>
 					</section>
 
-					<section>
+					<!-- <section>
 						<h2>Funciones</h2>
 					</section>
 
@@ -208,12 +262,10 @@
 						<h3>Funciones</h3>
 						<ul>
 							<li>Funciones:<small> Como hemos estudiado (en algún momento) en matemáticas, una función es una operación que a partir de uno o mas valores, produce otro valor. <strong>Resultado</strong></small></li>
-							<!-- <li>Archivos externos:<small> Es posible tener partes del código fuera de nuestro programa principal. Los archivos externos pueden importarse fácilmente.</small></li>
-							<li>Clases, objetos:<small> Con POO es posible dividir soluciones de un problema con las diferentes técnicas que ofrece el paradigma orientado a objetos.</small></li>
-							<li>Librerías externas:<small> Existen diversas librerías de aceso libre que pueden resolver una parte de nuestro problema.</small></li> -->
+							
 						</ul>
 
-					</section>
+					</section> -->
 
 
 					<section>
@@ -221,7 +273,7 @@
 					</section>
 
 
-					<section>
+					<!-- <section>
 						<h2>Estructura de un programa informático</h2>
 						<p>Existen <strong>dos</strong> partes o <strong>bloques:</strong></p>
 						<ul>
@@ -230,13 +282,13 @@
 						</ul>
 
 
-					</section>
+					</section> -->
 					
 
 
 				</section>
 
-				<section>
+				<!-- <section>
 
 					<section>
 						<h2>Estructura de un programa informático</h2>
@@ -264,7 +316,7 @@
 						<h2>¿Preguntas?</h2>
 					</section>
 
-				</section>
+				</section> -->
 
 					<section>
 						<h2>Bibliografia</h2>
