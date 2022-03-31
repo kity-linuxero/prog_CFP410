@@ -33,7 +33,7 @@ print(num1 + num2)
 ```
 Escriba dos programas uno que reste los números y otro programa que los multiplique.
 
-[Pista]("https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/7")
+[Pista]("https://kity-linuxero.github.io/prog_CFP410/clase2.html#/3/6")
 
 
 ## Ejercicio 5
