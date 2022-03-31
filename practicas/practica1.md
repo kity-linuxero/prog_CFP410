@@ -1,4 +1,4 @@
-# Práctica 1 - Parte I
+# Práctica 1
 
 Esta práctica tiene como objetivo poder volcar en lo práctico en Python lo visto en las clases 1 y 2.
 
@@ -138,3 +138,5 @@ No hay suficiente saldo para completar la operación
 ```
 
 El monto en la cuenta está previamente cargado (no se ingresa por teclado).
+
+[Siguiente Práctica](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica2.md)

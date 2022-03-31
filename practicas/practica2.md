@@ -1,6 +1,7 @@
 # Práctica 2
 
-Esta práctica tiene como objetivo poder volcar en lo práctico en Python lo visto en las clases 1 y 2.
+Esta práctica es la continuación de la [Práctica 1](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica1.md) y tiene como objetivo poder volcar en lo práctico en Python lo visto en las clases 1 y 2.
+
 
 _Escriban y prueben sus programas en: [Python Online](https://www.online-python.com/) y guardenlo en su computadora como un txt para posteriormente subirlo a Google Drive o donde prefieran. Mas adelante en el curso aprenderemos a usar [GitHub](https://github.com/) para guardar nuestro código._
 

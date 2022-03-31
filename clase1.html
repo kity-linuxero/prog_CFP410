@@ -351,8 +351,8 @@
 
 							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
 								if llueve:
-									print("Instrucción 1") # Tomar paraguas
-								print ("Instrucción 2") # Salir al trabajo
+									print("Tomar paraguas") # Instrucción 1
+								print ("Salir al trabajo") # Instrucción 2
 							</code></pre>
 							<!-- <section data-markdown>
 								<script type="text/template">
@@ -372,15 +372,15 @@
 								<h4>Si llueve la salida es:</h4>
 
 								<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers>
-									Instrucción 1 # Tomar paraguas
-									Instrucción 2 # Salir al trabajo
+									Tomar paraguas  
+									Salir al trabajo
 								</code></pre>
 							</div>
 
 						<div class="fragment">
 							<h4>Si NO llueve la salida es:</h4>
 							<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers>
-								Instrucción 2 # Salir al trabajo
+								Salir al trabajo
 							</code></pre>
 						</div>
 
@@ -394,25 +394,25 @@
 
 							<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
 								if llueve:
-									print("Instrucción 1") # Tomar paraguas
+									print("Tomar paraguas") # Instrucción 1
 								else:
-									print("Instrucción 3") # Abrir ventanas de la casa
-								print ("Instrucción 2")  # Salir al trabajo
+									print("Abrir ventanas de la casa") # Instrucción 2
+								print ("Salir al trabajo")  # Instrucción 3
 							</code></pre>
 
 							<div class="fragment">
 								<h4>Si llueve la salida es:</h4>
 
 								<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers>
-									Instrucción 1 # Tomar paraguas
-									Instrucción 2 # Salir al trabajo
+									Tomar paraguas   # Instrucción 1 
+									Salir al trabajo # Instrucción 3
 								</code></pre>
 							</div>
 							<div class="fragment">
 								<h4>Si NO llueve la salida es:</h4>
 								<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers>
-									Instrucción 3 # Abrir ventanas de la casa
-									Instrucción 2 # Salir al trabajo
+									Abrir ventanas de la casa # Instrucción 2
+									Salir al trabajo # Instrucción 3
 								</code></pre>
 							</div>
 
@@ -420,7 +420,7 @@
 
 						<section id="case">
 							<h3>Decisión o selectiva múltiple <small>[case o switch]</small></h3>
-							<p>Es una extensión de la estructura básia de decisión, para el caso de que las alternativas sean mas de dos:</p>
+							<p><small>Es una extensión de la estructura básia de decisión, para el caso de que las alternativas sean mas de dos:</small></p>
 							<img class="fragment" data-src="./static/clase1/fig4.gif" alt="Figura 1: Estructura decisión">
 							<p class="fragment"><small>Si mas de una condición es verdadera puede haber distintas formas de elegir cual caso tomar.</small></p>
 						</section>
@@ -477,8 +477,8 @@
 							<h3>Iteración<small> [while, for]</small></h3>
 							<p>Ejecutar un bloque de instrucciones mas de una vez. Puede saberse de ante mano o no</p>
 							<img class="" data-src="./static/clase1/fig5.gif" alt="Figura 5: While">
-							<p class="fragment">Se puede entender como <strong>mientras</strong> se cumpla la condición se repite. (while)</p>
-							<p class="fragment">ó ejecutar <strong>n veces</strong> un bloque de instrucciones en caso que se sepa de antemano. (for)</p>
+							<p class="fragment">Se puede entender como <strong>mientras</strong> (while) se cumpla la condición se repite.</p>
+							<p class="fragment">ó ejecutar <strong>n veces</strong> (for) un bloque de instrucciones en caso que se sepa de antemano. </p>
 						</section>
 
 						<section>
@@ -567,7 +567,7 @@
 
 						<section>
 							<h3>Iteración en Python [p2]</h3>
-							<h4>Iteración en una lista (for)</h4>
+							<h4>Iteración en una lista* (for)</h4>
 							<pre data-id="code-animation"><code class="bash" data-trim data-line-numbers="|2,3">
 								frutas = ["manzana", "banana", "pera"]
 								for x in frutas:
@@ -582,6 +582,8 @@
 									banana
 									pera
 								</code></pre>
+
+								<p><small>*Las listas se verán con mas detalle mas adelante en el curso.</small></p>
 							</div>		
 
 						</section>
@@ -615,7 +617,7 @@
 							<h3>Eficiencia de un algoritmo</h3>
 							<ul>
 								<li>Puede haber muchas soluciones a un mismo problema</li>
-								<li>y pueden ser todas correctas.</li>
+								<li>...y pueden ser todas correctas.</li>
 								<li>Algunas soluciones pueden ser mas eficientes que otras en recursos de computación (tiempo, memoria, etc)</li>
 							</ul>
 						</section>
@@ -815,6 +817,11 @@
 
 
 					</section> -->
+
+					<section>
+						<h3>¡Fin de la clase!</h3>
+						<a href="./clase2.html">Ir a siguiente clase ></a>
+					</section>
 
 					<section>
 						<h2>Bibliografia</h2>

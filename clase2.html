@@ -333,7 +333,7 @@
 					<section>
 						<h2>Comparación entre tipos</h2>
 						
-						<p>Es posible hacer operaciones de comparación sobre los datos. La comparación nos dará como resultado un valor booleano (verdadero o falso).</p>
+						<p><small>Es posible hacer operaciones de comparación sobre los datos. La comparación nos dará como resultado un valor booleano (verdadero o falso).</small></p>
 					
 						<ul>
 							<li>Comparación (==)</li> <small>Compara si dos datos del mismo tipo tienen el mismo valor.</small>
@@ -434,6 +434,71 @@
 						</div>
 						<br>
 						<small class="fragment"><strong>Recomendación:</strong> Prueben copiar y pegar el código de mas arriba en el intérprete <a href="https://www.online-python.com/">Python Online</a> y jueguen cambiando el orden, agregando mas strings, palabras... lo que se les ocurra para entender como se comporta el concatenado de strings.</small>
+					</section>
+
+					<section>
+						<h2>Operaciones sobre String</h2>
+						<p>Podemos imprimir string de diferentes maneras:</p>
+						
+						<div>
+							<p>Para no agregar un espacio podemos usar <strong>,</strong><p>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								nombre= "Juan"
+								apellido= "Perez"
+								print("¡Hola",nombre,apellido + "!")
+							</code></pre>
+						</div>
+						
+						<div>
+							<h4>El resultado será el mismo:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								¡Hola Juan Perez!
+							</code></pre>
+						</div>
+						<br>
+					</section>
+
+					<section>
+						<h2>Operaciones sobre String</h2>
+					
+						<div>
+							<p>Para no concatenar por fuera del string:<p>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								nombre= "Juan"
+								apellido= "Perez"
+								print(f"¡Hola {nombre} {apellido}!")
+							</code></pre>
+						</div>
+						
+						<div>
+							<h4>El resultado será:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								¡Hola Juan Perez!
+							</code></pre>
+						</div>
+						<br>
+					</section>
+
+					<section>
+						<h2>Operaciones sobre String</h2>
+					
+						<div>
+							<p>print(f") puede ser muy útil:<p>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								a= 23
+								b= 34
+								print(f'La suma de {a} + {b} = {(a+b)}')
+							</code></pre>
+						</div>
+						
+						<div>
+							<h4>El resultado será el mismo:</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								La suma de 23 + 34 = 57
+							</code></pre>
+						</div>
+						<small>con print(f'') NO es necesario convertir a string con "str" la suma de los números.</small>
+						<br>
 					</section>
 
 					<section>
