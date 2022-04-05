@@ -26,7 +26,10 @@
 					<h2>Clase 3</h2>
 					<h3>Contenido para hoy</h3>
 					<ul>
-						<li>Modularización</li>	
+						<li>Modularización</li>
+						<li>Funciones</li>	
+						<li>Parámetros</li>	
+						<li>Alcance de los datos</li>	
 					</ul>
 				</section>
 
@@ -106,8 +109,22 @@
 						<h2>Modulos</h2>
 						<p>Llamaremos módulos a cada "pedazo" de programa que resuelve una parte del problema. Como si fuera un <strong>sub-programa</strong> del programa entero.</p>
 						<p>Para hacerlo aún mas interesante, dotaremos a los módulos con instrucciones y datos propios (locales).</p>
-						<p>De esta manera tendremos <strong>módulos</strong> y el <strong>programa principal</strong> o (main).</p>
+						<p>De esta manera tendremos <strong>módulos (sub programas)</strong> y el <strong>programa principal</strong> o (main).</p>
 
+					</section>
+
+					<section>
+						<h2>Módulos</h2>
+						<h3>Generalidades</h3>
+
+							<ul>
+								<li>Cabecera:<small> Se define Define el nombre del módulo. A veces se utilizan palabras clave para especificar que es un módulo. (def)</small></li>
+								<li>Tipo de valor de retorno:<small> Se define el tipo de datos que va a devolver. Depende el lenguaje. (Opcional)</small></li>
+								<li>Lista de parámetros:<small> Son "variables" por la cual se transfiere información al módulo. Pueden ser de entrada y/o salida. (Opcional)</small></li>
+								<li>Datos locales:<small> Variables, declaraciones, tipos de datos, etc. Que son para uso local. (Opcional)</small></li>
+								<li>Bloque de código:<small> Es el código que se va a procesar dentro del módulo. Puede ser tan amplio como queramos.</small></li>
+							</ul>
+						
 					</section>
 
 					<section>
@@ -115,20 +132,21 @@
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							# Modulo o sub programa llamado saludo
-							def saludo():
-								print ("Llamaste al modulo saludo")
+							def modulo_prueba(): # Cabecera
+								print ("Llamaste al modulo de prueba") # Código
 							# ...
 							# Programa principal
 							print ("Acá estamos en el programa")
-							saludo()			
+							modulo_prueba() # Se invoca al módulo
 						</code></pre>
 					<div class="fragment">
 						<h4>Resultado</h4>
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							Acá estamos en el programa principal
-							Llamaste al modulo saludo
+							Llamaste al modulo de prueba
 						</code></pre>
 					</div>
+					<p class="fragment">Es común llamar a los módulos como <strong>funciones</strong>.</p>
 
 					</section>
 
@@ -138,31 +156,57 @@
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							# Modulo o sub programa llamado saludo
-							def saludo():
-								print ("Llamaste al modulo saludo")
+							def modulo_prueba():
+								print ("Llamaste al modulo de prueba")
 							# ...
 							# Programa principal
-							saludo()
+							modulo_prueba()
 							print ("Acá estamos en el programa")
-							saludo()
-							saludo()			
+							modulo_prueba()
+							modulo_prueba()			
 						</code></pre>
 					<div class="fragment">
 						<h4>Resultado</h4>
 						<pre data-id="code-animation"><code class="bash" data-trim>
-							Llamaste al modulo saludo
+							Llamaste al modulo de prueba
 							Acá estamos en el programa principal
-							Llamaste al modulo saludo
-							Llamaste al modulo saludo
+							Llamaste al modulo de prueba
+							Llamaste al modulo de prueba
 						</code></pre>
 					</div>
 
 					</section>
 
 					<section>
-						<h2>Modulos (cont)</h2>
-						<h3>Parámetros</h3>
-						<p>Son variables que tienen como característica principal <strong>transferir información</strong> entre los módulos.</p>
+						<h3>¿Cómo modularizar en un programa?</h3>
+						<ul>
+							<li>Funciones/procedimientos:<small> Parte de código que resuelve una parte del problema. Opcionalmente puede tener datos de entradas y/o salida.(Parámetros, valor de retorno)</small></li>
+							<li>Archivos externos:<small> Es posible tener partes del código fuera de nuestro programa principal. Los archivos externos pueden importarse fácilmente.</small></li>
+							<li>Clases, objetos:<small> Con POO es posible dividir soluciones de un problema con las diferentes técnicas que ofrece el paradigma orientado a objetos.</small></li>
+							<li>Librerías externas:<small> Existen diversas librerías de aceso libre que pueden resolver una parte de nuestro problema.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+				</section>
+				<section>
+
+					<section>
+						<h2>Parámetros</h2>
+					</section>
+					<section>
+						<h2>Parámetros</h2>
+						<p>Son <strong>variables</strong> que <strong>transfieren información</strong> entre los módulos o el programa principal. Los parámetros son opcionales.</p>
+						<p>Los módulos o funciones pueden tener <strong>muchos parámetros</strong> y <strong>un valor</strong> de retorno o salida (opcional)</p>
+						<p>Lo veremos con ejemplos.</p>
+					</section>
+
+					<section>
+						<h2>Parámetros (cont)</h2>
+						<h3>Los parametros pueden ser:</h3>
+						
 						<ul>
 							<li>Por valor: <small>Se envía una copia del dato al módulo. Si el dato cambia en el módulo, el dato en el módulo que llamó no se verá afectado.</small></li>
 							<li>Referencia: <small>Se envía "el mismo dato" (una referencia). De manera que si hay un cambio en el módulo cambiará también el dato en el otro módulo.</small></li>
@@ -172,15 +216,168 @@
 					</section>
 
 					<section>
+						<h2>Parámetros en Python</h2>
+						<p>En Python no se concibe la dialéctica "paso por valor/referencia" porque el lenguaje no trabaja con el concepto de variables sino objetos y referencias.</p>
+						<p>Básicamente siempre se pasa por valor a no ser que sea una lista, arreglos, etc.</p>
+
+					</section>
+
+					<section>
+						<h2>Parámetros (cont)</h2>
+						<h3>Envío de datos al módulo</h3>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							def modulo_saludo(nombre): # Cabecera con un parámetro
+								print (f"¡Hola {nombre}!") # Código del módulo
+							# ...
+							# Programa principal
+							nom1 = "Cristian"
+							modulo_saludo(nom1) # Invocación del módulo
+							nom2 = "Laura"
+							modulo_saludo(nom2)
+						</code></pre>
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								¡Hola Cristian!
+								¡Hola Laura!
+							</code></pre>
+						</div>
+
+						
+					</section>
+
+					<section>
+						<h2>Parámetros para retornar datos</h2>
+						<p>Como hemos dicho antes, a un módulo se lo conoce habitualmente como <strong>función</strong> que viene de la función matemática. Una función matemática puede tener muchos datos de entrada pero devuelve solo un valor*.</p>
+						<p>Veremos ejemplos a continuación de funciones en lenguaje Python.</p>
+						<small>*En Python podemos devolver varios valores. Los retorna como una <strong>lista (colección).**</strong></small>
+						<small>** Veremos que es una lista mas adelante.</small>
+					</section>
+
+					<section>
+						<h2>Parámetros y retorno</h2>
+						<h3>Ejemplo #1</h3>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							def sumador(n1, n2): # Cabecera con dos parámetros de entrada
+								return (n1+n2) # Valor de retorno. Se usa return
+
+							num1 = 22
+							num2 = 44
+							suma = sumador(num1,num2) # Se puede asignar a una variable
+							print (f"La suma es {suma}") # Para luego imprimirla
+
+							print (f"La suma es {sumador(num1,num2)}") # Otra forma 
+						</code></pre>
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								La suma es 66
+								La suma es 66
+							</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>Parámetros y retorno</h2>
+						<h3>Ejemplo #2</h3>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# Devuelve si el primer número es mayor
+							# Practica 1 - Ej7
+							def esMayor(n1,n2):
+								if n1>n2:
+									return True
+								else:
+									return False
+
+							def esMayorV2(n1,n2): # Mas corto ;)
+								return(n1>n2)
+
+							print (f"Es Mayor?: {esMayor(2,3)}")
+							print (f"Es Mayor?: {esMayorV2(2,3)}")
+
+						</code></pre>
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								Es Mayor?: False
+								Es Mayor?: False
+							</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>Parámetros y retorno</h2>
+						<h3>Ejemplo #3</h3>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							def esPar(n1):
+								return (n1 % 2 == 0) # Retorna un boolean.
+								# El boolean es resultante de esa operación
+						
+							print (f"Es par?: {esPar(2)}")
+
+						</code></pre>
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								Es par?: True
+							</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>Parámetros y retorno</h2>
+						<h3>Ejemplo #4</h3>
+						<h4>Varios valores de retorno</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+												
+							def ordenar(n1,n2):
+								if n1>n2:
+									return (n2,n1)
+								else:
+									return (n1,n2)
+									
+							def ordenar_corto(n1, n2):
+								return (n2,n1) if n1>n2 else (n1,n2)
+									
+							print (ordenar(19,2))
+							print (ordenar_corto(19,2))
+
+
+						</code></pre>
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								(2,19)
+								(2,19)
+							</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+				</section>
+				<section>
+
+					<section>
+						<h2>Alcance de los datos</h2>
+					</section>
+
+					<section>
 						<h2>Alcance de los datos</h2>
 						<p>Como vimos anteriormente, los datos pueden ser constantes o variables. Pero también hay que tener en cuenta el alcance de los mismos dentro del programa.</p>
 
 						<p></p>
 					</section>
 
+
+
 					<section>
 						<h2>Alcance de los datos (cont)</h2>
-						<p>En esta instancia <small>(para no complicarnos tanto)</small>, podemos diferenciar los datos como de alcance "global" o "local"</p>
+						<p>En esta instancia (para no complicarnos tanto), podemos diferenciar los datos como de alcance <strong>"global"</strong> o <strong>"local"</strong>.</p>
 						<ul>
 							<li>Global: Será accesible desde todo el programa y los módulos</li>
 							<li>Local: Será solo accesible desde el módulo donde se declaró</li>
@@ -217,7 +414,79 @@
 
 					<section>
 						<h3>Alcance de los datos (ejemplo)</h3s>
-						<h4>Variable global</h4>
+						<h4>Variable global (modificar)</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							numero= 3
+							def cuadrado(n1):
+								n1 = n1*n1
+							
+							cuadrado(numero)
+							print(f"El cuadrado es: {numero}")
+						</code></pre>
+						<div class="fragment">
+
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								3
+							</code></pre>
+							<p>Se pasó por "VALOR". Una copia de la variable.</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Alcance de los datos (ejemplo)</h3s>
+						<h4>Variable global (modificar)</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							numero= 3
+							def cuadrado():
+								numero*=numero
+							
+							cuadrado()
+							print(f"El cuadrado es: {numero}")
+							cuadrado()
+							print(f"El cuadrado es: {numero}")
+						</code></pre>
+						<div class="fragment">
+
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								UnboundLocalError: local variable 'numero' referenced before assignment
+							</code></pre>
+							<p>¿Cómo modifico una variable global?</p>
+						</div>
+					</section>
+
+					
+					<section>
+						<h3>Alcance de los datos (ejemplo)</h3s>
+						<h4>Variable global (modificar)</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							numero= 3
+							def cuadrado():
+								global numero # Se refiere a la variable global
+								numero*=numero
+							
+							cuadrado()
+							print(f"El cuadrado es: {numero}")
+							cuadrado()
+							print(f"El cuadrado es: {numero}")
+						</code></pre>
+						<div class="fragment">
+
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								El cuadrado es: 9
+								El cuadrado es: 81
+							</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h3>Alcance de los datos (ejemplo)</h3s>
+						<h4>Variable local</h4>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							
@@ -240,37 +509,44 @@
 								Cristian
 								NameError: name 'nombre' is not defined
 							</code></pre>
+							<small>La variable <strong>nombre</strong> será solo visible en el módulo donde se declaró.</small>
 						</div>
+						
 
 					</section>
 
 					<section>
-						<h3>¿Cómo modularizar en un programa?</h3>
+						<h2>Variables locales y globales</h2>
+						<p>¿Por qué no ponemos todas variables globales y listo?</p>
+
 						<ul>
-							<li>Funciones/procedimientos:<small> Parte de código que resuelve una parte del problema. Opcionalmente puede tener datos de entradas y/o salida.(Parámetros, valor de retorno)</small></li>
-							<li>Archivos externos:<small> Es posible tener partes del código fuera de nuestro programa principal. Los archivos externos pueden importarse fácilmente.</small></li>
-							<li>Clases, objetos:<small> Con POO es posible dividir soluciones de un problema con las diferentes técnicas que ofrece el paradigma orientado a objetos.</small></li>
-							<li>Librerías externas:<small> Existen diversas librerías de aceso libre que pueden resolver una parte de nuestro problema.</small></li>
+							<li>No es una buena práctica: <small>A menos que sea necesario tener una variable global, siempre se recomienda usar parámetros para enviar datos a los módulos.</small></li>
+							<li>Poca legibilidad: <small>Un programa que está constantemente llamando variables globales puede ser poco legible para quien esté mirando el código. El mantenimiento puede verse afectado.</small></li>
+							<li>Mayor uso de memoria: <small>Una variable global estará ocupando memoria durante toda la ejecución del programa, aunque ya no se use.</small></li>
+							<li>Atenta a la protección de datos: <small>Si una variable es local a un módulo, solo un módulo la podrá ver. De manera que se protegen los datos ante el acceso o modificación no deseada. Si es global, en cambio cualquier parte del programa puede acceder a los datos.</small></li>
 						</ul>
 					</section>
 
 					<!-- <section>
-						<h2>Funciones</h2>
-					</section>
+						<h2>Variables locales</h2>
+						<p>¿Para qué usamos las variables locales?</p>
 
-					<section>
-						<h3>Funciones</h3>
 						<ul>
-							<li>Funciones:<small> Como hemos estudiado (en algún momento) en matemáticas, una función es una operación que a partir de uno o mas valores, produce otro valor. <strong>Resultado</strong></small></li>
-							
+							<li>Datos <small>A menos que sea necesario tener una variable global, siempre se recomienda usar parámetros para enviar datos a los módulos.</small></li>
+							<li>Poca legibilidad: <small>Un programa que está constantemente llamando variables globales puede ser poco legible para quien esté mirando el código. El mantenimiento puede verse afectado.</small></li>
+							<li>Protección de datos : <small>En muchas ocasiones es bueno "encapsular" los datos. Si se trata de una variable global no podremos hacerlo.</small></li>
 						</ul>
-
 					</section> -->
 
+					
 
 					<section>
 						<h2>¿Preguntas?</h2>
 					</section>
+
+
+
+
 
 
 					<!-- <section>
@@ -285,6 +561,76 @@
 					</section> -->
 					
 
+
+				</section>
+				<section>
+
+					<section>
+						<h2>Ejemplo de Modularización</h2>
+					</section>
+
+					<section>
+						<h3>Ejemplo modularización</h3>
+						<p>Escriba un programa que compare dos números y diga cual de los dos es el mayor. Usar modularización.</p>
+						<h4>Sin modularizar</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>				
+							dinero= 900
+							extraccion= int(input("Ingrese el monto que desea extraer:"))
+							if extraccion <= dinero:
+								dinero = dinero - extraccion
+								print (f"Usted ha extraído ${extraccion}")
+							else:
+								print("No hay suficiente saldo para completar la operación")
+							print  (f"El saldo restante es: ${dinero}")
+						</code></pre>
+
+						<small>El ejercicio corresponde al <a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica1.md#ejercicio-10">Ejercicio 10 de la práctica 1.</a> </small>
+				
+
+					</section>
+
+					<section>
+						<h3>Ejemplo modularización</h3>
+						<h4>Usando modularización</h4>
+						
+
+						<pre data-id="code-animation"><code class="python" data-trim>				
+							dinero= 900
+							def hayHaldoSuficienteParaExtraer(extraccion):
+								return dinero >= extraccion
+							def extraer(extraccion):
+								global dinero
+								dinero = dinero-extraccion
+								print("Hola")
+							
+							extraccion= int(input("Ingrese el monto para extraer:"))
+							if hayHaldoSuficienteParaExtraer(extraccion):
+								extraer(extraccion)
+							else:
+								print("No hay suficiente saldo para la operación")
+							print  (f"El saldo restante es: ${dinero}")
+						</code></pre>
+				
+
+					</section>
+
+					<section>
+						<h2>Ejercicio en clase</h2>
+					</section>
+
+					<section>
+						<h3>Ejercicio en clase usando modularización</h3>
+						<p>Realice el <a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica2.md#ejercicio-6">ejercicio 6 de la práctica 2</a> utilizando lo aprendido en esta clase.</p>
+						<p>Escriba un módulo que resuelva el problema con iteraciones y otro módulo que o haga con la fórmula</p>
+
+						<small>Si ya hizo el ejercicio, puede modificarlo y mejorarlo de esa manera.</small>
+					</section>
+
+				</section>
+				<section>
+					<h3>¡Fin de la clase!</h3>
+					<!-- <a href="./clase2.html">Ir a siguiente clase ></a> -->
+					<!-- <a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica3.md">Ir a la Práctica 3 ></a> -->
 
 				</section>
 
@@ -324,9 +670,11 @@
 						<p>Algoritmos, datos y Programas (De Giusti)</p>
 						
 						<h3>Referencias</h3>
-						<p>Wikipedia</p>
-						<a href="https://python-reference.readthedocs.io/">Python-reference</a>
-						<a href="http://tic.taboadaleon.es/Unidad1-Programacion/Tema2_Lenguajes/contenido/5_estructura_de_un_programa_informtico.html#:~:text=Existen%20dos%20partes%20o%20bloques,para%20conseguir%20los%20resultados%20esperados.">taboadaleon.es</a>
+					
+					
+						<!-- <a href="http://tic.taboadaleon.es/Unidad1-Programacion/Tema2_Lenguajes/contenido/5_estructura_de_un_programa_informtico.html#:~:text=Existen%20dos%20partes%20o%20bloques,para%20conseguir%20los%20resultados%20esperados.">taboadaleon.es</a> -->
+
+						<a href="https://recursospython.com/">RecursosPython</a>
 
 						<h3>Recursos</h3>
 						<a href="https://www.online-python.com/">Interprete Python Online</a>
