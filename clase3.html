@@ -308,6 +308,27 @@
 					</section>
 
 					<section>
+						<h3>Orden de los parámetros</h3>
+						<p><strong>¡IMPORTANTE!:</strong> El envío de parámetros es <strong>por orden</strong>.  </p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							p1,p2,p3 = 10, 20, 30 # Le asigna 10 a p1, 20 a p2 y así...
+
+							def funcion(p1,p2,p3):
+								print (p1,p2,p3)
+	
+							funcion(p2,p3,p1)
+						</code></pre>
+
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								20 30 10
+							</code></pre>
+							<small>Como se puede ver, importa el orden en que se envía y se recibe. El nombre NO importa.</small>
+						</div>
+					</section>
+					<section>
 						<h2>Parámetros y retorno</h2>
 						<h3>Ejemplo #3</h3>
 						<pre data-id="code-animation"><code class="python" data-trim>
@@ -331,20 +352,15 @@
 						<h3>Ejemplo #4</h3>
 						<h4>Varios valores de retorno</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
-												
 							def ordenar(n1,n2):
 								if n1>n2:
 									return (n2,n1)
 								else:
 									return (n1,n2)
-									
 							def ordenar_corto(n1, n2):
 								return (n2,n1) if n1>n2 else (n1,n2)
-									
 							print (ordenar(19,2))
 							print (ordenar_corto(19,2))
-
-
 						</code></pre>
 						<div class="fragment">
 							<h4>Resultado</h4>
@@ -353,6 +369,54 @@
 								(2,19)
 							</code></pre>
 						</div>
+					</section>
+
+					<section>
+						<h3>Parámetros por defecto</h3>
+						<small>Si definimos un parámetro por defecto, el envío es opcional. Se define un valor para usar en caso que no se envíe ningún parámetro desde el programa.</small>
+
+						<pre data-id="code-animation"><code class="python" data-trim>			
+							# En caso que no se envíe ningún parámetro
+							# nombre será "humano"
+							def saludar(nombre="humano"):
+								print (f"Hola {nombre}")
+																
+							saludar("Cristian") #Se envía "Cristian" como parámetro
+							saludar() #No se envía ningún parámetro
+						</code></pre>
+
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								Hola Cristian
+								Hola humano
+							</code></pre>
+						</div>
+
+					</section>
+
+					<section>
+						<h3>Parámetros por defecto</h3>
+						<small>Puede haber muchos parámetros por defecto (opcionales). Deben estar siempre al final de los parámetros obligatorios.</small>
+
+						<pre data-id="code-animation"><code class="python" data-trim>			
+							# En caso que no se envíe ningún parámetro de descuento
+							# no se aplicará descuento
+							def calcular_descuento(importe, descuento=0):
+								return importe - (importe*((descuento/100)))
+																
+							print(calcular_descuento(100,20)) # 20% de descuento
+							print(calcular_descuento(100)) 		# Sin descuento
+						</code></pre>
+
+						<div class="fragment">
+							<h4>Resultado</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								80.0
+								100.0
+							</code></pre>
+						</div>
+
 					</section>
 
 					<section>
@@ -596,15 +660,14 @@
 
 						<pre data-id="code-animation"><code class="python" data-trim>				
 							dinero= 900
-							def hayHaldoSuficienteParaExtraer(extraccion):
-								return dinero >= extraccion
-							def extraer(extraccion):
+							def haySaldoSuficienteParaExtraer(unMonto):
+								return dinero >= unMonto
+							def extraer(unMonto):
 								global dinero
-								dinero = dinero-extraccion
-								print("Hola")
+								dinero = dinero-unMonto
 							
 							extraccion= int(input("Ingrese el monto para extraer:"))
-							if hayHaldoSuficienteParaExtraer(extraccion):
+							if haySaldoSuficienteParaExtraer(extraccion):
 								extraer(extraccion)
 							else:
 								print("No hay suficiente saldo para la operación")
