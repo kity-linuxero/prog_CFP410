@@ -44,13 +44,23 @@ Escriba un programa que reciba una secuencia de números ingresada por teclado h
 Pistas:
 - Utilice modularización para separar las responsabilidades del programa.
 - La función escrita en el ejercicio anterior le será muy útil en este ejercicio ;)
+- Para llevar la cuenta de máximos y mínimos ponga el siguiente código al principio de su programa.
+
+```python
+min=99999999 # El mínimo se inicia en un número grande para que al ser comparado con el primero sea reemplazado
+max=-1 # El máximo se inicializa en -1 para que cuando llegue el primer número máximo real este sea reemplazado
+```
+
 - Sugerencia
     - Una función para que _retorne_ el mayor entre dos
     - Una función para que _retorne_ el menor entre dos
 
+
+
+
 ## Ejercicio 7
 
-Re escriba el programa hecho en la práctica 2, ejercicio 7 utilizando módulos:
+Re escriba el programa hecho en la práctica 2, ejercicio 9 utilizando módulos:
 >Escriba un programa que le pida al usuario que ingrese un número del 1 al 6 y simule la función que se lanza un dado usando como ejemplo el ejercicio anterior. El programa debe seguir hasta que el usuario acerte el número.
 
 Compare los dos programas. ¿Qué conclusión puede sacar?
