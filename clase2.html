@@ -133,8 +133,8 @@
 						<ul>
 							<li>Numéricos:</li><small>
 							<ul>
-								<li>Enteros (-n,...-1,0,1....n)</li>
-								<li>Reales (-n,...-0.000001...,0.0,...,0.1,...n)</li>
+								<li>Enteros [int] (-n,...-1,0,1....n)</li>
+								<li>Reales [float](-n,...-0.000001...,0.0,...,0.1,...n)</li>
 							</ul></small>
 							<li>Lógico:</li>
 							<ul><small>
@@ -532,18 +532,35 @@
 					<section>
 						<h2>Conversión de tipos</h2>
 						<h4>Conversión de número a string</h4>
-						<p>Se usa la instrucción str</p>
+						<p>Se usa la instrucción str()</p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							var1= 233 # Se guarda en var1 un número entero
 							var2= str(var1) # Se convierte a string y se guarda en var2
 						</code></pre>
 
 						<h4>Conversión de string a número entero</h4>
-						<p>Se usa la instrucción int</p>
+						<p>Se usa la instrucción int()</p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							var3= '512' # Se guarda en var3 un string.
 							var4= int(var3) # Se convierte a entero y se guarda en var4
 						</code></pre>
+					</section>
+
+					<section>
+						<h2>Conversión de tipos</h2>
+
+						<h4>Conversión de string a número real (float)</h4>
+						<p>Se usa la instrucción float()</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							var1= "10.5" # Se guarda en var1 un string
+							var2= float(var1) # Se convierte a real y se guarda en var2
+						</code></pre>
+
+						<h4>¿Real o entero?</h4>
+						<p>Usemos enteros cuando trabajamos con números (int) enteros y real (float) cuando trabajamos con números con parte fraccionaria.</p>
+
+
+						
 					</section>
 
 					<section>
@@ -552,6 +569,10 @@
 				</section>
 
 				<section>
+
+					<section>
+						<h2>Operaciones comunes en programas</h2>
+					</section>
 
 					<section>
 						<h2>Operaciones comunes en programas</h2>
@@ -573,7 +594,7 @@
 					</section>
 
 					<section>
-						<h2>Operaciones comunes en programas</h2>
+						<h3>Operaciones comunes en programas</h3>
 						<h4>Incrementar el valor de una variable</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							contador=0
@@ -583,6 +604,42 @@
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							1
 						</code></pre>
+
+						<h4>Otra forma de incrementar el valor</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							contador=0
+							contador+=1
+							print (contador)
+						</code></pre>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							1
+						</code></pre>
+						
+					</section>
+
+					<section>
+						<h3>Operaciones comunes en programas</h3>
+						<h4>Decrementar el valor de una variable</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							contador=0
+							contador= contador -1
+							print (contador)
+						</code></pre>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							-1
+						</code></pre>
+
+						<h4>Otra forma de decrementar el valor</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							contador=0
+							contador-=1
+							print (contador)
+						</code></pre>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							-1
+						</code></pre>
+						<small>Puede aplicar la misma lógia para las demás operaciones aritméticas.</small>
+						
 					</section>
 					<section>
 						<h2>Práctica</h2>

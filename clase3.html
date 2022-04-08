@@ -256,8 +256,8 @@
 					</section>
 
 					<section>
-						<h2>Parámetros y retorno</h2>
-						<h3>Ejemplo #1</h3>
+						<h3>Parámetros y retorno</h3>
+						<h4>Ejemplo #1</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							def sumador(n1, n2): # Cabecera con dos parámetros de entrada
 								return (n1+n2) # Valor de retorno. Se usa return
@@ -279,8 +279,8 @@
 					</section>
 
 					<section>
-						<h2>Parámetros y retorno</h2>
-						<h3>Ejemplo #2</h3>
+						<h3>Parámetros y retorno</h3>
+						<h4>Ejemplo #2</h4>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							# Devuelve si el primer número es mayor
@@ -309,7 +309,7 @@
 
 					<section>
 						<h3>Orden de los parámetros</h3>
-						<p><strong>¡IMPORTANTE!:</strong> El envío de parámetros es <strong>por orden</strong>.  </p>
+						<p><strong>¡IMPORTANTE!:</strong> Para el envío de parámetros se considera <strong>el orden</strong> de los mismos.</p>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							p1,p2,p3 = 10, 20, 30 # Le asigna 10 a p1, 20 a p2 y así...
@@ -325,7 +325,7 @@
 							<pre data-id="code-animation"><code class="bash" data-trim>
 								20 30 10
 							</code></pre>
-							<small>Como se puede ver, importa el orden en que se envía y se recibe. El nombre NO importa.</small>
+							<small>Como se puede ver, importa el orden en que se envía y se recibe. El nombre es para el uso local.</small>
 						</div>
 					</section>
 					<section>
@@ -350,25 +350,22 @@
 					<section>
 						<h2>Parámetros y retorno</h2>
 						<h3>Ejemplo #4</h3>
-						<h4>Varios valores de retorno</h4>
+						<h4>Varios valores de retorno*</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							def ordenar(n1,n2):
 								if n1>n2:
 									return (n2,n1)
 								else:
 									return (n1,n2)
-							def ordenar_corto(n1, n2):
-								return (n2,n1) if n1>n2 else (n1,n2)
 							print (ordenar(19,2))
-							print (ordenar_corto(19,2))
 						</code></pre>
 						<div class="fragment">
 							<h4>Resultado</h4>
 							<pre data-id="code-animation"><code class="bash" data-trim>
 								(2,19)
-								(2,19)
 							</code></pre>
 						</div>
+						<small>*Mas adelante veremos como manipular listas y aprovechar el retorno múltiple.</small>
 					</section>
 
 					<section>
@@ -472,6 +469,7 @@
 								Cristian
 								Hola Cristian
 							</code></pre>
+							<small>Los datos serán accesibles por todos los módulos pero como  <strong>solo lectura</strong>. No se podrá modificar el valor.</small>
 						</div>
 
 					</section>
@@ -692,7 +690,7 @@
 				</section>
 				<section>
 					<h3>¡Fin de la clase!</h3>
-					<a href="./clase2.html">Ir a clase anterior ></a>
+					<a href="./clase2.html">Ir a clase anterior ></a><br>
 					<a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica3.md">Ir a la Práctica 3 ></a>
 
 				</section>
