@@ -44,7 +44,8 @@ Escriba un programa que reciba una secuencia de números ingresada por teclado h
 Pistas:
 - Utilice modularización para separar las responsabilidades del programa.
 - La función escrita en el ejercicio anterior le será muy útil en este ejercicio ;)
-- Para llevar la cuenta de máximos y mínimos ponga el siguiente código al principio de su programa.
+- En el primer ingreso de números, asigne a su máximo y mínimo el valor ingresado (Una opción posible) ó:
+- Puede llevar la cuenta del máximo y mínimo con valores opuestos. Ponga el siguiente código al principio de su programa para llevar la cuenta de máximos y mínimos de esa forma (otra opción posible):
 
 ```python
 min=99999999 # El mínimo se inicia en un número grande para que al ser comparado con el primero sea reemplazado
@@ -55,13 +56,10 @@ max=-1 # El máximo se inicializa en -1 para que cuando llegue el primer número
     - Una función para que _retorne_ el mayor entre dos
     - Una función para que _retorne_ el menor entre dos
 
-
-
-
 ## Ejercicio 7
 
 Re escriba el programa hecho en la práctica 2, ejercicio 9 utilizando módulos:
->Escriba un programa que le pida al usuario que ingrese un número del 1 al 6 y simule la función que se lanza un dado usando como ejemplo el ejercicio anterior. El programa debe seguir hasta que el usuario acerte el número.
+>Escriba un programa que le pida al usuario que ingrese un número del 1 al 6 y simule la función que se lanza un dado... El programa debe seguir hasta que el usuario acerte el número.
 
 Compare los dos programas. ¿Qué conclusión puede sacar?
 
@@ -82,7 +80,7 @@ Posibles módulos:
 - Otro módulo de saber si la opción elegida por el usuario le gana a la elegida por la computadora.
 
 ## Ejercicio 9
-Modifique el programa de piedra, papel y tijera del ejercicio anterior para que permita a la computadora hacer trampa dándole la oportunidad de tirar otra vez en caso que el usuario haya ganado en el primer intento. El usuario no debe enterarse ;) y la PC podrá elegir solo una vez mas (sino sería muy obvio XD). Busque la forma mas sencilla de hacerla.
+Modifique el programa de piedra, papel y tijera del ejercicio anterior para que permita a la computadora hacer trampa dándole la oportunidad de tirar otra vez en caso que el usuario haya ganado en el primer intento. El usuario no debe enterarse ;) y la PC podrá elegir solo una vez mas (sino sería muy obvio XD).
 
 
 
