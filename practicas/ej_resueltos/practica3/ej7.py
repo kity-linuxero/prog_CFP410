@@ -1,3 +1,6 @@
+# Escriba un programa que le pida al usuario que ingrese un número del 1 al 6 y simule la función que se lanza un dado...
+# El programa debe seguir hasta que el usuario acerte el número.
+
 import random
 
 # ######## VARIABLES GLOBALES ######## 

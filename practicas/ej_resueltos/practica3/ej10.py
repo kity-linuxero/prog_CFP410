@@ -63,10 +63,10 @@ def informar_gano_usuario(opcion_pc):
     print(f"¡Ganaste!, yo elegí {opcion_a_texto(opcion_pc)} :(")
 
 def informar_empate(opcion_pc):
-    print(f"¡Empatamos! yo también elegí {opcion_a_texto(pc)} :P")
+    print(f"¡Empatamos! yo también elegí {opcion_a_texto(opcion_pc)} :P")
 
 def informar_gano_pc(opcion_pc):
-    print(f"¡Perdiste!, yo elegí {opcion_a_texto(pc)} XD")
+    print(f"¡Perdiste!, yo elegí {opcion_a_texto(opcion_pc)} XD")
 
 
 ############################################################
@@ -83,23 +83,27 @@ con_trampa = False
 while seguirJugando:
 
     # LA PC elije su opción antes de pedirnos
-    pc = elige_pc()
+    eleccion_pc = elige_pc()
           
-    user = elige_usuario()
+    eleccion_user = elige_usuario()
 
-    gano = userGano(pc,user)
+    # Almacena en gano por True o False si el usuario ganó
+    usuario_gano_partida = userGano(eleccion_pc,eleccion_user) 
 
     # Ejercicio  9 donde se aplica la trampa. Si no está activada (con_trampa=False) se ignora la línea donde la pc tira nuevamente.
-    if con_trampa and userGano(pc,user):
-        pc = elige_pc()
+    if con_trampa and usuario_gano_partida:
+        # PC tira otra vez
+        eleccion_pc = elige_pc()
 
-    if userGano(pc,user):
-        informar_gano_usuario(pc)
+    if usuario_gano_partida:
+        # Gano usuario
+        informar_gano_usuario(eleccion_pc)
         wins+=1
-    elif hubo_empate(pc,user):
-        informar_empate(pc)
+    elif hubo_empate(eleccion_pc,eleccion_user):
+        # Hubo empate
+        informar_empate(eleccion_pc)
     else: # Ganó la PC
-        informar_gano_pc(pc)
+        informar_gano_pc(eleccion_pc)
         lost+=1
 
     seguirJugando = quiere_jugar_otra_vez()
