@@ -14,6 +14,7 @@ myEgg.onclick = function() {
   if (egg == 4){
     modal.style.display = "block";
     egg=-9999;
+    span = document.getElementById("egg_text").textContent = "A veces es mejor empezar de cero para encontrar el camino.";   
   } else {
       egg++;
   }
