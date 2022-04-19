@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Programación</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section  data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					
+					<h2>Introducción a la programación</h2>
+				</section>
+
+				<section>
+					<h2>Clase 4</h2>
+					<h3>Contenido para hoy</h3>
+					<ul>
+						<li>Arreglos (Array)</li>
+						<li>Listas (List)</li>	
+					</ul>
+				</section>
+
+				<!-- Sección Modularización -->
+
+				<section>
+
+					<section>
+						<h2>Seguimos con Tipos de datos</h2>
+					</section>
+
+					<section>
+						<h3>Tipos de datos vistos hasta ahora </h3> 
+						<ul>
+							<li>Numéricos: enteros y reales (int/float)</li>
+							<li>Lógicos booleanos (True/False)</li>
+							<li>Cadena de caracteres (Strings) <a href="clase2.html#/3/3">[1]</a></li>
+						</ul>
+						<p>Son tipos de datos "simples"</p>
+						<p>A continuación veremos tipos de datos compuestos.</p>
+						
+					</section>
+
+					<section id="arrays">
+						<h2>Arreglos (array)</h2>
+
+						<blockquote cite="https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica).">
+							&ldquo;Es una zona de almacenamiento contiguo (en la memoria) que contiene una serie de elementos del mismo tipo.&rdquo;
+						</blockquote>
+
+					</section>
+
+					<section>
+						<h3>Arreglos (Características)</h3>
+
+						
+						<ul>
+							<li>Homogéneo:<small> Todos los elementos del arreglo son del mismo tipo de datos. Y se define en el momento que definimos el arreglo.</small></li>
+							<li>Dimensiones:<small> Pueden ser n dimensionales. Los mas comunes son de 1 dimensión (vectores) y de 2 dimensiones (matrices).</small></li>
+							<li>Indexado:<small> Mediante uno o mas <strong>índices</strong> es posible acceder a cualquier elemento del arreglo. El índice por lo general es un valor numérico que va de 0 a n-1. Siendo 0 la referencia al primer elemento y n-1 el último. La cantidad de índices del arreglo define las dimensiones del mismo. Por ejemplo, un arreglo de una dimensión tendrá un índice. Uno de dos dimensiones tendrá dos índices y así...</small></li>
+							<li>Tamaño fijo:<small> El tamaño del arreglo y por lo tanto, la capacidad para almacenar datos es fija durante la ejecución del programa. La cantidad de memoria ocupada por el arrelo no varía.</small></li>
+							
+						</ul>
+					</section>
+
+					<section>
+						<h2>Vectores (Arreglos 1d)</h2>
+						<blockquote cite="Algoritmos, datos y Programas. De Giusti.">
+							&ldquo;Un vector o arreglo lineal es un tipo de dato arreglo con un índice, es decir con una dimensión.&rdquo;
+						</blockquote>
+						<p>Por lo general se usa el término <strong>arreglo</strong> o <strong>array</strong> para referirse a un vector.</p>
+
+					</section>
+
+					<section>
+						
+						<h4>Estructura básica de un arreglo</h4>
+
+							<ul>
+								<li>Nombre (o identificador)<small>Es de la forma que lo vamos a referenciar en el código. Un arreglo es una variable.</small></li>
+								<li>Tamaño<small> Es el número de elementos podrá almacenar. El tamaño impacta en la memoria.</small></li>
+								<li>Índice<small> Por lo general es un número entre 0 hasta n-1. Siendo n el tamaño total del arreglo.</small></li>
+								<li>Elemento o valor<small> El elemento es el dato que almacenará el arreglo en un índice determinado.</small></li>
+							</ul>
+							<img style="background: rgba(255,255,255,0.1);"  data-src="./static/clase4/array01.jpg" alt="Figura 1: Estructura de un arreglo">
+						
+					</section>
+
+					<section>
+						<h3>Estructura básica de un arreglo</h3>
+
+						<h4>Ejemplo de arreglo en C++</h4>
+
+						<pre data-id="code-animation"><code class="cpp" data-trim>
+							// Declaración de arreglo de números enteros
+							int arreglo_clase[7] = {5, 27, 43, 12, 8, 7, 0};
+							// Accedo al elemento en la posición 5
+							int x = arreglo_clase[5]; // El valor de x será 7
+							int arreglo_vacio[10];
+							arreglo_vacio[9] = 22
+							arreglo_vacio[10] = 224 // ¡ERROR! Out of range
+						</code></pre>
+						<h4>Estructura de arreglo_clase</h4>
+						<img style="height: 240px; width: auto;"  data-src="./static/clase4/array02.png" alt="Figura 1: Estructura secuencial">
+						<p><small><a href="https://www.programiz.com/cpp-programming/arrays">Mas ejemplos</a></small></p>
+						
+
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+				</section>
+				<section>
+
+					<section>
+						<h1>Listas</h1>
+					</section>
+					<section>
+						<h2>Listas</h2>
+						<small>
+
+						<blockquote cite="https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica).">
+							&ldquo;Una lista es un dato abstracto que representa una secuencia ordenada de valores, donde el mismo valor puede ocurrir más de una vez (pueden repetirse).
+							&rdquo;
+						</blockquote> </small>
+
+						<p><small>Muchos lenguajes de programación proporcionan soporte para tipos de dato de la lista, y tienen sintaxis especiales y semánticas para listas y operaciones de lista.</small></p>
+						<p><small>Las listas son usualmente <strong>implementadas</strong> como listas enlazadas o como arrays de longitud variable o array dinámicos.</small></p>
+
+						<h4>Estructura de una lista</h4>
+						<img   data-src="./static/clase4/lista01.png" alt="Figura 1: Estructura secuencial">
+					</section>
+
+					<section>
+						<h3>Listas en Python</h3>
+
+						<small>
+						<blockquote cite="https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica).">
+							&ldquo;Las listas en Python son un tipo de dato que permite almacenar datos de cualquier tipo. Son mutables y dinámicas.&rdquo;
+						</blockquote> </small>			
+						
+						<ul>
+							<li>Ordenadas:<small> Los elementos mantienen el orden en el que han sido definidos en la lista.</small></li>
+							<li>Indexadas:<small>Pueden ser indexadas utilizando corchetes []. Simular a los arrays visto antes.</small></li>
+							<li>Mutables:<small> Los elementos pueden ser modificados y cambiados durante la ejecución del programa.</small></li>
+							<li>Dinámica:<small> Se pueden añadir y quitar elementos de la misma durante la ejecución del programa.</small></li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Crear listas en Python</h2>
+						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							una_lista = [1,2,3,4] #Crea una_lista con 4 elementos enteros
+						</code></pre>
+						<p>Distintos tipos de datos</p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							lista_nueva = [1,"Hola",3.44,[1,2,3]]
+							# Crea lista_nueva con 4 elementos de distintos tipos
+						</code></pre>
+						<h4>Imprimir una lista:</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							print(lista)
+							print(lista_nueva)
+						</code></pre>
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							[1, 2, 3, 4]
+							[1, 'Hola', 3.44, [1, 2, 3]]
+						</code></pre>
+
+						<small><a href="https://www.mycompiler.io/view/AdA0QY5YYf5" target="_blank"> Try it yourself!</a></small>
+
+
+					</section>
+
+					<section>
+						<h2>Acceder y modificar listas</h2>
+						<p><small>Si tenemos una lista a con 3 elementos almacenados en ella, podemos acceder a los mismos usando corchetes y un índice, que va desde 0 a n-1 siendo n el tamaño de la lista.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							a = [90, "Python", 3.87]
+							print(a[0]) #90
+							print(a[1]) #Python
+							print(a[2]) #3.87
+						</code></pre>
+						<h4>Los i-últimos elementos</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							print(a[-1]) #3.87 -> El último elemento
+							print(a[-2]) #Python -> El anteúltimo
+						</code></pre>
+
+						<h4>Modificar un elemento</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							a[1] = "Hola"
+							print (a[1]) # Hola
+						</code></pre>
+
+						<small>Se modificó el elemento en el índice [1]</small>
+
+					</section>
+
+					<section>
+						<h3>Eliminar elemento de una lista</h3>
+						<p><small>Hay distintas formas de eliminar elementos de una lista. Ahora veremos del y remove().</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							a = [90, "Python", 3.87]
+							del a[1] # Elimina el elemento en la posición 1 de la lista
+							print(a) # [90, 3.87]					
+							a.remove(90) # Elimina el 90 de la lista
+							print(a) # [3.87]
+						</code></pre>
+
+						<p><a href="https://ellibrodepython.com/listas-en-python#acceder-y-modificar-listas">Más sobre listas en El Libro de Python</a></p>
+
+					</section>
+
+					<section>
+						<h3>Iterar listas</h3>
+						<p>En Python es muy fácil interar (o recorrer) listas.</p>
+						<h4>Ejemplo #1</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							lista = [5, 9, 10]
+							for e in lista:
+								print(e)
+
+							#5
+							#9
+							#10
+						</code></pre>
+
+						<p>La "variable" "e" dentro del for se refiere al elemento actual de la lista.</p>
+						<p><small>El nombre de esa variable es opcional y puede ser cualquier nombre válido para una variable cualquiera.</small></p>
+
+
+
+
+					</section>
+
+					<section>
+						<h3>Iterar listas</h3>
+						<p><small>Dentro de la iteración, podemos tratar al elemento de la lista como una variable cualquiera.</small></p>
+						<h4>Ejemplo #2</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							lista = [5, 9, 10]
+							for l in lista:
+								if l => 9:
+									print (l)
+						</code></pre>
+
+						<div class="fragment">
+							<h4>Output</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								9
+								10
+							</code></pre>
+						</div>
+
+
+					</section>
+
+					<section>
+						<h3>Iterar listas</h3>
+						<div>
+
+							<h4>Ejemplo #3</h4>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								alumnxs = ["Matias", "Ana", "Juan", "Victoria"]
+								for a in alumnxs:
+									if a == "Juan":
+										print(f"¡Hola {a}!")
+									else:
+										print(a)
+							</code></pre>
+
+							<div class="fragment">
+								<h4>Output</h4>
+								<pre data-id="code-animation"><code class="bash" data-trim>
+									Matias
+									Ana
+									¡Hola Juan!
+									Victoria
+								</code></pre>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Funciones para listas</h2>
+						
+					</section>
+
+					<section>
+						<h3>Funciones para listas</h3>
+
+						<p>Python (como otros lenguajes) nos proveen funciones, métodos o herramientas para interactuar con las listas. A continuación veremos algunos con ejemplos.</p>
+					</section>
+
+					<section>
+						<h3>Agregar elemento</h3>
+						<p>El método <code style="background-color:lightgrey; color:darkslategray;">apend()</code> añade un elemento al final de la lista.</p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [1, 2]
+							l.append(3)
+							print(l) #[1, 2, 3]
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Insertar</h3>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">insert(indice, elem)</code> añade un elemento en una posición o índice determinado.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [1, 3]
+							l.insert(1, 2)
+							print(l) #[1, 2, 3]
+						</code></pre>
+
+						<small>Recordar que el primer elemento es el índice[0].</small>
+					</section>
+
+					<section>
+						<h3>Quitar un elemento</h3>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">remove(elem)</code> recibe como argumento un objeto y lo borra de la lista.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [1, 2, 3]
+							l.remove(3)
+							print(l) #[1, 2]
+						</code></pre>
+						<br>
+
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">pop()</code> elimina por defecto el último elemento de la lista, pero si se pasa como parámetro un índice permite borrar elementos diferentes al último. </small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [1, 2, 3]
+							l.pop()
+							print(l) #[1, 2]
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Orden</h3>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">reverse()</code> inverte el órden de la lista.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [1, 2, 3]
+							l.reverse()
+							print(l) #[3, 2, 1]
+						</code></pre>
+						<br>
+
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">sort()</code> ordena los elementos de menos a mayor por defecto. </small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [3, 1, 2]
+							l.sort()
+							print(l) #[1, 2, 3]
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+
+				</section>
+
+				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					<h3>¡Fin de la clase!</h3>
+					<a href="./clase3.html"> < Ir a clase anterior</a><br>
+					<a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/">Ir a las prácticas ></a>
+
+				</section>
+
+
+					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+						<h2>Bibliografia</h2>
+
+						<p>Algoritmos, datos y Programas (De Giusti)</p>
+
+						<p><a href="https://ellibrodepython.com">El libro de Python</a></p>
+						
+						<h3>Referencias</h3>
+					
+					
+						<!-- <a href="http://tic.taboadaleon.es/Unidad1-Programacion/Tema2_Lenguajes/contenido/5_estructura_de_un_programa_informtico.html#:~:text=Existen%20dos%20partes%20o%20bloques,para%20conseguir%20los%20resultados%20esperados.">taboadaleon.es</a> -->
+
+						<a href="https://recursospython.com/">RecursosPython</a>
+
+						<h3>Recursos</h3>
+						<a href="https://www.online-python.com/">Interprete Python Online</a>
+
+					</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
