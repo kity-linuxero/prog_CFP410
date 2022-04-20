@@ -186,7 +186,7 @@
 						
 						<ul>
 							<li>Ordenadas:<small> Los elementos mantienen el orden en el que han sido definidos en la lista.</small></li>
-							<li>Indexadas:<small>Pueden ser indexadas utilizando corchetes []. Simular a los arrays visto antes.</small></li>
+							<li>Indexadas:<small>Pueden ser indexadas utilizando corchetes []. Similar a los arrays visto antes.</small></li>
 							<li>Mutables:<small> Los elementos pueden ser modificados y cambiados durante la ejecución del programa.</small></li>
 							<li>Dinámica:<small> Se pueden añadir y quitar elementos de la misma durante la ejecución del programa.</small></li>
 						</ul>
@@ -197,7 +197,7 @@
 						<h2>Crear listas en Python</h2>
 						
 						<pre data-id="code-animation"><code class="python" data-trim>
-							una_lista = [1,2,3,4] #Crea una_lista con 4 elementos enteros
+							lista = [1,2,3,4] #Crea una_lista con 4 elementos enteros
 						</code></pre>
 						<p>Distintos tipos de datos</p>
 
@@ -398,11 +398,12 @@
 						</code></pre>
 						<br>
 
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">pop()</code> elimina por defecto el último elemento de la lista, pero si se pasa como parámetro un índice permite borrar elementos diferentes al último. </small></p>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">pop()</code> retorna el último elemento de la lista y lo borra. Si se pasa como parámetro un índice permite retornar y borrar elementos diferentes al último. </small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							l = [1, 2, 3]
 							l.pop()
 							print(l) #[1, 2]
+							print(l.pop()) # 
 						</code></pre>
 					</section>
 
@@ -415,7 +416,7 @@
 							print(l) #[3, 2, 1]
 						</code></pre>
 						<br>
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">sort()</code> ordena los elementos de menos a mayor por defecto. </small></p>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">sort()</code> ordena los elementos de menor a mayor por defecto. </small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							l = [3, 1, 2]
 							l.sort()
@@ -429,7 +430,7 @@
 						<h3>Random para listas</h3>
 						<!-- La primer pista de este EASTER EGG comienza aquí. 5 veces click en el código te abrirá nuevos caminos. -->
 
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">choise()</code> de la librería <strong>random</strong> nos elige un elemento al azar de una lista.</small></p>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">choice()</code> de la librería <strong>random</strong> nos elige un elemento al azar de una lista.</small></p>
 						<pre id="myEgg" data-id="code-animation" onclick="egg()"><code class="python" data-trim>
 							from random import *
 							l = [3, 1, 2, 9, 12]
@@ -450,7 +451,7 @@
 
 				<section>
 					<h2>Ejercicio en clase</h2>
-					<p>Escribir un programa que nos permita simular un sorteo entre los alumnos de este curso. Una vez inscriptos los participantes, debe seleccionar uno indicando que es el ganador o ganadora del sorteo.</p>
+					<p>Escribir un programa que nos permita simular un sorteo entre los alumnos de este curso. El usuario va inscribiendo a los participantes ingresando los nombres por teclado. Una vez inscriptos los participantes, debe seleccionar uno indicando que es el ganador o ganadora del sorteo.</p>
 				</section>
 
 				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
