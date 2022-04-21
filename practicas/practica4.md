@@ -15,7 +15,7 @@ Escriba un programa que genere una lista de 100 elementos con números enteros a
 
 Escriba un programa que genere una lista con números consecutivos del 1 al 1000.
 
-Sugerencia: [Uso de range]("https://www.programiz.com/python-programming/methods/built-in/range")
+Una ayudita: [Uso de range]("https://www.programiz.com/python-programming/methods/built-in/range")
 
 ## Ejercicio 4
 
@@ -103,16 +103,14 @@ Ingrese palabra 5: Peaones
 
 ## Ejercicio 9
 
-Escriba un programa que genere un sorteo para el juego del "amigx invisible". Donde se ingresan los nombres de las personas que participan y a cada uno se le asigna otra persona la cual será su amigx invisible. En caso que las personas sean número impar, complete con el profesor para que nadie se quede sin su amigx invisible.
-
-
+Escriba un programa que genere un sorteo para el juego del "amigx invisible". Donde se ingresan los nombres de las personas que participan y a cada uno se le asigna otra persona la cual será su amigx invisible. En caso que las personas sean número impar, complete con el profesor para que nadie se quede sin su amigx invisible. Lo usaremos mas adelante cuando hagamos el _tester invisible_ XD.
 
 
 ## Ejercicio 10
 
 Escriba un programa que reciba la apuesta de n jugadores. A los jugadores se les pregunta el nombre y el número al cual apuestan. Las apuestas son números entre 0 y 99 y puede ser que varios jugadores apuesten al mismo número. Una vez que todos los jugadores hayan realizado su apuesta, el programa sortea un número entre 0 y 99. Puede ser que no haya ganadores, o haya mas de uno. Debe informar si hay ganadores o no y debe decir el nombre de los ganadores.
 
-### Ejemplo: 11
+### Ejemplo
 
 ```bash
 Ingrese nombre de la/el apostador: Martín
@@ -138,9 +136,12 @@ Salió sorteado el número 86. No hay ganadores
 
 ## Ejercicio 12
 
->Este ejercicio tiene una dificultad alta. Necesitará pensar cada parte del programa. Modularice cada parte del programa de manera que pueda reutilizar el código que se utilizará en cada turno.
+### Ejercicio para super sayayins de la programación XD
 
-Escriba un programa que permita jugar _una especie_ de __7 y medio__ que se juega con mazos de cartas españolas. Las cartas españolas tiene cuatro palos: espada, basto, copa y oro y cada palo tiene cartas numeradas del 1-12. A efectos del ejercicio eliminaremos las cartas 8 y 9 de cada palo, quedando 10 cartas por palo y en total 40 cartas.
+
+>Este ejercicio tiene una dificultad alta. Necesitará pensar cada parte del programa. Modularice cada parte del programa de manera que pueda reutilizar el código que se utilizará en cada turno. ¡Éxitos!
+
+Escriba un programa que permita jugar _una especie_ de __"7 y medio"__ que se juega con mazos de cartas españolas. Las cartas españolas tiene cuatro palos: espada, basto, copa y oro y cada palo tiene cartas numeradas del 1-12. A efectos del ejercicio eliminaremos las cartas 8 y 9 de cada palo, quedando 10 cartas por palo y en total 40 cartas.
 
 Al principio del programa, se le preguntará la cantidad de jugadores que deseen jugar. Siendo el mínimo 2 jugadores (la pc no jugará).
 
