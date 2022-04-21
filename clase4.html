@@ -28,6 +28,7 @@
 			<div class="modal-body">
 				<p>¡Felicitaciones!</p>
 				<p>¡Encontráste el <a href="https://es.wikipedia.org/wiki/Huevo_de_pascua_(virtual)">easter egg</a> de la clase!</p>
+				<pre style="font-family: monospace">(^_^)</pre>
 			</div>
 			</div>
 		</div>
@@ -426,20 +427,103 @@
 					</section>
 
 					<section>
+						<h3>Longitud de la lista</h3>
+
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">len(<lista>)</code> retorna un número con la cantidad de elementos de la lista.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = [3, 1, 2, 9, 12]
+							cant = len(l)
+							print(cant) # 5
+						</code></pre>
+						<br>
+						<h3>¿Está en la lista?</h3>
+						<p><small>De esta manera se puede saber por sí o por no (True/False) si un elemento está en una lista.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							list = [1,2,3,4,5,6] 
+							print (1 in list) # True
+							print (8 in list) # False
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Recorrer una lista anidada</h3>
+						<p><small>A continuación se presenta una lista anidada y como recorrerla.</small></p>
+
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							nom_y_edad = [["Alberto", 60], ["Avril", 21],  
+							["Manuel", 37], ["Gabriel", 40], ["Mai", 20]] 
+							# Recorrer e informar nombre y edad
+							for nombre in nom_y_edad: 
+								print(f"{nombre[0]} tiene {nombre[1]} años.")
+						</code></pre>
+						
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							Alberto tiene 60 años.
+							Avril tiene 21 años.
+							Manuel tiene 37 años.
+							Gabriel tiene 40 años.
+							Mai tiene 20 años.
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Recorrer una lista anidada</h3>
+						<p><small>Otra forma de recorrer la misma lista. Este método es mas intuitivo.</small></p>
+
+
+						<pre data-id="code-animation" ><code class="python" data-trim>
+							nom_y_edad = [["Alberto", 60], ["Avril", 21],  
+							["Manuel", 37], ["Gabriel", 40], ["Mai", 20]] 
+							
+							for nombre, edad in nom_y_edad: 
+								print(f"{nombre} tiene {edad} años.")
+						</code></pre>
+						
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							Alberto tiene 60 años.
+							Avril tiene 21 años.
+							Manuel tiene 37 años.
+							Gabriel tiene 40 años.
+							Mai tiene 20 años.
+						</code></pre>
+
+					</section>
+
+					<section>
 
 						<h3>Random para listas</h3>
 						<!-- La primer pista de este EASTER EGG comienza aquí. 5 veces click en el código te abrirá nuevos caminos. -->
 
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">choice()</code> de la librería <strong>random</strong> nos elige un elemento al azar de una lista.</small></p>
-						<pre id="myEgg" data-id="code-animation" onclick="egg()"><code class="python" data-trim>
-							from random import *
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">choice(lista)</code> de la librería <strong>random</strong> nos elige un elemento al azar de una lista.</small></p>
+						<pre id="myEgg" data-id="code-animation" onclick="egg_fun()"><code class="python" data-trim>
+							from random import choice
 							l = [3, 1, 2, 9, 12]
 							a = choice(l)
 							print(a)
 						</code></pre>
 
 						<p><small>Compruébelo usted mismo en <a href="https://www.mycompiler.io/view/EsarNy1AGgT" target="_blank">este link</a> y ejecute varias veces el programa.</small></p>
-						<p style="color:white"><small><span id="egg_text">Cinco veces en el código dará mas luz a tu conocimiento ;)</span></small></p>
+						
+
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">suffle(lista)</code> de la librería <strong>random</strong> reordena la lista de manera aleatoria.</small></p>
+						<pre data-id="code-animation" onclick="egg_2()"><code class="python" data-trim>
+							import random
+							milista = [1,2,3,4,5,6,7,8,9,10]
+							random.shuffle(milista)
+							print(milista)
+						</code></pre>
+
+						<p><small>Compruébelo usted mismo en <a href="https://www.mycompiler.io/view/BB7mS2v3qFI" target="_blank">este link</a> y ejecute varias veces el programa.</small></p>
+
+						<p style="color:white"><small><span id="egg_text">Cinco veces en el código de más arriba dará mas luz a tu conocimiento ;)</span></small></p>
+
+						
+						
 					</section>
 
 					<section>
