@@ -1,4 +1,4 @@
-# Práctica 3
+# Práctica 4
 
 En esta práctica entederemos el uso práctico de __listas__ vistas en clase. Aplique todas las técnicas que hemos visto hasta ahora que considere necesarias. En los casos que pueda y considere __modularice__ la solución y agregue comentarios al programa para aumentar la legibilidad cuando sea leída por un tercero.
 
