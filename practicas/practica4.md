@@ -5,7 +5,7 @@ En esta práctica entederemos el uso práctico de __listas__ vistas en clase. Ap
 
 ## Ejercicio 1
 
-Escriba un programa que dada la lista `[1, 2, 3, 4, 5, 6, 7]` convierta cada elemento a su cuadrado en una lista nueva y lo imprima en pantalla.
+Escriba un programa que dada la lista `[1, 2, 3, 4, 5, 6, 7]` convierta cada elemento a su cuadrado `(n*n)` en una lista nueva y luego imprima por pantalla la nueva lista.
 
 ## Ejercicio 2
 
@@ -13,14 +13,37 @@ Escriba un programa que genere una lista de 100 elementos con números enteros a
 
 ## Ejercicio 3
 
+Escriba un programa que genere una lista con números consecutivos del 1 al 1000.
+
+Sugerencia: [Uso de range]("https://www.programiz.com/python-programming/methods/built-in/range")
+
+## Ejercicio 4
+
+Escriba un programa que tome por teclado la temperatura media de cada día de la semana. Una vez tomados los datos que deben ser ingresados por teclado, debe informar la temperatura máxima y la mínima y qué día ocurrió cada una.
+
+```bash
+Ingrese temperatura media en el día domingo: 23.4
+Ingrese temperatura media en el día lunes: 21.0
+Ingrese temperatura media en el día martes: 18.3
+Ingrese temperatura media en el día miercoles: 16.4
+Ingrese temperatura media en el día jueves: 17.9
+Ingrese temperatura media en el día viernes: 15.6
+Ingrese temperatura media en el día sábado: 15.4
+
+La máxima se dió el día domingo, con 23.4 ºC
+La mínima se dió el día sábado, con 15.4 ºC
+```
+
+Pista:
+- Haga una lista con los días de la semana e itere sobre esa lista.
+
+
+## Ejercicio 5
+
 Dada la lista `[10, 20, [300, 400, [5000, 6000], 500], 30, 40]` escriba un programa que modifique esa lista e imprima en pantalla la siguiente lista `[10, 20, [300, 400, [5000, 6000, 7000], 500], 30, 40]`.
 
-## Ejercicio
 
-
-
-
-## Ejercicio
+## Ejercicio 6
 
 Escriba un programa que permita escribir una lista de n palabras. Al inicio del programa se le preguntará al usuario la cantidad de palabras que va a ingresar y luego se ingresarán ese número de palabras por teclado.
 
@@ -39,7 +62,7 @@ La lista es: ['Aviones', 'Barcos', 'Camiones', 'Peatones', 'Tractores', 'Trenes'
 
 ```
 
-## Ejercicio
+## Ejercicio 7
 
 Modifique el programa anterior agregando la opción de _cuenta palabras_. Al finalizar el programa y luego de imprimir la lista pregunte qué palabra le gustaría buscar en la lista. Luego debe contar la cantidad de veces que aparece dicha palabra.
 
@@ -61,7 +84,7 @@ La palabra Barcos aparece 2 veces
 
 ```
 
-## Ejercicio
+## Ejercicio 8
 
 Modifique el programa anterior para que el programa contenga una lista predefinida por el programador de palabras no válidas o prohibidas para ingresar.
 
@@ -78,17 +101,18 @@ Ingrese palabra 5: Peaones
 
 ```
 
-## Ejercicio
+## Ejercicio 9
+
+Escriba un programa que genere un sorteo para el juego del "amigx invisible". Donde se ingresan los nombres de las personas que participan y a cada uno se le asigna otra persona la cual será su amigx invisible. En caso que las personas sean número impar, complete con el profesor para que nadie se quede sin su amigx invisible.
 
 
 
 
-
-## Ejercicio 4
+## Ejercicio 10
 
 Escriba un programa que reciba la apuesta de n jugadores. A los jugadores se les pregunta el nombre y el número al cual apuestan. Las apuestas son números entre 0 y 99 y puede ser que varios jugadores apuesten al mismo número. Una vez que todos los jugadores hayan realizado su apuesta, el programa sortea un número entre 0 y 99. Puede ser que no haya ganadores, o haya mas de uno. Debe informar si hay ganadores o no y debe decir el nombre de los ganadores.
 
-### Ejemplo:
+### Ejemplo: 11
 
 ```bash
 Ingrese nombre de la/el apostador: Martín
@@ -112,7 +136,7 @@ Salió sorteado el número 86. No hay ganadores
 
 ```
 
-## Ejercicio
+## Ejercicio 12
 
 >Este ejercicio tiene una dificultad alta. Necesitará pensar cada parte del programa. Modularice cada parte del programa de manera que pueda reutilizar el código que se utilizará en cada turno.
 
@@ -124,7 +148,7 @@ Para este juego, no importa el palo de la carta, pero sí el valor numérico. La
 
 El juego consiste en que el jugador pide cartas a la computadora y luego de pedir una carta elegir si se "planta" o quiere otra carta mas. Gana el jugador que llegue mas cerca de sacar 7 y 1/2. Pero pierde automáticamente cuando se pasa.
 
-A tener en cuenta. Al principio de la partida debe _barajarse_ las cartas quedando mezcladas. A medida que se saque una carta la misma debe ser agregada al final del mazo.
+A tener en cuenta. Al principio de la partida debe _barajarse_ las cartas quedando mezcladas. A medida que un jugador pida una carta, la carta es quitada del mazo.
 
 Ejemplo de juego:
 
@@ -142,18 +166,19 @@ En total lleva 5,5 puntos.
 Su carta en este turno es: 1
 En total lleva 6,5 puntos.
 ¿Se planta o sigue? (p/s): p
-El jugador 1 se plantó con 6,5.
+El jugador 1 terminó su partida con 6,5.
 --------------
 Turno jugador 2
 Su carta es: 2
 ¿Se planta o sigue? (p/s): s
 Salió una carta 7.
-El jugador 2 obtuvo se pasó con 9.
+¡Perdiste!
+El jugador 2 terminó su partida con 9.
 --------------
 Turno jugador 3
 Su carta es: 7
 ¿Se planta o sigue? (p/s): p
-El jugador 3 se plantó con 7.
+El jugador 3 terminó su partida con 7.
 --------------
 ¡Ganó jugador 3!
 ```
