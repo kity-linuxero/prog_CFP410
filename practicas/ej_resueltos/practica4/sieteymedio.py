@@ -33,6 +33,7 @@ def game_over(unPuntaje):
 # Consulta al usuario la cantidad de jugadores y lo retorna al programa
 def numero_de_jugadores():
     n_jugadores = int(input("Ingrese la cantidad de jugadores que van a participar (mínimo 2): "))
+    
     while n_jugadores < 2:
         n_jugadores = int(input("Ingrese la cantidad de jugadores que van a participar (mínimo 2): "))
     return n_jugadores
@@ -48,7 +49,10 @@ def otra_carta():
 
 # Realiza el informe en pantalla de la jugada
 def informar_puntaje_jugador(unJugador, elPuntaje):
-    print (f"Jugador #{unJugador+1}. Terminó su turno. \nSu puntaje es: {elPuntaje}")
+    print (f"Jugador #{unJugador+1}. Terminó su turno.")
+    if elPuntaje <= 7.5: # Si se pasó no se informa el puntaje.
+        print(f"Su puntaje es: {elPuntaje}")
+
 
 # Hará una búsqueda de máximo. En caso de empate gana el que primero jugó
 def buscar_ganador(lista_de_puntajes):
@@ -56,7 +60,7 @@ def buscar_ganador(lista_de_puntajes):
     winer = 0
 
     for l in lista_de_puntajes:
-        if l > max and l < 7.5:
+        if l > max and l <= 7.5:
             winer = lista_de_puntajes.index(l)
             max= l
 
@@ -75,7 +79,7 @@ puntajes = []
 
 for i in range(n_jugadores):
 
-    puntaje_actual = 0.0
+    puntaje_actual = 0
     otra_carta_mas = True
     print (f"\n-- Turno jugador #{i+1} --")
 
@@ -87,6 +91,8 @@ for i in range(n_jugadores):
         print(f"Lleva {puntaje_actual} puntos.")
         if not game_over(puntaje_actual):
             otra_carta_mas = otra_carta()
+        else:
+            print("¡Perdiste!")
 
     informar_puntaje_jugador(i, puntaje_actual)
     puntajes.append(puntaje_actual)
