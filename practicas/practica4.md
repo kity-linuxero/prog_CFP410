@@ -160,25 +160,28 @@ Elija la cantidad de jugadores (mínimo 2): 3
 
 Turno jugador 1-
 Su carta en este turno es: 5
-¿Se planta o sigue? (p/s): s
+En total lleva 5 puntos.
+¿Desea sacar otra carta? (S/n): s
 Su carta en este turno es: 10
 En total lleva 5,5 puntos.
-¿Se planta o sigue? (p/s): s
+¿Desea sacar otra carta? (S/n): s
 Su carta en este turno es: 1
 En total lleva 6,5 puntos.
-¿Se planta o sigue? (p/s): p
+¿Desea sacar otra carta? (S/n): n
 El jugador 1 terminó su partida con 6,5.
 --------------
 Turno jugador 2
 Su carta es: 2
-¿Se planta o sigue? (p/s): s
+En total lleva 2 puntos.
+¿Desea sacar otra carta? (S/n): s
 Salió una carta 7.
 ¡Perdiste!
 El jugador 2 terminó su partida con 9.
 --------------
 Turno jugador 3
 Su carta es: 7
-¿Se planta o sigue? (p/s): p
+En total lleva 7 puntos.
+¿Desea sacar otra carta? (S/n): n
 El jugador 3 terminó su partida con 7.
 --------------
 ¡Ganó jugador 3!
@@ -186,11 +189,11 @@ El jugador 3 terminó su partida con 7.
 
 Sugerencias (Son opcionales pero le puede ayudar a resolver el ejercicio)
 - Escriba un módulo que, dada una carta le devuelva el valor de la misma.
-- Escriba un módulo que le permita saber si se pasó del puntaje o no.
+- Escriba un módulo que le permita saber si un jugador se pasó del puntaje o no. Lo que indicaría si perdió o no.
 - Escriba un módulo para crear el mazo.
 - Escriba un módulo para barajar las cartas (mezclarlas)
 - El mazo de cartas puede ser una lista. Como no importa el palo podrá resolverlo con una lista de 40 elementos numéricos. Debe haber 4 elementos de cada número 1,2,3,4,5,6,7,10,11 y 12.
-- 
+- Vaya probando cada módulo a medida que los vaya escribiendo. Por ejemplo. Cuando haga el módulo para crear el mazo, imprima con `print()`el mazo creado para verificar que funciona. Una vez creado el mazo pruebe con `print()`si al mezclarlo, el mismo se hace correctamente.
 
 
 

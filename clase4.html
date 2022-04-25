@@ -409,6 +409,27 @@
 					</section>
 
 					<section>
+						<h3>Obtener el índice de un elemento</h3>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">index(elem)</code> recibe como argumento un elemento y retorna el número del índice donde se encuentra.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = ['Vaca', 'Pato', 'Gato', 'Gallina']
+							indice = l.index('Gato')
+							print(indice) # Será 2.
+						</code></pre>
+
+						<h4>En caso que no esté dará error</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = ['Vaca', 'Pato', 'Gato', 'Gallina']
+							indice = l.index('Pez')
+						</code></pre>
+						<pre data-id="code-animation"><code class="sh" data-trim>
+							ValueError: 'Pez' is not in list
+						</code></pre>
+						<small>... y el programa terminará.</small>
+					</section>
+
+					<section>
 						<h3>Orden</h3>
 						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">reverse()</code> inverte el órden de la lista.</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
