@@ -134,7 +134,7 @@ Salió sorteado el número 86. No hay ganadores
 
 ```
 
-## Ejercicio 12
+## Ejercicio 11
 
 ### Ejercicio para super sayayins de la programación XD
 
