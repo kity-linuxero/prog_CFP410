@@ -159,7 +159,7 @@
 				<section>
 
 					<section>
-						<h1>Listas</h1>
+						<h2>Listas</h2>
 					</section>
 					<section>
 						<h2>Listas</h2>
@@ -198,7 +198,7 @@
 						<h2>Crear listas en Python</h2>
 						
 						<pre data-id="code-animation"><code class="python" data-trim>
-							lista = [1,2,3,4] #Crea una_lista con 4 elementos enteros
+							lista = [1,2,3,4] # Crea una lista con 4 elementos enteros
 						</code></pre>
 						<p>Distintos tipos de datos</p>
 
@@ -267,19 +267,18 @@
 
 					<section>
 						<h3>Iterar listas</h3>
-						<p>En Python es muy fácil interar (o recorrer) listas.</p>
+						<p><small>Python es muy fácil interar (o recorrer) listas.</small> </p>
 						<h4>Ejemplo #1</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							lista = [5, 9, 10]
 							for e in lista:
 								print(e)
-
 							#5
 							#9
 							#10
 						</code></pre>
 
-						<p>La "variable" "e" dentro del for se refiere al elemento actual de la lista.</p>
+						<p><small>La "variable" "e" dentro del for se refiere al elemento actual de la lista.</small></p>
 						<p><small>El nombre de esa variable es opcional y puede ser cualquier nombre válido para una variable cualquiera.</small></p>
 
 
@@ -373,18 +372,24 @@
 							l = [1, 3]
 							l.insert(1, 2) #[1, 2, 3]
 							l.insert(2,99) # [1, 2, 99, 3]
-
 							l.insert(15,6) # Out of range?...
 						</code></pre>
-
 						<div class="fragment">
-							<p>¡NO da error fuera de rango! <3</p>
+							<h4>¡NO da error fuera de rango! <3 </h4>
 							<p><small>Python se da cuenta que está fuera de rango y lo inserta al final.</small></p>
 							<pre data-id="code-animation"><code class="bash" data-trim>
 								[1, 2, 99, 3, 6]
 							</code></pre>
-							
+							<p><small>PERO si se intenta agregar con un índice fuera de rango <strong>sí dará error.</strong></small></p>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								l[90] = 0 # IndexError: list assignment index out of range
+							</code></pre>
 						</div>
+						
+						
+
+
+				
 
 						
 					</section>
