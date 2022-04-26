@@ -30,10 +30,13 @@ def sacar_carta(unMazo):
 def game_over(unPuntaje):
     return (unPuntaje > 7.5)
 
-# Consulta al usuario la cantidad de jugadores y lo retorna al programa.
-# No es necesaria tantos ifs y demás cosas vistas en este módulo. Pero se hace para mostrar que el input
-# si lo modularizamos lo podemos hacer tan potente como queramos.
 def numero_de_jugadores():
+    """
+    Consulta al usuario la cantidad de jugadores y lo retorna al programa.
+    No es necesaria tantos ifs y demás cosas vistas en este módulo. Pero se hace para mostrar que el input
+    si lo modularizamos lo podemos hacer tan potente como queramos.
+    
+    """
     n_jugadores = input("\nIngrese la cantidad de jugadores que van a participar (mínimo 2 - Por defecto 2): ")
 
     # Por si no ha ingresado nada se toma el valor por defecto.
@@ -49,13 +52,19 @@ def informar_carta(una_carta, puntaje_actual):
     print(f"Su carta es: {una_carta}")
     print(f"Lleva {puntaje_actual} puntos.") # Informa 
 
-# Pregunta si el usuario quiere otra carta. Por defecto será que sí.
 def otra_carta():
+    """
+    Pregunta si el usuario quiere otra carta. Por defecto será que sí.
+    Retorna False si el input es una n caso contrario True
+    """
     carta = input("¿Desea sacar otra carta? (S/n): ")
     return carta != 'n'
 
-# Realiza el informe en pantalla de la jugada
 def informar_puntaje_jugador(unJugador, elPuntaje):
+    """
+    Realiza el informe en pantalla de la jugada
+
+    """
     # Se informa unJugador+1 porque recuerden que el índice de una lista arranca en 0.
     print (f"Jugador #{unJugador+1}. Terminó su turno.")
     if elPuntaje <= 7.5: # Si se pasó no se informa el puntaje.
