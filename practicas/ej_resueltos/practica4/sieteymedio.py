@@ -131,23 +131,4 @@ for i in range(n_jugadores):
     informar_puntaje_jugador(i, puntaje_actual) # Informa el puntaje del turno del jugador.
     puntajes.append(puntaje_actual) # Almacena el puntaje. 
 
-    # print (f"\n-- Terminó turno jugador #{i+1} --") # Como el índice de la lista arranca en 0. Se informa i+1
-
 buscar_ganador(puntajes)
-
-    
-
-
-
-
-
-
-
-
-
-# print(mazo)
-
-# print (sacar_carta(mazo))
-# print (sacar_carta(mazo))
-# print (sacar_carta(mazo))
-# print (sacar_carta(mazo))
