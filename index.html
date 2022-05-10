@@ -14,14 +14,18 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
-		<div class="reveal">
-			<div class="slides">
+		
+		<!-- <img src="" id="mari" /> -->
+
+		<div class="reveal">		
+			 <div class="slides">
 				<section data-background="./static/back.jpg" data-transition="slide" data-background-color="#dddddd" data-background-size="contain">
 					<h2>Introducción a la programación</h2>
 					<h4>Centro de formación profesional 410</h4>
 					<h4>Indice de clases</h4>
 				<a href="clase1.html">Clase 1</a>
 				<br>
+				
 				<a href="clase2.html">Clase 2</a>
 				<br>
 				<a href="clase3.html">Clase 3</a>
@@ -30,11 +34,11 @@
 				<br>
 				<a href="https://github.com/kity-linuxero/prog_CFP410/tree/main/practicas">Practicas</a>
 
-
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
+		<script src="js/mari.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
@@ -48,6 +52,9 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
+			document.getElementById("mari").src = alvarvic;
+
 		</script>
 	</body>
 </html>
