@@ -73,7 +73,7 @@ Tambien puede ejecutar una shell de Python en una web sin tener siquiera instala
 ## Parte práctica
 
 
-## Ejercicio
+## Ejercicio 1
 
 Escriba __una función__ que retorne el la cantidad de caracteres que contiene una cadena __enviada por parámetro__.
 
@@ -84,7 +84,7 @@ La cadena contiene 12 caracteres.
 
 ```
 
-## Ejercicio 1
+## Ejercicio 2
 
 Escribir __una función__ que imprima cada caracter de un string enviado por parámetro.
 La cadena debe ser enviada por teclado desde el programa principal.
@@ -99,7 +99,7 @@ La letra 4 es: S
 La letra 5 es: O
 ```
 
-## Ejercicio 2
+## Ejercicio 3
 
 Escribir __una función__ que pida un string y luego un caracter y cuente la cantidad de veces que aparece un caracter en una cadena. El valor debe retornarlo como resultado de la función y ser impreso desde el programa.
 
@@ -111,7 +111,7 @@ Ingrese un caracter para buscar: O
 El caracter O aparece 2 veces
 ```
 
-## Ejercicio 3
+## Ejercicio 4
 
 Escriba __una función__ que retorne la cantidad de palabras que contiene una cadena. Por ejemplo:
 ```
@@ -120,7 +120,7 @@ Escriba __una función__ que retorne la cantidad de palabras que contiene una ca
 "Nos invitaron a un lugar que tenía buena pinta pero al final resultó ser súper random" # Debe retornar 16
 ```
 
-## Ejercicio 4
+## Ejercicio 5
 
 Escriba un programa que reciba una cantidad de nombres de personas. Luego los imprima pero con la primer letra en mayúsculas y el resto en minúscula.
 
@@ -141,7 +141,7 @@ Antonella
 
 Muchos lenguajes proveen mecanismos similares al visto en ese ejercicio.
 
-### Ejercicio 5
+### Ejercicio 6
 
 Escriba __una función__ que retorne (por True o False) si una subcadena está incluída en una cadena.
 Por ejemplo:
