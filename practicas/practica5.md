@@ -1,6 +1,6 @@
 # Práctica 5
 
-En esta práctica aplicaremos temas vistos a modo de repaso y veremos métodos y funciones útiles que nos servirán en la vida real programando.
+En esta práctica aplicaremos temas vistos a modo de repaso y veremos métodos y funciones útiles que nos servirán en la vida real programando sumado a unos tips.
 
 ## Procesamiento de strings
 
@@ -38,14 +38,14 @@ a
 n
 ```
 
-También tenemos varios métodos para usar en strings. Algunos los vimos en las clases, otros puede consultarlos en [este link]("https://ellibrodepython.com/cadenas-python").
+También tenemos varios métodos para usar en strings. Algunos los vimos en las clases, otros puede consultarlos en [este link](https://ellibrodepython.com/cadenas-python).
 
 
 ### Porciones de cadenas
 
 Llamamos _porción_ a un segmento de una cadena. La selección de una porción es similar a la selección de un caracter. Donde puede hacerse referencia a una `cadena[desde:hasta]` para acceder a un segmento de la misma. 
 
-Observe este ejemplo en Python.
+Observe este ejemplo en Python (en modo interactivo).
 
 ```py
 >>> s = "Pedro, Pablo, y Marı́a"
@@ -56,8 +56,13 @@ Pablo
 >>> print (s[15:20])
 Marı́a
 ```
+La operación para obtener la porción de una cadena también funciona en listas y tuplas.
 
->Los signos `>>>` son para indicar que está corriendo sobre un intérprete interactivo (o shell) de Python. Puede acceder a un intérprete interactivo de Python ingresando en la consola de su computadora (por lo general es `CMD` o `PowerShell` en Windows, `bash` o `sh` en Linux, `zsh` en Mac) y escriba `python3` para ingresar en una consola interactiva.
+## Modo interactivo (tip)
+
+En modo interactivo, interactuamos directamente sobre el intérprete de Python. Puede ser útil para probar algunas líneas antes de pasarlas a nuestro código. Se puede acceder al modo interactivo si se tiene instalado Python en la computadora y desde una consola del sistema operativo (por lo general es `CMD` o `PowerShell` en Windows, `bash` o `sh` en Linux, `zsh` en Mac).
+
+El `prompt` indicará con `>>>` que está listo para recibir comandos.
 
 
 ![Ejemplo de consola interactiva en Linux](./img/consola.png)
@@ -68,9 +73,12 @@ Tambien puede ejecutar una shell de Python en una web sin tener siquiera instala
 
 ![Ejemplo de consola interactiva en PowerShell, Windows](./img/shell.png)
 
+En la parte interactiva, puede realizar pruebas, por ejemplo si es posible ejecutar alguna acción sobre un tipo de datos o probar alguna operación sobre algún dato. En el siguiente ejemplo se prueba si es posible concatenar una tupla con otra.
+
+![Concatenación de tuplas en modo interactivo](./img/consola2.png)
 
 
-## Parte práctica
+# Parte práctica
 
 
 ## Ejercicio 1
@@ -141,7 +149,7 @@ Antonella
 
 Muchos lenguajes proveen mecanismos similares al visto en ese ejercicio.
 
-### Ejercicio 6
+## Ejercicio 6
 
 Escriba __una función__ que retorne (por True o False) si una subcadena está incluída en una cadena.
 Por ejemplo:
@@ -150,6 +158,16 @@ Por ejemplo:
 estaEn(Ana, Amanda) # Debe retornar False
 estaEn(Ana, Ananda) # Debe retornar True
 ```
+
+## Ejercicio 7
+
+Escriba __una función__ que retorne el máximo __y__ el mínimo de la siguiente lista:
+
+`[23, 56, 11, 677, 0, 77, 44, 33]`
+
+Pista: Retorno múltple de funciones ;)
+
+
 
 
 
