@@ -28,16 +28,180 @@
 					<h2>Clase 5</h2>
 					<h3>Contenido para hoy</h3>
 					<ul>
-						<li></li>
-						<li></li>	
+						<li>Tuplas</li>
 					</ul>
 				</section>
 
 				<section>
 					<section>
+						<h2>Tuplas</h2>
+					</section>
+
+					<section>
+						<h2>Tuplas</h2>
+						<p> Una tupla (tuple) es una secuencia de valores. Los valores pueden ser de cualquier tipo y están indexados por enteros, por lo que en ese sentido las tuplas se parecen mucho a las listas. La diferencia importante es que las tuplas <strong>son inmutables</strong>.</p>
+					</section>
+
+					<section>
+						<h2>Tuplas (cont)</h2>
+						<p>Sintácticamente, una tupla es una lista de valores separados por comas:</p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							t = 'a', 'b', 'c', 'd', 'e'
+						</code></pre>
+						<p>Aunque no es necesario, es común encerrar las tuplas en paréntesis:</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							t = ('a', 'b', 'c', 'd', 'e')
+						</code></pre>
+						<small>Dependiendo de lo que queramos hacer, <strong>las tuplas pueden ser más rápidas</strong> que las listas.</small>
+					</section>
+
+					<section>
+						<h2>Tuplas</h2>
+						<p>Por lo tanto, podemos decir que las tuplas son un tipo de datos que:</p>
+						<ul>
+							<li>Tiene un orden.</li>
+							<li>Se acceden a los elementos mediante un índice</li>
+							<li>Inmutables</li>
+							<li>Iterables</li>
+						</ul>
+						<small><a href="./clase4.html#/3/2">Ver comparación con listas</a></small>
+					</section>
+
+					<section>
+						<h3>Crear tuplas</h3>
+						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = (1,2,3)
+							tupla2 = 1,2,3 # Se crea una tupla sin paréntesis
+							vocales = ('a', 'e', 'i', 'o', 'u')
+							alumnos = ("Pedro", "Andrés", "Gastón", "Gustavo")
+							print (tupla)
+							print (tupla2)
+							print (vocales)
+							print (alumnos)
+							print (alumnos[3]) # Se accede por índice al elemento 3
+						</code></pre>
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							(1, 2, 3)
+							(1, 2, 3)
+							('a', 'e', 'i', 'o', 'u')
+							('Pedro', 'Andrés', 'Gastón', 'Gustavo')
+							Gastón
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Operaciones con tuplas</h3>
+						
+
+						<h4>Las tuplas son inmutables</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = (1, 2, 3)
+							tupla[0] = 5 # TypeError: object doesn't support item assignment
+						</code></pre>
+						<h4>Tuplas anidadas</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = 1, 2, ('a', 'b'), 3
+							print(tupla)       #(1, 2, ('a', 'b'), 3)
+							print(tupla[2][0]) #a
+						</code></pre>
+						<h4>Una lista en la tupla</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = (1, 2, [88, 99], 3)
+							tupla[2][0]= 99 # Permite cambiar el valor
+						</code></pre>
+					</section>
+
+					<section>
+						<h4>Concatenar dos tuplas</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							t1 = (1, 2, 3)
+							t2 = (4, 5, 6)
+							t3 = t1 + t2
+							print(t3) # (1, 2, 3, 4, 5, 6)
+						</code></pre>
+
+						<h4>Tuplas como valor de retorno</h4>
+						<small>
+						Como vimos en <a href="./clase3.html#/3/10/0">una clase anterior</a> es posible retornar mas de un valor de una función. Cuando son mas de un valor se retornará en una tupla.
+						</small>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = (1, 2, 3, 4, 5, 6)
+							def multi_return(t):
+								return (min(t), max(t))
+							print (multi_return(tupla)) # (1,6)
+						</code></pre>
+						<small>max() y min() son funciones incorporadas que encuentran los elementos más grande y más
+							pequeño en una secuencia. min_max calcula ambos y devuelve una tupla de dos valores.</small>
+
 						
 					</section>
+
+					<section>
+						<h4>Convertir una lista</h4>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">tuple()</code> permite convertir una lista en una tupla.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							lista = [1, 2, 3]
+							tupla = tuple(lista)
+							print (lista) # [1, 2, 3]
+							print (tupla) # (1, 2, 3)
+						</code></pre>
+						<h4>Iterar una tupla</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = (1, 2, 3)
+							for t in tupla:
+								print(t) #1, 2, 3
+						</code></pre>
+					</section>
+
+					<section>
+						<h4>Más métodos de tuplas</h4>
+						<small>La mayoría de los operadores de listas funcionan también en tuplas.</small>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">count(elem)</code> cuenta el número de veces que aparece "elem" en la tupla.</small></p>
+	
+						<pre data-id="code-animation"><code class="python" data-trim>
+							t = (1, 2, 3, 1, 1)
+							print (t.count(1)) # 3
+						</code></pre>
+						
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">index(elem)</code> busca el objeto que se le pasa como parámetro (elem) y devuelve el índice en el que se ha encontrado.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = (7, 7, 7, 3, 5)
+							print(l.index(5)) #4
+						</code></pre>
+						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">index()</code> también acepta un segundo parámetro opcional, que indica a partir de que índice empezar a buscar el objeto.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l = (7, 7, 7, 3, 5)
+							print(l.index(7, 2)) #2
+						</code></pre>
+
+						<small>En caso de no encontrarse el elemento devuelve un <code style="background-color:lightgrey; color:darkslategray;">ValueError</code></small>
+
+					</section>
+
+					<section>
+						<h3>Glosario de sección</h3>
+						<ul>
+							<li><strong>Tipo inmutable:</strong><small>Un tipo en el cual los elementos no se puede modificar. Las
+								asignaciones de elementos de tipos inmutables provocan un error.</small>
+							</li>
+							<li><strong>Tipo mutable: </strong><small>tipo de datos en el cual los elementos pueden ser modificados. 
+								Todos los tipos mutables son compuestos. Las listas y diccionarios* son tipos de datos mutables,
+								los string y las tuplas no.</small></li>
+
+							<li><strong>Tupla: </strong><small>Un tipo de secuencia que es similar a una lista excepto en que es inmutable.
+								Las tuplas se pueden usar donde quiera que se necesite un tipo inmutable, como puede ser la clave de un diccionario*.</small></li>
+						</ul>
+						<p><small>* Se verá diccionarios a continuación.</small></p>
+					</section>
 				</section>
+
+
 
 
 
@@ -49,9 +213,9 @@
 				</section>
 					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 						<h2>Bibliografia</h2>
-						<p>Algoritmos, datos y Programas (De Giusti)</p>
+						
 						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
-						<p><a href="https://argentinaenpython.com/quiero-aprender-python/aprenda-a-pensar-como-un-programador-con-python.pdf">Aprenda a pensar como un programador <small>(Downey-Elkner-Meyers)</small></a></p>
+						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">Pensar en Python (2da edición) <small>(Downey-Elkner-Meyers)</small></a></p>
 						<!-- <h3>Referencias</h3> -->
 						<h3>Recursos</h3>
 						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
