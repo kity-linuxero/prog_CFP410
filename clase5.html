@@ -49,11 +49,11 @@
 						<pre data-id="code-animation"><code class="python" data-trim>
 							t = 'a', 'b', 'c', 'd', 'e'
 						</code></pre>
-						<p>Aunque no es necesario, es común encerrar las tuplas en paréntesis:</p>
+						<p>Aunque no es necesario, es común encerrar las tuplas entre paréntesis:</p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							t = ('a', 'b', 'c', 'd', 'e')
 						</code></pre>
-						<small>Dependiendo de lo que queramos hacer, <strong>las tuplas pueden ser más rápidas</strong> que las listas.</small>
+						<small>Dependiendo de lo que queramos hacer, <strong>las tuplas pueden ser más rápidas</strong> que las listas.<small><a href="https://ellibrodepython.com/tuplas-python#crear-tupla-python">Ref</a></small></small>
 					</section>
 
 					<section>
@@ -61,9 +61,9 @@
 						<p>Por lo tanto, podemos decir que las tuplas son un tipo de datos que:</p>
 						<ul>
 							<li>Tiene un orden.</li>
-							<li>Se acceden a los elementos mediante un índice</li>
-							<li>Inmutables</li>
+							<li>Se acceden a los elementos mediante un índice numérico</li>
 							<li>Iterables</li>
+							<li><strong>Inmutables</strong></li>
 						</ul>
 						<small><a href="./clase4.html#/3/2">Ver comparación con listas</a></small>
 					</section>
@@ -82,6 +82,7 @@
 							print (alumnos)
 							print (alumnos[3]) # Se accede por índice al elemento 3
 						</code></pre>
+						<div class="fragment">
 						<h4>Output</h4>
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							(1, 2, 3)
@@ -90,6 +91,7 @@
 							('Pedro', 'Andrés', 'Gastón', 'Gustavo')
 							Gastón
 						</code></pre>
+					</div>
 
 					</section>
 
@@ -101,7 +103,8 @@
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							tupla = (1, 2, 3)
-							tupla[0] = 5 # TypeError: object doesn't support item assignment
+							tupla[0] = 5
+							# TypeError: object doesn't support item assignment
 						</code></pre>
 						<h4>Tuplas anidadas</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
@@ -125,20 +128,6 @@
 							t3 = t1 + t2
 							print(t3) # (1, 2, 3, 4, 5, 6)
 						</code></pre>
-
-						<h4>Tuplas como valor de retorno</h4>
-						<small>
-						Como vimos en <a href="./clase3.html#/3/10/0">una clase anterior</a> es posible retornar mas de un valor de una función. Cuando son mas de un valor se retornará en una tupla.
-						</small>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							tupla = (1, 2, 3, 4, 5, 6)
-							def multi_return(t):
-								return (min(t), max(t))
-							print (multi_return(tupla)) # (1,6)
-						</code></pre>
-						<small>max() y min() son funciones incorporadas que encuentran los elementos más grande y más
-							pequeño en una secuencia. min_max calcula ambos y devuelve una tupla de dos valores.</small>
-
 						
 					</section>
 
@@ -185,6 +174,46 @@
 					</section>
 
 					<section>
+						<h3>Tuplas como valor de retorno</h3>
+						<small>
+						Como vimos en <a href="./clase3.html#/3/10/0">una clase anterior</a> es posible retornar mas de un valor de una función. Cuando son mas de un valor se retornará en una tupla.
+						</small>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							tupla = (1, 2, 3, 4, 5, 6)
+							def min_max(t):
+								return (min(t), max(t))
+							print (min_max(tupla)) # (1,6)
+						</code></pre>
+						<small><code style="background-color:lightgrey; color:darkslategray;">max()</code> y <code style="background-color:lightgrey; color:darkslategray;">min()</code> son funciones incorporadas que encuentran los elementos más grande y más
+							pequeño respectivamente en una secuencia. <code style="background-color:lightgrey; color:darkslategray;">min_max()</code> calcula ambos y devuelve una tupla de dos valores.</small>
+
+					</section>
+
+					<section>
+						<h4>Tuplas de argumentos de longitud variable</h4>
+						<small><p>Las funciones pueden tomar una cantidad variable de argumentos (o parámetros). Un nombre de parámetro que comienza con * hace una <strong>reunión</strong> de argumentos en una tupla.</p></small>
+						<div class="fragment">
+							<p>Ejemplo:</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							def imprime_todo(*args):
+								print(args)
+						</code></pre>
+						</div>
+						<div class="fragment">
+							<pre data-id="code-animation"><code class="python" data-trim>
+								imprime_todo("hola", "chau", 2, 99.9)
+							</code></pre>
+						</div>
+						<div class="fragment">
+							<h4>Output</h4>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								('hola', 'chau', 2, 99.9)
+							</code></pre>
+						</div>
+					</section>
+
+
+					<section>
 						<h3>Glosario de sección</h3>
 						<ul>
 							<li><strong>Tipo inmutable:</strong><small>Un tipo en el cual los elementos no se puede modificar. Las
@@ -196,9 +225,15 @@
 
 							<li><strong>Tupla: </strong><small>Un tipo de secuencia que es similar a una lista excepto en que es inmutable.
 								Las tuplas se pueden usar donde quiera que se necesite un tipo inmutable, como puede ser la clave de un diccionario*.</small></li>
+							<li><strong>Reunión: </strong><small>Una operación que junta múltiples argumentos en una tupla. Lo opuesto a la reunión es una <strong>dispersión</strong>.</small></li>
 						</ul>
-						<p><small>* Se verá diccionarios a continuación.</small></p>
+						<p><small>* Se verá diccionarios mas adelante.</small></p>
 					</section>
+				</section>
+				<section>
+					<h3>Ejercicio en clase</h3>
+					<p>Escriban una función llamada <code style="background-color:lightgrey; color:darkslategray;">sumar_todos()</code> que tome cualquier cantidad de argumentos numéricos y devuelva su suma.</p>
+					<p><small>Pista: Observe la función <a href="https://es.acervolima.com/funcion-sum-en-python/">sum()</a>. Puede serle de ayuda.</small></p>
 				</section>
 
 
@@ -215,7 +250,7 @@
 						<h2>Bibliografia</h2>
 						
 						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
-						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">Pensar en Python (2da edición) <small>(Downey-Elkner-Meyers)</small></a></p>
+						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
 						<!-- <h3>Referencias</h3> -->
 						<h3>Recursos</h3>
 						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
