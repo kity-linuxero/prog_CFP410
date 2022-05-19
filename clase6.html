@@ -45,14 +45,16 @@
 
 					<section>
 						<h2>Diccionarios (cont)</h2>
-						<p>Un diccionario contiene una colección de índices que se llaman <strong>claves (key)</strong> y una colección de <strong>valores (value)</strong>. Cada clave está asociada a un valor único. La asociación de una clave y valor se llama <strong>par clave-valor</strong> o a veces <strong>ítem</strong>. Como podrá deducir, las claves no pueden repetirse.</p>
+						<p>Un diccionario contiene una colección de índices que se llaman <strong>claves (key)</strong> y una colección de <strong>valores (value)</strong>. Cada clave está asociada a un valor único. La asociación de una clave y valor se llama <strong>par clave-valor</strong> o a veces <strong>ítem</strong>. Esto da un mapeo de un valor por cada clave. Las claves no pueden repetirse.</p>
 					</section>
 
 					<section>
 						<h3>Propiedades de los diccionarios</h3>
-						<p>Algunas propiedades de los diccionarios en Python son:</p>
+						<p>Algunas propiedades de los diccionarios en Python:</p>
 						<ul>
-						<li>Son dinámicos</li>
+						<li><strong>Dinámicos</strong>:<small> Pueden crecer o decrecer. Se pueden añadir o eliminar elementos. Igual que las listas.</small></li>
+						<li><strong>Indexados</strong>:<small> Los elementos del diccionario son accesibles a través de un índice llamada <code>key</code>.</small></li>
+						<li><strong>Anidados</strong>:<small> Un diccionario puede contener a otro diccionario en su campo <code>value</code>.</small></li>
 						</ul>
 					</section>
 
@@ -84,155 +86,153 @@
 							traductor = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
 						</code></pre>
 						<div class="fragment">
-						<p><small>Pero si lo imprimimos... ¿Qué pasa?</small></p>
-						<h4>Output</h4>
+						<h4>Otra forma de verlo. Mas intuitivo.</h4>
 						<pre data-id="code-animation"><code class="bash" data-trim>
-							> traductor
-
+							traductor = {
+								'one': 'uno',
+								'two': 'dos',
+								'three': 'tres'
+							}
 						</code></pre>
 					</div>
 
 					</section>
 
 					<section>
-						<h3>Operaciones con tuplas</h3>
+						<h3>Acceder y modificar elementos</h3>
+
+						<p><small>igual que las listas y tuplas, los elementos pueden accederse con <code>[]</code> o con la función <code>get()</code></small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							print(traductor['one']) # Uno
+							print(traductor.get('one')) # Uno
+						</code></pre>
+						<p><small>Para modificar un elemento basta con usar <code>[]</code> con el nombre del <code>key</code> y asignar el valor que queremos.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							traductor['one']= "1"
+							print(traductor.get('one')) # 1
+						</code></pre>
+						<p><small>Si el <code>key</code> al que accedemos no existe, se añade automáticamente</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							traductor['four']= 'cuatro'
+							print(traductor.get('four')) # cuatro
+							
+						</code></pre>
+					</section>
+
+					<section>
+						<h4>Iterar un diccionario</h4>
+						<p><small>Los diccionarios se iteran igual que una lista. La iteración se realiza sobre su <code>key</code>.</small></p>
 						
-
-						<h4>Las tuplas son inmutables</h4>
-
 						<pre data-id="code-animation"><code class="python" data-trim>
-							tupla = (1, 2, 3)
-							tupla[0] = 5
-							# TypeError: object doesn't support item assignment
+							diccionario = {
+								'nombre': 'Carlos',
+								'edad': '32',
+								'e-mail': 'carlitos@gmail.com'
+							}
+							for d in diccionario:
+								print (d)
 						</code></pre>
-						<h4>Tuplas anidadas</h4>
+						<h4>Output</h4>
 						<pre data-id="code-animation"><code class="python" data-trim>
-							tupla = 1, 2, ('a', 'b'), 3
-							print(tupla)       #(1, 2, ('a', 'b'), 3)
-							print(tupla[2][0]) #a
+							nombre
+							edad
+							e-mail
 						</code></pre>
-						<h4>Una lista en la tupla</h4>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							tupla = (1, 2, [88, 99], 3)
-							tupla[2][0]= 99 # Permite cambiar el valor
-						</code></pre>
-					</section>
-
-					<section>
-						<h4>Concatenar dos tuplas</h4>
-
-						<pre data-id="code-animation"><code class="python" data-trim>
-							t1 = (1, 2, 3)
-							t2 = (4, 5, 6)
-							t3 = t1 + t2
-							print(t3) # (1, 2, 3, 4, 5, 6)
-						</code></pre>
+						<div class="fragment">
+							<p><small>Si quisiera imprimir el <code>value</code> en vez de la <code>key</code>. ¿Cómo debería modificar el código?</small></p>
+						</div>
+						<div class="fragment">
+							<p><small>¿Lo hacemos entre todxs?</small></p>
+						</div>
 						
 					</section>
 
 					<section>
-						<h4>Convertir una lista</h4>
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">tuple()</code> permite convertir una lista en una tupla.</small></p>
+						<h3>Diccionarios anidados</h3>
+						<p><small>Podemos tener en el <code>value</code> de una <code>key</code> otro diccionario o lista.</small></p>						
 						<pre data-id="code-animation"><code class="python" data-trim>
-							lista = [1, 2, 3]
-							tupla = tuple(lista)
-							print (lista) # [1, 2, 3]
-							print (tupla) # (1, 2, 3)
+							anidado1 = {"a": 1, "b": 2}
+							anidado2 = {"a": 1, "b": 2}
+							d = {
+							"anidado1" : anidado1,
+							"anidado2" : anidado2
+							}
+							print(d)
+							#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}
 						</code></pre>
-						<h4>Iterar una tupla</h4>
+						<small class="fragment">¿Cómo podríamos obtener el dato 1 de la key a? <a href="https://www.mycompiler.io/new/python" target="_blank">¿Lo intentamos?</a></small>
+						<div class="fragment">
+						<h3>Listas como values</h3>
 						<pre data-id="code-animation"><code class="python" data-trim>
-							tupla = (1, 2, 3)
-							for t in tupla:
-								print(t) #1, 2, 3
+							l1 = [1,2,3,4,5]
+							l2 = ['a', 'b', 'c']
+							d = {
+							"numeros" : l1,
+							"letras" : l2
+							}
+							print(d)
+							#{'numeros': [1, 2, 3, 4, 5], 'letras': ['a', 'b', 'c']}
 						</code></pre>
+					</div>
+
 					</section>
 
 					<section>
-						<h4>Más métodos de tuplas</h4>
-						<small>La mayoría de los operadores de listas funcionan también en tuplas.</small>
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">count(elem)</code> cuenta el número de veces que aparece "elem" en la tupla.</small></p>
+						<h4>Métodos diccionarios Python</h4>
+						<p><small>El método <code>clear()</code> elimina todo el contenido del diccionario.</small></p>
 	
 						<pre data-id="code-animation"><code class="python" data-trim>
-							t = (1, 2, 3, 1, 1)
-							print (t.count(1)) # 3
+							d = {'a': 1, 'b': 2}
+							d.clear()
+							print(d) #{}
 						</code></pre>
 						
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">index(elem)</code> busca el objeto que se le pasa como parámetro (elem) y devuelve el índice en el que se ha encontrado.</small></p>
+						<p><small>El método <code>get(key,default)</code> nos permite consultar el <code>value</code> para un <code>key</code> determinado. El segundo parámetro es opcional y es el valor que va a devolver en caso que no encuentre la key.</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
-							l = (7, 7, 7, 3, 5)
-							print(l.index(5)) #4
+							d = {'a': 1, 'b': 2}
+							print(d.get('a')) #1
+							print(d.get('z', 'No encontrado')) #No encontrado
 						</code></pre>
-						<p><small>El método <code style="background-color:lightgrey; color:darkslategray;">index()</code> también acepta un segundo parámetro opcional, que indica a partir de que índice empezar a buscar el objeto.</small></p>
+						<p><small>El método <code>items()</code> El método items() devuelve una lista con los keys y values del diccionario. i se convierte en list se puede indexar como si de una lista normal se tratase, siendo los primeros elementos las key y los segundos los value.</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
-							l = (7, 7, 7, 3, 5)
-							print(l.index(7, 2)) #2
+							d = {'a': 1, 'b': 2}
+							it = d.items()
+							print(it)             #dict_items([('a', 1), ('b', 2)])
+							print(list(it))       #[('a', 1), ('b', 2)]
+							print(list(it)[0][0]) #a
 						</code></pre>
-
-						<small>En caso de no encontrarse el elemento devuelve un <code style="background-color:lightgrey; color:darkslategray;">ValueError</code></small>
-
 					</section>
-
 					<section>
-						<h3>Tuplas como valor de retorno</h3>
-						<small>
-						Como vimos en <a href="./clase3.html#/3/10/0">una clase anterior</a> es posible retornar mas de un valor de una función. Cuando son mas de un valor se retornará en una tupla.
-						</small>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							tupla = (1, 2, 3, 4, 5, 6)
-							def min_max(t):
-								return (min(t), max(t))
-							print (min_max(tupla)) # (1,6)
-						</code></pre>
-						<small><code style="background-color:lightgrey; color:darkslategray;">max()</code> y <code style="background-color:lightgrey; color:darkslategray;">min()</code> son funciones incorporadas que encuentran los elementos más grande y más
-							pequeño respectivamente en una secuencia. <code style="background-color:lightgrey; color:darkslategray;">min_max()</code> calcula ambos y devuelve una tupla de dos valores.</small>
-
+						<h4>Mas métodos que veremos en la próxima clase</h4>
 					</section>
-
-					<section>
-						<h4>Tuplas de argumentos de longitud variable</h4>
-						<small><p>Las funciones pueden tomar una cantidad variable de argumentos (o parámetros). Un nombre de parámetro que comienza con * hace una <strong>reunión</strong> de argumentos en una tupla.</p></small>
-						<div class="fragment">
-							<p>Ejemplo:</p>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							def imprime_todo(*args):
-								print(args)
-						</code></pre>
-						</div>
-						<div class="fragment">
-							<pre data-id="code-animation"><code class="python" data-trim>
-								imprime_todo("hola", "chau", 2, 99.9)
-							</code></pre>
-						</div>
-						<div class="fragment">
-							<h4>Output</h4>
-							<pre data-id="code-animation"><code class="bash" data-trim>
-								('hola', 'chau', 2, 99.9)
-							</code></pre>
-						</div>
-					</section>
-
 
 					<section>
 						<h3>Glosario de sección</h3>
 						<ul>
-							<li><strong>Tipo inmutable:</strong><small>Un tipo en el cual los elementos no se puede modificar. Las
-								asignaciones de elementos de tipos inmutables provocan un error.</small>
+							<li><strong>Mapeo:</strong><small>Una relación en la cual cada elemento de un conjunto corresponde a un elemento
+								de otro conjunto.</small>
 							</li>
-							<li><strong>Tipo mutable: </strong><small>tipo de datos en el cual los elementos pueden ser modificados. 
-								Todos los tipos mutables son compuestos. Las listas y diccionarios* son tipos de datos mutables,
-								los string y las tuplas no.</small></li>
+							<li><strong>Diccionario: </strong><small>Estructura de datos que se basa en un mapeo de las claves a sus valores correspondienes.</small></li>
 
-							<li><strong>Tupla: </strong><small>Un tipo de secuencia que es similar a una lista excepto en que es inmutable.
-								Las tuplas se pueden usar donde quiera que se necesite un tipo inmutable, como puede ser la clave de un diccionario*.</small></li>
-							<li><strong>Reunión: </strong><small>Una operación que junta múltiples argumentos en una tupla. Lo opuesto a la reunión es una <strong>dispersión</strong>.</small></li>
+							<li><strong>Par clave-valor:</strong><small>La representación del mapeo de una clave a un valor. <code>key:value</code></small></li>
+							<li><strong>Ítem:</strong><small> Cuando hablamos de diccionarios, un ítem es un sinónimo para un <strong>par clave-valor</strong>.</small></li>
+							<li><strong>Clave (key):</strong><small>Un objeto que aparece en un diccionario como la primera parte de un par clave-valor.</small></li>
+							<li><strong>Valor (value):</strong><small>Un objeto que aparece en un diccionario como la segunda parte de un par clave-valor. Esto es más específico que nuestro uso anterior de la palabra “valor”.</small></li>
 						</ul>
-						<p><small>* Se verá diccionarios mas adelante.</small></p>
+
 					</section>
 				</section>
 				<section>
 					<h3>Ejercicio en clase</h3>
-					<p>Escriban una función llamada <code style="background-color:lightgrey; color:darkslategray;">sumar_todos()</code> que tome cualquier cantidad de argumentos numéricos y devuelva su suma.</p>
-					<p><small>Pista: Observe la función <a href="https://es.acervolima.com/funcion-sum-en-python/">sum()</a>. Puede serle de ayuda.</small></p>
+					<p><small>Escriba una función llamada <code>histograma(unaPalabra)</code> que cuente la cantidad de letras que aparecen en la palabra enviada por parámetro y las vaya contabilizando en un diccionario. Luego el programa principal debe tomar palabras hasta que el usuario quiera terminar de ingresar palabras (elija el criterio que quiera para condición de corte).</small></p>
+					<p><small>Por ejemplo: si se invoca la función con la palabra "pinguino" debe crearse el siguiente diccionario:</small></p>
+					<pre data-id="code-animation"><code class="python" data-trim>
+						{'p': 1, 'i': 2, 'n': 2, 'g': 1, 'u': 1, 'o': 1}
+					</code></pre>
+					<p><small>Una vez que termine informe la letra más utilizada.</small></p>
+
 				</section>
 
 
@@ -241,8 +241,8 @@
 
 				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 					<h3>¡Fin de la clase!</h3>
-					<a href="./clase4.html"> < Ir a clase anterior</a><br>
-					<a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica5.md">Ir a la práctica 5 ></a>
+					<a href="./clase5.html"> < Ir a clase anterior</a><br>
+					
 
 				</section>
 					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
