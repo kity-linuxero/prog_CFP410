@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Programación</title>
+		<link rel="stylesheet" href="css/egg.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section  data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					
+					<h2>Introducción a la programación</h2>
+				</section>
+
+				<section>
+					<h2>Clase 6</h2>
+					<h3>Contenido para hoy</h3>
+					<ul>
+						<li>Diccionarios</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Diccionarios</h2>
+					</section>
+
+					<section>
+						<h2>Diccionarios</h2>
+						<p>Los diccionarios son una estructura de datos que permite almacenar su contenido en forma de <code>clave:valor</code></p>
+						<p><small>Son como listas, pero más general. Mientras que en las listas, los índices tienen que ser números enteros, en un diccionario pueden ser (casi) de cualquier tipo.</small></p>
+					</section>
+
+					<section>
+						<h2>Diccionarios (cont)</h2>
+						<p>Un diccionario contiene una colección de índices que se llaman <strong>claves (key)</strong> y una colección de <strong>valores (value)</strong>. Cada clave está asociada a un valor único. La asociación de una clave y valor se llama <strong>par clave-valor</strong> o a veces <strong>ítem</strong>. Esto da un mapeo de un valor por cada clave. Las claves no pueden repetirse.</p>
+					</section>
+
+					<section>
+						<h3>Propiedades de los diccionarios</h3>
+						<p>Algunas propiedades de los diccionarios en Python:</p>
+						<ul>
+						<li><strong>Dinámicos</strong>:<small> Pueden crecer o decrecer. Se pueden añadir o eliminar elementos. Igual que las listas.</small></li>
+						<li><strong>Indexados</strong>:<small> Los elementos del diccionario son accesibles a través de un índice llamada <code>key</code>.</small></li>
+						<li><strong>Anidados</strong>:<small> Un diccionario puede contener a otro diccionario en su campo <code>value</code>.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Crear diccionarios en Python</h3>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							diccionario = {} # Se crea diccionario vacío
+							otro_diccionario = dict() # Se crea diccionario vacío
+						</code></pre>
+
+						<div class="fragment">
+							<h4>Agregar elementos</h4>
+
+							<pre data-id="code-animation"><code class="python" data-trim>
+								> traductor = {} # Crear diccionario vacío
+								> traductor['one']='uno' # Agregar el valor uno a la clave one
+								> traductor['two']='dos' # Agregar el valor dos a la clave two
+								> traductor
+								{'one': 'uno', 'two': 'dos'} # Estructura del diccionario
+							</code></pre>
+							<p><small>Si la clave no existe se crea y agrega el valor.</small></p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Crear diccionarios en Python</h3>
+						<p><small>Podemos crear un diccionario nuevo enviándole directamente un diccionario</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							traductor = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
+						</code></pre>
+						<div class="fragment">
+						<h4>Otra forma de verlo. Mas intuitivo.</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							traductor = {
+								'one': 'uno',
+								'two': 'dos',
+								'three': 'tres'
+							}
+						</code></pre>
+					</div>
+
+					</section>
+
+					<section>
+						<h3>Acceder y modificar elementos</h3>
+
+						<p><small>igual que las listas y tuplas, los elementos pueden accederse con <code>[]</code> o con la función <code>get()</code></small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							print(traductor['one']) # Uno
+							print(traductor.get('one')) # Uno
+						</code></pre>
+						<p><small>Para modificar un elemento basta con usar <code>[]</code> con el nombre del <code>key</code> y asignar el valor que queremos.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							traductor['one']= "1"
+							print(traductor.get('one')) # 1
+						</code></pre>
+						<p><small>Si el <code>key</code> al que accedemos no existe, se añade automáticamente</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							traductor['four']= 'cuatro'
+							print(traductor.get('four')) # cuatro
+							
+						</code></pre>
+					</section>
+
+					<section>
+						<h4>Iterar un diccionario</h4>
+						<p><small>Los diccionarios se iteran igual que una lista. La iteración se realiza sobre su <code>key</code>.</small></p>
+						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							diccionario = {
+								'nombre': 'Carlos',
+								'edad': '32',
+								'e-mail': 'carlitos@gmail.com'
+							}
+							for d in diccionario:
+								print (d)
+						</code></pre>
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							nombre
+							edad
+							e-mail
+						</code></pre>
+						<div class="fragment">
+							<p><small>Si quisiera imprimir el <code>value</code> en vez de la <code>key</code>. ¿Cómo debería modificar el código?</small></p>
+						</div>
+						<div class="fragment">
+							<p><small>¿Lo hacemos entre todxs?</small></p>
+						</div>
+						
+					</section>
+
+					<section>
+						<h3>Diccionarios anidados</h3>
+						<p><small>Podemos tener en el <code>value</code> de una <code>key</code> otro diccionario o lista.</small></p>						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							anidado1 = {"a": 1, "b": 2}
+							anidado2 = {"a": 1, "b": 2}
+							d = {
+							"anidado1" : anidado1,
+							"anidado2" : anidado2
+							}
+							print(d)
+							#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}
+						</code></pre>
+						<small class="fragment">¿Cómo podríamos obtener el dato 1 de la key a? <a href="https://www.mycompiler.io/new/python" target="_blank">¿Lo intentamos?</a></small>
+						<div class="fragment">
+						<h3>Listas como values</h3>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							l1 = [1,2,3,4,5]
+							l2 = ['a', 'b', 'c']
+							d = {
+							"numeros" : l1,
+							"letras" : l2
+							}
+							print(d)
+							#{'numeros': [1, 2, 3, 4, 5], 'letras': ['a', 'b', 'c']}
+						</code></pre>
+					</div>
+
+					</section>
+
+					<section>
+						<h4>Métodos diccionarios Python</h4>
+						<p><small>El método <code>clear()</code> elimina todo el contenido del diccionario.</small></p>
+	
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d = {'a': 1, 'b': 2}
+							d.clear()
+							print(d) #{}
+						</code></pre>
+						
+						<p><small>El método <code>get(key,default)</code> nos permite consultar el <code>value</code> para un <code>key</code> determinado. El segundo parámetro es opcional y es el valor que va a devolver en caso que no encuentre la key.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d = {'a': 1, 'b': 2}
+							print(d.get('a')) #1
+							print(d.get('z', 'No encontrado')) #No encontrado
+						</code></pre>
+						<p><small>El método <code>items()</code> El método items() devuelve una lista con los keys y values del diccionario. Si se convierte en list se puede indexar como si de una lista normal se tratase, siendo los primeros elementos las key y los segundos los value.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d = {'a': 1, 'b': 2}
+							it = d.items()
+							print(it)             #dict_items([('a', 1), ('b', 2)])
+							print(list(it))       #[('a', 1), ('b', 2)]
+							print(list(it)[0][0]) #a
+						</code></pre>
+					</section>
+					<section>
+						<h4>Mas métodos que veremos en la próxima clase</h4>
+					</section>
+
+					<section>
+						<h3>Glosario de sección</h3>
+						<ul>
+							<li><strong>Mapeo:</strong><small>Una relación en la cual cada elemento de un conjunto corresponde a un elemento
+								de otro conjunto.</small>
+							</li>
+							<li><strong>Diccionario: </strong><small>Estructura de datos que se basa en un mapeo de las claves a sus valores correspondienes.</small></li>
+
+							<li><strong>Par clave-valor:</strong><small>La representación del mapeo de una clave a un valor. <code>key:value</code></small></li>
+							<li><strong>Ítem:</strong><small> Cuando hablamos de diccionarios, un ítem es un sinónimo para un <strong>par clave-valor</strong>.</small></li>
+							<li><strong>Clave (key):</strong><small>Un objeto que aparece en un diccionario como la primera parte de un par clave-valor.</small></li>
+							<li><strong>Valor (value):</strong><small>Un objeto que aparece en un diccionario como la segunda parte de un par clave-valor. Esto es más específico que nuestro uso anterior de la palabra “valor”.</small></li>
+						</ul>
+
+					</section>
+				</section>
+				<section>
+					<h3>Ejercicio en clase</h3>
+					<p><small>Escriba una función llamada <code>histograma(unaPalabra)</code> que cuente la cantidad de letras que aparecen en la palabra enviada por parámetro y las vaya contabilizando en un diccionario. Luego el programa principal debe tomar palabras hasta que el usuario quiera terminar de ingresar palabras (elija el criterio que quiera para condición de corte).</small></p>
+					<p><small>Por ejemplo: si se invoca la función con la palabra "pinguino" debe crearse el siguiente diccionario:</small></p>
+					<pre data-id="code-animation"><code class="python" data-trim>
+						{'p': 1, 'i': 2, 'n': 2, 'g': 1, 'u': 1, 'o': 1}
+					</code></pre>
+					<p><small>Una vez que termine informe la letra más utilizada.</small></p>
+
+				</section>
+
+
+
+
+
+				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					<h3>¡Fin de la clase!</h3>
+					<a href="./clase5.html"> < Ir a clase anterior</a><br>
+					
+
+				</section>
+					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+						<h2>Bibliografia</h2>
+						
+						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
+						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
+						<!-- <h3>Referencias</h3> -->
+						<h3>Recursos</h3>
+						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
+						<p><a href="https://www.mycompiler.io/new/python" target="_blank">My Compiler IDE Online</a></p>
+						
+					</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="js/egg.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
