@@ -45,7 +45,7 @@
 
 					<section>
 						<h2>Diccionarios (cont)</h2>
-						<p>Un diccionario contiene una colección de índices que se llaman <strong>claves (key)</strong> y una colección de <strong>valores (value)</strong>. Cada clave está asociada a un valor único. La asociación de una clave y valor se llama <strong>par clave-valor</strong> o a veces <strong>ítem</strong>. Esto da un mapeo de un valor por cada clave. Las claves no pueden repetirse.</p>
+						<p>Un diccionario contiene una colección de índices que se llaman <strong>claves (key)</strong> y una colección de <strong>valores (value)</strong>. Cada clave está asociada a un valor único. La asociación de una clave y valor se llama <strong>par clave-valor</strong> o a veces <strong>ítem</strong>. Esto da un mapeo de un valor por cada clave. <strong>Las claves no pueden repetirse.</strong></p>
 					</section>
 
 					<section>
@@ -76,6 +76,7 @@
 								{'one': 'uno', 'two': 'dos'} # Estructura del diccionario
 							</code></pre>
 							<p><small>Si la clave no existe se crea y agrega el valor.</small></p>
+							<small>Desde la versión 3.7 de Python los diccionarios están <strong>ordenados</strong> por lo que los elementos tendrán el orden en el cual fueron agregados. No pasa lo mismo en Python <= 3.6 </small>
 						</div>
 					</section>
 
@@ -94,6 +95,7 @@
 								'three': 'tres'
 							}
 						</code></pre>
+						
 					</div>
 
 					</section>
@@ -101,7 +103,7 @@
 					<section>
 						<h3>Acceder y modificar elementos</h3>
 
-						<p><small>igual que las listas y tuplas, los elementos pueden accederse con <code>[]</code> o con la función <code>get()</code></small></p>
+						<p><small>Al igual que las listas y tuplas, los elementos pueden accederse con <code>[]</code> o con la función <code>get()</code></small></p>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							print(traductor['one']) # Uno
@@ -134,7 +136,7 @@
 							for d in diccionario:
 								print (d)
 						</code></pre>
-						<h4>Output</h4>
+						
 						<pre data-id="code-animation"><code class="python" data-trim>
 							nombre
 							edad
@@ -144,7 +146,11 @@
 							<p><small>Si quisiera imprimir el <code>value</code> en vez de la <code>key</code>. ¿Cómo debería modificar el código?</small></p>
 						</div>
 						<div class="fragment">
-							<p><small>¿Lo hacemos entre todxs?</small></p>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								for d in diccionario:
+									print (diccionario.get(d))
+							</code></pre>
+							
 						</div>
 						
 					</section>
@@ -162,16 +168,13 @@
 							print(d)
 							#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}
 						</code></pre>
-						<small class="fragment">¿Cómo podríamos obtener el dato 1 de la key a? <a href="https://www.mycompiler.io/new/python" target="_blank">¿Lo intentamos?</a></small>
+						<!-- <small class="fragment">¿Cómo podríamos obtener el dato 1 de la key a? <a href="https://www.mycompiler.io/new/python" target="_blank">¿Lo intentamos?</a></small> -->
 						<div class="fragment">
 						<h3>Listas como values</h3>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							l1 = [1,2,3,4,5]
 							l2 = ['a', 'b', 'c']
-							d = {
-							"numeros" : l1,
-							"letras" : l2
-							}
+							d = { "numeros" : l1, "letras" : l2 }
 							print(d)
 							#{'numeros': [1, 2, 3, 4, 5], 'letras': ['a', 'b', 'c']}
 						</code></pre>
@@ -195,17 +198,18 @@
 							print(d.get('a')) #1
 							print(d.get('z', 'No encontrado')) #No encontrado
 						</code></pre>
-						<p><small>El método <code>items()</code> El método items() devuelve una lista con los keys y values del diccionario. Si se convierte en list se puede indexar como si de una lista normal se tratase, siendo los primeros elementos las key y los segundos los value.</small></p>
+						
+					</section>
+					<section>
+						<h4>Mas métodos útiles: items()</h4>
+						<p><small>El método <code>items()</code> devuelve una lista con los keys y values del diccionario. Si se convierte en list se puede indexar como si de una lista normal se tratase, siendo los primeros elementos las key y los segundos los value.</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							d = {'a': 1, 'b': 2}
 							it = d.items()
-							print(it)             #dict_items([('a', 1), ('b', 2)])
-							print(list(it))       #[('a', 1), ('b', 2)]
-							print(list(it)[0][0]) #a
+							print(it)             # dict_items([('a', 1), ('b', 2)])
+							print(list(it))       # [('a', 1), ('b', 2)]
+							print(list(it)[0][0]) # a
 						</code></pre>
-					</section>
-					<section>
-						<h4>Mas métodos que veremos en la próxima clase</h4>
 					</section>
 
 					<section>
