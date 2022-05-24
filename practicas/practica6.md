@@ -1,11 +1,11 @@
 # Práctica 6
 
-Práctica sobre diccionarios
+Práctica sobre diccionarios y tuplas
 
 
 ## Ejercicio 1
 
-Escribir un programa que guarde en una variable el diccionario `{'Dolar':'$', 'Euro':'€', 'Yen':'¥', 'Peso uruguayo':'$'}` y pregunte al usuario por una divisa y muestre su símbolo o un mensaje de aviso si la divisa no está en el diccionario. En tal caso se termina el programa.
+Escribir un programa que guarde en una variable el siguiente diccionario `{'Dolar':'$', 'Euro':'€', 'Yen':'¥', 'Peso argentino':'$'}` y pregunte al usuario por una divisa y muestre su símbolo o un mensaje de aviso si la divisa no está en el diccionario. En tal caso se termina el programa.
 
 ```bash
 Ingrese una divisa para saber el símbolo: Euro
@@ -30,10 +30,9 @@ Ingrese la divisa para convertir: Euro
 
 ## Ejercicio 3
 
-Escribir un programa que guarde en un diccionario los precios de unos productos (por unidad) y luego, a pedido del usuario imprima el precio por tantas unidades.
-Por ejemplo, se tiene el diccionario: 
+Se tiene el siguiente diccionario:
 `{ 'Mayonesa':'140,50', 'Cerveza': 130, 'Agua mineral': 110.15, Servilleta: 65.20 }`.
-Se simula una compra donde se van ingresando productos y cantidad. Los valores se van sumando para tener el total para cobrar al finalizar la compra.
+Escriba un programa que permita simular una compra donde se van ingresando productos y cantidad. Los valores se van sumando para tener el total para cobrar al finalizar la compra.
 La compra termina cuando el usuario ingresa `fin` donde se deberá finalizar la compra e informar el monto total.
 También debe ser posible saber el parcial de una compra cuando se ingresa `parcial` donde deberá informar el monto gastado hasta el momento pero sin finalizar la compra:
 A continuación se muestra un ejemplo de ejecucición del programa:
@@ -61,3 +60,69 @@ Ingrese producto: fin
 ----------------------
 El total de su compra es: $ 746,70
 ```
+
+## Ejercicio 4
+Se tiene el siguiente diccionario:
+```python
+diccionario = {
+    "clase": {
+        "estudiante": {
+            "nombre": "Mike",
+            "materias": {
+                "matematica": 7,
+                "geografia": 8
+            }
+        }
+    }
+}
+```
+
+Desarrolle un programa para que imprima la nota de geografía.
+
+## Ejercicio 5
+
+### Parte práctica
+
+Escriba una función llamada `tupla(n)` que cree una tupla de `n` elementos. La cantidad es enviada por parámetro. Se debe retornar dicha tupla.
+
+### Unit-test
+Un `unit-test` o "prueba unitaria" es una forma de comprobar que el código funcione correctamente. Muchas veces se prueba una función enviandole una entrada conocida esperando una salida esperada. Si la función en su valor de retorno coincide con el valor esperado se dice que el test pasa (OK o pass).
+
+En el ejercicio citado probaremos si una función hace realmente lo que necesitamos pasando un test. Para eso, ingrese en el [link]("https://www.mycompiler.io/view/HmQb6r2sS3q") y clickee en el botón __Fork__ para poder modificar el código. Luego copie y pegue su función en el lugar indicado:
+
+```python
+#### INICIO FUNCION A DESARROLLAR
+
+# MODIFIQUE ESTA FUNCION PARA QUE PASE EL TEST
+'''
+    Esta función debe crear una tupla con n elementos
+'''
+def tupla(n):
+    print (n)
+    
+#### FIN FUNCION A DESARROLLAR
+```
+
+Ejecute el programa con el botón __Run__. La salida debe ser la siguiente:
+
+```bash
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+
+[Execution complete with exit code 0]
+```
+
+Más adelante profundizaremos en Unit-tests pero como puede ver es una herramienta muy potente para probar nuestro código.
+
+## Ejercicio 6
+
+
+
+
+
+
+
+
