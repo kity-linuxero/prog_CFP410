@@ -201,7 +201,7 @@
 						
 					</section>
 					<section>
-						<h4>Mas métodos útiles: items()</h4>
+						<h4>Mas métodos útiles (part1)</h4>
 						<p><small>El método <code>items()</code> devuelve una lista con los keys y values del diccionario. Si se convierte en list se puede indexar como si de una lista normal se tratase, siendo los primeros elementos las key y los segundos los value.</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							d = {'a': 1, 'b': 2}
@@ -209,6 +209,44 @@
 							print(it)             # dict_items([('a', 1), ('b', 2)])
 							print(list(it))       # [('a', 1), ('b', 2)]
 							print(list(it)[0][0]) # a
+						</code></pre>
+						<p><small>El método <code>keys()</code> devuelve las keys del diccionario. Si se usa en conjunto con <code>list()</code> se puede obtener en forma de lista.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							k = d.keys() 					# dict_keys(['a', 'b'])
+							lista_keys = list(k) 	# ['a', 'b']
+						</code></pre>
+					</section>
+
+					<section>
+						<h4>Mas métodos útiles (part2)</h4>
+						<p><small>El método <code>values()</code> devuelve todos los values de un diccionario.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d = {'a': 1, 'b': 2}
+							print(list(d.values())) #[1, 2] # Se convierte a Lista
+						</code></pre>
+						<p><small>El método <code>pop(key)</code> busca y borra la <code>key</code> que se pasa como parámetro y devuelve el <code>value</code> asociado. Si la clave no existe da error.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d = {'a': 1, 'b': 2}
+							elem = d.pop('a') # elem=1
+							print(d) #{'b': 2}
+						</code></pre>
+						<p><small>El método <code>pop(key,default)</code> es igual que el método <code>get(key)</code> pero en caso de error retorna <code>default</code> pasado por parámetro.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d = {'a': 1, 'b': 2}
+							elem = d.pop('e', 'no elem') # elem='no elem'
+							print(d) # {'a': 1, 'b': 2}
+						</code></pre>
+					</section>
+
+					<section>
+						<h4>Mas métodos útiles (part3)</h4>
+						<p><small>El método <code>update(diccionario)</code> recibe como parámetro un diccionario. Los <code>value</code> son actualizados en el diccionario que es llamado. Si alguna <code>key</code> no está es agregada.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							d1 = {'a': 1, 'b': 2}
+							d2 = {'a': 0, 'd': 400}
+							d1.update(d2)
+							print(d1)
+							#{'a': 0, 'b': 2, 'd': 400}
 						</code></pre>
 					</section>
 
@@ -230,12 +268,12 @@
 				</section>
 				<section>
 					<h3>Ejercicio en clase</h3>
-					<p><small>Escriba una función llamada <code>histograma(unaPalabra)</code> que cuente la cantidad de letras que aparecen en la palabra enviada por parámetro y las vaya contabilizando en un diccionario. Luego el programa principal debe tomar palabras hasta que el usuario quiera terminar de ingresar palabras (elija el criterio que quiera para condición de corte).</small></p>
+					<p><small>Escriba una función llamada <code>histograma(unaPalabra)</code> que cuente la cantidad de letras que aparecen en la palabra enviada por parámetro y las contabilice en un diccionario. Luego el programa principal informe el diccionario.</small></p>
 					<p><small>Por ejemplo: si se invoca la función con la palabra "pinguino" debe crearse el siguiente diccionario:</small></p>
 					<pre data-id="code-animation"><code class="python" data-trim>
 						{'p': 1, 'i': 2, 'n': 2, 'g': 1, 'u': 1, 'o': 1}
 					</code></pre>
-					<p><small>Una vez que termine informe la letra más utilizada.</small></p>
+					<p><a href="https://www.mycompiler.io/view/AKItTFBdohO" target="_blank">Ej resuelto</a></p>
 
 				</section>
 
