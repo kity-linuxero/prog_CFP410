@@ -251,7 +251,48 @@
 					</section>
 
 					<section>
-						<h3>Glosario de sección</h3>
+						<h4>Mas métodos útiles (part4)</h4>
+						<p><small>El método <code>fromkeys()</code> devuelve un diccionario con las <code>keys</code> especificadas y el <code>value</code> especificado.</small></p>
+						<p>Sintaxis</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							dict.fromkeys(keys, value)
+						</code></pre>
+						<p>Ejemplo seteando keys</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							k = ('key1', 'key2', 'key3')
+							thisdict = dict.fromkeys(k)
+							print(thisdict)
+						</code></pre>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							{'key1': None, 'key2': None, 'key3': None}
+						</code></pre>
+						<small>Si no se especifica, el value de todas las claves será <code>None</code>.</small>
+					</section>
+
+					<section>
+						<h4>Mas métodos útiles (part4 - cont)</h4>
+						<p>Ejemplo seteando keys y values</p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							k = ('key1', 'key2', 'key3')
+							v = ('value1', 'value2', 'value3')
+							thisdict = dict.fromkeys(k,v)
+							print(thisdict)
+						</code></pre>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							{
+								'key1': ('value1', 'value2', 'value3'), 
+								'key2': ('value1', 'value2', 'value3'),
+								'key3': ('value1', 'value2', 'value3')
+							}
+						</code></pre>
+						<small>Puede ser útil para setear valores por defecto</small>
+					</section>
+
+
+					<section>
+						<h3>Glosario de clase (1/2)</h3>
 						<ul>
 							<li><strong>Mapeo:</strong><small>Una relación en la cual cada elemento de un conjunto corresponde a un elemento
 								de otro conjunto.</small>
@@ -259,6 +300,14 @@
 							<li><strong>Diccionario: </strong><small>Estructura de datos que se basa en un mapeo de las claves a sus valores correspondienes.</small></li>
 
 							<li><strong>Par clave-valor:</strong><small>La representación del mapeo de una clave a un valor. <code>key:value</code></small></li>
+							
+						</ul>
+
+					</section>
+
+					<section>
+						<h3>Glosario de clase (2/2)</h3>
+						<ul>
 							<li><strong>Ítem:</strong><small> Cuando hablamos de diccionarios, un ítem es un sinónimo para un <strong>par clave-valor</strong>.</small></li>
 							<li><strong>Clave (key):</strong><small>Un objeto que aparece en un diccionario como la primera parte de un par clave-valor.</small></li>
 							<li><strong>Valor (value):</strong><small>Un objeto que aparece en un diccionario como la segunda parte de un par clave-valor. Esto es más específico que nuestro uso anterior de la palabra “valor”.</small></li>

@@ -31,7 +31,7 @@ Ingrese la divisa para convertir: Euro
 ## Ejercicio 3
 
 Se tiene el siguiente diccionario:
-`{ 'Mayonesa':'140,50', 'Cerveza': 130, 'Agua mineral': 110.15, Servilleta: 65.20 }`.
+`{'Mayonesa':'140,50', 'Cerveza': 130, 'Agua mineral': 110.15, Servilleta: 65.20}`.
 Escriba un programa que permita simular una compra donde se van ingresando productos y cantidad. Los valores se van sumando para tener el total para cobrar al finalizar la compra.
 La compra termina cuando el usuario ingresa `fin` donde se deberá finalizar la compra e informar el monto total.
 También debe ser posible saber el parcial de una compra cuando se ingresa `parcial` donde deberá informar el monto gastado hasta el momento pero sin finalizar la compra:
@@ -67,7 +67,7 @@ Se tiene el siguiente diccionario:
 diccionario = {
     "clase": {
         "estudiante": {
-            "nombre": "Mike",
+            "nombre": "Marcos",
             "materias": {
                 "matematica": 7,
                 "geografia": 8
@@ -81,14 +81,40 @@ Desarrolle un programa para que imprima la nota de geografía.
 
 ## Ejercicio 5
 
-### Parte práctica
+Desarrolle una función que actualice las notas de matemática y geografía para que sean 8 y 7 respectivamente.
 
-Escriba una función llamada `tupla(n)` que cree una tupla de `n` elementos. La cantidad es enviada por parámetro. Se debe retornar dicha tupla.
+## Ejercicio 6
+
+Desarrolle una función que actualice la clave `geografia` por `historia` e imprima el diccionario final.
+
+## Ejercicio 7
+
+Desarrolle una función que, dado el siguiente diccionario, devuelva el día con menor temperatura.
+
+```python
+
+temp = {
+    'domingo': 23.3,
+    'lunes': 22.6,
+    'martes': 18.9,
+    'miercoles': 17.2,
+    'jueves': 19.4,
+    'viernes': 20.0,
+    'sabado': 24.1
+}
+
+```
+
+## Ejercicio 8
+
+Escriba una función llamada `tupla(n)` que cree una tupla de `n` elementos. La cantidad es enviada por el parámetro `n`. Se debe retornar dicha tupla.
+
+## Ejercicio 9
 
 ### Unit-test
 Un `unit-test` o "prueba unitaria" es una forma de comprobar que el código funcione correctamente. Muchas veces se prueba una función enviandole una entrada conocida esperando una salida esperada. Si la función en su valor de retorno coincide con el valor esperado se dice que el test pasa (OK o pass).
 
-En el ejercicio citado probaremos si una función hace realmente lo que necesitamos pasando un test. Para eso, ingrese en el [link]("https://www.mycompiler.io/view/HmQb6r2sS3q") y clickee en el botón __Fork__ para poder modificar el código. Luego copie y pegue su función en el lugar indicado:
+En este ejercicio comprobaremos la función del ejercicio anterior pasando un test. Para eso, ingrese en el [link]("https://www.mycompiler.io/view/HmQb6r2sS3q") y clickee en el botón __Fork__ para poder modificar el código. Luego copie y pegue su función en el lugar indicado:
 
 ```python
 #### INICIO FUNCION A DESARROLLAR
@@ -117,7 +143,26 @@ OK
 
 Más adelante profundizaremos en Unit-tests pero como puede ver es una herramienta muy potente para probar nuestro código.
 
-## Ejercicio 6
+## Ejercicio 10
+
+Teniendo el los siguientes diccionarios:
+```python
+empleados = ['Agustina', 'Juan Manuel', 'Martina']
+defaults = {"Puesto": 'Developer', "Salario": 1200}
+```
+
+Escriba un programa que permita obtener el siguiente diccionario:
+```python
+    {
+        'Agustina': {'Puesto': 'Developer', 'Salario': 1200},
+        'Juan Manuel': {'Puesto': 'Developer', 'Salario': 1200},
+        'Martina': {'Puesto': 'Developer', 'Salario': 1200}
+    }
+
+```
+
+¿Puede hacerlo con una sola instrucción?
+
 
 
 
