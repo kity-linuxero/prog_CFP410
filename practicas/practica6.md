@@ -47,7 +47,7 @@ Ingrese cantidad: 2
 El precio es: $260
 ----------------------
 Ingrese producto: parcial
-Parcial compra: $681,50
+Parcial compra: $681.50
 ----------------------
 Ingrese producto: computadora
 El producto no existe
@@ -58,7 +58,7 @@ El precio es: $65.20
 ----------------------
 Ingrese producto: fin
 ----------------------
-El total de su compra es: $ 746,70
+El total de su compra es: $ 746.70
 ```
 
 ## Ejercicio 4
@@ -145,7 +145,7 @@ Más adelante profundizaremos en Unit-tests pero como puede ver es una herramien
 
 ## Ejercicio 10
 
-Teniendo el los siguientes diccionarios:
+Teniendo las siguientes variables:
 ```python
 empleados = ['Agustina', 'Juan Manuel', 'Martina']
 defaults = {"Puesto": 'Developer', "Salario": 1200}
