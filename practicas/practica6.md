@@ -114,7 +114,7 @@ Escriba una función llamada `tupla(n)` que cree una tupla de `n` elementos. La 
 ### Unit-test
 Un `unit-test` o "prueba unitaria" es una forma de comprobar que el código funcione correctamente. Muchas veces se prueba una función enviandole una entrada conocida esperando una salida esperada. Si la función en su valor de retorno coincide con el valor esperado se dice que el test pasa (OK o pass).
 
-En este ejercicio comprobaremos la función del ejercicio anterior pasando un test. Para eso, ingrese en el [link]("https://www.mycompiler.io/view/HmQb6r2sS3q") y clickee en el botón __Fork__ para poder modificar el código. Luego copie y pegue su función en el lugar indicado:
+En este ejercicio comprobaremos la función del ejercicio anterior pasando un test. Para eso, ingrese en el [link](https://www.mycompiler.io/view/HmQb6r2sS3q) y clickee en el botón __Fork__ para poder modificar el código. Luego copie y pegue su función en el lugar indicado:
 
 ```python
 #### INICIO FUNCION A DESARROLLAR
