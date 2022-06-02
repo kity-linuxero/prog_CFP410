@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Programación</title>
+		<link rel="stylesheet" href="css/egg.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section  data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					
+					<h2>Introducción a la programación</h2>
+				</section>
+
+				<section>
+					<h2>Clase 7</h2>
+					<h3>Contenido para hoy</h3>
+					<ul>
+						<li>Módulos y paquetes</li>
+						<li>Built-in functions</li>
+						<li>Documentación de los módulos</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Módulos y paquetes</h2>
+					</section>
+
+					<section>
+						<h2>Módulos y paquetes</h2>
+						<p><small>Como vimos en una <a href="./clase3.html#/2/7" target="_blank">una clase anterior</a> es posible tener módulos en archivos separados del programa principal y pueden importarse para usarse en el programa principal.</small></p>
+						<p><small>En Python, los programas se escriben usando la extensión <code>.py</code> así que un módulo, por lo general, tendrá esa misma extensión.</small></p>
+						<p><small>Un <strong>módulo</strong> o <strong>module</strong> en Python será un archivo <code>.py</code> que contiene un conjunto de funciones, variables o clases y que puede ser usado por otros módulos. Nos permiten reutilizar código y organizarlo mejor en namespaces.</small></p>
+						
+					</section>
+
+					<section>
+						<h4>Ejemplo import</h4>
+						<p><small>Por ejemplo, podemos definir un módulo llamado <code>modulo.py</code> en un archivo separado con dos funciones <code>suma()</code> y <code>resta()</code>.</small></p>
+						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# modulo.py
+							def suma(a, b):
+								return a + b
+							def resta(a, b):
+								return a - b
+						</code></pre>
+						<p><small>Una vez definido el módulo puede ser <strong>importado</strong> desde otro archivo usando <code>import</code></small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# programa.py
+							import modulo
+							print(modulo.suma(4, 3))   # 7
+							print(modulo.resta(10, 9)) # 1
+						</code></pre>
+						<p><small>En el ejemplo citado se importa todo el contenido del archivo. Pero puede importarse solamente las funciones que nos interese importar.</small></p>
+					</section>
+
+					<section>
+						<h4>Ejemplo import (cont)</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# programa.py
+							from modulo import suma, resta					
+							print(suma(4, 3))   # 7
+							print(resta(10, 9)) # 1
+						</code></pre>
+						<p><small>Se importan funciones que vamos a utilizar separadas por coma y solo se importarán dichas funciones.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# programa.py
+							from modulo import *
+							print(suma(4, 3))   # 7
+							print(resta(10, 9)) # 1
+						</code></pre>
+						<p><small>Si importamos los módulos de la forma <code>from modulo import</code> no hace falta hacer explícito el llamado a la función con <code>modulo.funcion()</code>.</small></p>
+
+						<p><small>Siempre que sea posible debemos importar solamente las funciones que vamos a utilizar.</small></p>
+					</section>
+
+					<section>
+						<h3>Rutas (path) de los modulos</h3>
+						<p><small>En el ejemplo anterior, <code>modulo.py</code> y <code>programa.py</code> están ubicados en la misma carpeta. Pero es posible (y recomendable) tener los módulos ubicados en otra carpeta.</small></p>
+						<p><small>Por ejemplo, podemos tener la siguiente estructura:</small></p>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							curso
+							├── mods
+							│   ├── modulo.py
+							│   └── otromodulo.py
+							└── programa.py
+						</code></pre>
+						<p><small>Si queremos invocar a <code>modulo.py</code> desde nuestro programa debemos hacerlo de la siguiente manera:</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							from mods.modulo.py import *
+							print(suma(4, 3))   # 7
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Paths del sistema</h3>
+						<p><small>Por defecto, Python buscará los módulos en el/los <code>sys.path</code></small>
+						<small>Para ver nuestro sys.path, lo podemos hacer de la siguiente manera:</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							import sys
+							print(sys.path)
+						</code></pre>
+
+						<p><small>Obviamente en el <code>sys.path</code> aparecerá la ubicación donde corrimos el programa, pero aparecerán mas ubicaciones.</small></p>
+	
+						<p class="fragment"><small>En las prácticas anteriores usamos el módulo <code>random.py</code>. ¿Puede encontrar el archivo random.py y ver el contenido?</small></p>
+
+
+					</section>
+
+					<section>
+						<h3>Renombrando módulos</h3>
+						<p><small>Es habitual importar módulos y renombrarlos internamente con un nombre mas corto. Supongamos que tenemos un módulo con un nombre largo.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# modulo_con_nombre_largo.py
+							saludo = "Hola"
+						</code></pre>
+						<p><small>En vez de invocarlo así:</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							import modulo_con_nombre_largo
+							print(modulo_con_nombre_largo.saludo)
+						</code></pre>
+						<p><small>Podríamos abreviarlo de la siguiente manera usando <code>as</code></small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							import modulo_con_nombre_largo as m
+							print(m.saludo)
+						</code></pre>
+					</section>
+
+					<section>
+
+						<h3>Excepción ImportError</h3>
+						<p><small>Importar un módulo puede lanzar una excepción cuando se intenta importar un módulo que no ha sido encontrado. Dicha excepción es un <code>ModuleNotFoundError</code>.</small></p>
+						<p><small>Mas adelante en el curso veremos como manejar excepciones, pero por ahora es suficiente saber que en caso que de tal error es porque un módulo no ha sido encontrado y debemos verificar si lo estamos invocando correctamente.</small></p>
+						<h4>Ejemplo</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							from mods.modulosas import *
+						</code></pre>
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							ModuleNotFoundError: No module named 'mods.modulosas'
+						</code></pre>
+
+
+					</section>
+
+					<section>
+						<h3>Módulos y funcion main</h3>
+						<p><small>Un problema frecuente es que al crear un módulo e importarlo desde otro módulo tengamos código "suelto" (fuera de funciones), entonces al importarlo, el intérprete ejecutará ese código y probablemente no sea lo que deseamos. Ejemplo:</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# modulo.py
+							def suma(a, b):
+								return a + b
+							
+							print(f"La suma es {suma(3,99)}") # Código "suelto"
+						</code></pre>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# programa.py
+							import modulo
+							# Output: La suma es 102
+							# ...
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Módulos y funcion main (cont.)</h3>
+						<p><small>Dependiendo del caso, puede ser importante especificar que el código "suelto" se ejecute solamente si el módulo es ejecutado por sí mismo (y no si es importado desde otro módulo). Por lo tanto se dice que el módulo es el <code>__main__</code> </small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# modulo.py
+							def suma(a, b):
+								return a + b
+							
+							if (__name__ == '__main__'):
+								print(f"La suma es {suma(3,99)}") # Código "suelto"
+						</code></pre>
+
+						<p><small>La variable <code>__main__</code> es una variable auto-generada por el intérprete que se refiere al nombre del módulo actual.</small></p>
+
+						
+					</section>
+
+					
+					
+				</section>
+
+				<section>
+					<section>
+						<h3>Built-in Functions</h3>
+					</section>
+
+					<section>
+						<h3>Built-in Functions</h3>
+						<p><small>Python (como muchos otros lenguajes) contiene tipos y funciones incorporadas (Built-in Functions) que siempre estarán disponibles para usarlas sin necesidad de acudir a <code>import</code>.</small></p>
+						<p><small>Puede consultar en <a href="https://docs.python.org/es/3/library/functions.html" target="_blank">la Documentación de Python</a> para tener un listado completo.</small></p>
+						<p><small>Algunas ya las hemos usado en clase por lo que le pueden resultar familiar.</small></p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h3>Consideraciones para escribir módulos</h3>
+					</section>
+
+					<section>
+						<h3>Documentación de los módulos</h3>
+						<p><small>Una buena práctica cuando se escribe un módulo es definir que es lo que hace y como se usa. Se usa la notación de comentarios con triple comillas dobles.</small></p>
+
+						<h4>modulo_clase.py</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							"""Breve descripción del módulo
+							Puede contener instrucciones de como se usa
+							"""
+							
+							def suma(a, b):
+								""" Retorna la suma de dos operandos enviados por parámetro
+								"""
+								return a + b
+							
+							if (__name__ == '__main__'):
+								print(f"La suma es {suma(3,99)}") # Código "suelto"
+						</code></pre>
+
+
+					</section>
+
+					<section>
+						<h4>Para hacer en clase</h4>
+						<p><small>Ingrese al intérprete de Python escribiendo <code>python</code> en su consola. Una vez que tenga el prompt escriba <code>help(sum)</code></small></p>
+						<p><small>¿Qué ha pasado?</small></p>
+						<p><small>Copie y pegue el contenido de modulo_clase.py y grabelo en su computadora en una carpeta. Luego abra un intérprete de Python dentro de esa carpeta y escriba lo siguiente:</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							import modulo_clase.py
+							help(modulo_clase)
+						</code></pre>
+						<p><small>¿Qué ha pasado?</small></p>
+
+					</section>
+					
+				</section>
+
+				<section>
+					<h3>Ejercicio en clase</h3>
+					<p><small>Cree su propio módulo llamado <code>matematica</code> que contenga 4 funciones una para suma, resta, multiplicación y división respectivamente. Cada función debe retornar el resultado de la operación.</small></p>
+					<p><small>Luego escriba en otro archivo un programa que importe el módulo y solicite al usuario dos números y ejecute cada función informando el resultado por pantalla.</small></p>
+					<p><small>No olvide de realizar la documentación del módulo.</small></p>
+
+				</section>
+
+				<section>
+
+					
+					<section>
+						<h3>Glosario de clase</h3>
+						<ul>
+							<li><strong>Path</strong><small>.</small>
+							</li>
+							<li><strong>Módulo: </strong><small>.</small></li>
+
+							<li><strong>Namespace:</strong><small>.</small></li>
+							
+						</ul>
+
+					</section>
+
+				</section>
+				
+
+
+
+
+
+				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					<h3>¡Fin de la clase!</h3>
+					<a href="./clase5.html"> < Ir a clase anterior</a><br>
+					
+
+				</section>
+					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+						<h2>Bibliografia</h2>
+						
+						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
+						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
+						<!-- <h3>Referencias</h3> -->
+						<h3>Recursos</h3>
+						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
+						<p><a href="https://www.mycompiler.io/new/python" target="_blank">My Compiler IDE Online</a></p>
+						
+					</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="js/egg.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
