@@ -38,17 +38,26 @@
 					</section>
 
 					<section>
-						<h2>Archivos</h2>
+						<h3>Archivos</h3>
 						<p><small>Un archivo o fichero es una secuencia de bytes almacenados en un dispositivo. Un archivo se identifica por un nombre y una ubicación dentro de un sistema de archivos (file system). Un sistema de archivos, por lo general tiene una forma jerárquica en forma de arbol para representar los archivos en los nodos "hoja" y las carpetas o directorios en los nodos intermedios.</small></p>
 						<img data-src="./static/clase8/FilesAndFolders.png">
 						
 					</section>
 
 					<section>
+						<h3>Archivos (cont)</h3>
+						<p><small>El sistema operativo se encarga de las operaciones de bajo nivel sobre los archivos, de manera que no tenemos que preocuparos por los detalles de implementación del file-system.</small></p>
+						<p><small>Por lo tanto, temas como como está compuesto el file-system, permisos de acceso, controler de acceso y tipo de file-system escapa al alcance de este curso.</small></p>
+						<p><small>Al menos en esta primera parte, vamos a enfocarnos en procesar 'parsear' (parse) archivos de texto plano (sin formato).</small></p>
+
+					</section>
+
+					<section>
 						<h3>Archivos en Python</h3>
 						<p><small>Al igual que en otros lenguajes de programación, Python soporta nativamente operaciones sobre arhivos.</small></p>
-						<p><small>Las operaciones soportadas mas utilizadas son: abrir un archivo, cerrar, crear, escribir, añadir contenido, abrir archivo en modo binario..</small></p>
+						<p><small>Las operaciones soportadas mas utilizadas son: abrir un archivo, cerrar, crear, escribir, añadir contenido, abrir archivo en modo binario.</small></p>
 						<p><small>Como podrá imaginarse, en Python es muy sencillo realizar todas estas operaciones. A continuación veremos varios ejemplos de como realizar las acciones mencionadas.</small></p>
+						
 
 					</section>
 				</section>
@@ -60,12 +69,8 @@
 
 					<section>
 						<h3>Leer archivos</h3>
-						<p><small>Uno de los archivos que soporta Python son los archivos de texto plano (sin formato). Imaginemos que tenemos el archivo <code>curso_ate.txt</code> en la misma carpeta donde corre nuestro programa.</small></p>
-						<!-- <pre data-id="code-animation"><code class="txt" data-trim>
-							Línea 1
-							Línea 2
-							Línea 3
-						</code></pre> -->
+						<p><small>Uno de los tipos de archivos que soporta Python son los archivos de texto plano (sin formato). Imaginemos que tenemos el archivo <code>curso_ate.txt</code> en la misma carpeta donde corre nuestro programa.</small></p>
+
 						<p><small>Podemos abrir el archivo usando la función <code>open()</code> pasando como argumento el nombre de archivo que queremos abrir.</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							archivo = open('curso_ate.txt')
@@ -77,7 +82,7 @@
 					<section>
 						<h3>Leer archivos (cont)</h3>
 						<p><small>En el ejemplo anterior, vimos la función <code>open()</code> enviando como argumento de la función solo el nombre del archivo.</small></p>
-						<p><small>Si no se especifica algún otro argumento que no sea el nombre del archivo, se abrirá el archivo en modo <code>lectura</code>. Pero existe un segundo argumento es es importante especificar que representa el <strong>el modo de apertura del archivo</strong></small></p>
+						<p><small>Si no se especifica algún otro argumento que no sea el nombre del archivo, se abrirá el archivo en modo <code>lectura</code>. Pero existe un segundo argumento es es importante especificar que representa el <strong>el modo de apertura del archivo</strong>:</small></p>
 						<small>
 						<ul>
 							<li><strong><code>'r'</code></strong>: Por defecto. Leer un archivo.</li>
@@ -87,7 +92,7 @@
 							<li><strong><code>'b'</code></strong>: Abrir un archivo en modo binario.</li>
 						</ul>
 						</small>
-						<p><small>Por lo que, para abrir el archivo <code>curso_ate.txt</code> si especificamos el segundo argumento quedaría:</small></p>
+						<p><small>Por lo tanto, para abrir el archivo <code>curso_ate.txt</code> si especificamos el segundo argumento quedaría:</small></p>
 						<pre data-id="code-animation"><code class="python" data-trim>
 							archivo = open('curso_ate.txt','r')
 						</code></pre>
@@ -186,10 +191,10 @@
 						
 						<pre data-id="code-animation"><code class="python" data-trim>
 							with open('curso_ate.txt', 'r') as archivo:
-							linea = archivo.readline()
-							while linea != '':
-								print(linea, end='')
-								linea = fichero.readline()
+								linea = archivo.readline()
+								while linea != '':
+									print(linea, end='')
+									linea = archivo.readline()
 						</code></pre>
 						<p><small>Se usa el <code>end=''</code> para que no imprima el salto de línea. </small></p>
 
@@ -197,8 +202,8 @@
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							with open('curso_ate.txt', 'r') as archivo:
-							for linea in archivo.readlines():
-								print(linea, end='')
+								for linea in archivo.readlines():
+									print(linea, end='')
 						</code></pre>
 
 					</section>
@@ -207,8 +212,8 @@
 						<h3>Ejemplos - leer líneas (Cont)</h3>
 						<p>Versión resumida:</p>
 						<pre data-id="code-animation"><code class="python" data-trim>
-							with open('ejemplo.txt', 'r') as fichero:
-								for linea in fichero:
+							with open('ejemplo.txt', 'r') as archivo:
+								for linea in archivo:
 									print(linea, end='')
 						</code></pre>
 						<h4>Output</h4>
@@ -275,11 +280,11 @@
 							# Tenemos unos datos que queremos guardar
 							jugadores = ["Messi", "J. Alvarez", "Dybala"]
 							
-							# Guardamos la lista en el fichero
+							# Guardamos la lista en el archivo
 							for linea in jugadores:
 								archivo.write(linea + "\n")
 							
-							# Cerramos el fichero
+							# Cerramos el archivo
 							archivo.close()
 						</code></pre>
 						<p><small>Es importante agregar el salto de línea "<code>\n</code>" ya que por defecto no la agrega.</small></p>
@@ -331,92 +336,37 @@
 								mensaje = ""
 								with open('file.txt', 'r') as archivo:
 									mensaje = archivo.read()
-								# Borra el contenido del fichero para dejarlo vacío
+								# Borra el contenido del archivo para dejarlo vacío
 								f = open('file.txt', 'w')
 								f.close()
 								return mensaje
 							escribe_archivo("Mensaje para el curso")
-							print(lee_fichero())
+							print(lee_archivo())
 						</code></pre>
 
 					</section>
-				</section>
-
-
-
 					<section>
 						<h2>¿Preguntas?</h2>
 					</section>
-
-					
-					
 				</section>
-
-				<section>
-					<section>
-						<h3>Built-in Functions</h3>
-					</section>
-
-					<section>
-						<h3>Built-in Functions</h3>
-						<p><small>Python (como muchos otros lenguajes) contiene tipos y funciones incorporadas (Built-in Functions) que siempre estarán disponibles para usarlas sin necesidad de acudir a <code>import</code>.</small></p>
-						<p><small>Puede consultar en <a href="https://docs.python.org/es/3/library/functions.html" target="_blank">la Documentación de Python</a> para tener un listado completo.</small></p>
-						<p><small>Algunas ya las hemos usado en clase por lo que le pueden resultar familiar.</small></p>
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h3>Consideraciones para escribir módulos</h3>
-					</section>
-
-					<section>
-						<h3>Documentación de los módulos</h3>
-						<p><small>Una buena práctica cuando se escribe un módulo es definir que es lo que hace y como se usa. Se usa la notación de comentarios con triple comillas dobles.</small></p>
-
-						<h4>modulo_clase.py</h4>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							"""Breve descripción del módulo
-							Puede contener instrucciones de como se usa
-							"""
-							
-							def suma(a, b):
-								""" Retorna la suma de dos operandos enviados por parámetro
-								"""
-								return a + b
-							
-							if (__name__ == '__main__'):
-								print(f"La suma es {suma(3,99)}") # Código "suelto"
-						</code></pre>
-
-
-					</section>
-
-					<section>
-						<h4>Para hacer en clase</h4>
-						<p><small>Ingrese al intérprete de Python escribiendo <code>python</code> en su consola. Una vez que tenga el prompt escriba <code>help(sum)</code></small></p>
-						<p><small>¿Qué ha pasado?</small></p>
-						<p><small>Copie y pegue el contenido de modulo_clase.py y grabelo en su computadora en una carpeta. Luego abra un intérprete de Python dentro de esa carpeta y escriba lo siguiente:</small></p>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							import modulo_clase.py
-							help(modulo_clase)
-						</code></pre>
-						<p><small>¿Qué ha pasado?</small></p>
-
-					</section>
-					
-				</section>
-
 				<section>
 					<h3>Ejercicio en clase</h3>
-					<p><small>Cree su propio módulo llamado <code>matematica</code> que contenga 4 funciones una para suma, resta, multiplicación y división respectivamente. Cada función debe retornar el resultado de la operación.</small></p>
-					<p><small>Luego escriba en otro archivo un programa que importe el módulo y solicite al usuario dos números y ejecute cada función informando el resultado por pantalla.</small></p>
-					<p><small>No olvide de realizar la documentación del módulo.</small></p>
+					<p>Descargue <a href="https://github.com/kity-linuxero/prog_CFP410/tree/main/practicas/files/clase8.txt">este archivo</a> y copielo en una carpeta. En esa misma carpeta, cree el archivo <code>clase8.py</code>. Luego lea el contenido del archivo línea por línea e imprimalo por pantalla marcando el número de línea de cada una seguida por un <code> - </code>.</p>
+					<pre data-id="code-animation"><code class="python" data-trim>
+						1 - Marisco
+						2 - Alimento
+						---
+					</code></pre>
 
 				</section>
 
-				<section>
+
+
+
+
+					
+					
+				<!-- <section>
 
 					
 					<section>
@@ -429,7 +379,7 @@
 
 					</section>
 
-				</section>
+				</section> -->
 				
 
 
@@ -438,7 +388,7 @@
 
 				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 					<h3>¡Fin de la clase!</h3>
-					<a href="./clase5.html"> < Ir a clase anterior</a><br>
+					<a href="./clase7.html"> < Ir a clase anterior</a><br>
 					
 
 				</section>
