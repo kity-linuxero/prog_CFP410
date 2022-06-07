@@ -13,7 +13,7 @@ Escriba una función que permita leer el contenido entero de un archivo de texto
 Escriba un programa que lea las primeras `n` filas de un archivo. El número `n` debe ser enviado por el usuario.
 
 ## Ejercicio 3
-Escriba una función que lea el archivo `mf1.txt` y cuente la cantidad de líneas que arrancan con la letra `T` e imprima la cantidad en pantalla.
+Escriba una función que lea el archivo `mf1.txt` y cuente la cantidad de líneas que arrancan con la letra `M` e imprima la cantidad en pantalla.
 
 Descargar archivo <a href="https://clases.concristian.com.ar/practicas/files/mf1.txt" download="mf1.txt">mf1.txt</a>
 
