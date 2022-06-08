@@ -1,9 +1,9 @@
 # Práctica 7
 
-Módulos y archivos
+### Módulos y archivos
 
-Para esta práctica ejercitaremos lo aprendido en las clases de módulos y archivos.
-Para eso, escriba un módulo `files.py` y agregue en el mismo una función por cada ejercicio que será llamado desde el programa principal con la instrucción `import`.
+Para esta práctica ejercitaremos lo aprendido en las clases de [módulos](https://clases.concristian.com.ar/clase7.html#/2) y [archivos](https://clases.concristian.com.ar/clase8.html#/2).
+Para eso, escriba un módulo `files.py` y agregue en el mismo una función por cada ejercicio (Ejercicios del 1 al 10) que será llamado desde el programa principal con la instrucción `import`.
 En caso que files.py se ejecute por su cuenta (sin importarlo desde otro archivo), debe imprimir un mensaje de qué es lo que hace el módulo y cada función.
 
 ## Ejercicio 1
@@ -37,10 +37,14 @@ Escriba la función `palabras_cortas()` que lea el archivo `mf1.txt` e imprima l
 Escriba una función que cuente la cantidad de letras mayúsculas que aparece en el archivo `mf1.txt`.
 
 ## Ejercicio 8
-Escriba una función que permita buscar una palabra dentro del archivo `mf1.txt` y que pueda reemplazarse por otra palabra enviada por el usuario. Se debe guardar en un nuevo archivo llamado `mf1-a.txt`
+Escriba una función que permita buscar una palabra dentro del archivo `mf1.txt` y que pueda reemplazarse por otra palabra enviada por el usuario. Se debe guardar en un nuevo archivo llamado `mf1-a.txt`. Utilice las funciones hechas en otros ejercicios, como puede ser el ejercicio 5.
 
 ```bash
-
+Escriba la palabra que desea buscar: Yo
+La palabra "Yo" aparece 10 veces
+Escriba la palabra que desee reemplazar por "Yo": Me
+Fue reemplazada la palabra 'Yo' por 'Me' 10 veces.
+El resultado se guardó en el archivo 'mf1-a.txt'
 ```
 
 ## Ejercicio 9
@@ -62,50 +66,3 @@ Ver que el contenido del archivo coincida con lo que ha ingresado por teclado.
 ## Ejercicio 10
 Escriba una función que modifique el contenido del archivo `mf1.txt` para que cada línea empiece con la letra en mayúscula.
 Una vez terminado, ejecute nuevamente el ejercicio n y vea como cambia el resultado.
-
-## Ejercicio 11
-¿Recuerda el ejercicio 11 de la práctica 4? El del 7 y medio. Agregue la opción que permita guardar el nombre del jugador y las veces que ganó la partida para tener un registro de los mas ganadores.
-
-También agregue una opción para que el programa informe el top 5 de ganadores.
-
-## Ejercicio 12
-
-### Archivos CSV
-Los archivos `.csv` (Comma separated values) que significa valores separados por comas, son un tipo de documento en formato abierto sencillo para representar datos en forma de tabla, en las que las columnas se separan por comas y las filas por saltos de líneas.
-
-Por ejemplo, si queremos representar la siguiente tabla en formato `csv` 
-
-| Marca     | Modelo | Año  | Precio  | Origen |
-|-----------|--------|------|---------|--------|
-| Ford      | Fiesta | 2013 | 2000.00 | México |
-| Chevrolet | Onix   | 2015 | 2190.12 | Brasil |
-| Peugeot   | 208 GT | 2019 | 2590.99 | Brasil |
-
-un archivo `CSV` que contiene esa info es el siguiente:
-
-```
-Marca,Modelo,Año,Precio,Origen
-Ford,Fiesta,2013,2000.00,México
-Chevrolet,Onix,2015,2190.12,Brasil
-Peugeot,208 GT,2019,2590.99,Brasil
-```
-
-Teniendo esto en cuenta, procese el archivo datos.csv y cargue los datos en una lista de diccionarios donde las keys de los diccionarios sean la primer línea del archivo y cada elemento de la lista corresponda a una línea del archivo (excepto la primera).
-
-Si usamos como ejemplo el archivo de arriba, un diccionario posible sería:
-
-```
-{
-    'Marca': 'Ford',
-    'Modelo': 'Fiesta',
-    'Año': '2013',
-    'Precio': '2000.00',
-    'Origen': 'México
-}
-
-```
-
-
-
-
-
