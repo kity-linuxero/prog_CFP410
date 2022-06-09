@@ -27,7 +27,7 @@ Escriba una función que permita contar la cantidad de veces que aparece una pal
 
 ```bash
 Escriba la palabra que desea buscar: Yo
-La palabra "Yo" aparece 10 veces
+La palabra "Yo" aparece 9 veces
 ```
 
 ## Ejercicio 6
@@ -41,9 +41,9 @@ Escriba una función que permita buscar una palabra dentro del archivo `mf1.txt`
 
 ```bash
 Escriba la palabra que desea buscar: Yo
-La palabra "Yo" aparece 10 veces
+La palabra "Yo" aparece 9 veces
 Escriba la palabra que desee reemplazar por "Yo": Me
-Fue reemplazada la palabra 'Yo' por 'Me' 10 veces.
+Fue reemplazada la palabra 'Yo' por 'Me' 9 veces.
 El resultado se guardó en el archivo 'mf1-a.txt'
 ```
 
