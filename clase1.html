@@ -449,7 +449,7 @@
 
 						<section>
 							<h3>Iteración<small> [while, for]</small></h3>
-							<p>Ejecutar un bloque de instrucciones mas de una vez. Puede saberse de ante mano o no</p>
+							<p>La iteración es la capacidad de ejecutar un bloque de sentencias de forma repetida.</p>
 							<img class="" data-src="./static/clase1/fig5.gif" alt="Figura 5: While">
 							<p class="fragment">Se puede entender como <strong>mientras</strong> (while) se cumpla la condición se repite.</p>
 							<p class="fragment">ó ejecutar <strong>n veces</strong> (for) un bloque de instrucciones en caso que se sepa de antemano. </p>
@@ -562,11 +562,20 @@
 
 						</section>
 
-
-
-						
-
-
+						<section>
+							<h3>Sentencia <code>break</code></h3>
+							<p><small>A veces no sabemos que es momento de terminar un bucle hasta que llegas a la mitad del cuerpo. En ese caso podemos utilizar la sentencia <code>break</code> para saltar hacia afuera del bucle.</small></p>
+							<p><small>Supongamos que queremos tomar la entrada del usuario hasta que se escriba 'listo'</small></p>
+							<pre data-id="code-animation"><code class="python" data-trim>
+								while True:
+									linea = input('Su texto: ')
+									if linea == 'listo':
+										break # Rompe el while
+									print(linea)
+								print('¡Listo!')
+							</code></pre>
+							<p><small>Como la condición del bucle es <code>True</code> siempre será verdadera y por lo tanto nunca corta. Salvo cuando se ejecuta la sentencia <code>break</code>.</small></p>					
+						</section>
 
 						<section>
 							<h3>Documentación de un algoritmo</h3>
