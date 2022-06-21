@@ -76,7 +76,7 @@ k!KKJVTP
 ## Ejercicio 3
 ### Diccionario de contraseñas
 
->Importante: cuando hablamos de diccionarios en este ejercicio no nos referimos a las estructuras de datos diccionarios vistas en el curso. Sino, simplemente a una lista de palabras o números.
+> __Importante:__ cuando hablamos de diccionarios en este ejercicio no nos referimos a las estructuras de datos diccionarios vistas en el curso. Sino, simplemente a una lista de palabras o números.
 
 Un reconocido ISP (proveedor de internet) de Argentina, durante mucho tiempo tuvo como contraseña de WiFi para sus routers, de forma predeterminada un patrón de números seguido del DNI del titular.
 Una técnica muy conocida para atacar redes WPA/WPA2 (a día de hoy es el estándar para proteger redes mas utilizado para redes WiFi) es obtener la PSK (la clave) cifrada, que, mediante un __diccionario de datos__  y un algoritmo se pueden ir probando una a una hasta llegar a la clave WiFi en texto plano.
@@ -100,7 +100,7 @@ Los patrones que se utilizaban eran: `004`, `011` o `044` seguido por un DNI. Po
 Como puede ver, simplemente son números generados consecutivamente.
 
 ### El programa a desarrollar
-Desarrolle un programa que permita generar un _diccionario de datos_ que dé al usuario la opción de elegir el prefijo a usar y luego pregunte desde que número empezar a generar y hasta qué número. Si el usuario no especifica el número se debe empezar por el DNI 00.000.000.
+Desarrolle un programa que permita generar un _diccionario de datos_ que dé al usuario la opción de elegir el prefijo a usar y luego pregunte desde que número empezar a generar y hasta qué número. Si el usuario no especifica el número se debe empezar por el DNI 00.000.000. Se deberá guardar en un archivo `dic.txt`.
 Se muesta a continuación un ejemplo de ejecución
 
 ```bash
@@ -113,10 +113,11 @@ Su opción: 1
 
 Elija el número para empezar a generar: 
 Elija el número donde termina de generar:
+¡Diccionario generado correctamente!
+Consulte el archivo dic.txt
 ```
 
-En dicho caso no se especificó nada, por lo que empezará de la siguiente manera:
-
+En dicho caso no se especificó nada, por lo que empezará de la siguiente manera `dic.txt`:
 ```
 00400000000
 00400000001
@@ -129,3 +130,5 @@ En dicho caso no se especificó nada, por lo que empezará de la siguiente maner
 ```
 
 Observe que cada línea debe tener 11 caracteres (3 del prefijo y 8 del número de DNI) se deben completar con 0 si es necesario. Para realizar esto, un compañero hizo una búsqueda por internet y encontró que se puede hacer de la siguiente manera: [link](https://www.delftstack.com/howto/python/python-leading-zeros/)
+
+> __Nota:__ Genere los valores directamente en el archivo. Si intenta grabarlos en una variable primero la PC puede llegar a colapsar por falta de RAM.
