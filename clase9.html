@@ -28,11 +28,11 @@
 					<h2>Clase 9</h2>
 					<h3>Contenido para hoy</h3>
 					<ul>
-						<li>Recursividad</li>
+						<li>Excepciones</li>
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<section>
 						<h2>Recursividad o recursión</h2>
 					</section>
@@ -62,7 +62,84 @@
 					</section>
 
 
+				</section> -->
+
+
+				<section>
+					<section>
+						<h2>Excepciones</h2>
+					</section>
+
+					<section>
+						<h3>Excepciones</h3>
+						<p><small>Una <strong>excepción</strong> es una indicación que se produjo un error o una situación anómala en el programa en <strong>tiempo de ejecución</strong>.</small></p>
+						<p><small>Como su nombre lo indica, se producen cuando la ejecución de una parte del programa no termina correctamente sino que termina de manera excepcional como consecuencia de una situación inesperada. Se suponen que las excepciones ocurren con poca frecuencia.</small></p>
+						<p><small>A estas alturas nos hemos encontrado con numerosas excepciones que tal vez simplemente ignorábamos o se lo atribuíamos a un error en nuestro código, pero no siempre es así. Nuestro código puede ser correcto y aún así, el programa puede dar alguna excepción.</small></p>
+						<p><small>A continuación veremos excepciones típicas para ir entendiendo el concepto.</small></p>
+
+					</section>
+
+					<section>
+						<h3>Excepciones (cont)</h3>
+						<p><small>Una excepción típica es intentar abrir en modo lectura un archivo que no existe. En tal caso la ejecución del programa dará un error y el programa terminará.</small></p>
+						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							archivo = open("datos.txt", 'r')
+							archivo.write("Agregamos una línea")
+							archivo.close()
+						</code></pre>
+
+						<p><small>Si el archivo <code>datos.txt</code> no existe, el error será el siguiente:</small></p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							FileNotFoundError: [Errno 2] No such file or directory: datos.txt
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Excepciones (cont)</h3>
+						<p><small>Supongamos que nos piden escribir una función <code>divide(a,b)</code> que tiene que retornar el valor de a dividido por b.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							def divide(a,b):
+								return a/b
+						</code></pre>
+						<p><small>Puede parecer que no hay problema, pero ¿Qué pasaría si b=0?.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							print (divide(8,2))
+							print (divide(8,0))
+						</code></pre>
+						<h4>Output</h4>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							4.0
+							ZeroDivisionError: division by zero
+						</code></pre>
+						<p class="fragment"><small>Es matemáticamente imposible dividir por cero en números reales, así que dará error.</small></p>
+						
+					</section>
+
+					<section>
+						<h3>Manejo de excepciones</h3>
+						<p><small>El <strong>manejo de excepciones</strong> (Exception handling) permite al programador crear aplicaciones tolerantes a fallos y robustas (resistente a errores). De manera que el programa se ejecuta y no termina de forma inesperada ante la aparición de excepciones.</small></p>
+						<p><small>Es importante aclarar que <strong>no todos los lenguajes soportan manejo de excepciones</strong>.</small></p>
+						
+						<p><small>Para que un lenguaje soporte excepciones. Debe tener algún mecanismo para:
+							<ul>
+								<li>Un modo de definirlas.</li>
+								<li>Una forma de alcanzarlas (invocarlas).</li>
+								<li>Una forma de manejarlas.</li>
+								<li>Un criterio de continuación.</li>
+							</ul>
+						</small>
+
+						<p><small>En casos donde el lenguaje no soporta el manejo de excepciones debe buscarse alguna forma definiendo procedimientos manualmente y agregando sentencias <code>if</code> donde podría ocurrir alguna excepción.</small></p>
+
+						</p>
+
+					</section>
 				</section>
+
+
 
 				<section>
 					<h3>Ejercicio en clase</h3>
