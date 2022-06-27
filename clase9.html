@@ -72,7 +72,7 @@
 
 					<section>
 						<h3>Excepciones</h3>
-						<p><small>Una <strong>excepción</strong> es una indicación que se produjo un error o una situación anómala en el programa en <strong>tiempo de ejecución</strong>.</small></p>
+						<p><small>Una <strong>excepción</strong> es una condición inesperada o inusual, que surge durante la ejecución del programa y no puede ser manejada en el contexto local.</small></p>
 						<p><small>Como su nombre lo indica, se producen cuando la ejecución de una parte del programa no termina correctamente sino que termina de manera excepcional como consecuencia de una situación inesperada. Se suponen que las excepciones ocurren con poca frecuencia.</small></p>
 						<p><small>A estas alturas nos hemos encontrado con numerosas excepciones que tal vez simplemente ignorábamos o se lo atribuíamos a un error en nuestro código, pero no siempre es así. Nuestro código puede ser correcto y aún así, el programa puede dar alguna excepción.</small></p>
 						<p><small>A continuación veremos excepciones típicas para ir entendiendo el concepto.</small></p>
@@ -80,7 +80,7 @@
 					</section>
 
 					<section>
-						<h3>Excepciones (cont)</h3>
+						<h3>Excepciones <small>(p2)</small></h3>
 						<p><small>Una excepción típica es intentar abrir en modo lectura un archivo que no existe. En tal caso la ejecución del programa dará un error y el programa terminará.</small></p>
 						
 						<pre data-id="code-animation"><code class="python" data-trim>
@@ -97,7 +97,7 @@
 					</section>
 
 					<section>
-						<h3>Excepciones (cont)</h3>
+						<h3>Excepciones <small>(p3)</small></h3>
 						<p><small>Supongamos que nos piden escribir una función <code>divide(a,b)</code> que tiene que retornar el valor de a dividido por b.</small></p>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
@@ -123,7 +123,7 @@
 						<p><small>El <strong>manejo de excepciones</strong> (Exception handling) permite al programador crear aplicaciones tolerantes a fallos y robustas (resistente a errores). De manera que el programa se ejecuta y no termina de forma inesperada ante la aparición de excepciones.</small></p>
 						<p><small>Es importante aclarar que <strong>no todos los lenguajes soportan manejo de excepciones</strong>.</small></p>
 						
-						<p><small>Para que un lenguaje soporte excepciones. Debe tener algún mecanismo para:
+						<p><small>Para que un lenguaje soporte excepciones debe proveer:
 							<ul>
 								<li>Un modo de definirlas.</li>
 								<li>Una forma de alcanzarlas (invocarlas).</li>
@@ -137,6 +137,80 @@
 						</p>
 
 					</section>
+
+					<section>
+						<h3>Manejo de excepciones <small>(p2)</small></h3>
+						<p><small>Existen dos modelos de ejecución de excepciones:</small></p>
+
+					<p><small><strong>Continuación:</strong> Cuando se produce una excepción la atiende el manejador de excepción y luego el código sigue desde la línea siguiente de donde se produjo la excepción.</small></p>
+					<p><small><strong>Terminación:</strong> Cuando se produce una excepción, termina el bloque de código donde se encontró la excepción, luego la atiende el manejador y el programa sigue desde fuera del bloque que la lanzó.</small></p>
+					<p><small>Los distintos lenguajes tienen sus particularidades y sentencias definidas para el manejo de excepciones. A fines prácticos veremos su tratamiento en Python.</small></p>
+
+						<small>
+							<ul>
+								<li>Continuación:
+									<ul><li><a href="https://es.wikipedia.org/wiki/PL/1" target="_blank">PL/1</a></li></ul>
+								</li>
+								<li>Terminación:
+									<ul>
+										<li>ADA</li>
+										<li>C++</li>
+										<li>Java</li>
+										<li>Python</li>
+										<li>PHP</li>
+									</ul>
+								</li>
+								
+							</ul>
+						</small>
+
+					</section>
+
+					<section>
+						<h3>Excepciones en Python</h3>
+						<p><small>Se manejan a través de los bloques <code>try except</code></small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
+							while True:
+								try:
+									x = int(input("Por favor ingrese un número: "))
+									break # Para "romper" el while
+								except ValueError:
+									print("Oops! No era válido. Intente nuevamente...")
+						</code></pre>
+						<p><small>Puede probar el código <a href="https://www.mycompiler.io/view/Bym8uc2Hhs2" target="_blank">aquí</a> ingresando distintos valores en el input. (Por defecto, toma los valores "Hola" y 99).</small></p>
+						
+
+					</section>
+					<section>
+						<h3>Excepciones en Python <small>(p2)</small></h3>
+						<p><small>La declaración try funciona de la siguiente manera:</small></p>
+						<small>
+							<ul>
+								<li>Primero se ejecuta el bloque <code>try</code> (el código que está entre <code>try</code> y <code>except</code>)</li>
+								<li>Si no ocurre ninguna excepción, el bloque <code>except</code> se saltea y termina la ejecución de la declaración <code>try</code>.</li>
+								<li>Si ocurre una excepción durante la ejecución del bloque <code>try</code>, el resto del bloque se saltea. Luego, si su tipo (en este caso el tipo es <code>ValueError</code>)coincide con la excepción nombrada luego de la palabra <code>except</code>, se ejecuta el bloque <code>except</code> y la ejecución continúa luego de la declaración <code>try</code> </li>
+								<li>Si ocurre una excepción pero que no coincide con el tipo esperado en el <code>except</code>, la excepción se pasa a las declaraciones <code>try</code> de "más afuera". Si no se encuentra nada que la maneje queda como una excepción no manejada y la ejecución termina mostrando la excepción.</li>
+							</ul>
+
+							<p>Es posible declarar varios bloques <code>except</code> para manejar varios tipos de excepciones.</p>
+						</small>
+					</section>
+
+					<section>
+						<h3>Excepciones en Python <small>(p3)</small></h3>
+						<p><small>El bloque <code>try except</code> se puede complementar opcionalmente con las sentencias <code>else</code> y <code>finally</code></small></p>
+						<small>
+							<ul>
+								<li><strong><code>else</code></strong>: Se ejecuta en caso que NO se haya producido una excepción.</li>
+								<li><strong><code>finally</code></strong>: Se ejecuta siempre. Haya ocurrido una excepción o no.</li>
+							</ul>
+						</small>
+
+						<p><small></small></p>
+
+					</section>
+
 				</section>
 
 
@@ -204,7 +278,6 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/zoom/zoom.js"></script>
-		<script src="js/egg.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
