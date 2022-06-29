@@ -29,6 +29,17 @@
 					<h3>Contenido para hoy</h3>
 					<ul>
 						<li>Excepciones</li>
+						<small>
+							<ul>
+								<li><a href="clase9.html#/2/1">Qué son las excepciones</a></li>
+								<li><a href="./clase9.html#/2/4">Manejo de excepciones</a></li>
+								<li><a href="./clase9.html#/2/6">Excepciones en Python</a></li>
+								<li><a href="./clase9.html#/2/11">Lanzar excepciones</a></li>
+								<li><a href="./clase9.html#/2/12">built-in exceptions</a></li>
+							</ul>
+						</small>
+						<li><a href="./clase9.html#/glosario">Glosario</a></li>
+						<li><a href="./clase9.html#/ejercicio">Ejercicio en clase</a></li>
 					</ul>
 				</section>
 
@@ -114,7 +125,7 @@
 							4.0
 							ZeroDivisionError: division by zero
 						</code></pre>
-						<p class="fragment"><small>Es matemáticamente imposible dividir por cero en números reales, así que dará error.</small></p>
+						<p class="fragment"><small>Es matemáticamente imposible dividir por cero en números reales por lo tanto la operación da error.</small></p>
 						
 					</section>
 
@@ -170,7 +181,7 @@
 						<h3>Excepciones en Python</h3>
 						<p><small>Se manejan a través de los bloques <code>try except</code></small></p>
 
-						<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
+						<pre data-id="code-animation"><code class="python" data-trim>
 							while True:
 								try:
 									x = int(input("Por favor ingrese un número: "))
@@ -199,6 +210,19 @@
 
 					<section>
 						<h3>Excepciones en Python <small>(p3)</small></h3>
+						<p><small>¿Qué sucede cuando una excepción no encuentra un manejador en su bloque <code>try except</code>?</small></p>
+						<small>
+						  <ul>
+							<li><strong>Busca estáticamente</strong>: Analiza si el <code>try</code> está contenido dentro de otro y si ese otro tiene un manejador para la excepción. Sino...</li>
+							<li><strong>Busca dinámicamente</strong>: Analiza quién lo llamó y analiza ahí.</li>
+							<li><strong>Si no se encuentra un manejador, se corta el proceso</strong> y larga el mensaje de error estándar.</li>
+							<li><strong>Levanta excepciones explícitamente con <code>raise</code></strong></li>
+						  </ul>
+						</small>
+					</section>
+
+					<section>
+						<h3>Excepciones en Python <small>(p4)</small></h3>
 						<p><small>El bloque <code>try except</code> se puede complementar opcionalmente con las sentencias <code>else</code> y <code>finally</code></small></p>
 						<small>
 							<ul>
@@ -206,46 +230,137 @@
 								<li><strong><code>finally</code></strong>: Se ejecuta siempre. Haya ocurrido una excepción o no.</li>
 							</ul>
 						</small>
+						<pre data-id="code-animation"><code class="python" data-trim>
+						try:
+							x = int(input("Por favor ingrese un número: "))
+						except ValueError as e:
+							print(f"Oops! No era válido.\nCódigo de error: {e}")
+						except:
+							print(f"Ha ocurrido un error inesperado")
+						else:
+							print("El proceso terminó sin error")
+						finally:
+							print("Fin del proceso")
+						</code></pre>
 
 						<p><small></small></p>
 
 					</section>
 
-				</section>
-
-
-
-				<section>
-					<h3>Ejercicio en clase</h3>
-					<p>Descargue <a href="./practicas/files/clase8.txt" download="clase8.txt">este archivo</a> y copielo en una carpeta. En esa misma carpeta, cree el archivo <code>clase8.py</code>. Luego lea el contenido del archivo línea por línea e imprimalo por pantalla marcando el número de línea de cada una seguida por un <code> - </code>.</p>
-					<pre data-id="code-animation"><code class="python" data-trim>
-						1 - Marisco
-						2 - Alimento
-						---
-					</code></pre>
-
-				</section>
-
-
-
-
-
-					
-					
-				<!-- <section>
-
-					
 					<section>
+						<h3>Excepciones en Java</h3>
+						<p><small>En Java se usan los bloques <code>try</code> y <code>catch</code>. Pero el funcionamiento es similar.</small></p>						
+						<pre data-id="code-animation"><code class="java" data-trim>
+							public class ExcDemo {
+								public static void main(String[] args) {
+									int nums[]=new int[4];
+									try {
+										System.out.println("Antes de la excepción.");
+										//generar una excepción de índice fuera de límites
+										nums[7]=10;
+									}catch (ArrayIndexOutOfBoundsException exc){
+										//Capturando la excepción
+										System.out.println("Índice fuera de los límites!");
+									} finally {
+									System.out.println("Después de la excepción.");
+									}
+								}
+							}
+							</code></pre>
+					</section>
+
+					<section>
+						<h3>Lanzar excepciones</h3>
+						<p><small>Es posible levantar o lanzar manualmente una excepción. En Python, se usa la instrucción <code>raise</code>. Raise se usa en diversos lenguajes. En Java, por ejemplo, lanzaremos una excepción con las instrucciones <code>throws</code> o <code>throw</code>.</small></p>
+						<h4>Ejemplo lanzar excepciones</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							raise NameError("Información de la excepción")	
+						</code></pre>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							raise ZeroDivisionError	
+						</code></pre>
+
+						<p class="fragment"><small>Es posible crear excepciones personalizadas, pero lo veremos mas adelante en el curso.</small></p>
+						<p class="fragment"><small>¿Para qué puede ser útil lanzar excepciones? ¿Si justamente lo que queremos es evitarlas?</small></p>
+						<p class="fragment"><small>¿Por qué no poner todo el código sobre un <code>try except</code> para capturar toda posible excepción?</small></p>
+
+					</section>
+
+					<section>
+						<h3>Listado de built-in exceptions</h3>
+						<p>Algunas built-in exceptions</p>
+						<small>
+						<ul>
+							<li>
+								<strong><code>ModuleNotFoundError</code></strong>: Se lanza cuando se intenta importar un módulo que no es encontrado.
+							</li>
+							<li>
+								<strong><code>KeyError</code></strong>: Se lanza cuando se intenta acceder a la key inexistente de un diccionario.
+							</li>
+							<li>
+								<strong><code>ZeroDivisionError</code></strong>: Se lanza cuando se intenta dividir por cero.
+							</li>
+							<li>
+								<strong><code>FileNotFoundError</code></strong>: Se lanza cuando se intenta abrir un archivo que no es encontrado en el path indicado.
+							</li>
+							<li>
+								<strong><code>SyntaxError</code></strong>: Se  lanza cuando hay un error de sintaxis.
+							</li>
+							<li>
+								<strong><code>IndentationError</code></strong>: Es un tipo de <code>SyntaxError</code>, que se lanza específicamente cuando se encuentra un error de identación en el código. <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" target="_blank">Ver herencia de excepciones</a>
+							</li>
+							<li>
+								<strong><code>TypeError</code></strong>: Se lanza cuando se aplica una función u operación no encontrada para el tipo. 
+							</li>
+						</ul>
+			
+					</small>
+					<p><small>Hay un listado de built-in exceptions que lo pueden consultar en <a href="https://docs.python.org/es/3/library/exceptions.html">la documentación</a></small></p>
+					<p><small>El listado de excepciones se centraron en la versión de 3.10 de Python. Para los demás lenguajes pueden ser similares los nombres.</small></p>
+
+					</section>
+
+					<section>
+						<h3>Ejemplo usando excepciones</h3>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							FILE= "archivo.txt"
+							try:
+								with open(FILE, 'r') as archivo:
+									for linea in archivo:
+										print (linea, end='')
+							except FileNotFoundError:
+								print("No se ha encontrado el archivo")
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+				</section>
+
+		
+					<section id="glosario">
 						<h3>Glosario de clase</h3>
 						<ul>
-							<li><strong>Path:</strong><small>Un path es una ruta en un file-system (Estructura de directorios). Un ejemplo de un path, puede ser <code>C:\curso\python\modulos</code> para una ruta absoluta en Windows o <code>..\python\modulos</code> para una ruta relativa.<br>Otro ejemplo, para rutas estilo Unix (Linux, Mac) podría ser <code>/home/usuario/python/modulos</code> para un path absoluto y <code>./python/modulos</code> para una ruta relativa.</small>
-							</li>
-							<li><strong>Módulo:</strong><small>Un módulo es un archivo que consta de código Python. Un módulo puede definir funciones, variables y clases. Un módulo también puede incluir código ejecutable.</small></li>							
+							<li><strong>Excepción:</strong><small> Condición inesperada o inusual, que surge durante la ejecución del programa y no puede ser manejada en el contexto local.</small></li>
+							<li><strong>Manejo de excepciones:</strong><small> Los lenguajes que soportan manejo de excepciones, proveen alguna forma que podamos controlar el comportamiento del programa cuando se produce una excepción.</small></li>
+							<li><strong>Manejador:</strong><small> Se refiere al bloque de código encargado para tratar una excepción. El bloque de código está entre <code>try except</code> </small></li>
+							<li><strong>Modelo de terminación:</strong><small> Es una de las técnicas que usa un lenguaje para actuar frente a una excepción. El modelo de terminación indica que el programa termina el bloque de ejecución donde se produjo la excepción para ir directamente al manejador y luego NO sigue por la siguiente línea de código se quedó, sino que la ejecución sigue luego del bloque que produjo la excepción. </small></li>						
 						</ul>
 
 					</section>
 
-				</section> -->
+					<section id="ejercicio">
+						<h3>Ejercicio en clase</h3>
+
+	
+					</section>
+
+				
 				
 
 
@@ -262,6 +377,7 @@
 					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 						<h2>Bibliografia</h2>
 						
+						<p><a href="https://docs.python.org/3/">Python oficial documentation</a> </p>
 						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
 						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
 						<!-- <h3>Referencias</h3> -->
