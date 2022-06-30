@@ -117,3 +117,7 @@ log/*.log
 tmp/**
 node_modules/
 
+# Mis Tests
+tests
+
+
