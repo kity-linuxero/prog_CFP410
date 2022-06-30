@@ -31,15 +31,17 @@
 						<li>Excepciones</li>
 						<small>
 							<ul>
-								<li><a href="clase9.html#/2/1">Qué son las excepciones</a></li>
-								<li><a href="./clase9.html#/2/4">Manejo de excepciones</a></li>
-								<li><a href="./clase9.html#/2/6">Excepciones en Python</a></li>
-								<li><a href="./clase9.html#/2/11">Lanzar excepciones</a></li>
-								<li><a href="./clase9.html#/2/12">built-in exceptions</a></li>
+								<li><a href="clase9.html#/excepciones">Qué son las excepciones</a></li>
+								<li><a href="clase9.html#/handling">Manejo de excepciones</a></li>
+								<li><a href="clase9.html#/en_python">Excepciones en Python</a></li>
+								<li><a href="clase9.html#/built-in">built-in exceptions</a></li>
+								<li><a href="clase9.html#/raise">Lanzar excepciones</a></li>
+								<li><a href="clase9.html#/ejemplos">Ejemplos</a></li>
 							</ul>
 						</small>
-						<li><a href="./clase9.html#/glosario">Glosario</a></li>
-						<li><a href="./clase9.html#/ejercicio">Ejercicio en clase</a></li>
+						
+						<li><a href="clase9.html#/ejercicio">Ejercicio en clase</a></li>
+						<li><a href="clase9.html#/glosario">Glosario</a></li>
 					</ul>
 				</section>
 
@@ -81,7 +83,7 @@
 						<h2>Excepciones</h2>
 					</section>
 
-					<section>
+					<section id="excepciones">
 						<h3>Excepciones</h3>
 						<p><small>Una <strong>excepción</strong> es una condición inesperada o inusual, que surge durante la ejecución del programa y no puede ser manejada en el contexto local.</small></p>
 						<p><small>Como su nombre lo indica, se producen cuando la ejecución de una parte del programa no termina correctamente sino que termina de manera excepcional como consecuencia de una situación inesperada. Se suponen que las excepciones ocurren con poca frecuencia.</small></p>
@@ -105,6 +107,8 @@
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							FileNotFoundError: [Errno 2] No such file or directory: datos.txt
 						</code></pre>
+
+						<p><small>Prestar atención que el error es <code>FileNotFoundError</code>. Mas adelante veremos como tratar ese error.</small></p>
 					</section>
 
 					<section>
@@ -125,11 +129,11 @@
 							4.0
 							ZeroDivisionError: division by zero
 						</code></pre>
-						<p class="fragment"><small>Es matemáticamente imposible dividir por cero en números reales por lo tanto la operación da error.</small></p>
+						<p class="fragment"><small>En los números naturales, enteros y reales, la división por cero no posee un valor definido por lo tanto la operación da error.</small></p>
 						
 					</section>
 
-					<section>
+					<section id="handling">
 						<h3>Manejo de excepciones</h3>
 						<p><small>El <strong>manejo de excepciones</strong> (Exception handling) permite al programador crear aplicaciones tolerantes a fallos y robustas (resistente a errores). De manera que el programa se ejecuta y no termina de forma inesperada ante la aparición de excepciones.</small></p>
 						<p><small>Es importante aclarar que <strong>no todos los lenguajes soportan manejo de excepciones</strong>.</small></p>
@@ -177,11 +181,11 @@
 
 					</section>
 
-					<section>
+					<section id="en_python">
 						<h3>Excepciones en Python</h3>
 						<p><small>Se manejan a través de los bloques <code>try except</code></small></p>
 
-						<pre data-id="code-animation"><code class="python" data-trim>
+						<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
 							while True:
 								try:
 									x = int(input("Por favor ingrese un número: "))
@@ -269,25 +273,9 @@
 							</code></pre>
 					</section>
 
-					<section>
-						<h3>Lanzar excepciones</h3>
-						<p><small>Es posible levantar o lanzar manualmente una excepción. En Python, se usa la instrucción <code>raise</code>. Raise se usa en diversos lenguajes. En Java, por ejemplo, lanzaremos una excepción con las instrucciones <code>throws</code> o <code>throw</code>.</small></p>
-						<h4>Ejemplo lanzar excepciones</h4>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							raise NameError("Información de la excepción")	
-						</code></pre>
 
-						<pre data-id="code-animation"><code class="python" data-trim>
-							raise ZeroDivisionError	
-						</code></pre>
 
-						<p class="fragment"><small>Es posible crear excepciones personalizadas, pero lo veremos mas adelante en el curso.</small></p>
-						<p class="fragment"><small>¿Para qué puede ser útil lanzar excepciones? ¿Si justamente lo que queremos es evitarlas?</small></p>
-						<p class="fragment"><small>¿Por qué no poner todo el código sobre un <code>try except</code> para capturar toda posible excepción?</small></p>
-
-					</section>
-
-					<section>
+					<section id="built-in">
 						<h3>Listado de built-in exceptions</h3>
 						<p>Algunas built-in exceptions</p>
 						<small>
@@ -321,8 +309,32 @@
 
 					</section>
 
-					<section>
-						<h3>Ejemplo usando excepciones</h3>
+					<section id="raise">
+						<h3>Lanzar excepciones</h3>
+						<p><small>Es posible levantar o lanzar manualmente una excepción. En Python, se usa la instrucción <code>raise</code>. En Java, se lanza una excepción con las instrucciones <code>throws</code> o <code>throw</code>.</small></p>
+						<h4>Ejemplo lanzar excepciones</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							raise NameError("Información de la excepción")	
+						</code></pre>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							raise ZeroDivisionError	
+						</code></pre>
+
+						<!-- <h4>Crear una excepcion personalizada*</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class MiErrorPersonalizado(Exception): pass
+							# código **
+							raise MiErrorPersonalizado('Este es un error personalizado')
+						</code></pre> -->
+						
+						<p class="fragment"><small>¿Para qué puede ser útil lanzar excepciones? ¿Si justamente lo que queremos es evitarlas?. <a href="clase9.html#/ejemplo_raise">Ver un ejemplo</a></small></p>
+											
+						<p class="fragment"><small>¿Por qué no poner todo el código sobre un <code>try except</code> para capturar toda posible excepción?</small></p>
+
+					</section>
+
+					<section id="ejemplos">
+						<h4>Ejemplo para abrir un archivo</h4>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							FILE= "archivo.txt"
@@ -334,6 +346,39 @@
 								print("No se ha encontrado el archivo")
 						</code></pre>
 
+						<h4>Ejemplo para una calculadora</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							try:
+								a = int(input("Ingrese un valor para a:"))
+								b = int(input("Ingrese un valor para b:"))
+								c = a / b
+								print(f"a / b = {c}")
+							except(ValueError, ZeroDivisionError):
+								print("Ha ocurrido un error")
+						</code></pre>
+
+					</section>
+
+					<section id="ejemplo_raise">
+						<h4>Ejemplo usando raise</h4>
+						<p><small>El programa dará error si se envía una tasa de interés mayor al 100%.</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							def calcular_interes(monto, años, tasa_interes):
+								try:
+									if tasa_interes > 100:
+										raise ValueError(tasa_interes)
+									interes = (monto * años * tasa_interes) / 100
+									print(f'El interés ganado es: {interes}')
+									return interes
+								except ValueError:
+									print(f'Tasa de interés fuera de rango: {tasa_interes}')
+						
+							calcular_interes(1000, 3, 8)		
+							calcular_interes(1000, 3, 101)
+						</code></pre>
+						<p><small>Siempre que sea posible, es deseable usar las built-in exceptions para dar una estandarización al manejo de errores de nuestra aplicación.</small></p>
+
 					</section>
 
 					<section>
@@ -342,9 +387,21 @@
 
 				</section>
 
+				<section id="ejercicio">
+					<h3>Ejercicio en clase</h3>
+					<p><small> Escriba un módulo llamado <code>calcu_cfp.py</code> que contenga las funciones <code>suma(a,b)</code>, <code>resta(a,b)</code>, <code>producto(a,b)</code>, <code>divide(a,b)</code>.
+						Cada función debe recibir dos parámetros para realizar las operaciones descritas y debe retornar el valor. Si llega a haber algún error, debe informarlo con la excepción correspondiente.</small></p>
+					
+					<p><small>Escriba un programa llamado <code>ej_clase9.py</code> que importe el módulo <code>calcu_cfp</code> y le pida al usuario dos valores y una operación para realizar entre ellos.</small></p>
+					<p><small>El programa debe ser robusto para no interrumpirse inesperadamente por un error y debe informar que "algo malo ha ocurrido" pero sin finalizar, dando la oportunidad al usuario de corregir los datos que haya ingresado mal.</small></p>
+
+					<p><small>Intercambie el módulo con el o la compañera que está a su lado para comprobar que su módulo funciona en tu programa.</small></p>
+
+				</section>
+
 		
 					<section id="glosario">
-						<h3>Glosario de clase</h3>
+						<h3>Glosario</h3>
 						<ul>
 							<li><strong>Excepción:</strong><small> Condición inesperada o inusual, que surge durante la ejecución del programa y no puede ser manejada en el contexto local.</small></li>
 							<li><strong>Manejo de excepciones:</strong><small> Los lenguajes que soportan manejo de excepciones, proveen alguna forma que podamos controlar el comportamiento del programa cuando se produce una excepción.</small></li>
@@ -354,11 +411,7 @@
 
 					</section>
 
-					<section id="ejercicio">
-						<h3>Ejercicio en clase</h3>
 
-	
-					</section>
 
 				
 				
@@ -369,22 +422,24 @@
 
 				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 					<h3>¡Fin de la clase!</h3>
-					<a href="./clase7.html"> < Ir a clase anterior</a><br>
-					<a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica7.md"> < Ir a la práctica 7</a><br>
+					<a href="./clase8.html"> < Ir a clase anterior</a><br>
+					<!-- <a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica7.md"> < Ir a la práctica 7</a><br> -->
 					
 
 				</section>
 					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 						<h2>Bibliografia</h2>
+						<small>
 						
 						<p><a href="https://docs.python.org/3/">Python oficial documentation</a> </p>
 						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
 						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
+						<p><a href="https://pynative.com/python-exceptions">PyNative</a></p>
 						<!-- <h3>Referencias</h3> -->
 						<h3>Recursos</h3>
 						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
 						<p><a href="https://www.mycompiler.io/new/python" target="_blank">My Compiler IDE Online</a></p>
-						
+					</small>
 					</section>
 			</div>
 		</div>
