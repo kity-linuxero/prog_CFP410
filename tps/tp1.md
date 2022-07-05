@@ -19,7 +19,7 @@ Tenga en cuenta lo siguiente:
 - Deben eliminarse las tildes. *
 - Deben eliminarse las comas, puntos y símbolos especiales.*
 
-* Se proveerá una función para que 
+  ** Se proveerá una función que les facilitará este punto.
 
 ### Primera etapa
 
