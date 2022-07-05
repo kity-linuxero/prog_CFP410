@@ -18,6 +18,7 @@ Tenga en cuenta lo siguiente:
 - Para el proceso de las palabras deben pasarse todas a minúsculas.
 - Deben eliminarse las tildes. *
 - Deben eliminarse las comas, puntos y símbolos especiales.*
+- El programa debe ser lo suficientemente robusto para contemplar, por ejemplo si el diccionario no existe y en tal caso informar del error sin cerrarse inesperadamente.
 
   ** Se proveerá una función que les facilitará este punto.
 
