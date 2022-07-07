@@ -30,7 +30,7 @@ Desarrolle un programa que permita que el usuario escriba texto _en modo interac
 ¡Bienvenidx al TP1 del curso de programación!
 Usted ha ingresado al modo interactivo.
 
-> Hola, estoy probando un texto de prueba. A ver si funciona.
+> Hola, esto es un texto de prueba.
 > Texto, texto y mas texto... kljakljdja fasdfas
 > @fin
 
@@ -56,8 +56,8 @@ python tp1.py
 ¡Bienvenidx al TP1 del curso de programación!
 Usted ha ingresado al modo interactivo.
 
-> Escribiendo un texto de prueba para verificar el funcionamiento.
-> Debe poder leer varias líneas.
+> Esto es un texto de prueba para verificar el funcionamiento.
+> Debe poder leer un texto así.
 > prueva.
 > @fin
 
@@ -89,8 +89,8 @@ python tp1.py
 ¡Bienvenidx al TP1 del curso de programación!
 Usted ha ingresado al modo interactivo.
 
-> Escribiendo un texto de prueba para verificar el funcionamiento.
-> Debe poder leer varias líneas.
+> Esto es un texto de prueba para verificar el funcionamiento.
+> Debe poder leer un texto así.
 > prueva.
 > @fin
 
@@ -115,4 +115,4 @@ El objetivo de esta memoria caché es mejorar el rendimiento de la aplicación. 
 
 Debe entregarse lo que tenga hasta la semana de las vacaciones de invierno. No hace falta que esté completamente terminadas todas las etapas, pero haga hasta donde pueda.
 
-Enviar un mensaje privado por Slack la URL del repositorio de Github donde subió el trabajo práctico. El repositorio debe tener un archivo readme.md indicando su funcionamiento básico y cuestiones que considere que el instructor deba tener en cuenta para comprender el código y hacerlo funcionar.
+Enviar un mensaje privado por Slack la URL del repositorio de Github donde subió el trabajo práctico. El repositorio el repositorio debe ser de acceso público y debe tener un archivo readme.md indicando su funcionamiento básico y cuestiones que considere que el instructor deba tener en cuenta para comprender el código y hacerlo funcionar.
