@@ -212,7 +212,7 @@ Promedio en minutos: 68,2 minutos por día
 
 Implemente un reloj en español en base a una hora enviada por el usuario. Si el usuario no manda ningún horario, debe tomar la hora actual. Por ejemplo:
 
-| Hora | Expresion español      |
+| Hora | Expresión español      |
 |------|------------------------|
 | 6:00 | las seis               |
 | 6:05 | las seis y cinco       |
