@@ -143,7 +143,7 @@ El formato de fecha/hora utiliza caracteres específicos para indicar formatos. 
 
 [Documentación strftime](https://docs.python.org/es/3/library/time.html#time.strftime)
 
-El formato en `datetime` funciona de forma inversa de manera que puede formatear desde un string hacia una fecha. Vea el siguiente ejemplo:
+El formato en `datetime` funciona de forma inversa de manera que puede formatear desde un string hacia una fecha. Esta vez, se usa `strptime(<fecha>, 'formato')` en vez de `strftime()`. Vea el siguiente ejemplo:
 
 ```python
 from datetime import datetime
@@ -163,7 +163,92 @@ Por favor ingrese su fecha de nacimiento en formato dd.mm.yyyy: 12.12.2001
 Naciste en este milenio.
 ```
 
+# Marca temporal (Timestamp)
 
+Un _timestamp_ o marca temporal, es una secuencia de caracteres que denotan la hora y fecha que ocurrió un evento determinado. Por lo general, es muy útil para el registro de eventos. Ya que es menos costoso tener un timestamp frente a lo que podría ser tener una fecha y hora completa.
+
+## Tiempo Unix (Unix Epoch)
+
+Tiempo Unix o Tiempo POSIX es un sistema para la descripción de instantes de tiempo: se define _como la cantidad de tiempo transcurridos desde la medianoche UTC del 1 de enero de 1970_. Esa cantidad de tiempo es expresada por lo general en segundos o microsegundos. Dependerá de la precisión que se desea manejar. 
+
+Es universalmente usado no solo en sistemas operativos tipo-Unix, sino también en muchos otros sistemas computacionales como algunas bases de datos. Dicho UNIX timestamp es de amplio uso para ordenación y seguimiento de información en aplicaciones distribuidas y aplicaciones dinámicas.
+
+## Timestamp en Python
+
+### Datetime a timestamp
+
+Podemos usar el ya mencionado módulo `datetime` para registrar _timestamps_. El _método_ `timestamp()` retorna un timestamp POSIX correspondiente a una instancia de datetime. El valor retornado es un `float`.
+
+```python
+from datetime import datetime
+
+# Registra la fecha y hora actual
+dt = datetime.now()
+
+# Convirtiendo a timestamp
+ts = datetime.timestamp(dt)
+
+print("La fecha y hora actual es:", dt)
+print("El timestamp es:", ts)
+```
+
+```bash
+La fecha y hora actual es: 2022-08-02 21:13:15.673305
+El timestamp es: 1659474795.673305
+```
+
+### Timestamp a datetime
+
+Es posible realizar la operación inversa. Por lo general, se usa el timestamp para registrar el evento y que sea el timestamp lo que se graba en la base de datos, archivo, etc y luego sea convertido el valor a una fecha _human-readable_ para mostrar.
+
+```python
+from datetime import datetime
+
+# timestamp
+ts = 1659475157
+
+# Convierte a datetime
+dt = datetime.fromtimestamp(ts)
+print("La fecha y hora es:", dt)
+```
+
+```bash
+La fecha y hora es: 2022-08-02 21:19:17
+```
+
+>A fines prácticos no se ha contemplado la zona horaria por lo que la fecha y hora puede no coincidir con la fecha y hora de nuestra zona.
+
+## Timestamp a String
+
+Es posible aplicar formatos como hemos visto con datetime usando el método `strftime()`. Para esto se debe convertir el `timestamp` primero a `datetime` y proceder de la misma manera como hemos visto [anteriormente](#formato-de-fecha-y-hora).
+
+```python
+from datetime import datetime
+
+timestamp = 1659475157
+# Convertir a datetime
+date_time = datetime.fromtimestamp(timestamp)
+
+# Convierte el timestamp a string en formato dd-mm-yyyy HH:MM:SS
+str_date_time = date_time.strftime("%d-%m-%Y, %H:%M:%S")
+print("Resultado 1:", str_date_time)
+
+# Convierte el timestamp a string en formato dd nombre_mes, yyyy
+str_date = date_time.strftime("%d %B, %Y")
+print("Resultado 2:", str_date)
+
+# Convierte el timestamp en formato HH:AM/PM MM:SS
+str_time = date_time.strftime("%I%p %M:%S")
+print("Resultado 3:", str_time)
+```
+
+```bash
+Resultado 1: 02-08-2022, 21:19:17
+Resultado 2: 02 August, 2022
+Resultado 3: 09PM 19:17
+```
+
+Herramienta útil: [Epoch converter online](https://www.epochconverter.com/)
 
 # Ejercicios
 
@@ -172,11 +257,15 @@ Naciste en este milenio.
 
 Escriba un programa que pregunte al usuario su fecha de nacimiento y calcule la edad. 
 
-**Easter egg:** Si el día del cumpleaños coincide con el día en que está corriendo el programa debe saludarlo con un felíz cumpleaños. Puede usar algo creativo de [ASCII Art](https://www.asciiart.eu/holiday-and-events/birthdays)
+**[Easter egg:](https://es.wikipedia.org/wiki/Huevo_de_pascua_(virtual))** Si el día del cumpleaños coincide con el día en que está corriendo el programa debe saludarlo con un felíz cumpleaños.
+
+Puede usar algo creativo de [ASCII Art](https://www.asciiart.eu/holiday-and-events/birthdays).
+
 
 ## Registro de horas de pantalla
 
 Escriba un programa para registrar la cantidad de tiempo que un usuario ha pasado frente a una pantalla durante un período de tiempo específico y guarde la data en un archivo llamado `registro-dia-mes-año.txt`.
+
 El día, mes y año del nombre del archivo debe corresponder a la fecha inicial.
 
 ```bash
@@ -210,7 +299,9 @@ Promedio en minutos: 68,2 minutos por día
 
 ## Reloj en español
 
-Implemente un reloj en español en base a una hora enviada por el usuario. Si el usuario no manda ningún horario, debe tomar la hora actual. Por ejemplo:
+Implemente un reloj en español en base a una hora enviada por el usuario. Si el usuario no manda ningún horario, debe tomar la hora actual.
+
+Por ejemplo:
 
 | Hora | Expresión español      |
 |------|------------------------|
@@ -222,6 +313,7 @@ Implemente un reloj en español en base a una hora enviada por el usuario. Si el
 | 6:40 | las siete menos veinte |
 | 6:45 | las siete menos cuarto |
 | 6:50 | las siete menos diez   |
+| 6:49 | las siete menos diez*  |
 
 
 ### Ejemplo de ejecución
@@ -236,10 +328,50 @@ Es la una y media
 Ingrese una hora: 1:45
 Son las dos menos cuarto
 --
+Ingrese una hora: 1:43
+Son las dos menos cuarto
+--
 Ingrese una hora: 1:00
 Es la una
 ```
 
+Para simplificar la implementación redondee los minutos (para abajo o para arriba según prefiera) de manera que si el minuto es, por ejemplo, 44 el texto equivale a _"menos cuarto"_ o si es y 49 el texto sea _"menos diez"_.
+
 Ref:
 - [Hora en español](https://espanol.lingolia.com/es/vocabulario/numeros-fechas-horas/horas)
 - [Ejemplos de hora](https://www.quia.com/jg/12243list.html)
+
+
+## Registro de asistencia
+
+Escriba un programa que permita registrar el horario de una serie de empleadxs a medida que van llegando hasta que llegue el empleado "$fin". El registro debe guardarse en un archivo llamado `asistencia-dd-mm-YYYY.csv` con formato csv. Use _timestamp_ para registrar los eventos de asistencia. 
+
+Ejemplo:
+
+```bash
+- Registro de fichaje para el día 02-08-2022 -
+
+Ingrese nombre de empleadx: David
+Se registró el ingreso de David a las 08:01:00
+---
+Ingrese nombre de empleadx: Daniel
+Se registró el ingreso de David a las 08:02:56
+--
+Ingrese nombre de empleadx: Roxana
+Se registró el ingreso de Roxana a las 08:04:32
+--
+Ingrese nombre de empleadx: $fin
+
+Finalizó el fichaje de empleadxs.
+
+```
+
+El contenido del archivo `asistencia-02-08-2022.csv` debe ser similar a este.
+
+```
+1659427260,David
+1659427376,Daniel
+1659427472,Roxana
+```
+
+>**Importante:** Es probable que no haya correlación entre las fechas registradas y la fecha actual. Eso puede darse por la diferencia entre la _zona horaria_ (_time zone_ o _tz_). No es requisito de este laboratorio registrarlo en la zona horaria de Argentina, es opcional.
