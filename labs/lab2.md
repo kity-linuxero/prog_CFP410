@@ -266,7 +266,7 @@ Puede usar algo creativo de [ASCII Art](https://www.asciiart.eu/holiday-and-even
 
 Escriba un programa para registrar la cantidad de tiempo que un usuario ha pasado frente a una pantalla durante un período de tiempo específico y guarde la data en un archivo llamado `registro-dia-mes-año.txt`.
 
-El día, mes y año del nombre del archivo debe corresponder a la fecha inicial.
+El día, mes y año del nombre del archivo debe corresponder a la fecha inicial. La fecha inicial debe ser especificada por el usuario.
 
 ```bash
 Fecha inicial (formato dd.mm.yyyy): 21.12.2021 
