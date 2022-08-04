@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Programación</title>
+		<link rel="stylesheet" href="css/egg.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section  data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					
+					<h2>Introducción a la programación</h2>
+				</section>
+
+				<section>
+					<h2>Clase 9</h2>
+					<h3>Contenido para hoy</h3>
+					<ul>
+						<li>Excepciones</li>
+						<small>
+							<ul>
+								<li><a href="clase9.html#/excepciones">Qué son las excepciones</a></li>
+								<li><a href="clase9.html#/handling">Manejo de excepciones</a></li>
+								<li><a href="clase9.html#/en_python">Excepciones en Python</a></li>
+								<li><a href="clase9.html#/built-in">built-in exceptions</a></li>
+								<li><a href="clase9.html#/raise">Lanzar excepciones</a></li>
+								<li><a href="clase9.html#/ejemplos">Ejemplos</a></li>
+							</ul>
+						</small>
+						
+						<li><a href="clase9.html#/ejercicio">Ejercicio en clase</a></li>
+						<li><a href="clase9.html#/glosario">Glosario</a></li>
+					</ul>
+				</section>
+
+				
+
+
+				<section>
+					<section id="poo">
+						<h3>Introducción a la Programación Orientada a objetos</h3>
+					</section>
+
+					<section id="poo1">
+						<h3>Programación orientada a objetos</h3>
+						<p><small>La <strong>Programación orientada a Objetos</strong> (POO) es un <strong>paradigma</strong> de programación, es decir, un modelo o un estilo de programación que nos da unas guías sobre cómo trabajar con él. Se basa en el <strong>concepto de clases y objetos</strong>. Este tipo de programación se utiliza para estructurar un programa de software en piezas simples y reutilizables de clases para crear instancias individuales de objetos. </small></p>
+						<p><small>Con el paradigma de Programación Orientado a Objetos lo que buscamos es dejar de centrarnos en la lógica pura de los programas, para empezar a pensar en objetos, lo que constituye la base de este paradigma. Esto nos ayuda a poder modelar objetos de la vida real o abstractos con su comportamiento y características de forma directa hacia un lenguaje de programación.</small></p>
+
+					</section>
+
+					<section id="poo2">
+						<h3>Programación orientada a objetos<small></small></h3>
+						<p><small>La Programación Orientada a objetos permite que el código sea reutilizable, organizado y fácil de mantener. Sigue el principio de desarrollo de software utilizado por muchos programadores <strong>DRY</strong>(Don't Repeat Yourself) «entre otros principios», para evitar duplicar el código y crear de esta manera programas eficientes. Además, evita el acceso no deseado a los datos o la exposición de código mediante la <strong>encapsulación</strong> y la <strong>abstracción</strong>, de la que hablaremos en detalle más adelante.</small></p>
+						<p><small>Un programa orientado a objetos puede verse como: «Un conjunto de <strong>objetos</strong> que colaboran enviándose <strong>mensajes</strong>».</small></p>
+					</section>
+
+					<section id="poo3">
+						<h3>Conceptos de POO</h3>
+						<p><small>La POO introduce nuevos conceptos, que amplían los conceptos vistos hasta el momento. Entre ellos se destacan lo siguientes:</small></p>
+			
+						<ul>
+							<li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica los datos que va a poseer el objeto (atributos) y el comportamiento (métodos) que tendrá el mismo. </small></li>
+							<li><strong>Objeto</strong><small>Es una <strong>instancia</strong> de una clase. Es decir, un objeto creado a partir de la plantilla de una clase definida. Un objeto contiene <em>atributos</em> (datos) y un <em>comportamiento</em> provisto por los <em>métodos</em> (funciones) definidos en la clase de la cual es instancia.</small></li>
+							<li><strong>Método</strong><small>Es la implementación en código de un <strong>mensaje</strong> que el objeto sabe responder. Definen el comportamiento del objeto y por lo tanto es lo que un objeto puede o es capaz de hacer. </small></li>
+							<li><strong>Atributo o propiedad</strong><small>Es un dato que se define en la clase y que serán los datos que tendrá el objeto. El valor de los datos pueden cambiar durante la ejecución del programa.</small></li>
+						</ul>
+				
+						
+					</section>
+
+					<section>
+						<h3>Conceptos de POO<small>(p2)</small></h3>
+						<p><small>Por ejemplo, una clase para representar animales puede llamarse "animal" y tener una serie de <strong>atributos</strong>, como "nombre" y "edad" (que normalmente son propiedades), y una serie con los comportamientos que estos pueden tener, como caminar o comer, y que a su vez se implementan como <strong>métodos</strong> en la clase (funciones).</small></p>
+						<p><small>Otro ejemplo, podemos tener una clase para representar cuentas bancarias, llamada "cuenta-bancaria". Los atributos pueden ser titular, numero de cuenta, monto, etc. Y el comportamiento puede ser extracción, deposito, consulta de saldo, etc.</small></p>
+						
+						
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+				</section>
+
+				<section id="ejercicio">
+					<h3>Ejercicio en clase</h3>
+					<p><small> Escriba un módulo llamado <code>calcu_cfp.py</code> que contenga las funciones <code>suma(a,b)</code>, <code>resta(a,b)</code>, <code>producto(a,b)</code>, <code>divide(a,b)</code>.
+						Cada función debe recibir dos parámetros para realizar las operaciones descritas y debe retornar el valor. Si llega a haber algún error, debe informarlo con la excepción correspondiente.</small></p>
+					
+					<p><small>Escriba un programa llamado <code>ej_clase9.py</code> que importe el módulo <code>calcu_cfp</code> y le pida al usuario dos valores y una operación para realizar entre ellos.</small></p>
+					<p><small>El programa debe ser robusto para no interrumpirse inesperadamente por un error y debe informar que "algo malo ha ocurrido" pero sin finalizar, dando la oportunidad al usuario de corregir los datos que haya ingresado mal.</small></p>
+
+					<p><small>Intercambie el módulo con el o la compañera que está a su lado para comprobar que su módulo funciona en tu programa.</small></p>
+
+				</section>
+
+		
+					<section id="glosario">
+						<h3>Glosario</h3>
+						<ul>
+							<li><strong>Excepción:</strong><small> Condición inesperada o inusual, que surge durante la ejecución del programa y no puede ser manejada en el contexto local.</small></li>
+							<li><strong>Manejo de excepciones:</strong><small> Los lenguajes que soportan manejo de excepciones, proveen alguna forma que podamos controlar el comportamiento del programa cuando se produce una excepción.</small></li>
+							<li><strong>Manejador:</strong><small> Se refiere al bloque de código encargado para tratar una excepción. El bloque de código está entre <code>try except</code> </small></li>
+							<li><strong>Modelo de terminación:</strong><small> Es una de las técnicas que usa un lenguaje para actuar frente a una excepción. El modelo de terminación indica que el programa termina el bloque de ejecución donde se produjo la excepción para ir directamente al manejador y luego NO sigue por la siguiente línea de código se quedó, sino que la ejecución sigue luego del bloque que produjo la excepción. </small></li>						
+						</ul>
+
+					</section>
+
+
+
+				
+				
+
+
+
+
+
+				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					<h3>¡Fin de la clase!</h3>
+					<a href="./clase8.html"> < Ir a clase anterior</a><br>
+					<!-- <a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica7.md"> < Ir a la práctica 7</a><br> -->
+					
+
+				</section>
+					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+						<h2>Bibliografia</h2>
+						<small>
+						
+						<p><a href="https://docs.python.org/3/">Python oficial documentation</a> </p>
+						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
+						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
+						<p><a href="https://pynative.com/python-exceptions">PyNative</a></p>
+						<!-- <h3>Referencias</h3> -->
+						<h3>Recursos</h3>
+						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
+						<p><a href="https://www.mycompiler.io/new/python" target="_blank">My Compiler IDE Online</a></p>
+					</small>
+					</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
