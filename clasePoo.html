@@ -55,7 +55,7 @@
 
 					<section id="poo1">
 						<h3>Programación orientada a objetos</h3>
-						<p><small>La <strong>Programación orientada a Objetos</strong> (POO) es un <strong>paradigma</strong> de programación, es decir, un modelo o un estilo de programación que nos da unas guías sobre cómo trabajar con él. Se basa en el <strong>concepto de clases y objetos</strong>. Este tipo de programación se utiliza para estructurar un programa de software en piezas simples y reutilizables de clases para crear instancias individuales de objetos. </small></p>
+						<p><small>La <strong>Programación orientada a Objetos</strong> (POO) es un <strong>paradigma</strong> de programación, es decir, un modelo o un estilo de programación que nos da unas guías sobre cómo trabajar con él. Se basa en el <strong>concepto de clases y objetos</strong>. </small></p>
 						<p><small>Con el paradigma de Programación Orientado a Objetos lo que buscamos es dejar de centrarnos en la lógica pura de los programas, para empezar a pensar en objetos, lo que constituye la base de este paradigma. Esto nos ayuda a poder modelar objetos de la vida real o abstractos con su comportamiento y características de forma directa hacia un lenguaje de programación.</small></p>
 
 					</section>
@@ -71,10 +71,16 @@
 						<p><small>La POO introduce nuevos conceptos, que amplían los conceptos vistos hasta el momento.</small></p>
 			
 						<ul>
-							<li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica los datos que va a poseer el objeto (atributos) y el comportamiento (métodos) que tendrá el mismo. </small></li>
+							<!-- <li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica los datos o <strong>atributos</strong> que va a poseer el objeto y el <strong>comportamiento</strong> (implementado en métodos) que tendrá el mismo. Una clase es un modelo que define un conjunto de variables y métodos apropiado para operar con dichos datos. Cada objeto creado a partir de la clase se denomina <em>instancia</em> de la clase. -->
+							<li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica la estructura y comportamiento de los objetos.</li>
+							<ul>
+								<li><strong>Atributo o propiedad:</strong> Almacenan el estado de la clase por medio de <em>variables</em> (variables de instancia o de clase), estructura de datos e incluso otras clases.</li>
+								<li><strong>Métodos:</strong> Son funciones que describen lo que es capaz de hacer el objeto.</li>
+							</ul>
+							</small></li>
 							<li><strong>Objeto</strong><small>Es una <strong>instancia</strong> de una clase. Es decir, un objeto creado a partir de la plantilla de una clase definida. Un objeto contiene <em>atributos</em> (datos) y un <em>comportamiento</em> provisto por los <em>métodos</em> (funciones) definidos en la clase de la cual es instancia.</small></li>
-							<li><strong>Método</strong><small>Es la implementación en código de un <strong>mensaje</strong> que el objeto sabe responder. Definen el comportamiento del objeto y por lo tanto es lo que un objeto puede o es capaz de hacer. </small></li>
-							<li><strong>Atributo o propiedad</strong><small>Es un dato que se define en la clase y que serán los datos que tendrá el objeto. El valor de los datos pueden cambiar durante la ejecución del programa.</small></li>
+							<!-- <li><strong>Método</strong><small>Es la implementación en código de un <strong>mensaje</strong> que el objeto sabe responder. Definen el comportamiento del objeto y por lo tanto es lo que un objeto puede o es capaz de hacer. </small></li>
+							<li><strong>Atributo o propiedad</strong><small>Es un dato que se define en la clase y que serán los datos que tendrá el objeto. El valor de los datos pueden cambiar durante la ejecución del programa.</small></li> -->
 						</ul>
 				
 						
@@ -82,7 +88,7 @@
 
 					<section>					
 						<h3>Conceptos de POO<small>(p2)</small></h3>
-						<p><small>Por ejemplo, una clase para representar animales puede llamarse "animal" y tener una serie de <strong>atributos</strong>, como "nombre" y "edad" (que normalmente son propiedades), y una serie con los comportamientos que estos pueden tener, como caminar o comer, y que a su vez se implementan como <strong>métodos</strong> en la clase (funciones).</small></p>
+						<p><small>Por ejemplo, una clase para representar animales puede llamarse "animal" y tener una serie de <strong>atributos</strong>, como "nombre" y "edad", y una serie con los comportamientos que estos pueden tener, como caminar o comer, y que a su vez se implementan como <strong>métodos</strong> en la clase (funciones).</small></p>
 						<p><small>Otro ejemplo, podemos tener una clase para representar vehículos, llamada "Vehiculo". Los <strong>atributos</strong> pueden ser patente, marca, modelo, etc. Y el <strong>comportamiento</strong> puede ser arrancar, poner alarma, acelerar, etc.</small></p>
 						<p><small>Como puede verse, cosas <em>cotidianas</em> como vehículos, animales o cualquier cosa que nos imaginemos pueden ser representadas en un lenguaje de programación mediante el paradigma <em>POO</em>.</small></p>
 					</section>
@@ -113,9 +119,9 @@
 					<section>
 						<h3>Motivación <small>(p2)</small></h3>
 						<p><small>Imaginemos que tenemos un juego de naves moviéndose por la pantalla. Cada una de ellas tendrá una una posición <code>(x,y)</code>, un color, un tamaño de nave como también un comportamiento cada una.</small></p>
-						<p><small>Sin usar <em>POO</em> tendríamos que definir una variable por cada dato que queremos almacenar para cada nave. Si tenemos 10 naves y 5 datos para almacenar por cada nave, <em>¡Tendríamos que definir 50 variables!</em>. El código sería un verdadero desorden y ni hablar si quisieramos modificar la cantidad de naves o agregar atributos nuevos</small></p>
+						<p><small>Sin usar <em>POO</em> tendríamos que definir una variable por cada dato que queremos almacenar para cada nave. Si tenemos 10 naves y 5 datos para almacenar por cada nave, <em>¡Tendríamos que definir 50 variables!</em>. El código sería un verdadero desorden y ni hablar si quisieramos modificar la cantidad de naves o agregar atributos nuevos.</small></p>
 						<p><small>Si diseñamos el programa con una arquitectura <em>orientada a objetos</em> esto sería muy sencillo con apenas unas cuantas líneas de código.</small></p>
-						<p><small>Mediante una <strong>clase</strong> podríamos definir lo general de las naves; sus atributos y características y luego "fabricar" naves (crear <strong>objetos</strong>) cada una con sus cualidades.</small></p>
+						<p><small>Mediante una <strong>clase</strong> podríamos definir lo general de las naves; sus <strong>atributos</strong> y <strong>características</strong> y luego "fabricar" naves (crear <strong>objetos</strong>) cada una con sus cualidades.</small></p>
 					</section>
 
 					<section>
@@ -124,49 +130,72 @@
 
 				</section>
 
-				<section>
+				<section id="definicion">
 					<section>
 						<h2>Definiendo clases</h2>
 					</section>
 
 					<section>
 						<h3>Definiendo clases</h3>
-						<p><small>Como hemos <a href="#/poo3">mencionado</a> anteriormente, una <strong>clase</strong> es como un "molde" para crear objetos. Imaginemos que queremos crear un objeto para representar un gato.</small></p>
+						<p><small>Como hemos <a href="#/poo3">mencionado</a> anteriormente, una <strong>clase</strong> es como un "molde" para crear objetos. Imaginemos que queremos crear un objeto para representar un auto.</small></p>
 					
 						<pre data-id="code-animation"><code class="python" data-trim>
 							# Creamos una clase vacía
-							class Gato:
+							class Auto:
 								pass # No hace nada
 						</code></pre>
 
 						<p><small>Ahora que tenemos la <strong>clase</strong>, podemos crear un <strong>objeto</strong> de la misma. Podemos hacerlo como si de una variable normal se tratase. Nombre de la variable igual a la clase con (). Dentro de los paréntesis irían los parámetros de entrada si los hubiera.</small></p>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
-							mi_gato = Gato()
-							otro_gato = Gato()
+							mi_auto = Auto()
+							otro_auto = Auto()
 						</code></pre>
 						
-
 						<p><small>Cuando se crea un objeto a partir de una clase se dice que se <em>instancia</em> una clase o que un objeto es <em>instancia</em> de una determinada clase.</small></p>
-
-						
-
-
-
+						<p class="fragment"><small><strong>IMPORTANTE:</strong> Por <em>convención</em>, los nombres de las clases empiezan <em>siempre</em> en <strong>mayúsculas</strong>.</small></p>
 					</section>
+
+					<section>
+						<h2>Definiendo atributos</h2>
+						<p><small>Las clases pueden tener atributos y es importante saber que hay dos tipos</small></p>
+
+						<p>
+							<ul>
+								<li>Atributos de <strong>instancia</strong>:<small>Pertenecen solo a la instancia en particular. Es decir cada objeto tendrá sus propios datos basados en sus atributos de instancia.</small></li>
+								<li>Atributos de <strong>clase</strong>:<small>Son atributos que pertenecen a la clase y serán comunes para TODOS los objetos instancia de esa clase.</small></li>
+							</ul>
+						</p>
+						<p><small>Por lo tanto, para repasar, digamos que los atributos que tendrá un objeto se definen con <strong>variables</strong> y su comportamiento serán definidos por <strong>funciones</strong>.</small></p>
+						<p><small>Otra cosa a tener en cuenta es que, como hemos dicho, "Los objetos se <em>crean</em> a partir de una clase". Existe un método especial llamado <strong>constructor</strong>. Si no se define, el lenguaje usará un constructor predeterminado, pero muchas veces es útil definir nosotros el/los constructores que tendrá una clase.</small></p>
+					</section>
+
+					<section>
+						<h2>Definiendo atributos <small>(p2)</small></h2>
+						
+					</section>
+
+
 				</section>
 
-				<section id="ejercicio">
-					<h3>Ejercicio en clase</h3>
-					<p><small> Escriba un módulo llamado <code>calcu_cfp.py</code> que contenga las funciones <code>suma(a,b)</code>, <code>resta(a,b)</code>, <code>producto(a,b)</code>, <code>divide(a,b)</code>.
-						Cada función debe recibir dos parámetros para realizar las operaciones descritas y debe retornar el valor. Si llega a haber algún error, debe informarlo con la excepción correspondiente.</small></p>
-					
-					<p><small>Escriba un programa llamado <code>ej_clase9.py</code> que importe el módulo <code>calcu_cfp</code> y le pida al usuario dos valores y una operación para realizar entre ellos.</small></p>
-					<p><small>El programa debe ser robusto para no interrumpirse inesperadamente por un error y debe informar que "algo malo ha ocurrido" pero sin finalizar, dando la oportunidad al usuario de corregir los datos que haya ingresado mal.</small></p>
+				<section>
 
-					<p><small>Intercambie el módulo con el o la compañera que está a su lado para comprobar que su módulo funciona en tu programa.</small></p>
+
+					<section id="ejercicio">
+						<h3>Ejercicio en clase</h3>
+						<p><small> Escriba un módulo llamado <code>calcu_cfp.py</code> que contenga las funciones <code>suma(a,b)</code>, <code>resta(a,b)</code>, <code>producto(a,b)</code>, <code>divide(a,b)</code>.
+							Cada función debe recibir dos parámetros para realizar las operaciones descritas y debe retornar el valor. Si llega a haber algún error, debe informarlo con la excepción correspondiente.</small></p>
+						
+						<p><small>Escriba un programa llamado <code>ej_clase9.py</code> que importe el módulo <code>calcu_cfp</code> y le pida al usuario dos valores y una operación para realizar entre ellos.</small></p>
+						<p><small>El programa debe ser robusto para no interrumpirse inesperadamente por un error y debe informar que "algo malo ha ocurrido" pero sin finalizar, dando la oportunidad al usuario de corregir los datos que haya ingresado mal.</small></p>
+	
+						<p><small>Intercambie el módulo con el o la compañera que está a su lado para comprobar que su módulo funciona en tu programa.</small></p>
+	
+					</section>
 
 				</section>
+
+				
 
 		
 					<section id="glosario">
