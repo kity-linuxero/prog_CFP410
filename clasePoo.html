@@ -68,7 +68,7 @@
 
 					<section id="poo3">
 						<h3>Conceptos de POO</h3>
-						<p><small>La POO introduce nuevos conceptos, que amplían los conceptos vistos hasta el momento. Entre ellos se destacan lo siguientes:</small></p>
+						<p><small>La POO introduce nuevos conceptos, que amplían los conceptos vistos hasta el momento.</small></p>
 			
 						<ul>
 							<li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica los datos que va a poseer el objeto (atributos) y el comportamiento (métodos) que tendrá el mismo. </small></li>
@@ -80,18 +80,80 @@
 						
 					</section>
 
-					<section>
+					<section>					
 						<h3>Conceptos de POO<small>(p2)</small></h3>
 						<p><small>Por ejemplo, una clase para representar animales puede llamarse "animal" y tener una serie de <strong>atributos</strong>, como "nombre" y "edad" (que normalmente son propiedades), y una serie con los comportamientos que estos pueden tener, como caminar o comer, y que a su vez se implementan como <strong>métodos</strong> en la clase (funciones).</small></p>
-						<p><small>Otro ejemplo, podemos tener una clase para representar cuentas bancarias, llamada "cuenta-bancaria". Los atributos pueden ser titular, numero de cuenta, monto, etc. Y el comportamiento puede ser extracción, deposito, consulta de saldo, etc.</small></p>
-						
-						
+						<p><small>Otro ejemplo, podemos tener una clase para representar vehículos, llamada "Vehiculo". Los <strong>atributos</strong> pueden ser patente, marca, modelo, etc. Y el <strong>comportamiento</strong> puede ser arrancar, poner alarma, acelerar, etc.</small></p>
+						<p><small>Como puede verse, cosas <em>cotidianas</em> como vehículos, animales o cualquier cosa que nos imaginemos pueden ser representadas en un lenguaje de programación mediante el paradigma <em>POO</em>.</small></p>
+					</section>
+
+					<section>					
+						<h3>Conceptos de POO<small>(p3)</small></h3>
+						<p><small>Además de los conceptos previamente vistos, la POO se basa en 6 principios básicos:</small></p>
+			
+						<ul>
+							<li>Herencia</li>
+							<li>Cohesión</li>
+							<li>Abstracción</li>
+							<li>Polimorfismo</li>
+							<li>Acoplamiento</li>
+							<li>Encapsulamiento</li>
+						</ul>
+						<p><small>Estos principios se verán mas adelante.</small></p>
+					</section>
+
+					<section>
+						<h3>Motivación</h3>
+						<p><small>Luego de esta breve explicación, parece ser que la POO es bastante lógica, pero no es algo que existió siempre en los lenguajes de programación y muchos de estos no lo soportan. </small></p>
+						<p><small>En parte surgió debido a las necesidades de los programadores, en el trascurso de los años, de hacer programas cada vez mas complejos. </small></p>
+						<p><small>En el mundo de la programación hay gran cantidad de aplicaciones que realizan tareas muy similares y es importante identificar los <em>patrones</em> que nos permiten no reinventar la rueda. La programación orientada a objetos intentaba resolver esto.</small></p>
+						<p><small>Uno de los primeros mecanismos que se han utilizado para agrupar bloques y resolver problemas repetitivos fueron las <strong>funciones</strong>. Si bien las funciones son muy útiles, no son suficientes para resolver problemas complejos por si solas.</small></p>
+					</section>
+					
+					<section>
+						<h3>Motivación <small>(p2)</small></h3>
+						<p><small>Imaginemos que tenemos un juego de naves moviéndose por la pantalla. Cada una de ellas tendrá una una posición <code>(x,y)</code>, un color, un tamaño de nave como también un comportamiento cada una.</small></p>
+						<p><small>Sin usar <em>POO</em> tendríamos que definir una variable por cada dato que queremos almacenar para cada nave. Si tenemos 10 naves y 5 datos para almacenar por cada nave, <em>¡Tendríamos que definir 50 variables!</em>. El código sería un verdadero desorden y ni hablar si quisieramos modificar la cantidad de naves o agregar atributos nuevos</small></p>
+						<p><small>Si diseñamos el programa con una arquitectura <em>orientada a objetos</em> esto sería muy sencillo con apenas unas cuantas líneas de código.</small></p>
+						<p><small>Mediante una <strong>clase</strong> podríamos definir lo general de las naves; sus atributos y características y luego "fabricar" naves (crear <strong>objetos</strong>) cada una con sus cualidades.</small></p>
 					</section>
 
 					<section>
 						<h2>¿Preguntas?</h2>
 					</section>
 
+				</section>
+
+				<section>
+					<section>
+						<h2>Definiendo clases</h2>
+					</section>
+
+					<section>
+						<h3>Definiendo clases</h3>
+						<p><small>Como hemos <a href="#/poo3">mencionado</a> anteriormente, una <strong>clase</strong> es como un "molde" para crear objetos. Imaginemos que queremos crear un objeto para representar un gato.</small></p>
+					
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# Creamos una clase vacía
+							class Gato:
+								pass # No hace nada
+						</code></pre>
+
+						<p><small>Ahora que tenemos la <strong>clase</strong>, podemos crear un <strong>objeto</strong> de la misma. Podemos hacerlo como si de una variable normal se tratase. Nombre de la variable igual a la clase con (). Dentro de los paréntesis irían los parámetros de entrada si los hubiera.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							mi_gato = Gato()
+							otro_gato = Gato()
+						</code></pre>
+						
+
+						<p><small>Cuando se crea un objeto a partir de una clase se dice que se <em>instancia</em> una clase o que un objeto es <em>instancia</em> de una determinada clase.</small></p>
+
+						
+
+
+
+					</section>
 				</section>
 
 				<section id="ejercicio">
