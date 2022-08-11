@@ -74,7 +74,7 @@
 							<!-- <li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica los datos o <strong>atributos</strong> que va a poseer el objeto y el <strong>comportamiento</strong> (implementado en métodos) que tendrá el mismo. Una clase es un modelo que define un conjunto de variables y métodos apropiado para operar con dichos datos. Cada objeto creado a partir de la clase se denomina <em>instancia</em> de la clase. -->
 							<li><strong>Clase</strong><small>Es una especie de "plantilla" o "molde" que define de manera genérica la estructura y comportamiento de los objetos.</li>
 							<ul>
-								<li><strong>Atributo o propiedad:</strong> Almacenan el estado de la clase por medio de <em>variables</em> (variables de instancia o de clase), estructura de datos e incluso otras clases.</li>
+								<li><strong>Atributos:</strong> Almacenan el estado de la clase por medio de <em>variables</em> (variables de instancia o de clase), estructura de datos e incluso otras clases.</li>
 								<li><strong>Métodos:</strong> Son funciones que describen lo que es capaz de hacer el objeto.</li>
 							</ul>
 							</small></li>
@@ -132,7 +132,7 @@
 
 				<section id="definicion">
 					<section>
-						<h2>Definiendo clases</h2>
+						<h2>Definir clases, atributos y métodos</h2>
 					</section>
 
 					<section>
@@ -158,20 +158,94 @@
 
 					<section>
 						<h2>Definiendo atributos</h2>
-						<p><small>Las clases pueden tener atributos y es importante saber que hay dos tipos</small></p>
+						<p>Las clases pueden tener atributos y es importante saber que hay dos tipos:</p>
 
 						<p>
 							<ul>
-								<li>Atributos de <strong>instancia</strong>:<small>Pertenecen solo a la instancia en particular. Es decir cada objeto tendrá sus propios datos basados en sus atributos de instancia.</small></li>
-								<li>Atributos de <strong>clase</strong>:<small>Son atributos que pertenecen a la clase y serán comunes para TODOS los objetos instancia de esa clase.</small></li>
+								<li>Atributos de <strong>instancia</strong>:<small>También llamados atributo de objeto. Pertenecen solo a la instancia en particular. Es decir cada objeto tendrá sus propios datos basados en sus atributos de instancia. Para acceder al atributo de instancia, será requisito <em>instanciar</em> una clase.</small></li>
+								<li>Atributos de <strong>clase</strong>:<small>Son atributos que pertenecen a la clase y que todos los objetos tendrán ese atributo. Como es un atributo de la clase, no es necesario instanciar una clase para acceder al atributo. Sino que basta con invocar a la clase seguido por el atributo.</small></li>
 							</ul>
 						</p>
-						<p><small>Por lo tanto, para repasar, digamos que los atributos que tendrá un objeto se definen con <strong>variables</strong> y su comportamiento serán definidos por <strong>funciones</strong>.</small></p>
-						<p><small>Otra cosa a tener en cuenta es que, como hemos dicho, "Los objetos se <em>crean</em> a partir de una clase". Existe un método especial llamado <strong>constructor</strong>. Si no se define, el lenguaje usará un constructor predeterminado, pero muchas veces es útil definir nosotros el/los constructores que tendrá una clase.</small></p>
+						<!-- <p class="fragment"><small>Para resumir, podemos decir que los atributos que tendrá un objeto se definen con <strong>variables</strong> y su comportamiento serán definidos por <strong>funciones</strong>.</small></p> -->
+						<p><small>De ahora en mas diremos <em>variables de instancia</em> a los atributos de instancia y <em>variables de clase</em> a los atributos de clase.</small></p>
+					</section>
+
+					<!-- <section>
+						<h2>Definiendo atributos <small>(p2)</small></h2>
+						<p>Vamos a definir una clase con sus atributos.</p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Auto:
+								marca = "VW"
+								color = None
+
+							mi_auto = Auto() # Instanciamos la clase auto
+							mi_auto.color = 'Rojo'
+							
+							otro_auto = Auto()
+							otro_auto.color = 'Blanco'
+
+							print(mi_auto.marca) # VW
+							print(mi_auto.color) # Rojo
+							print(otro_auto.color) # Blanco
+						</code></pre>
+						<p><small>Hemos creado una clase <code>Auto</code> con dos atributos de <em>instancia</em>; marca y color. Marca tiene un valor por defecto. Son tratados como <em>variables</em> normales, pero se acceden a ella anteponiendo el nombre del <em>objeto</em>. Quedando finalmente: <code>objeto.atributo</code></small></p>
+					</section> -->
+
+					<section>
+						<h3>Definiendo métodos: constructor</h3>
+						<!-- <h4>Constructor</h4> -->
+						<p><small>Los lenguajes nos proveen un <em>constructor</em> por defecto para que cada clase pueda construir objetos. Pero a veces resulta muy útil tener nuestros propios <em>constructores</em>.</small></p>
+						<p><small>En <code>Python</code> hay un <em>método</em> especial llamado <code>__init__</code> que se usa como constructor.</small></p>
+						
+						<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
+							class Auto:
+								def __init__(self, marca, color): # Constructor
+									self.marca= marca # Variable de instancia
+									self.color= color # Variable de instancia
+
+							mi_auto = Auto('Ford', 'Blanco') # Se instancia un objeto
+							print(mi_auto.marca, mi_auto.color) # Ford Blanco
+						</code></pre>
+
+						<p class="fragment"><small>Seguramente te hayas fijado en el <code>self</code> que se pasa como parámetro de entrada del método. Es una variable que representa la instancia de la clase, y deberá estar siempre ahí.</small></p>
+						<p class="fragment"><small>El uso de <code>__init__</code> y el doble __ no es una coincidencia. Cuando veas un método con esa forma, significa que está <em>reservado</em> para un uso especial del lenguaje.</small></p>
+						
+
 					</section>
 
 					<section>
-						<h2>Definiendo atributos <small>(p2)</small></h2>
+						<h2>Definiendo métodos</h2>
+						
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Auto:
+								origen = "Argentina" # Variable de clase
+								
+								def __init__(self, un_modelo): # Constructor
+									self.modelo= un_modelo	# Variable de instancia
+							
+								def arrancar(self):
+									print("Auto encendido")
+								def acelerar(self, velocidad):
+									print(f"Acelerando a {velocidad}km/h")
+								
+							mi_auto = Auto('Cruze')
+							mi_auto.arrancar()
+							mi_auto.acelerar(40)
+						</code></pre>
+						<p><small>Podemos acceder a los <em>métodos</em> con un punto luego del identificador del objeto. El primer parámetro de los métodos <em>debe ser</em> <code>self</code>. <a href="https://www.mycompiler.io/view/JdPnZIvjeYB" target="_blank">Ver código</a></small></p>
+						<p class="fragment"><small>En Python las variables de clase se definen fuera de los métodos y las variables de instancia van dentro de algún método.</small></p>
+					</section>
+
+					<section>
+						<h2>Ejemplos</h2>
+						
+						<p><small>Queremos modelar los semáforos de una ciudad para que permita pasar o no a los autos en cada esquina de una larga avenida.</small></p>
+						<p><small>El semáforo debe tener un estado de luz para saber en qué luz está (Rojo o Verde) y algún mecanismo que permita intercambiar entre un color de luz y el otro.</small></p>
+						<p class="fragment"><small>¿Cómo se les ocurre que podemos hacer?</small></p>
+						<p class="fragment"><small><a href="https://www.mycompiler.io/view/Lcly15uBOFt" target="_blank">Vamos al ejemplo resuelto</a></small></p>
+
+						<p class="fragment"><small>Los métodos pueden invocar a las variables de instancia, de clase o incluso otros métodos del objeto o de la clase. <a href="https://www.mycompiler.io/view/AfLZLONyIeD" target="_blank">Veamoslo en un ejemplo:</a></small></p>
 						
 					</section>
 
