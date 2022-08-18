@@ -25,7 +25,7 @@ Para eso, nuestra Pila debe entender los mensajes:
 
 
 ## Ejercicio 5
-Modifique su solución para el ejercicio en clase de POO de la siguiente manera:
+Modifique su solución para el [ejercicio en clase](https://clases.concristian.com.ar/clasePoo.html#/ejercicio) de POO de la siguiente manera:
 
 Modele con POO el comportamiento de unos encendedores.
 
