@@ -14,7 +14,7 @@ Realice un programa que procese a personas que van a ir ingresando en una sala. 
 Para cargar los nombres de persona, pida al usuario que ingrese nombre y edad de personas hasta que llegue la persona `@fin`. Las personas deben guardarse en una lista y al finalizar la carga de datos deben presentarse todas las personas.
 
 ## Ejercicio 4
-Implemente con _POO_ una _Pila_. La Pila consiste en una estructura de datos como las que vinimos usando como _Listas_ pero en este caso usaremos nuestra propia estructura con los propios mensajes y se comporta como una estructura _LIFO_ (Last In-Fist Out) es decir, el último elemento en ingresar es el primero en salir. La Pila deberá ser _genérica_ en cuanto a que puede guardar cualquier tipo de datos.
+Implemente con _POO_ una _Pila_. La Pila consiste en una estructura de datos como las que vinimos usando como _Listas_ pero en este caso usaremos nuestra propia estructura con los propios mensajes y se comporta como una estructura _LIFO_ (Last In-First Out) es decir, el último elemento en ingresar es el primero en salir. La Pila deberá ser _genérica_ en cuanto a que puede guardar cualquier tipo de datos.
 
 Para eso, nuestra Pila debe entender los mensajes:
 - `apilar(elemento)`: Apila un elemento. Lo agrega en la estructura.
