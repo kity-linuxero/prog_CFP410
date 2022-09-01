@@ -16,6 +16,12 @@ Para cargar los nombres de persona, pida al usuario que ingrese nombre y edad de
 ## Ejercicio 4
 Implemente con _POO_ una _Pila_. La Pila consiste en una estructura de datos como las que vinimos usando como _Listas_ pero en este caso usaremos nuestra propia estructura con los propios mensajes y se comporta como una estructura _LIFO_ (Last In-First Out) es decir, el último elemento en ingresar es el primero en salir. La Pila deberá ser _genérica_ en cuanto a que puede guardar cualquier tipo de datos.
 
+
+La siguiente imágen muestra un ejemplo de pila donde fueron ingresando los valores en el siguiente orden: **3 | 7 | 2 | 5 | 8**
+
+![Lalala](http://www.dcc.uchile.cl/~bebustos/apuntes/cc30a/TDA/pila.gif)
+
+
 Para eso, nuestra Pila debe entender los mensajes:
 - `apilar(elemento)`: Apila un elemento. Lo agrega en la estructura.
 - `desapilar()`: Retorna el elemento de "más arriba" y lo quita de la pila.
