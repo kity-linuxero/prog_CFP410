@@ -76,26 +76,268 @@
 					<section id="poo3">
 						<h3>Conceptos de POO</h3>
 
-						<p>Como hemos mencionado antes, la POO introduce muchos conceptos nuevos. Los más básicos los vimos en la clase anterior. Ahora nos introduciremos a otros conceptos básicos de la POO</p>
+						<p><small>Como hemos mencionado antes, la POO introduce muchos conceptos nuevos. Los más básicos los vimos en la clase anterior. Ahora nos introduciremos a otros conceptos básicos de la POO</small></p>
 						<ul>
-							<li>Abstracción</li>
-							<li>Herencia</li>
-							<li>Polimorfismo</li>
-							<li>Encapsulamiento</li>
-
+							<li><a href="#/herencia">Herencia</a> (Inheritance)</li>
+							<li><a href="#/polimorfismo">Polimorfismo</a> (Polymorphism)</li>
+							<li><a href="#/encapsulacion">Encapsulamiento</a> (Encapsulation)</li>
+							<!-- <li><a href="#/abstraccion">Abstracción</a> (Abstraction)</li> -->
 						</ul>
+					</section>
+				</section>
+
+				<section>
+
+					<section id="herencia">
+						<h2>Herencia</h2>
+					</section>
+					<section id="herencia-p1">
+						<h3>Herencia</h3>
+						<p><small>En POO, se define herencia a la capacidad de crear clases que <em>hereden</em> el comportamiento (métodos) y atributos (variables) de otra clase. De esta manera, se introducen nuevos conceptos, clases <strong>padres</strong> o <strong>superclases</strong> y clases <strong>hijas</strong> o <strong>subclases</strong>.</small></p>
+						<p><small>Podemos decir entonces que la clase <em>hija</em> hereda los métodos y atributos de la clase padre. Aunque también puede tener atributos y métodos propios o los métodos de la clase padre <em>reescritos</em> como veremos mas adelante.</small></p>
+						<p><small>Imaginemos que podríamos tener una clase <code>Animal</code> para representar animales. Y dotar a la clase con atributos como nombre, especie, etc. y como métodos podemos tener comer, dormir, caminar, correr, etc.</small></p>
+						<p><small>A su vez podemos ser más específicos y definir la clase <code>Gato</code> para representar gatos en nuestro programa. La clase <code>Gato</code> puede ser una <em>subclase</em> de la clase <code>Animal</code>. Como un gato es a su vez un animal, es fácil imaginarnos que heredará los atributos y métodos de la <em>superclase</em>.</small></p>
+					</section>
+
+					<section id="herencia-p2">
+						<h3>Uso de herencia</h3>
+						<p><small>Hasta este punto podemos preguntarnos para qué sirve realmente la herencia o nos puede parecer de poca utilidad. Sin embargo, aporta mucha claridad y evita código repetido.</small></p>
+						<p><small>Puede ser útil cuando tengamos clases que <em>se parecen entre sí pero tienen ciertas particularidades</em>.</small></p>
+						<p><small>En vez de definir una clase por cada "animal", podemos tomar los elementos en común y crear una clase <em>Animal</em> de la que hereden el resto de los animales.</small></p>
+						<p><small>Esto, ayuda a aplicar el concepto de <strong>DRY</strong> <a href="https://es.wikipedia.org/wiki/No_te_repitas" target="_blank"><em>(Don't Repeat Yourself)</em></a> que consiste en no repetir código de manera innecesaria. Cuanto más código repetido haya, será mas difícil de mantener y habrá mas posibilidad de inconsistencia.</small></p>
+						<p class="fragment"><small>Veamos un <a href="https://www.mycompiler.io/view/8gvQRnpyS66" target="_blank">ejemplo</a> para profundizar el concepto</small></p>
+
+					</section>
+
+					<section id="herencia-ej1">
+						<h3>Herencia - Ejemplo</h3>
+
+						<p><small>Los diferentes lenguajes tienen sus formas de indicar que una clase es hija de otra clase previamente definida. Se usan palabras claves como <em>extends</em>, <em>subclass</em>, <em>inherits</em> u otras similares.</small></p>
+						<p><small>En el caso de <strong>Python</strong>, lenguaje de referencia en este curso, simplemente se envía como parámetro la clase padre.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							# Superclase
+							class Animal:
+								pass
+
+							# Subclase 1
+							class Gato(Animal):
+								pass
+
+							# Subclase 2
+							class Perro(Animal):
+								pass
+						</code></pre>
+					</section>
+
+				
+					<section id="herencia_multiple">
+						<h3>Herencia múltiple</h3>
+						<p><small>El concepto de herencia múltiple, es que una clase puede heredar (o ser hija) de más de una clase. No todos los lenguajes soportan esta característica. Python, por su parte sí soporta herencia múltiple. La sintaxis es la siguiente:</small></p>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Gato(Animal, Mamifero):
+								pass
+						</code></pre>
+						<p><small>Otros lenguajes, como Java, al no soportar <strong>herencia múltiple</strong> suelen utilizar mecanismos como el concepto de <strong>interface</strong> para <em>simular</em> las características de la herencia múltiple.</small></p>
+					</section>
+
+
+					<section id="super">
+						<h3>El método especial <code>super()</code></h3>
+						<p><small>Algunas veces nos es útil acceder a un método de la superclase desde una subclase. Para eso existe un método especial llamado <code>super()</code>. </small></p>
+						<p><small>Es algo muy habitual en la POO y los lenguajes con dichas características soportan un mecanismo para interactuar con la clase padre. Se suele usar el nombre <code>super().metodo_padre()</code> para referirnos al método de la superclase.</small></p>
+
+						<div class="fragment">
+						<h4>Ejemplo</h4>
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Animal():
+								def __init__(self, una_especie):
+									self.especie = una_especie
+						
+							class Gato(Animal):
+								def __init__(self):
+									super().__init__('gato')
+						</code></pre>
+						<p><small>¿Qué pasa en este ejemplo? <a href="https://www.mycompiler.io/view/AWW0NhYxKPP" target="_blank">Ver código funcionando.</a>
+						 <span class="fragment">¿Vemos <a href="https://www.mycompiler.io/view/3oSWKuVeTg5" target="_blank">otro ejemplo</a>?</span>
+						</small></p>
+
+						</div>
+					</section>
+
+					<section id="metodos">
+						<h3>Métodos y atributos en subclases</h3>
+						<p><small>Las subclases pueden tener métodos o atributos que la superclase no tiene. Por ejemplo, la subclase <strong>Gato</strong> puede tener un método <code>maullar()</code> que la clase Animal no tiene.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Animal():
+								pass
+						
+							class Gato(Animal):
+								def maullar(self):
+									print("¡Miau!")
+						</code></pre>
+
+						<p><small><strong>Importante:</strong> La visibilidad de los métodos y atributos, es siempre desde arriba hacia abajo. Es decir, las subclases tienen acceso a los métodos y variables de las superclases, pero no es igual a la inversa.</small></p>
+
+						<p><small>Veamos un <a href="https://www.mycompiler.io/view/13QFdGNUNKj" target="_blank">ejemplo</a> mas completo.</small></p>
+
+					</section>
+
+					
+
+					<section id="sobreescribir_metodos">
+						<h3>Sobreescribiendo metodos</h3>
+						<p><small>Una de las cualidades mas interesantes de la POO, además que las clases hijas pueden heredar los atributos y comportamiento de las clases padres, es que las clases hijas pueden realizar ciertas acciones <em>a su manera</em>. Es decir, no tiene por qué realizar una acción igual que la clase padre.</small></p>
+						<p><small>Volviendo a la clase Animal, en el siguiente ejemplo intentamos describir este concepto.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Animal():
+								def hablar(self):
+									pass
+						
+							class Perro(Animal):
+								def hablar(self):
+									print("¡Guau!")
+						</code></pre>
+
+						<p><small>Algo muy interesante que podemos hacer es sobreescribir el método <code>__str__()</code> en una clase. Lo veremos dos ejemplos; uno sin <a href="https://www.mycompiler.io/view/7jfmwpUvRnG" target="_blank">reescribir</a> el método y otro ejemplo <a href="https://www.mycompiler.io/view/G8gM07rUvsa" target="_blank">reescribiendo</a> el método. <a href="https://docs.python.org/es/3/reference/datamodel.html#object.__str__">Ref.</a></small></p>
+						
+
+						<p><small>Esto nos da el pie para continuar con el próximo principio de la POO, <strong>polimorfismo</strong>.</small></p>
+
+					</section>
+
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<section id="polimorfismo">
+						<h2>Polimorfismo</h2>
+					</section>
+
+					<section>
+						<h3>Polimorfismo</h3>
+						<p><small>El término <strong>polimorfismo</strong> tiene origen en las palabras <em>poly</em> (muchos) y <em>morfo</em> (formas) y aplicado a la programación hace referencia a que los objetos pueden tomar diferentes formas.</small></p>
+						<p><small>Dicho en otras palabras, quiere decir que los objetos de diferentes clases pueden ser accedidos utilizando la misma <em>interfaz</em> (métodos disponibles) mostrando un comportamiento distinto (tomando diferentes formas) según como sean accedidos pero la forma de accederlo es la misma.</small></p>
+						<p><small>En <strong>Python</strong> (y en otros lenguajes de tipado dinámico como Ruby), el término <em>polimorfismo</em> viene muy ligado con el <a href="https://ellibrodepython.com/duck-typing-python">duck typing</a>. Que básicamente lo que propone es que <em>si un objeto camina como un pato y habla como un pato, entonces tiene que ser un pato</em>. </small></p>
+
+
+
+
+					</section>
+
+					<section>
+						<h3>Polimorfismo</h3>
+
+						<p><small>Volviendo a lo práctico, el <em>polimorfismo</em> nos dice que podemos tratar de la misma manera a varios objetos independientemente del tipo o instancia de la clase que sea.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Perro(Animal):
+								def hablar(self):
+									print("Guau!")
+							class Gato(Animal):
+								def hablar(self):
+									print("Miau!")
+						</code></pre>
+
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							for animal in Perro(), Gato():
+								animal.hablar()
+							# Guau!
+							# Miau!
+						</code></pre>
+						<p><small>Cada animal se comporta de manera distinta al usar <code>hablar()</code> pero el método para hacerlos hablar es el mismo.</small></p>
+						<p><small>La variable animal va "tomando formas" de <em>Perro</em> y <em>Gato</em> en tiempo de ejecución. Si bien, en Python no es un problema ya que es de tipado dinámico, en otros lenguajes como <em>Java</em> el polimorfismo es mas evidente y debe ser apoyado por la <em>herencia</em> para interactuar entre objetos de distintas clases.</small> </p>
+
+
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+				</section>
+
+				<section>
+					<section id="encapsulamiento">
+						<h2>Encapsulamiento</h2>
+					</section>
+
+					<section>
+						<h3>Encapsulamiento</h3>
+						<p><small>El encapsulamiento o encapsulación en programación es un concepto relacionado con la POO, y hace referencia al <strong>ocultamiento</strong> de los estado internos (variables y métodos) de una clase hacia al exterior de la misma. </small></p>
+
+						<p><small>En ciertos lenguajes es posible ocultar información que puede ser vista por otras clases, incluso con sus clases hijas. En <em>C++</em> y <em>Java</em> se especifica usando las palabras claves:</small></p>
+						<small>
+							<ul>
+								<li><strong>Public:</strong> El atributo o método será accesible desde fuera de la clase.</li>
+								<li><strong>Private:</strong> El atributo o método <em>NO</em> será accesible desde fuera de la clase.</li>
+								<li><strong>Protected:</strong> El atributo o método será accesible <em>solo desde las subclases</em>.</li>
+							</ul>
+						</small>
+
+						<p><small>Como hemos visto anteriormente, es una mala práctica de programación acceder y modificar directamente los estados internos de una clase fuera de la misma.</small></p>
+						<p><small>Por lo tanto veremos como proteger los estados internos de una clase para que no sea posible modificarlos y proteger la integridad de nuestros objetos.</small></p>
+					</section>
+
+					<section>
+						<h3>Encapsulamiento</h3>
+						<p><small>En <strong>Python</strong> no tenemos las palabras claves que sí tenemos en Java y C++. Pero tenemos otras formas de hacer lo mismo.</small></p>
+					<small>
+						<ul>
+							<li><strong>Public:</strong> Por defecto en Python todo será public.</li>
+							<li><strong>Private:</strong> El atributo o método debe empezar con doble guión bajo (__).</li>
+							<li><strong>"Protected":</strong> El atributo o método debe comenzar con guión bajo (_). Pero a diferencia de Java, sí podrá ser accedido desde fuera de la clase.</li>
+						</ul>
+					</small>
+					
+
+
+					<h4>Ejemplo con métodos</h4>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Prueba:
+								def public(self):
+									pass
+								def _protected(self):
+									pass
+								def __private(self):
+									pass
+						</code></pre>
+
+						<p><small>Ejemplo <a href="https://www.mycompiler.io/view/8qERUiQ2nzJ">encapsulamiento</a></small></p>
+
+						
+
+					
+					</section>
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+				</section>
+
+				<!-- <section>
+
+					<section id="abstraccion">
+						<h2>Abstracción</h2>
 					</section>
 
 					<section id="abstraccion-p1">
 						<h3>Abstracción</h3>
 						<p><small>La abstracción consiste en identificar las características esenciales de un objeto, es poner énfasis en <em>¿Qué hace?</em> más que en el <em>¿Cómo lo hace?</em>. (Concepto de caja negra).</small></p>
-						<!-- <p><small>La abstracción consiste en ocultar toda la complejidad que algo puede tener por dentro, ofreciéndonos unas funciones de alto nivel, por lo general sencillas de usar, que pueden ser usadas para interactuar con la aplicación sin tener conocimiento de lo que hay dentro.</small></p> -->
+						
 						<p><small>Este concepto también puede entenderse como el método que se usa al momento de <em>analizar</em> un elemento particular, desechando los aspectos no relevantes y considerando solo las propiedades esenciales para nuestro análisis. Lo que nos facilita la comprensión del comportamiento del elemento.</small></p>
 						<p><small>Durante las prácticas hemos representado objetos de la vida real realizando una <em>abstracción</em> a un lenguaje de programación para resolver un problema determinado.</small></p>
 						<p><small>Como para dar un ejemplo, en la <a href="clasePoo.html#/ejercicio" target="_blank">clase anterior</a> hemos visto una forma de abstracción de un encendedor. Resaltando las cualidades que nos interesaba y descartando otras que no eran relevantes para lo que nos pedía el ejercicio.</small></p>
-						<!-- <p><small>En algunos lenguajes se promueve el uso de <em>interfaces</em> para profundizar este concepto.</small></p> -->
-
 						
+
 					</section>
 
 					<section id="abstraccion-p2">
@@ -105,290 +347,60 @@
 
 						<p><small>Volcado a la programación, la abstracción se evidencia cuando le ofrecemos al usuario que utilice nuestro código sin que sea necesario conocer los detalles de implementación, sino que basta con dar a conocer cómo y en qué situación utilizar determinados métodos. (Como una caja negra).</small></p>
 						<p><small>Por ejemplo, hemos utilizado el método <code>randint(a,b)</code> de <code>random</code> sin conocer como está implementado. Simplemente nos centramos en que la función nos retorne un número entero random entre a y b. ¡Pero hay <a href="https://github.com/python/cpython/blob/3.10/Lib/random.py#L366" target="_blank">mas de 70 líneas de código</a> que hacen que todo eso funcione!</small></p>
-						<p><small>A su vez hay conceptos relacionados con la abstracción como lo son<em>clases abstractas</em> y <em>métodos abstractos</em>.</small></p>
-						<p><small>Se define como clase abstracta la que contiene métodos abstractos, y se define como método abstracto a un método que ha sido declarado pero no implementado. Es decir, que no tiene código.</small></p>
 						
-
-					</section>
-
-					<section id="herencia-p1">
-						<h3>Herencia</h3>
-						<p><small>En POO, se define herencia a la capacidad de crear clases que <em>hereden</em> el comportamiento y atributos de una clase <em>padre</em>. Se introducen entonces nuevos conceptos como clases <em>padres</em> o <em>superclases</em> y clases <em>hijas</em> o <em>subclases</em>.</small></p>
-						<p><small>De esta forma podemos decir que la clase <em>hija</em> hereda los métodos y atributos de la clase padre. Pero también puede tener atributos y métodos propios o los métodos de la clase padre <em>reescritos</em>.</small></p>
-						<p><small>Imaginemos que podríamos tener una clase <code>Animal</code> para representar animales. Y dotar a la clase con atributos como nombre, especie, etc. Como métodos podemos tener comer, dormir, caminar, correr, etc.</small></p>
-						<p><small>A su vez podemos ser más específicos y definir la clase <code>Gato</code> para representar gatos en nuestro programa. La clase <code>Gato</code> puede ser una <em>subclase</em> de la clase <code>Animal</code>. Como un gato es a su vez un animal, es fácil imaginarnos que heredará los atributos y métodos de la superclase. Y también puede tener atributos y métodos propios.</small></p>
-					</section>
-
-					<section id="herencia-p2">
-						<h3>Herencia - Ejemplo</h3>
-
-						<p><small>Los diferentes lenguajes tienen sus formas de indicar que una clase es hija de otra clase previamente definida. Se usan palabras claves como <em>extends</em>, <em>subclass</em>, <em>inherits</em> u otras similares. En el caso de <strong>Python</strong>, usado como lenguaje de referencia en este curso, simplemente se envía como parámetro la clase padre.</small></p>
-
-						<pre data-id="code-animation"><code class="python" data-trim>
-							# Clase padre
-							class Animal:
-								pass
-
-							class Gato(Animal):
-								pass
-						</code></pre>
-
-						<div class="fragment">
-
-							<h4>Herencia múltiple</h4>
-							<p><small>El concepto de herencia múltiple, es que una clase puede heredar (o ser hija) de más de una clase. No todos los lenguajes soportan esta característica. Python, por su parte sí soporta herencia múltiple. La sintaxis es la siguiente:</small></p>
-							<pre data-id="code-animation"><code class="python" data-trim>
-								class Gato(Animal, Mamifero):
-									pass
-							</code></pre>
-						</div>
+						
 					</section>
 
 					<section>
-						<h3>Uso de herencia</h3>
-						<p><small>Hasta este punto podemos preguntarnos para qué sirve realmente la herencia o nos puede parecer de poca utilidad. Sin embargo, aporta mucha claridad y evita código repetido.</small></p>
-					<p><small>Puede ser útil cuando tengamos clases que <em>se parecen entre sí pero tienen ciertas particularidades</em>.</small></p>
-					<p><small>En vez de definir una clase por cada "animal", podemos tomar los elementos en común y crear una clase <em>Animal</em> de la que hereden el resto de los animales.</small></p>
-					<p><small>Esto, ayuda a aplicar el concepto de <strong>DRY</strong> <a href="https://es.wikipedia.org/wiki/No_te_repitas" target="_blank"><em>(Don't Repeat Yourself)</em></a> que consiste en no repetir código de manera innecesaria. Cuanto más código repetido haya, será mas difícil de mantener y habrá mas posibilidad de inconsistencia.</small></p>
-					<p class="fragment"><small>Veamos un <a href="https://www.mycompiler.io/view/8gvQRnpyS66" target="_blank">ejemplo</a> para profundizar el concepto</small></p>
-
+						<h3>Clases abstractas</h3>
+						<p><small>Se suman nuevos conceptos relacionados con la abstracción como lo son <em>clases abstractas</em> y <em>métodos abstractos</em>.</small></p>
+						<p><small>Se define como clase abstracta la que contiene métodos abstractos y esta <em>NO puede ser instanciada</em>.</small></p>
+						<p><small>Se define como método abstracto a un método que ha sido declarado pero no implementado. Es decir, que no tiene código.</small></p>
 					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+				</section> -->
+
 					
-					<section>
-						<h3>Herencia y ocultación<small></small></h3>
-						<p><small>En ciertos lenguajes es posible ocultar información que puede ser vista por otras clases, incluso con sus clases hijas. De esta manera es posible ocultar variables de instancia y métodos a otras clases o a sus clases hijas. Esto es notorio en <em>C++</em> y <em>Java</em> que se especifica usando las palabras claves:</small></p>
-						<small>
-							<ul>
-								<li><strong>Public:</strong></li>
-								<li><strong>Private:</strong></li>
-								<li><strong>Protected:</strong></li>
-							</ul>
-						</small>
-						<p><small></small></p>
-						<p><small></small></p>
-						<p><small></small></p>
-					</section>
+					
+				
 
 					<section>
 						<h3>Repaso:</h3>
 						<h4>Características básicas de la POO</h4>
 						<ul>
-							<li>Clase</li>
-							<li>Objeto</li>
-							<li>Atributos o datos</li>
-							<li>Comportamiento o métodos</li>
+							<li>Herencia</li>
+							<li>Polimorfismo</li>
+							<li>Encapsulamiento</li>
+							<!-- <li>Abstracción</li> -->
 						</ul>
-					</section>
-
-					<section>
-						<h2>¿Preguntas?</h2>
 					</section>
 
 				</section>
 
-				<section id="definicion">
-					<section>
-						<h2>Definir clases, atributos y métodos</h2>
-					</section>
-
-					<section id="def_class">
-						<h3>Definiendo clases</h3>
-						<p><small>Como hemos <a href="#/poo2">mencionado</a> anteriormente, una <strong>clase</strong> es como una <em>plantilla</em> para crear objetos. Imaginemos que queremos crear un objeto para representar un auto.</small></p>
-					
-						<pre data-id="code-animation"><code class="python" data-trim>
-							# Creamos una clase vacía
-							class Auto:
-								pass # No hace nada
-						</code></pre>
-
-						<p><small>Ahora que tenemos la <strong>clase</strong>, podemos crear un <strong>objeto</strong> de la misma. Podemos hacerlo como si de una variable normal se tratase; 
-							<code>nombre_variable=Clase()</code>. Dentro de los paréntesis irían los parámetros de entrada si los hubiera.</small></p>
-
-						<pre data-id="code-animation"><code class="python" data-trim>
-							mi_auto = Auto()
-							otro_auto = Auto()
-						</code></pre>
-						
-						<p><small>Cuando se crea un objeto a partir de una clase se dice que se <em>instancia</em> una clase o que un objeto es <em>instancia</em> de una determinada clase.</small></p>
-						<p><small>En este ejemplo vimos una clase vacía, sin atributos ni comportamiento definido, lo cual no tiene ninguna utilidad práctica. Pero nos sirve para introducirnos en la sintáxis.</small></p>
-						<p class="fragment"><small><strong>IMPORTANTE:</strong> Por <em>convención</em>, los nombres de las clases empiezan <em>siempre</em> en <strong>mayúsculas</strong>.</small></p>
-					</section>
-
-					<section id="def_attrib">
-						<h2>Definiendo atributos</h2>
-						<p>Las clases pueden tener atributos y es importante saber que hay dos tipos:</p>
-
-						<p>
-							<ul>
-								<li class="fragment">Atributos de <strong>instancia</strong>:<small>También llamados atributo de objeto. Son atributos (datos) que pertenecen solo a la instancia u objeto en particular. Es decir cada objeto tendrá sus propios datos basados en sus atributos de instancia. Para acceder al atributo de instancia, será requisito <em>instanciar</em> una clase. Es decir, crear un objeto.</small></li>
-								<li class="fragment">Atributos de <strong>clase</strong>:<small>Son atributos que pertenecen a la clase y que todos los objetos tendrán ese atributo. Como es un atributo de la clase, no es necesario instanciar una clase para acceder al atributo. Sino que basta con invocar a la clase seguido por el atributo.</small></li>
-							</ul>
-						</p>
-						<!-- <p class="fragment"><small>Para resumir, podemos decir que los atributos que tendrá un objeto se definen con <strong>variables</strong> y su comportamiento serán definidos por <strong>funciones</strong>.</small></p> -->
-						<p class="fragment"><small>De ahora en mas diremos <em>variables de instancia</em> a los atributos de instancia y <em>variables de clase</em> a los atributos de clase.</small></p>
-					</section>
-
-					<!-- <section>
-						<h2>Definiendo atributos <small>(p2)</small></h2>
-						<p>Vamos a definir una clase con sus atributos.</p>
-
-						<pre data-id="code-animation"><code class="python" data-trim>
-							class Auto:
-								marca = "VW"
-								color = None
-
-							mi_auto = Auto() # Instanciamos la clase auto
-							mi_auto.color = 'Rojo'
-							
-							otro_auto = Auto()
-							otro_auto.color = 'Blanco'
-
-							print(mi_auto.marca) # VW
-							print(mi_auto.color) # Rojo
-							print(otro_auto.color) # Blanco
-						</code></pre>
-						<p><small>Hemos creado una clase <code>Auto</code> con dos atributos de <em>instancia</em>; marca y color. Marca tiene un valor por defecto. Son tratados como <em>variables</em> normales, pero se acceden a ella anteponiendo el nombre del <em>objeto</em>. Quedando finalmente: <code>objeto.atributo</code></small></p>
-					</section> -->
-
-					<section id="constructor">
-						<h3>Definiendo métodos: constructor</h3>
-						<!-- <h4>Constructor</h4> -->
-						<p><small>Los lenguajes nos proveen un <em>constructor</em> por defecto para que cada clase pueda construir objetos. Pero a veces resulta muy útil tener nuestros propios <em>constructores</em>.</small></p>
-						<p><small>En <code>Python</code> hay un <em>método</em> especial llamado <code>__init__</code> que se usa como constructor.</small></p>
-						
-						<pre data-id="code-animation" class="fragment"><code class="python" data-trim data-line-numbers>
-							class Auto:
-								def __init__(self, un_modelo, un_color): # Constructor
-									self.modelo = un_modelo # Variable de instancia
-									self.color = un_color # Variable de instancia
-
-							mi_auto = Auto('Fiesta', 'Blanco') # Se instancia objeto
-							print(mi_auto.modelo, mi_auto.color) # Fiesta Blanco
-							otro_auto = Auto('Cruze', 'Negro') # Se instancia objeto
-							print(otro_auto.modelo, otro_auto.color) # Cruze Negro
-						</code></pre>
-
-						<p class="fragment"><small>Seguramente te hayas fijado en el <code>self</code> que se pasa como parámetro de entrada del método. Es una variable que representa la instancia de la clase, y <em>deberá estar siempre ahí</em>.</small></p>
-						<p class="fragment"><small>El uso de <code>__init__</code> y el doble __ no es una coincidencia. Cuando veas un método con esa forma, significa que está <em>reservado</em> para un uso especial del lenguaje.</small></p>
-						
-
-					</section>
-
-					<section id="metodos">
-						<h2>Definiendo métodos</h2>
-						
-						<pre data-id="code-animation"><code class="python" data-trim>
-							class Auto:
-								origen = "Argentina" # Variable de clase
-
-								def __init__(self, un_modelo): # Constructor
-									self.modelo= un_modelo	# Variable de instancia
-							
-								def arrancar(self): # Método
-									print("Auto encendido")
-								def acelerar(self, velocidad): # Método
-									print(f"Acelerando a {velocidad}km/h")
-								
-							mi_auto = Auto('Cruze')
-							mi_auto.arrancar() # Auto encendido"
-							mi_auto.acelerar(40) # Acelerando a 40km/h
-						</code></pre>
-						<p><small>Podemos acceder a los <em>métodos</em> con un punto luego del identificador del objeto. El primer parámetro de los métodos <em>debe ser</em> <code>self</code>. <a href="https://www.mycompiler.io/view/JdPnZIvjeYB" target="_blank">Ver código</a></small></p>
-						<p class="fragment"><small>En Python las variables de clase se definen fuera de los métodos y las variables de instancia van dentro de algún método.</small></p>
-					</section>
-
-					<section id="ejemplo">
-						<h2>Ejemplo</h2>
-						
-						<p><small>Queremos implementar en código el comportamiento de un semáforo.</small></p>
-						<p><small>El semáforo debe tener un estado de luz (Rojo o Verde) y de alguna forma deberíamos intercambiar entre un color de luz y el otro.</small></p>
-						<p class="fragment">¿Cómo se les ocurre que podemos hacer?</p>
-						<ul>
-							<li class="fragment">Crear una clase <em>Semaforo</em></li>
-							<li class="fragment">Crear el <em>constructor</em> de la clase</li>
-							<li class="fragment">Crear una <em>variable de instancia</em> para la luz</li>
-							<li class="fragment">Crear un <em>método</em> para cambiar la luz</li>
-						</ul>
-						
-
-						<p class="fragment"><small><a href="https://www.mycompiler.io/view/Lcly15uBOFt" target="_blank">Vamos al ejemplo resuelto</a></small></p>
-						
-
-						
-					</section>
-
-					<section>
-						<h3>Conclusiones sobre el ejemplo 1</h3>
-						<small>
-						<p>
-							<ul>
-								<li>Es necesario un método para definir variables de instancia. (L8)</li>
-								<li>Es posible definir valores por defecto a las variables de instancia (L8)</li>
-								<li>Es posible modificar las variables de instancia desde un método (L11)</li>
-								<li>Un constructor puede no tener parámetros de entrada (L17)</li>
-								<li>Es posible crear varios objetos de una clase (L23)</li>
-								<li>Es posible modificar las variables de instancia desde el programa principal (L24). Pero no es una buena práctica. Más adelante veremos que lo ideal es crear métodos para modificar los atributos (principio de encapsulación).</li>
-							</ul>
-
-						</p>
-												<!-- <p class="fragment"><small>Los métodos pueden invocar a las variables de instancia, de clase o incluso otros métodos del objeto o de la clase. <a href="https://www.mycompiler.io/view/AfLZLONyIeD" target="_blank">Veamoslo en un ejemplo:</a></small></p> -->
-
-					</small>
-					</section>
-
-					<section id="atributos_y_objetos">
-						<h3>Los atributos son objetos</h3>
-						<p><small>Si bien hasta ahora no lo hemos notado, los atributos son objetos. Con esta afirmación podemos crear una clase y que una instancia de esa clase sea el atributo de otra clase que estemos trabajando.</small></p>
-						<pre data-id="code-animation"><code class="python" data-trim>
-							class Estereo:
-								def encender(self):
-									# Código
-								def apagar(self):
-									# Código
-								# ...  Más código ...
-
-							class Auto
-								def __init__(self, un_color): # Constructor
-									self.audio = Estereo() # Objeto como va de instancia
-									self.color = un_color
-									# ...  Más código ...
-						</code></pre>
-						<p><small>De esta manera, podemos crear tantos objetos como creamos que sean necesarios. Y de hecho es bueno que hagamos una clase para cada objeto que contenga un comportamiento particular.</small></p>
-					</section>
-
-					<section>
-						<h2>¿Preguntas?</h2>
-					</section>
-
-
-				</section>
-
-				<section>
+				
 
 
 
 
 					<section id="ejercicio">
 						<h2>Ejercicio en clase</h2>
-						<p>Modele con POO el comportamiento de un <em>encendedor</em>.</p>
-						<p><small>Un encendedor puede encenderse (muestra un mensaje "Encendor encendido") y apagarse ("Encendedor apagado").</small></p>
-						<p><small>Además consta de un tanque de butano con capacidad máxima de 10 encendidos. Cada vez que se enciende el encendedor, la capacidad disminuye en uno. Si el tanque está vacío no será posible encenderlo ("No hay suficiente combustible"). Debe ser posible llenar el tanque de butano donde se llenará a su capacidad máxima.</small></p>
-						<p><small> También debe ser posible crear un segundo encendedor con el comportamiento totalmente independiente al primer encendedor.</small></p>
-
-						<p><small>Definir la clase <code>Encendedor</code> con los atributos y métodos que considere necesarios para modelarlo como se pide.</small></p>
-						<p><small>Escribir un programa que cree un encendedor, lo encienda 11 veces y una vez agotado el tanque, lo recargue y lo encienda una vez mas. <span><a href="https://www.mycompiler.io/view/Fmv9jPU45mO" target="_blank">Ejercicio resuelto</a></span></small></p>
+						<p><small>Representar en Python el siguiente esquema de clases <em>Vehiculo</em>.</small></p>
+						<img data-src="./static/poo/EjercicioClases.png" style="height: 40%; width: 40%">
+						<p><small>Implementar el método <code>__str__()</code> por cada clase para que imprima el contenido de cada caracteristica del vehículo en particular.</small></p>
+						<p><small>Ejercicio <a href="https://www.mycompiler.io/view/B9I30sMQLbm" target="_blank">resuelto</a></small></p>
+						
 						
 					</section>
 
-				</section>
-
-				<section>
-
-				
-
 		
+
+					<section>
 					<section id="glosario1">
-						<h3>Glosario <small>(p1/2)</small></h3>
+						<h3>Glosario <small>(p1/3)</small></h3>
 						<ul>
 							
 							<li><strong>POO:</strong><small> (Programación orientada a objetos): Un estilo de programación en el cual los datos y las operaciones que los manipulan se organizan en clases y métodos.</small></li>
@@ -402,12 +414,28 @@
 					</section>
 
 					<section id="glosario2">
-						<h3>Glosario <small>(p2/2)</small></h3>
+						<h3>Glosario <small>(p2/3)</small></h3>
 						<ul>
 							
 							<li><strong>Método:</strong><small> Una función que se define dentro de una definición de clase y se invoca en instancias de esa clase.</small></li>
 							<li><strong>Variable de instancia:</strong><small> Son variables que pertenecen a los objetos. Cada objeto creado tendrán sus propias variables de instancia.</small></li>
 							<li><strong>Variable de clase:</strong><small> Son variables que pertenecen a la clase. No hace falta instanciar la clase para interactuar con dicha variable.</small></li>
+
+
+						</ul>
+
+					</section>
+
+					<section id="glosario3">
+						<h3>Glosario <small>(p3/2)</small></h3>
+						<ul>
+							
+							<li><strong>Herencia:</strong><small> La capacidad que una clase herede los métodos y atributo de otra clase.</small></li>
+							<li><strong>Superclase:</strong><small> (o clase padre) es la clase de mas arriba en la jerarquía de la cual se heredarán los atributos y métodos a otra clase.</small></li>
+							<li><strong>Subclase:</strong><small> (o clase hija) es una clase que hereda de una clase padre los atributos y métodos.</small></li>
+							<li><strong>Polimorfismo:</strong><small> Un objeto puede tomar muchas formas. En Python puede entenderse que varios objetos entiendan los mismos mensajes.</small></li>
+							<li><strong>Encapsulamiento:</strong><small> Principio para ocultación del estado interno de un objeto.</small></li>
+
 
 
 						</ul>
