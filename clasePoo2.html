@@ -42,8 +42,8 @@
 							</ul>
 
 						
-						<li><a href="clasePoo.html#/ejercicio">Ejercicio en clase</a></li>
-						<li><a href="clasePoo.html#/glosario1">Glosario</a></li>
+						<li><a href="clasePoo2.html#/ejercicio">Ejercicio en clase</a></li>
+						<li><a href="clasePoo2.html#/glosario1">Glosario</a></li>
 					</ul>
 				</section>
 
@@ -333,7 +333,7 @@
 						<h3>Abstracción</h3>
 						
 						
-						<p><small>La abstracción puede entenderse como el método que se usa al momento de <em>analizar</em> un elemento particular (puede ser un elemento de la vida real), desechando los aspectos no relevantes y considerando solo las propiedades esenciales para nuestro análisis. Lo que nos facilita la comprensión del comportamiento del elemento.</small></p>
+						<p><small>La abstracción puede entenderse como el mecanismo que se usa al momento de <em>analizar</em> un elemento particular (puede ser un elemento de la vida real), desechando los aspectos no relevantes y considerando solo las propiedades esenciales para nuestro análisis. Lo que nos facilita la comprensión del comportamiento del elemento.</small></p>
 						<p><small>Durante las prácticas hemos realizado una y otra vez el proceso de <em>abstracción</em> para poder entender un <em>algo</em> y poder así resaltar las características que son relevantes representar en un programa de computadora.</small></p>
 						<!-- <p><small>Como para dar un ejemplo, en la <a href="clasePoo.html#/ejercicio" target="_blank">clase anterior</a> hemos visto una forma de abstracción de un encendedor. Resaltando las cualidades que nos interesaba y descartando otras que no eran relevantes para lo que nos pedía el ejercicio.</small></p> -->
 						<p><small>La abstracción nos ayuda también a desechar <em>como</em> se hacen procesos complejos y centrarnos en <em>qué es</em> que hacen.</small></p>
@@ -344,8 +344,9 @@
 					<section id="clases_abstractas">
 						<h3>Clases y métodos abstractos</h3>
 						<p><small>Se suman nuevos conceptos relacionados con la abstracción como lo son <em>clases abstractas</em> y <em>métodos abstractos</em>.</small></p>
-						<p><small>Se define como clase abstracta la que contiene métodos abstractos y esta <em>NO puede ser instanciada</em>.</small></p>
 						<p><small>Se define como método abstracto a un método que ha sido declarado pero no implementado. Es decir, que no tiene código.</small></p>
+						<p><small>Se define como clase abstracta la que contiene métodos abstractos y esta <em>NO puede ser instanciada</em>.</small></p>
+						
 						<p class="fragment"><small>¿Y para qué puede servir una clase abstracta si no puede ser instanciada? ¿Para qué puede servir un método que no tiene código?</small></p>
 						<p class="fragment"><small>Una clase abstracta sirve para definir la <em>interfaz</em> de las clases hijas al igual que los métodos abstractos, sirven para estandarizar la <em>interfaz</em> de los objetos obligándonos a implementar los métodos abstractos en las clases hijas.</small></p>
 						
@@ -356,9 +357,10 @@
 						
 						<p><small>Supongamos que tenemos una superclase <em>Vehículo</em> con tres subclases, Auto, Camioneta y Moto.</small></p>
 
-						<img data-src="./static/poo/clase_abstracta.png" style="height: 50%; width: 50%">
+						<img data-src="./static/poo/clase_abstracta.png" style="height: 55%; width: 55%">
+						
 						<p><small>Si no definimos la clase <em>Vehículo</em> como abstracta podrán haber instancias de <em>Vehículo</em> que NO serán un Auto, o Camioneta o Moto y tal vez no queramos que eso ocurra.</small></p>
-						<p><small>En un diagrama de clases, una clase se indica que es abstracta cuando el nombre de la misma está en cursiva.</small></p>
+						<p><small>En un <a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica9.md#introducci%C3%B3n-al-diagrama-de-clases-uml" target="_blank">diagrama de clases</a>, una clase se indica que es abstracta cuando el nombre de la misma está en cursiva.</small></p>
 
 					</section>
 
@@ -385,9 +387,9 @@
 						<p><small>En Python, una clase abstracta es la que contiene métodos abstractos.</small></p>
 					</section>
 
-					<section>
+					<section id="metodos_abstractos">
 						<h3>Métodos abstractos</h3>
-						<p><small>Los métodos abstractos nos <em>obligan</em> a tener que implementar los métodos en cada subclase. Si no los implementamos, dará error.</small></p>
+						<p><small>Los métodos abstractos nos <em>obligan</em> a implementar los métodos en cada subclase. Si no los implementamos, dará error.</small></p>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							from abc import ABC, abstractmethod
@@ -404,6 +406,26 @@
 						<p><small>En ese ejemplo el intérprete dará error porque el método <code>arrancar()</code> no está implementado en la subclase.</small></p>
 
 
+					</section>
+
+					<section>
+						<h3>Métodos abstractos <small>(P2)</small></h3>
+
+						<p><small>Para implementar un método abstracto, en la subclase debe ir el nombre del método con sus parámetros sin el decorator <code>@abstractmethod</code>.</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							from abc import ABC, abstractmethod
+							class Vehiculo(ABC):
+
+								@abstractmethod
+								def arrancar(self):
+									pass
+
+							class Auto(Vehiculo):
+								# Se implementa el método abstracto
+								def arrancar(self):  
+									print("ruuunnn") 
+						</code></pre>
 					</section>
 
 					<section>
@@ -437,7 +459,7 @@
 					<section id="ejercicio">
 						<h2>Ejercicio en clase</h2>
 						<p><small>Representar en Python el siguiente esquema de clases <em>Vehiculo</em>.</small></p>
-						<img data-src="./static/poo/EjercicioClases.png" style="height: 40%; width: 40%">
+						<img data-src="./static/poo/EjercicioClases.png" style="height: 30%; width: 30%">
 						<p><small>Implementar el método <code>__str__()</code> por cada clase para que imprima el contenido de cada caracteristica del vehículo en particular.</small></p>
 						<p><small>Ejercicio <a href="https://www.mycompiler.io/view/B9I30sMQLbm" target="_blank">resuelto</a></small></p>
 						
@@ -468,6 +490,7 @@
 							<li><strong>Método:</strong><small> Una función que se define dentro de una definición de clase y se invoca en instancias de esa clase.</small></li>
 							<li><strong>Variable de instancia:</strong><small> Son variables que pertenecen a los objetos. Cada objeto creado tendrán sus propias variables de instancia.</small></li>
 							<li><strong>Variable de clase:</strong><small> Son variables que pertenecen a la clase. No hace falta instanciar la clase para interactuar con dicha variable.</small></li>
+							<li><strong>Abstracción</strong><small> La abstracción es un termino que hace referencia a la ocultación de la complejidad intrínseca de una aplicación al exterior, centrándose sólo en como puede ser usada, lo que se conoce como interfaz.</small></li>
 
 
 						</ul>
@@ -475,7 +498,7 @@
 					</section>
 
 					<section id="glosario3">
-						<h3>Glosario <small>(p3/2)</small></h3>
+						<h3>Glosario <small>(p3/3)</small></h3>
 						<ul>
 							
 							<li><strong>Herencia:</strong><small> La capacidad que una clase herede los métodos y atributo de otra clase.</small></li>

@@ -52,11 +52,11 @@ Para el mensaje `quien_sos()` utilice algún mecanismo que obtenga el nombre de 
 
 
 ## Ejercicio 2
->Este ejercicio es una ampliación del  [ejercicio 5](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica8.md#ejercicio-4) de la práctica anterior.
+>Este ejercicio es una ampliación del [ejercicio 4](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica8.md#ejercicio-4) de la práctica anterior.
 
 Implemente utilizando _POO_ una estructura de datos **Pila** (si ya tiene hecho el ejercicio de la práctica anterior puede usarlo como guía) y otra estructura de datos **Cola**.
 
-Ambas estructuras tienen similitudes y diferencias, mientras que una _Pila_ se trata de una estructura del tipo _LIFO_ (Last-In First-Out), es decir que el último en entrar es el último en salir, la cola se basa en el tipo _FIFO_ (First-In First-Out), es decir que el primer elemento que ingresa es el primero en salir, como una cola de supermercado.
+Ambas estructuras tienen similitudes y diferencias, mientras que una _Pila_ se trata de una estructura del tipo _LIFO_ (Last-In First-Out), es decir que el último en entrar es el primero en salir, la cola se basa en el tipo _FIFO_ (First-In First-Out), es decir que el primer elemento que ingresa es el primero en salir, como una cola de supermercado.
 
 Las estructuras deben entender los siguientes mensajes:
 
