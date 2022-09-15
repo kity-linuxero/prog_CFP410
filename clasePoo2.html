@@ -289,7 +289,7 @@
 
 					<section>
 						<h3>Encapsulamiento</h3>
-						<p><small>En <strong>Python</strong> no tenemos las palabras claves que sí tenemos en Java y C++. Pero tenemos otras formas de hacer lo mismo.</small></p>
+						<p><small>En <strong>Python</strong> no tenemos las palabras claves que sí tenemos en Java y C++. Pero tenemos otras formas de implementarlo.</small></p>
 					<small>
 						<ul>
 							<li><strong>Public:</strong> Por defecto en Python todo será public.</li>
@@ -297,10 +297,30 @@
 							<li><strong>"Protected":</strong> El atributo o método debe comenzar con guión bajo (_). Pero a diferencia de Java, sí podrá ser accedido desde fuera de la clase.</li>
 						</ul>
 					</small>
+
+					<pre data-id="code-animation"><code class="python" data-trim>
+						class Prueba:
+							def __init__(self):
+								self.atributo_publico = 0
+								self._atributo_protegido = 1
+								self.__atributo_privado = 2
+					
+						p = Prueba()
+						print (p.atributo_publico) # 0
+						print (p._atributo_protegido) # 1
+						print (p.__atributo_privado) # AttributeError:
+							
+					</code></pre>
+
+					</section>
 					
 
 
-					<h4>Ejemplo con métodos</h4>
+					
+
+					<section>
+						<h3>Ejemplo con métodos</h3>
+						<p><small>Los métodos también pueden encapsularse:</small></p>
 
 						<pre data-id="code-animation"><code class="python" data-trim>
 							class Prueba:
@@ -310,17 +330,61 @@
 									pass
 								def __private(self):
 									pass
+
+							p = Prueba()
+							p.public() # pass
+							p._protected() # pass
+							p.__private() # AttributeError:
 						</code></pre>
 
-						<p><small>Ejemplo <a href="https://www.mycompiler.io/view/8qERUiQ2nzJ">encapsulamiento</a></small></p>
+						<p><small>Ejemplo <a href="https://www.mycompiler.io/view/8qERUiQ2nzJ" target="_blank">encapsulamiento</a></small></p>
+					</section>
+					<section>
+						<h3>getters y setters</h3>
+						<p><small>Como ya hemos mencionado en varias oportunidades, <em>es una mala práctica de programación acceder directamente a los atributos</em> existen por lo tanto mecanismos para acceder a los atributos sin romper el <em>encapsulamiento</em> de nuestros objetos. Estos mecanismos son conocidos como <strong>getters</strong> y <strong>setters</strong>.</small></p>
+						<small>
+						<ul>
+							<li><strong>getter</strong>: Viene del inglés <em>get</em> (obtener) y se usa para obtener el atributo que está encapsulado.</li>
+							<li><strong>setter</strong>: Viene del inglés <em>set</em> (establecer o setear) y se usa para establecer el valor al atributo que está encapsulado.</li>
+						</ul>
+					</small>
+					<p><small>En ambos caso se tratan de <em>métodos</em> que nos permiten acceder de forma segura al atributo encapsulado.</small></p>
+					<p><small>Por lo general, en el caso del <strong>getter</strong> es simplemente un método que hace un <code>return</code> del atributo.</small></p>
+					<p><small>En el caso del <strong>setter</strong> puede tratarse de un método que recibe como parámetro el valor para establecer en el atributo. Pero además el método puede contener código para hacer que el valor establecido sea válido.</small></p>
+					</section>
 
+					<section>
+						<h3>Getters y setters</h3>
+						<p><small>Siempre es mejor comprender las cosas con un ejemplo:</small></p>
+
+						<pre data-id="code-animation"><code class="python" data-trim>
+							class Prueba:
+								def __init__(self):
+									self.__atributo = 0
+								
+								def get_atributo(self):
+									return self.__atributo
+
+								def set_atributo(self, valor):
+									self.__atributo = valor
+
+							p = Prueba() # Se instancia la clase
+							p.set_atributo(3) # Se setea el valor 3 en el atributo
+							print (p.get_atributo()) # Se obtiene el valor del atributo
+						</code></pre>
+
+						<p><small>De esta manera estamos respetando el principio de encapsulación. Es importante que los métodos getters y setters sean accesibles desde donde se requiera obtener o establecer los valores de sus atributos.</small></p>
 						
 
-					
 					</section>
 					<section>
 						<h2>¿Preguntas?</h2>
 					</section>
+
+					
+				
+
+					
 				</section>
 
 				<section>
