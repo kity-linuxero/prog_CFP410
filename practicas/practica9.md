@@ -54,7 +54,7 @@ Para el mensaje `quien_sos()` utilice algún mecanismo que obtenga el nombre de 
 ## Ejercicio 2
 >Este ejercicio es una ampliación del [ejercicio 4](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica8.md#ejercicio-4) de la práctica anterior.
 
-Implemente utilizando _POO_ una estructura de datos **Pila** (si ya tiene hecho el ejercicio de la práctica anterior puede usarlo como guía) y otra estructura de datos **Cola**.
+Escriba un programa llamado `estructura_datos.py` y en él implemente utilizando _POO_ una estructura de datos **Pila** (si ya tiene hecho el ejercicio de la práctica anterior puede usarlo como guía) y otra estructura de datos **Cola**.
 
 Ambas estructuras tienen similitudes y diferencias, mientras que una _Pila_ se trata de una estructura del tipo _LIFO_ (Last-In First-Out), es decir que el último en entrar es el primero en salir, la cola se basa en el tipo _FIFO_ (First-In First-Out), es decir que el primer elemento que ingresa es el primero en salir, como una cola de supermercado.
 
@@ -77,6 +77,28 @@ Las estructuras deben entender los siguientes mensajes:
 Como puede ver, hay mensajes que son los mismos y otros que varían un poco en su implementación. Utilice una superclase `Estructura_de_datos` y dos subclases `Pila` y `Cola` para implementar el código.
 Puede apoyarse en una estructura `List` para ir almacenando los datos en las estructuras solicitadas.
 Trate de reutilizar todo el código que pueda generalizando en la clase `Estructura_de_datos` el código que sea compartido.
+
+>Importante: Respete el nombre de las clases; utilizando `Pila` para representar las pilas y `Cola` para representar las colas. Como también el nombre de los métodos propuestos. Puede crear métodos auxiliares si los necesita. Pero la interfaz hacia el usuario debe ser la sugerida.
+
+## Ejercicio 2.1 - Unittest 
+
+#### En este ejercicio se utilizarán unittest para verificar que la estructura de datos funciona como se espera
+
+Descargue el archivo [test_pila_cola.py](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/ej_resueltos/practica9/test_pila_cola.py) para verificar que su estructura de datos funciona. Deben pasar todos los test. Puede verificar el código fuente del test para tener mas información.
+
+El archivo debe estar en la misma carpeta que el programa `estructura_de_datos.py` y debe ejecutarse el programa `test_pila_cola.py`.
+El resultado esperado es el siguiente:
+
+```bash
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+```
+
+> Revise con atención el archivo [test_pila_cola.py](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/ej_resueltos/practica9/test_pila_cola.py). ¿Qué es lo que está haciendo?
+
 
 ## Ejercicio 3
 
@@ -155,3 +177,4 @@ a.llenar_tanque()
 # Han entrado 7,36 litros
 # Usted ha gastado $1268,12
 ```
+
