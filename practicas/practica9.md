@@ -99,6 +99,7 @@ OK
 
 > Revise con atención el archivo [test_pila_cola.py](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/ej_resueltos/practica9/test_pila_cola.py). ¿Qué es lo que está haciendo?
 
+[Documentación adicional](https://docs.python.org/es/3/library/unittest.html)
 
 ## Ejercicio 3
 
