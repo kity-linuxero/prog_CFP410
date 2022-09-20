@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Programación</title>
+		<link rel="stylesheet" href="css/egg.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section  data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					
+					<h2>Introducción a la programación</h2>
+				</section>
+
+				<section id="indice">
+					<h2>Clase 11</h2>
+					<h3>Contenido para hoy</h3>
+					<ul>
+						<li>Programación orientada a objetos</li>
+
+							<ul>
+								<li><a href="clasePoo2.html#/poo1">Repaso</a></li>
+								
+								<li><a href="clasePoo2.html#/herencia">Herencia</a></li>
+								<li><a href="clasePoo2.html#/polimorfismo">Polimorfismo</a></li>
+								<li><a href="clasePoo2.html#/encapsulamiento">Encapsulamiento</a></li>
+								<li><a href="clasePoo2.html#/abstraccion">Abstracción</a></li>
+								
+
+							</ul>
+
+						
+						<li><a href="clasePoo2.html#/ejercicio">Ejercicio en clase</a></li>
+						<li><a href="clasePoo2.html#/glosario1">Glosario</a></li>
+					</ul>
+				</section>
+
+				
+
+
+				<section>
+					<section id="poo">
+						<h3>Git, versionado de código y repositorios</h3>
+						
+					</section>
+
+					<section id="git1">
+						<h3>¿Qué es GIT?</h3>
+						<p><small>Git es <strong>un software</strong> para <em>control de versiones</em> (VCS del inglés Version control system) diseñado por <a href="https://es.wikipedia.org/wiki/Linus_Torvalds" target="_blank">Linus Torvalds</a> y es de código abierto.</small></p>
+						<h4>¿Qué es el control de versiones?</h4>
+						<p><small>El control de versiones se refiere al proceso de guardar diferentes versiones a lo largo de las etapas de un proyecto. No solo versiones completas, si no cambios en el código fuente.</small></p>
+						<p><small>Con el control de versiones podemos, en cualquier momento, volver a una versión anterior cuando queramos.</small></p>
+						<h4 class="fragment">¿Es lo mismo que Github?</h4>
+						<p class="fragment"><small><strong>¡NO!</strong> Github es una <em>plataforma</em> para almacenar repositorios <em>remotos</em> de git. Hay muchas otras alternativas a <a href="https://github.com/" target="_blank">GitHub</a> siendo la mas relevante hoy en día <a href="https://about.gitlab.com/" target="_blank">GitLab</a>.</small></p>
+					</section>
+
+
+					<section id="git2">
+						<h3>¿Para qué sirve Git?</h3>
+
+						<p><small>Imaginemos que estamos en un equipo de desarrollo de software de muchas personas trabajando sobre el mismo software. ¿Se imaginan compartir el código entre todos?.</small></p>
+						<p><small>Si alguien abre un archivo en modo escritura, ninguna otra persona podría acceder con permisos de escritura. Sería realmente un caos poder organizar el código. No habría seguimiendo de cambios que hizo cada desarrollador.</small></p>
+						<!-- <p><small>Un software para control de versiones nos proveen herramientas para trabajar no solamente en equipo y poder desarrollar sobre el mismo código sino que también nos proveen las herramientas de seguimiento por cada línea de código que se fueron agregando a lo largo del tiempo, bifurcar el código, volver a una versión anterior, etc.</small></p> -->
+						
+						<small><ul>Un sistema de control de versiones nos permite:
+							<li>Tener historial de los cambios</li>
+							<li>Almacenar el código</li>
+							<li>Trabajar en equipo</li>
+							<li>Nos permite rastrear errores</li>
+						</ul>
+						</small>
+						<p><small>Hoy en día, el software de control de versiones mas popular es git. Y es de <em>suma importancia para los desarrolladores</em> comprender su funcionamiento.</small></p>
+
+					</section>
+
+					<section id="git3">
+						<h3>Arquitectura de Git</h3>
+						<p><small>Git, que presenta una <strong>arquitectura distribuida</strong> (o descentralizada).
+							En lugar de tener un único espacio para todo el historial de versiones del software (arquitectura centralizada),
+							como sucede de manera habitual en los sistemas de control de versiones antaño populares,
+							como <em>CVS</em> o <em>Subversion</em>, en Git, la copia de trabajo del código de cada
+							desarrollador <em>es también un repositorio</em> que puede albergar el historial completo de todos los cambios.
+							Es decir, cada desarrollador tendrá una copia del repositorio completo en su estación de trabajo.
+						</small></p>
+						<p><small>La <strong>arquitectura distribuida</strong> presenta una ventaja, ya que si el servidor donde está alojado nuestro código por alguna razón llega a no estar disponible por un momento, podemos seguir trabajando al tener una copia en nuestra estación de trabajo.</small></p>
+						<p><small>Caso contrario, en una <strong>arquitectura centralizada</strong> NO podremos no solamente acceder a los nuevos cambios que introdujeron los otros desarrolladores, sino tampoco a nuestro código donde estábamos trabajando.</small></p>
+						<p><small>Otra diferencia de Git con los demás VCS es que Git almacena sus datos como un conjunto de <em>copias instantáneas</em> en vez de tener una lista de cambios (deltas) entre los archivos.</small></p>
+						<p><small>Otra ventaja es que en Git casi todas las operaciones son locales.</small></p>
+
+					</section>
+
+					<section>
+						<h3>Definiendo conceptos I</h3>
+						<p><small>Antes de seguir, es necesario definir algunos conceptos básicos:</small></p>
+						<small>
+						<ul>
+							<li><strong>Repositorio</strong>: Es un almacén o lugar para almacenar datos. En este caso código fuente de programas.</li>
+							<li><strong>Repositorio Local</strong>: Es un repositorio que está en la estación de trabajo del desarrollador.</li>
+							<li><strong>Repositorio remoto</strong>: Es un repositorio remoto. Puede estar en un servidor, en la nube, en GitHub/GitLab, etc.</li>
+							<li><strong>Workspace</strong>: Lugar de trabajo para nuestro proyecto. Básicamente es la <em>carpeta</em> o <em>directorio</em> donde están nuestros programas. Mediante el repositorio remoto es como vamos a compartir el código con nuestros colegas.</li>
+							<li><strong>Comando</strong>: Son instrucciones que se dan a un software de la computadora, por ejemplo Git.</li>
+							<li><strong>Copia instantánea</strong>: (Snapshot) Es una "<em>imágen</em>" (copia completa) de la información en un momento determinado.</li>
+							<li><strong>Hash</strong>: Un hash es una función que dada una entrada de información, devuelve una cadena de longitud fija. Es altamente usado para realizar verificaciones de integridad de la información y así comprobar que la misma no se haya corrompido.</li>
+						</ul>
+						</small>
+					</section>
+
+					<section>
+						<h3>Estados en Git</h3>
+						<p><small>Nuestro repositorio Git tiene 3 fases o áreas:</small></p>
+						<small>
+							<ul>
+								<li><strong>Working Directory</strong></li>
+								<li><strong>Staging Area</strong></li>
+								<li><strong>Git Repository:</strong>
+									<ul>
+										<li>Local</li>
+										<li>Remote</li>
+									</ul>
+								</li>
+							</ul>
+						</small>
+
+						<p><small>Los archivos irán pasando de un estado a otro según vayamos avanzando.</small></p>
+
+					</section>
+
+					<section>
+						<h3>Areas de un repo Git</h3>
+						
+						<!-- <img data-src="./static/git/Git_ciclo_de_vida_de_archivos_git.svg.png" style="height: 75%; width: 75%"> -->
+						<img data-src="./static/git/git-repos.png">
+						<!-- <p><small><small>Fuente imagen: Wikipedia</small></small></p> -->
+						
+						
+					</section>
+
+					<section>
+						<h3>Fase 1: Working directory</h3>
+						<p><small>Es nuestra carpeta local donde estamos trabajando. Si no se especifica, los archivos quedarán en esta área y no pasarán a las siguientes.</small></p>
+						<p><small>En esta área podemos hacer cualquier cambio en los archivos y no afecta al repositorio en absoluto. Pero cuando modifiquemos un archivo, el mismo pasará al estado <strong>modificado</strong>.</small></p>
+						<p><small>Si queremos llevar nuestros archivos del <em>working directory</em> al <em>repositorio</em> para almacenarlos, primero deberemos llevarlos al <strong>stagin area</strong>, donde los archivos estarán listos esperando a estar pasados al repositorio.</small></p>
+						<p><small>Para pasarlos al área siguiente (stagin area) se conoce como <code> git add</code>, por su comando que veremos mas adelante.</small></p>
+					</section>
+
+					<section>
+						<h3>Fase 2: Staging Area</h3>
+						<p><small>El staging es el lugar donde se guardan temporalmente los cambios, para luego ser llevados definitivamente al repositorio.</small></p>
+						<p><small>El área de staging se puede ver como un "limbo" donde nuestros archivos están por ser enviados al repositorio o ser regresados a la carpeta del proyecto.</small></p>
+					</section>
+
+					<section>
+						<h3>Fase 3: Repositorio</h3>
+						<p><small>En esta fase, los archivos que hayan pasado al area de <em>repository</em>, quedan almacenados en el o los repositorios.</small></p>
+						<p><small>El comando que hace posible pasar los archivos al repositorio es <code> git commit</code>.</small></p>
+						<p><small>Un <em>commit</em> es una imágen del estado de la carpeta al momento de hacerlo, por lo tanto será posible volver a esta imágen en cualquier momento.</small></p>
+						
+						<small>
+						<ul> Cada <code>commit</code> contiene:
+							<li>Una descripción</li>
+							<li>Un <em>hash</em> que lo identifica unívocamente</li>
+							<li>Autor</li>
+							<li>Fecha, hora de realizado</li>
+						</ul>
+					</small>
+					<p><small>Siempre se guardará en el repositorio local. Para guardarlo también en el repositorio remoto se ejecuta lo que se llama un <em>push</em> dado que se usa el comando <code>git push</code>.</small></p>
+					</section>
+
+					<section>
+						<h3>Ciclo de vida de archivos Git</h3>
+						<p><small>Los archivos tienen "4" estados <em>(status)</em> en cada diferente fase que conforman su ciclo de vida:</small></p>
+
+						<small>
+						<ul>
+							<li class="fragment"><strong>Sin seguimiento (untracked)*</strong>
+								<ul>
+									<li>Lo archivos no están en Git, solo en nuestro disco</li>
+									<li>Nunca han sido afectados por <code>git add</code></li>
+									<li>Git no tiene registro de su existencia</li>
+								</ul>
+							</li>
+							<li class="fragment"><strong>Modificado (modified/unstaged/no rastrados para el commit)</strong>
+								<ul>
+									<li>Están en Git</li>
+									<li>Git tiene un registro desactualizado de los archivos</li>
+									<li>Sus últimas modificaciones están en el disco pero no en Git</li>
+									<li>Sus últimos cambios han sido afectados por el comando <code>git add</code> ni <code>git commit</code></li>
+								</ul>
+							</li>
+							<li class="fragment"><strong>Preparado (staged/a ser confirmados)</strong>
+								<ul>
+									<li>Están en el stagin area. Fueron llevados con el comando <code>git add</code></li>
+									<li>Git tiene un registro de los cambios, pero aún no han sido pasados al repositorio</li>
+								</ul>
+							
+							</li>
+							<li class="fragment"><strong>Confirmado (committed/tracked)</strong>
+								<ul>
+									<li>Son los archivos que están definitivamente en el repositorio</li>
+									<li>No tienen cambios pendientes. Fueron llevados con el comando <code>git commit</code></li>
+								</ul>			
+							</li>
+						</ul>
+						
+						</small>
+						<p class="fragment"><small>* En algunas referencias puede ser que se encuentren como tres estados, ignorando el status <em>untracked</em>, ya que Git no tiene registros de su existencia.</small></p>
+					</section>
+
+					<section>
+						<h3>Flujo de trabajo en Git</h3>
+						<p><small>Por lo general, el flujo de trabajo en Git es el siguiente:</small></p>
+						<small>
+						<ul>
+							<li>1. Se crea un repositorio o se clona uno existente (Se realiza solo una vez). <code>git init</code> o <code>git clone</code> respectivamente.</li>
+							<li>1.1 En caso que el repositorio haya sido creado, puede agregarse opcionalmente la URL del repositorio remoto. <code>git remote add</code></li>
+							<li>2. Se crean o modifican archivos según necesite nuestro código. Ej.: <code>programa.py</code></li>
+							<li>3. Se agregan los archivos al área stagin. <code>git add</code></li>
+							<li>4. Se pasan al repositorio local. <code>git commit</code></li>
+							<li>5. Opcionalmente se pueden enviar al repositorio remoto. <code>git push</code></li>
+						</ul>
+					</small>
+					</section>
+
+
+					<section>
+						<h3>Flujo de trabajo en Git</h3>
+						<p><small>Para graficar lo dicho antes, el flujo y sus comandos serían así:</small></p>
+
+						<img src="./static/git/git_flujo.png">
+					</section>
+
+					<!-- <section>
+						<h3>Stage area y repositorio</h3>
+						<p><small>Seguramente te preguntarás ¿Para qué sirve tener un area stagin y un repositorio? Si con una fase alcanzaría para almacenar nuestros archivos al repositorio.</small></p>
+						<p><small>Hay una ventaja fundamental en separar estas dos áreas.</small></p>
+						<p><small>Imaginemos que creamos dos archivos, <code>programa.py</code> y <code>modulo.py</code>.</small></p>
+						<p><small>Como cada <code>commit</code> requiere de un breve comentario </small></p>
+
+					</section> -->
+
+
+
+				</section>
+
+				<section>
+					<section>
+						<h3>Usando Git</h3>
+					</section>
+
+					<section>
+						<h2>Instalación de Git</h2>
+						<p>La instalación de Git puede variar según tu sistema operativo.</p>
+						<ul>
+							<li><a href="https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos#Instalar_GIT_en_Windows" target="_blank">Instalación en Windows</a></li>
+							<li><a href="https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos#Instalar_GIT_en_Linux" target="_blank">Instalación en Linux</a></li>
+							<li><a href="https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos#Instalar_GIT_en_MacOS" target="_blank">Instalación en MacOS</a></li>
+						</ul>
+
+						<p><small>En el caso de la instalación en Windows, se incluye además el <em>Git Bash</em> que será donde se ejecutarán los comandos.</small></p>
+						<p><small>Hay muchas aplicaciones para realizar todos los pasos de git de forma gráfica. Por ejemplo Visual Studio Code provee herramientas básicas para trabajar con Git. <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows/MacOS), <a href="https://murmele.github.io/Gittyup/" target="_blank">Gittyup</a>(Linux, Windows, MacOS).</small></p>
+						<p><small>En lo que sigue, nos centraremos al uso de la consola, ya que es como se usa en el ámbito de los desarrolladores. Ocasionalmente nos apoyaremos en las herramientas gráficas para ilustrar alguna situación.</small></p>
+					</section>
+				</section>
+
+			
+					
+			
+
+
+
+
+					<section id="ejercicio">
+						<h2>Ejercicio en clase</h2>
+						<p><small>Representar en Python el siguiente esquema de clases <em>Vehiculo</em>.</small></p>
+						<img data-src="./static/poo/EjercicioClases.png" style="height: 30%; width: 30%">
+						<p><small>Implementar el método <code>__str__()</code> por cada clase para que imprima el contenido de cada caracteristica del vehículo en particular.</small></p>
+						<p><small>Ejercicio <a href="https://www.mycompiler.io/view/B9I30sMQLbm" target="_blank">resuelto</a></small></p>
+						
+						
+					</section>
+
+		
+
+					<section>
+					<section id="glosario1">
+						<h3>Glosario <small>(p1/3)</small></h3>
+						<ul>
+							
+							<li><strong>POO:</strong><small> (Programación orientada a objetos): Un estilo de programación en el cual los datos y las operaciones que los manipulan se organizan en clases y métodos.</small></li>
+							<li><strong>Clase:</strong><small> Una "plantilla" que definen los datos y comportamiento que tendrán los objetos creados a partir de la clase .</small></li>
+							<li><strong>Objeto:</strong><small> Es una <em>instancia</em> de la clase a la cual pertenece. Tendrán los datos y comportamiento definidos en la clase.</small></li>
+							
+
+
+						</ul>
+
+					</section>
+
+					<section id="glosario2">
+						<h3>Glosario <small>(p2/3)</small></h3>
+						<ul>
+							
+							<li><strong>Método:</strong><small> Una función que se define dentro de una definición de clase y se invoca en instancias de esa clase.</small></li>
+							<li><strong>Variable de instancia:</strong><small> Son variables que pertenecen a los objetos. Cada objeto creado tendrán sus propias variables de instancia.</small></li>
+							<li><strong>Variable de clase:</strong><small> Son variables que pertenecen a la clase. No hace falta instanciar la clase para interactuar con dicha variable.</small></li>
+							<li><strong>Abstracción</strong><small> La abstracción es un termino que hace referencia a la ocultación de la complejidad intrínseca de una aplicación al exterior, centrándose sólo en como puede ser usada, lo que se conoce como interfaz.</small></li>
+
+
+						</ul>
+
+					</section>
+
+					<section id="glosario3">
+						<h3>Glosario <small>(p3/3)</small></h3>
+						<ul>
+							
+							<li><strong>Herencia:</strong><small> La capacidad que una clase herede los métodos y atributo de otra clase.</small></li>
+							<li><strong>Superclase:</strong><small> (o clase padre) es la clase de mas arriba en la jerarquía de la cual se heredarán los atributos y métodos a otra clase.</small></li>
+							<li><strong>Subclase:</strong><small> (o clase hija) es una clase que hereda de una clase padre los atributos y métodos.</small></li>
+							<li><strong>Polimorfismo:</strong><small> Un objeto puede tomar muchas formas. En Python puede entenderse que varios objetos entiendan los mismos mensajes.</small></li>
+							<li><strong>Encapsulamiento:</strong><small> Principio para ocultación del estado interno de un objeto.</small></li>
+
+
+
+						</ul>
+
+					</section>
+				</section>
+
+
+
+				
+				
+
+
+
+
+
+				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+					<h3>¡Fin de la clase!</h3>
+					<a href="./clasePoo.html"> < Ir a clase anterior</a><br>
+					<a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica9.md" target="_blank"> Ir a la práctica 9</a><br>
+					
+
+				</section>
+					<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
+						<h2>Bibliografia</h2>
+						<small>
+						<p><a href="https://ellibrodepython.com" target="_blank">El libro de Python</a></p>
+						<p><a href="https://raw.githubusercontent.com/espinoza/ThinkPython2-spanish/master/book/thinkpython2-spanish.pdf">ThinkPython 2nd edition<br><small>(Downey-Elkner-Meyers)</small></a></p>
+						
+						<!-- <h3>Referencias</h3> -->
+						<h3>Recursos</h3>
+						<p><a href="https://www.online-python.com/" target="_blank">Interprete Python Online</a></p>
+						<p><a href="https://www.mycompiler.io/new/python" target="_blank">My Compiler IDE Online</a></p>
+					</small>
+					</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
