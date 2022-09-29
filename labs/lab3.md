@@ -60,7 +60,7 @@ Si todo salió bien, se mostrará una pantalla similar a la siguiente:
 Ahora tenemos `camelcase` instalada, para usarla debemos ver la [documentación](https://pypi.org/project/camelcase/) de los desarrolladores. 
 
 ```python
-import camelcase
+import camelcase # Importación de librería instalada
 
 c = camelcase.CamelCase()
 
@@ -156,7 +156,7 @@ nom = fake.name()
 dir = fake.address()
 tex = fake.text()
 
-print(f"Nombre: {nom}\nDirección: {dir}\nTexto: {tex}")
+print(f"Nombre: {nom}\nDirección: {dir}\n")
 ```
 
 El output puede ser algo como este:
@@ -165,8 +165,6 @@ El output puede ser algo como este:
 Nombre: Sheila Doyle
 Dirección: Unit 7227 Box 7193
 DPO AA 99185
-Texto: Left current population after. Policy teach him customer bank. Possible decision Democrat lead.
-Make sense street require. Report remain student.
 ```
 
 Podemos notar dos cosas,
@@ -308,7 +306,21 @@ Vea el código fuente de "aliens" [aquí](https://github.com/pygame/pygame/blob/
 ## Otras librerías que pueden ser útiles
 
 - `pysimplegui`: Crear interfaces gráficas "desktop" para nuestras aplicaciones. [Doc](https://www.pysimplegui.org/en/latest/)
-- ``
+- `wxPython`: Crear interfaces gráficas para Python. [Doc](https://pypi.org/project/wxPython/)
+- `django`: _Framework_* para crear aplicaciones Web con Python. [Doc](https://docs.djangoproject.com/en/4.1/)
+- `requests`:  Biblioteca HTTP elegante y simple para Python. Permite obtener datos desde una página web. [Doc](https://requests.readthedocs.io/en/latest/)
+
+
+## Sugerencias para utilizar una librería
+
+Las librerías forman parte del desarrollo de nuestras aplicaciones. Cuando nuestras aplicaciones pasan de ser simples ejercicios de programación lo mas probable es que nos apoyemos en librerías que nos simplifiquen parte de lo que necesitamos hacer.
+
+Para eso debemos saber que tenemos que resolver y buscar si hay algunas librería ya implementada. Obviamente los buscadores de internet nos ayudarán en esta tarea. 
+
+Como sugerencia, siempre es buscar librerías que estén en desarrollo y no hayan quedado _deprecadas_ (obsoletas, sin mantenimiento). Para saber esto solo basta con ver la última actualización desde [pypip](https://pypi.org/) o desde el repositorio de la librería, por lo general sus respectivos repositorios se encuentran en GitHub o GitLab.
+
+También hay que prestar atención a la __licencia__ con la cual está publicada la librería de manera de saber qué uso podemos darle y si es compatible con nuestro proyecto. Algunas licencias de software libre, como la GPLv3(https://es.wikipedia.org/wiki/GNU_General_Public_License#Compatibilidad_y_licencias_m%C3%BAltiples) (licencia restrictiva) exige que los programas que usen el código de esa librería sean publicados bajo la misma licencia. 
+
 
 
 ## Introducción a JSON.
