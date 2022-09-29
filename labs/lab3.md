@@ -1,7 +1,7 @@
 # Laboratorio 3
 En este laboratorio usted aprenderá a:
-- Utilizar JSON para intercambio de información
 - Instalar librerías para Python
+- Entender el uso de las librerías y ejemplos prácticos
 
 ## Librerías
 
