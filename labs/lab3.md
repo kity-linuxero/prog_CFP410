@@ -80,7 +80,7 @@ La librería anterior se mostró solamente a fines de ejemplo. Fíjese que prime
 
 - `pip list`: Lista las librerías instaladas.
 - `pip update <libreria>`: Actualiza la librería indicada
-- `pip remove <libreria>`: Desinstala la librería indicada
+- `pip uninstall <libreria>`: Desinstala la librería indicada
 - `pip show <libreria>`: Muestra información adicional sobre la librería indicada
 - `pip freeze`: Muestra las librerías instaladas y sus versiones en formato _requeriments_.
 - `pip freeze <libreria>`: Muestra la librería indicada, sus dependencias y respectivas versiones en formato _requeriments_.
