@@ -319,47 +319,7 @@ Para eso debemos saber que tenemos que resolver y buscar si hay algunas librerí
 
 Como sugerencia, siempre es buscar librerías que estén en desarrollo y no hayan quedado _deprecadas_ (obsoletas, sin mantenimiento). Para saber esto solo basta con ver la última actualización desde [pypip](https://pypi.org/) o desde el repositorio de la librería, por lo general sus respectivos repositorios se encuentran en GitHub o GitLab.
 
-También hay que prestar atención a la __licencia__ con la cual está publicada la librería de manera de saber qué uso podemos darle y si es compatible con nuestro proyecto. Algunas licencias de software libre, como la GPLv3(https://es.wikipedia.org/wiki/GNU_General_Public_License#Compatibilidad_y_licencias_m%C3%BAltiples) (licencia restrictiva) exige que los programas que usen el código de esa librería sean publicados bajo la misma licencia. 
+También hay que prestar atención a la __licencia__ con la cual está publicada la librería de manera de saber qué uso podemos darle y si es compatible con nuestro proyecto. Algunas licencias de software libre, como la [GPLv3](https://es.wikipedia.org/wiki/GNU_General_Public_License#Compatibilidad_y_licencias_m%C3%BAltiples) (licencia restrictiva) exige que los programas que usen el código de esa librería sean publicados bajo la misma licencia. 
 
 
-
-## Introducción a JSON.
-
-**JSON** (JavaScript Object Notation - Notación de Objetos de JavaScript) es un formato ligero de intercambio de datos. Leerlo y escribirlo es simple para humanos, mientras que para las máquinas es simple interpretarlo y generarlo.
-
-Obtuvo una amplia adopción como anternativa a la notación [XML](https://developer.mozilla.org/es/docs/Web/XML/XML_introduction) que está cada vez mas en desuso y es comúnmente utilizado para _transmitir datos_ en aplicaciones web (por ejemplo: enviar algunos datos desde el servidor al cliente, así estos datos pueden ser mostrados en páginas web, o vice versa). También es común verlo en archivos de configuración o para guardar información en formato texto.
-
-JSON es parte importante del desarrollo de software por lo que tarde o temprano se encontrará en la situación de necesitar _generar_ o _parsear_ un JSON.
-
-JSON está constituído por dos estructuras:
-- Una colección de pares de nombre/valor. En varios lenguajes esto es conocido como un objeto, registro, estructura, **diccionario**, tabla hash, lista de claves o un arreglo asociativo.
-- Una lista ordenada de valores. En la mayoría de los lenguajes, esto se implementa como arreglos, vectores, _listas_ o secuencias.
-
-A fines prácticos, podemos ver el formato JSON similar a los diccionarios vistos en clase. Porque se basa en el par `clave:valor` encerrados entre `{}`
-
-### Sintaxis
-Los tipos de datos disponibles en JSON son:
-- Números
-- String
-- Booleanos
-- null
-- Arrays
-- Objetos
-
-```json
-{
-  "departamento":8,
-  "nombredepto":"Ventas",
-  "director": "Juan Rodríguez",
-  "empleados":[
-    {
-      "nombre":"Pedro",
-      "apellido":"Fernández"
-    },{
-      "nombre":"Jacinto",
-      "apellido":"Benavente"
-    } 
-  ]
-}
-```
 
