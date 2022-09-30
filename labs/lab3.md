@@ -13,13 +13,13 @@ Gracias a estas librerías, podemos concentrarnos en resolver un problema sin es
 
 En los desarrollos de la vida real, salvo en algunas excepciones, las y los programadores, desarrollan soportándose en librerías que se encuentren disponibles para usar.
 
-Una librería al ser un conjunto de código de un tercero, debe haber una forma de importar ese código para poder usarlo. Es posible importar las librerías de distintas maneras, pero a continuación veremos como usar librerías de terceros en Python.
+Una librería al ser un conjunto de código de un tercero, debe haber una forma de importar ese código para poder usarlo. Es posible importar las librerías de distintas maneras, pero a continuación veremos como usar librerías en Python.
 
 ### Librerías y paquetes en Python
 
 Python es uno de los lenguajes mas populares en estos tiempos. Y dispone de más de 402.931 paquetes (packages) para poder usar libremente. [Fuente](https://pypi.org/)
 
-Hasta ahora hemos usado y en ocasiones importado a nuestro código parte de la librería estándar de Python sin instalar ninguna, pero a medida que nuestros proyectos se vuelven cada vez más complejos, será necesario apoyarnos en esas librerías para agilizar nuestro desarrollo.
+Hasta ahora hemos usado y en ocasiones importado a nuestro código parte de la librería estándar de Python sin instalar nada, pero a medida que nuestros proyectos se vuelven cada vez más complejos, será necesario apoyarnos en esas librerías para agilizar nuestro desarrollo.
 
 Obviamente es posible instalar librerías para otros lenguajes, cada uno utiliza su propio manejador de paquetes, por ejemplo en Python se usa `pip` para instalar paquetes, en NodeJS se usa `npm`, `maven` para Java, `Ruby Gems` para Ruby.
 
@@ -42,7 +42,7 @@ pip --version
 
 En caso de no estar instalado, se puede instalar desde este [link](https://pypi.org/project/pip/).
 
-esa pantalla muestra que está instalada la versión 22.2.2 de pip.
+Esa pantalla muestra que está instalada la versión 22.2.2 de pip.
 
 #### Descargar e instalar paquetes
 
@@ -92,12 +92,12 @@ Antes de instalar cualquier paquete de Python, __se recomienda crear un entorno 
 
 En un momento determinado nos encontraremos trabajando con varios proyectos y cada proyecto necesitará sus propios paquetes y tal vez, necesiten versiones específicas de cada paquete. Por esa razón se recomienda altamente realizar entornos virtuales. Pero para este laboratorio puede obviarlo pero sepa que los paquetes se instalarán de manera global en el sistema y no para un determinado proyecto.
 
-Para mas información de como crear entornos virtuales, visite este [link](https://www.programaenpython.com/miscelanea/crear-entornos-virtuales-en-python/)
+Para mas información de como crear entornos virtuales, visite este [link](https://www.programaenpython.com/miscelanea/crear-entornos-virtuales-en-python/).
 
 
 ### Archivo requeriments
 
-Si observamos código fuente de proyectos Python, es común ver en la carpeta raíz del proyecto un archivo llamado `requeriments.txt`. El archivo contiene una lista de las librerías que usará el proyecto con sus versiones correspondientes.
+Si observamos código fuente de proyectos Python, a veces podemos ver en la carpeta raíz del proyecto un archivo llamado `requeriments.txt`. El archivo contiene una lista de las librerías que usará el proyecto con sus versiones correspondientes.
 
 Por ejemplo, el contenido de un archivo `requeriments.txt` puede ser el siguiente: 
 
@@ -119,7 +119,7 @@ Respecto a las versiones, las librerías suelen usar _Versionado semántico_ (Se
 
 Vea mas documentación sobre [SemVer](https://semver.org/lang/es/) y sepa como versionar su software.
 
-### Librería Faker
+## Librería Faker
 
 En este Lab, veremos la utilización de la librería [Faker](https://faker.readthedocs.io/en/master/).
 Según su documentación, Faker se describe como  un paquete de Python que genera datos falsos. Ya sea que necesite iniciar una base de datos, crear documentos, completar su persistencia para realizar pruebas de estrés o anonimizar los datos tomados de un servicio de producción, Faker es para usted.
@@ -216,8 +216,6 @@ Si utilizamos `fake = Faker('es_ES')` en nuestro código, podemos utilizar sus m
 Tiene un listado completo de los métodos [aquí](https://faker.readthedocs.io/en/master/locales/es_ES.html).
 
 
-
-
 ## Convierta texto en audio
 
 En el siguiente ejemplo verá que con apenas unas pocas líneas de código podrá reproducir audio a partir de un texto enviado.
@@ -279,7 +277,47 @@ Se generará un archivo `qr.code` con el mensaje
 
 ![](./img/qr.png)
 
+## Descargar contenido de YouTube
 
+Se utiliza la librería:
+- `pytube`: Librería que permite descargar contenido de YouTube [Doc](https://pytube.io/en/latest/index.html)
+
+#### Instalación
+
+```
+pip install pytube
+```
+
+#### Descargar un video
+
+```python
+from pytube import YouTube 
+# La carpeta donde se guardará
+CARPETA = "./"  
+# Link del video a descargar
+LINK='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+
+yt = YouTube(LINK) 
+
+d_video = yt.streams.get_by_itag(22)
+
+d_video.download(CARPETA) 
+```
+
+#### Descargar solo el audio
+
+```python
+from pytube import YouTube
+
+# La carpeta donde se guardará
+CARPETA = './'
+# Link del video a descargar
+LINK = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+
+yt=YouTube(LINK)
+t=yt.streams.filter(only_audio=True).first()
+t.download(CARPETA)
+```
 
 ## Librería Pygame
 
@@ -309,6 +347,8 @@ Vea el código fuente de "aliens" [aquí](https://github.com/pygame/pygame/blob/
 - `wxPython`: Crear interfaces gráficas para Python. [Doc](https://pypi.org/project/wxPython/)
 - `django`: _Framework_* para crear aplicaciones Web con Python. [Doc](https://docs.djangoproject.com/en/4.1/)
 - `requests`:  Biblioteca HTTP elegante y simple para Python. Permite obtener datos desde una página web. [Doc](https://requests.readthedocs.io/en/latest/)
+- `pandas`: Manejo y análisis de estructuras de datos. [Doc](https://pandas.pydata.org/docs/)
+- `arcade`: Crear juegos. Alternativa a pygame. [Doc](https://api.arcade.academy/en/latest/)
 
 
 ## Sugerencias para utilizar una librería
