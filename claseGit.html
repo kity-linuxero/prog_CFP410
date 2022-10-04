@@ -25,10 +25,10 @@
 				</section>
 
 				<section id="indice">
-					<h2>Clase 11</h2>
-					<h3>Contenido para hoy</h3>
+					<h2>Clase 12</h2>
+					<h3>Contenido de la clase</h3>
 					<ul>
-						<li>Programación orientada a objetos</li>
+						<li>Introducción a Git</li>
 
 							<ul>
 								<li><a href="clasePoo2.html#/poo1">Repaso</a></li>
@@ -42,7 +42,7 @@
 							</ul>
 
 						
-						<li><a href="clasePoo2.html#/ejercicio">Ejercicio en clase</a></li>
+						<li><a href="claseGit.html#/ejercicio">Ejercicio en clase</a></li>
 						<li><a href="clasePoo2.html#/glosario1">Glosario</a></li>
 					</ul>
 				</section>
@@ -156,7 +156,7 @@
 							<li>Hay tres branchs: <code>master</code>, <code>new_feature</code> y <code>bug_fix</code></li>
 							<li>Merge de commits:</li>
 							<ul>
-								<li>c2 = c1 + c1.1</li>
+								<li>c2 = c1 + c1.a</li>
 								<li>c3= c2 + c1.2</li>
 							</ul>
 						</ul>
@@ -170,7 +170,7 @@
 						<small>
 						<ul>
 							<li>Es posible que otro branch sobrepase al <code>main</code>, de hecho la mayoría de veces algún branch está por delante del <code>main</code></li>
-							<li>Esto es así porque la rama <mode>main</mode> se usa para un código que puede correr en producción o es estable. En el resto de las ramas pueden ir pruebas, versiones de desarrollo o nuevas características (features).</li>
+							<li>La rama <mode>main</mode> se usa para un código de producción o que es estable. En el resto de las ramas pueden ser pruebas, versiones de desarrollo o nuevas características (features).</li>
 							<li>Las nuevas características por lo general son branchs que parten de una rama de desarrollo.</li>
 						</ul>
 						</small>
@@ -266,7 +266,7 @@
 
 					<section>
 						<h3>Ciclo de vida de archivos Git</h3>
-						<p><small>Los archivos tienen "4" estados <em>(status)</em> en cada diferente fase que conforman su ciclo de vida:</small></p>
+						<p><small>Los archivos tienen "4" estados <em>(status)</em> en cada diferente fase en su ciclo de vida:</small></p>
 
 						<small>
 						<ul>
@@ -327,6 +327,10 @@
 						<img src="./static/git/git_flujo.png">
 					</section>
 
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
 					<!-- <section>
 						<h3>Stage area y repositorio</h3>
 						<p><small>Seguramente te preguntarás ¿Para qué sirve tener un area stagin y un repositorio? Si con una fase alcanzaría para almacenar nuestros archivos al repositorio.</small></p>
@@ -348,28 +352,29 @@
 					<section>
 						<h2>Instalación de Git</h2>
 						<p>La instalación de Git puede variar según tu sistema operativo.</p>
+						<small>
 						<ul>
 							<li><a href="https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos#Instalar_GIT_en_Windows" target="_blank">Instalación en Windows</a></li>
 							<li><a href="https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos#Instalar_GIT_en_Linux" target="_blank">Instalación en Linux</a></li>
 							<li><a href="https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos#Instalar_GIT_en_MacOS" target="_blank">Instalación en MacOS</a></li>
 						</ul>
-
+					</small>
 						<p><small>En el caso de la instalación en Windows, se incluye además el <em>Git Bash</em> que será donde se ejecutarán los comandos.</small></p>
-						<p><small>Hay muchas aplicaciones para realizar todos los pasos de git de forma gráfica. Por ejemplo Visual Studio Code provee herramientas básicas para trabajar con Git. <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows/MacOS), <a href="https://murmele.github.io/Gittyup/" target="_blank">Gittyup</a>(Linux, Windows, MacOS).</small></p>
+						<p><small>Hay muchas aplicaciones para realizar todos los pasos de git de forma gráfica. Por ejemplo Visual Studio Code provee herramientas básicas para trabajar con Git. <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows/MacOS), <a href="https://murmele.github.io/Gittyup/" target="_blank">Gittyup</a> (Linux, Windows, MacOS).</small></p>
 						<p><small>En lo que sigue, nos centraremos al uso de la consola, ya que es como se usa en el ámbito de los desarrolladores. Ocasionalmente nos apoyaremos en las herramientas gráficas para ilustrar alguna situación.</small></p>
 					</section>
 
 					<section>
 						<h3>Creando un repositorio</h3>
-						<p>Como hemos dicho antes, hay dos formas de crear un repositorio:</p>
+						<p>Como hemos dicho antes, hay dos formas de iniciar un repositorio:</p>
 						<ul>
-							<li>Creando un repositorio</li>
+							<li>Creando un repositorio desde cero</li>
 							<pre data-id="code-animation"><code class="bash" data-trim>
 								git init
 							</code></pre>
 							<li>Clonando un repositorio</li>
 							<pre data-id="code-animation"><code class="bash" data-trim>
-								git clone URL
+								git clone URL_GitHub/GitLab...
 							</code></pre>
 						</ul>
 					</section>
@@ -401,12 +406,41 @@
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							git commit -m "Una descripción"
 						</code></pre>
+
+						<p class="fragment"><small>Cada commit se identifican con un <strong>hash</strong>.</small></p>
 					</section>
 
 					<section>
 						<h3>Ver registro de commits</h3>
 
-						<p>Ver el estado del repositorio</p>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git log
+						</code></pre>
+						<small>
+						<p>Con ese comando podemos obtener los siguientes datos de los commits:</p>
+						
+						<ul>
+							<li>La descripción del commit</li>
+							<li>El hash del commit</li>
+							<li>Autor</li>
+							<li>Fecha y hora</li>
+							<li>Tags (si los hay)</li>
+						</ul>
+					</small>
+
+					</section>
+
+					<section>
+						<h3>Agregar etiquetas</h3>
+						<p>Se pueden usar para definir por ejemplo versiones.</p>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git tag "v1.0"
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Ver el estado del repositorio</h3>
 
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							git status
@@ -430,22 +464,65 @@
 						<pre data-id="code-animation"><code class="bash" data-trim>
 							git switch -c "Nombre_rama"
 						</code></pre>
+
+						<p><small>Anteriormente se usaba <code>git checkout -B nombre_rama</code> para crear un branch. Pero <code>checkout</code> fue dejado para cambiar entre <em>commits</em> y se implementó <code>switch</code> para cambiar entre ramas.</small></p>
+
+						<p>Cambiar entre una rama u otra</p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git switch nombre_rama_a_cambiarnos
+						</code></pre>
+
+
 					</section>
-				</section>
 
-			
+					<section>
+						<h3>Mergear ramas</h3>
+						<small>
+						<p>Una de las características mas potentes de Git es poder fusionar (mergear) las distintas ramas.</p>
+						<p>Los pasos a seguir:</p>
+						<ul>
+							<li>Pararnos en la rama destino</li>
+							<li>Luego invocar con <code>git merge rama_origen</code></li>
+						</ul>
+					</small>
+
+						<p><small>Por ejemplo si estamos en la rama <code>main</code> y nos queremos traer los cambios que hicimos en <code>develop</code></small></p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git switch main
+							git merge develop
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Volver a un commit anterior</h3>
+						<p><small>Podemos volver a un commit anterior</small></p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git checkout HASH_COMMIT o TAG
+						</code></pre>
+
+						
+					</section>
+
 					
-			
-
-
-
+				</section>
 
 					<section id="ejercicio">
 						<h2>Ejercicio en clase</h2>
-						<p><small>Representar en Python el siguiente esquema de clases <em>Vehiculo</em>.</small></p>
-						<img data-src="./static/poo/EjercicioClases.png" style="height: 30%; width: 30%">
-						<p><small>Implementar el método <code>__str__()</code> por cada clase para que imprima el contenido de cada caracteristica del vehículo en particular.</small></p>
-						<p><small>Ejercicio <a href="https://www.mycompiler.io/view/B9I30sMQLbm" target="_blank">resuelto</a></small></p>
+						<p><small>Desde el sitio <a href="https://learngitbranching.js.org/?locale=es_ES&NODEMO=" target="_blank">LearnGitBranching</a> realizar lo siguiente:</small></p>
+					<small>
+						<ul>
+							<li>Desde el branch <code>main</code> crear un nuevo branch llamado <code>bugFix</code></li>
+							<li>Hacer un commit en <code>bugFix</code></li>
+							<li>Volver al branch <code>main</code> y hacer otro commit</li>
+							<li>Mergear <code>bugFix</code> a <code>main</code></li>
+						</ul>
+					</small>
+						
+						<img data-src="./static/git/Git_04.png" style="height: 30%; width: 30%">
+						
 						
 						
 					</section>
