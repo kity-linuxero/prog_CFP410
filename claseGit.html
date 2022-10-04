@@ -52,7 +52,7 @@
 
 				<section>
 					<section id="poo">
-						<h3>Git, versionado de código y repositorios</h3>
+						<h3>Introducción a Git</h3>
 						
 					</section>
 
@@ -74,7 +74,8 @@
 						<p><small>Por ejemplo, si alguien abre un archivo en modo escritura, ninguna otra persona podría acceder con permisos de escritura.  No habría seguimiento de cambios que hizo cada desarrollador.</small></p>
 						<!-- <p><small>Un software para control de versiones nos proveen herramientas para trabajar no solamente en equipo y poder desarrollar sobre el mismo código sino que también nos proveen las herramientas de seguimiento por cada línea de código que se fueron agregando a lo largo del tiempo, bifurcar el código, volver a una versión anterior, etc.</small></p> -->
 						
-						<small><ul>Un sistema de control de versiones nos permite:
+						<small>
+						<ul>Un sistema de control de versiones nos permite:
 							<li>Tener historial de los cambios</li>
 							<li>Almacenar el código</li>
 							<li>Trabajar en equipo</li>
@@ -108,7 +109,7 @@
 						<small>
 						<ul>
 							<li><strong>Repositorio</strong>: Es un almacén o lugar para almacenar datos. En este caso código fuente de programas.</li>
-							<li><strong>Commit</strong>: Es una copia de nuestro repositorio de un momento dado. Marca un punto de control al cual podemos volver en cualquier momento. Lleva un registro de cambios.</li>
+							<li><strong>Commit</strong>: Es una  instantánea de nuestro repositorio de un momento dado. Marca un punto de control al cual podemos volver en cualquier momento. Lleva un registro de cambios.</li>
 							<li><strong>Branch</strong>: (Rama) Es una linea independiente de desarrollo que parte desde un commit. Los cambios en una rama no afectan al commit de origen. Los branchs luegos pueden fusionarse (merge) con otra rama.</li>
 							<li><strong>main</strong>: <code>main</code> es la rama por defecto. Anteriormente era llamada <code>master</code>.</li>
 							<li><strong>Head</strong>: Se refiere al commit en el que estamos posicionado en cada momento. Por regla general HEAD suele coincidir con el último commit de la rama en la que estés, ya que habitualmente estás trabajando en lo último. Pero es posible movernos en el tiempo a otro commit, entonces el HEAD apuntará a otro commit.</li>
@@ -136,12 +137,10 @@
 						<img src="./static/git/Git_01.png">
 						<small>
 						<ul>
-							<li>Cada círculo es un commit. (c1), (c2), etc...</li>
-							<li>Es posible volver a cada commit y ver el historial de cambios</li>
 							<li>Hay dos branchs: <code>master</code> y <code>new_feature</code></li>
-							<li>Merge de commit: En c de todos se hizo un <em>merge</em> de <code>new_feature</code> con <code>main</code>.</li>
+							<li>Merge de commit: En c3 se hizo un <em>merge</em> de <code>new_feature</code> con <code>main</code>.</li>
 							<ul>
-								<li>*c4 = c2.2 + c3</li>
+								<li>*c3 = c1.2 + c2</li>
 							</ul>
 						</ul>
 						</small>
@@ -149,23 +148,42 @@
 
 					<section>
 						<h3>Como se trabaja en Git</h3>
-						<p>Usando branchs</p>
+						
 
 						<img src="./static/git/Git_02.png">
 						<small>
 						<ul>
-							<li>Cada círculo es un commit. (c1), (c2), etc...</li>
-							<li>Es posible volver a cada commit y ver el historial de cambios</li>
 							<li>Hay tres branchs: <code>master</code>, <code>new_feature</code> y <code>bug_fix</code></li>
-							<li>Merge de commit: <em>merge</em> de <code>new_feature</code> con <code>main</code>.</li>
+							<li>Merge de commits:</li>
 							<ul>
-								<li>*c4 = c2.2 + c3</li>
+								<li>c2 = c1 + c1.1</li>
+								<li>c3= c2 + c1.2</li>
 							</ul>
 						</ul>
 						</small>
 					</section>
 
 					<section>
+						<h3>Como se trabaja en Git</h3>
+
+						<img src="./static/git/Git_03.png">
+						<small>
+						<ul>
+							<li>Es posible que otro branch sobrepase al <code>main</code>, de hecho la mayoría de veces algún branch está por delante del <code>main</code></li>
+							<li>Esto es así porque la rama <mode>main</mode> se usa para un código que puede correr en producción o es estable. En el resto de las ramas pueden ir pruebas, versiones de desarrollo o nuevas características (features).</li>
+							<li>Las nuevas características por lo general son branchs que parten de una rama de desarrollo.</li>
+						</ul>
+						</small>
+					</section>
+
+					<section>
+						<h2>¿Preguntas?</h2>
+					</section>
+
+					<section>
+						<h3>Definiendo conceptos II</h3>
+
+						<small>
 						<ul>
 
 						<li><strong>Repositorio Local</strong>: Es un repositorio que está en la estación de trabajo del desarrollador.</li>
@@ -174,11 +192,12 @@
 							<li><strong>Comando</strong>: Son instrucciones que se dan a un software de la computadora, por ejemplo Git.</li>
 							<li><strong>Hash</strong>: Un hash es una función que dada una entrada de información, devuelve una cadena de longitud fija. Es altamente usado para realizar verificaciones de integridad de la información y así comprobar que la misma no se haya corrompido. <strong>Los commits se identifican con un hash.</strong></li>
 						</ul>
-						<div class="r-stack">
+					</small>
+						<!-- <div class="r-stack">
 							<img class="fragment current-visible" src="https://placekitten.com/450/300" width="450" height="300">
 							<img class="fragment current-visible" src="https://placekitten.com/300/450" width="300" height="450">
 							<img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
-						  </div>
+						  </div> -->
 
 					</section>
 
@@ -338,6 +357,79 @@
 						<p><small>En el caso de la instalación en Windows, se incluye además el <em>Git Bash</em> que será donde se ejecutarán los comandos.</small></p>
 						<p><small>Hay muchas aplicaciones para realizar todos los pasos de git de forma gráfica. Por ejemplo Visual Studio Code provee herramientas básicas para trabajar con Git. <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows/MacOS), <a href="https://murmele.github.io/Gittyup/" target="_blank">Gittyup</a>(Linux, Windows, MacOS).</small></p>
 						<p><small>En lo que sigue, nos centraremos al uso de la consola, ya que es como se usa en el ámbito de los desarrolladores. Ocasionalmente nos apoyaremos en las herramientas gráficas para ilustrar alguna situación.</small></p>
+					</section>
+
+					<section>
+						<h3>Creando un repositorio</h3>
+						<p>Como hemos dicho antes, hay dos formas de crear un repositorio:</p>
+						<ul>
+							<li>Creando un repositorio</li>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								git init
+							</code></pre>
+							<li>Clonando un repositorio</li>
+							<pre data-id="code-animation"><code class="bash" data-trim>
+								git clone URL
+							</code></pre>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Agregando archivos al staged area</h3>
+						<p></p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git add [lista de archivos]
+						</code></pre>
+
+						<p>Agregar a todos los archivos:</p>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git add *
+						</code></pre>
+
+						<p>Agregar archivos individuales:</p>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git add programa.py module.py
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Creando commits</h3>
+						<p>Los archivos que estén en el staged area podrán pasar a ser un commit</p>
+
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git commit -m "Una descripción"
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Ver registro de commits</h3>
+
+						<p>Ver el estado del repositorio</p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git status
+						</code></pre>
+						
+						<p>Una forma resumida</p>
+
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git status -s
+						</code></pre>
+
+
+						<a href="https://git-school.github.io/visualizing-git/#free" target="_blank">Algo visual para practicar.</a>
+						<a href="https://learngitbranching.js.org/?locale=es_AR&NODEMO=" target="_blank">LearnGit Branch</a>
+
+					</section>
+
+					<section>
+						<h3>Crear branchs</h3>
+						<p>Para crear ramas:</p>
+						<pre data-id="code-animation"><code class="bash" data-trim>
+							git switch -c "Nombre_rama"
+						</code></pre>
 					</section>
 				</section>
 
