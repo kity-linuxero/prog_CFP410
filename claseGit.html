@@ -71,7 +71,7 @@
 						<h3>¿Para qué sirve Git?</h3>
 
 						<p><small>Imaginemos que estamos en un equipo de desarrollo de software de muchas personas trabajando sobre el mismo software. ¿Se imaginan compartir el código entre todos?.</small></p>
-						<p><small>Si alguien abre un archivo en modo escritura, ninguna otra persona podría acceder con permisos de escritura. Sería realmente un caos poder organizar el código. No habría seguimiendo de cambios que hizo cada desarrollador.</small></p>
+						<p><small>Por ejemplo, si alguien abre un archivo en modo escritura, ninguna otra persona podría acceder con permisos de escritura.  No habría seguimiento de cambios que hizo cada desarrollador.</small></p>
 						<!-- <p><small>Un software para control de versiones nos proveen herramientas para trabajar no solamente en equipo y poder desarrollar sobre el mismo código sino que también nos proveen las herramientas de seguimiento por cada línea de código que se fueron agregando a lo largo del tiempo, bifurcar el código, volver a una versión anterior, etc.</small></p> -->
 						
 						<small><ul>Un sistema de control de versiones nos permite:
@@ -81,7 +81,7 @@
 							<li>Nos permite rastrear errores</li>
 						</ul>
 						</small>
-						<p><small>Hoy en día, el software de control de versiones mas popular es git. Y es de <em>suma importancia para los desarrolladores</em> comprender su funcionamiento.</small></p>
+						<p><small>Hoy en día, el software de control de versiones mas popular es Git. Y es de <em>suma importancia para los desarrolladores</em> comprender su funcionamiento.</small></p>
 
 					</section>
 
@@ -89,15 +89,16 @@
 						<h3>Arquitectura de Git</h3>
 						<p><small>Git, que presenta una <strong>arquitectura distribuida</strong> (o descentralizada).
 							En lugar de tener un único espacio para todo el historial de versiones del software (arquitectura centralizada),
-							como sucede de manera habitual en los sistemas de control de versiones antaño populares,
+							como sucede de manera habitual en los sistemas de control de versiones,
 							como <em>CVS</em> o <em>Subversion</em>, en Git, la copia de trabajo del código de cada
-							desarrollador <em>es también un repositorio</em> que puede albergar el historial completo de todos los cambios.
+							desarrollador <em>es también un repositorio</em>
 							Es decir, cada desarrollador tendrá una copia del repositorio completo en su estación de trabajo.
 						</small></p>
 						<p><small>La <strong>arquitectura distribuida</strong> presenta una ventaja, ya que si el servidor donde está alojado nuestro código por alguna razón llega a no estar disponible por un momento, podemos seguir trabajando al tener una copia en nuestra estación de trabajo.</small></p>
+						
 						<p><small>Caso contrario, en una <strong>arquitectura centralizada</strong> NO podremos no solamente acceder a los nuevos cambios que introdujeron los otros desarrolladores, sino tampoco a nuestro código donde estábamos trabajando.</small></p>
-						<p><small>Otra diferencia de Git con los demás VCS es que Git almacena sus datos como un conjunto de <em>copias instantáneas</em> en vez de tener una lista de cambios (deltas) entre los archivos.</small></p>
-						<p><small>Otra ventaja es que en Git casi todas las operaciones son locales.</small></p>
+						
+						<p><small>Otra ventaja es que en Git casi todas las operaciones son locales. Reduciendo el tráfico de la red.</small></p>
 
 					</section>
 
@@ -107,15 +108,81 @@
 						<small>
 						<ul>
 							<li><strong>Repositorio</strong>: Es un almacén o lugar para almacenar datos. En este caso código fuente de programas.</li>
-							<li><strong>Repositorio Local</strong>: Es un repositorio que está en la estación de trabajo del desarrollador.</li>
-							<li><strong>Repositorio remoto</strong>: Es un repositorio remoto. Puede estar en un servidor, en la nube, en GitHub/GitLab, etc.</li>
-							<li><strong>Workspace</strong>: Lugar de trabajo para nuestro proyecto. Básicamente es la <em>carpeta</em> o <em>directorio</em> donde están nuestros programas. Mediante el repositorio remoto es como vamos a compartir el código con nuestros colegas.</li>
-							<li><strong>Comando</strong>: Son instrucciones que se dan a un software de la computadora, por ejemplo Git.</li>
-							<li><strong>Copia instantánea</strong>: (Snapshot) Es una "<em>imágen</em>" (copia completa) de la información en un momento determinado.</li>
-							<li><strong>Hash</strong>: Un hash es una función que dada una entrada de información, devuelve una cadena de longitud fija. Es altamente usado para realizar verificaciones de integridad de la información y así comprobar que la misma no se haya corrompido.</li>
+							<li><strong>Commit</strong>: Es una copia de nuestro repositorio de un momento dado. Marca un punto de control al cual podemos volver en cualquier momento. Lleva un registro de cambios.</li>
+							<li><strong>Branch</strong>: (Rama) Es una linea independiente de desarrollo que parte desde un commit. Los cambios en una rama no afectan al commit de origen. Los branchs luegos pueden fusionarse (merge) con otra rama.</li>
+							<li><strong>main</strong>: <code>main</code> es la rama por defecto. Anteriormente era llamada <code>master</code>.</li>
+							<li><strong>Head</strong>: Se refiere al commit en el que estamos posicionado en cada momento. Por regla general HEAD suele coincidir con el último commit de la rama en la que estés, ya que habitualmente estás trabajando en lo último. Pero es posible movernos en el tiempo a otro commit, entonces el HEAD apuntará a otro commit.</li>
+						</ul>
+						</small>
+
+					</section>
+
+					<section>
+						<h3>Como se trabaja en Git</h3>
+						<p>Commits</p>
+						<img src="./static/git/Git_00.png">
+						<small>
+						<ul>
+							<li>Cada círculo es un commit. (c1), (c2), etc...</li>
+							<li>Es posible volver a cada commit y ver el historial de cambios</li>
 						</ul>
 						</small>
 					</section>
+
+					<section>
+						<h3>Como se trabaja en Git</h3>
+						<p>Usando branchs</p>
+
+						<img src="./static/git/Git_01.png">
+						<small>
+						<ul>
+							<li>Cada círculo es un commit. (c1), (c2), etc...</li>
+							<li>Es posible volver a cada commit y ver el historial de cambios</li>
+							<li>Hay dos branchs: <code>master</code> y <code>new_feature</code></li>
+							<li>Merge de commit: En c de todos se hizo un <em>merge</em> de <code>new_feature</code> con <code>main</code>.</li>
+							<ul>
+								<li>*c4 = c2.2 + c3</li>
+							</ul>
+						</ul>
+						</small>
+					</section>
+
+					<section>
+						<h3>Como se trabaja en Git</h3>
+						<p>Usando branchs</p>
+
+						<img src="./static/git/Git_02.png">
+						<small>
+						<ul>
+							<li>Cada círculo es un commit. (c1), (c2), etc...</li>
+							<li>Es posible volver a cada commit y ver el historial de cambios</li>
+							<li>Hay tres branchs: <code>master</code>, <code>new_feature</code> y <code>bug_fix</code></li>
+							<li>Merge de commit: <em>merge</em> de <code>new_feature</code> con <code>main</code>.</li>
+							<ul>
+								<li>*c4 = c2.2 + c3</li>
+							</ul>
+						</ul>
+						</small>
+					</section>
+
+					<section>
+						<ul>
+
+						<li><strong>Repositorio Local</strong>: Es un repositorio que está en la estación de trabajo del desarrollador.</li>
+							<li><strong>Repositorio remoto</strong>: Es un repositorio remoto. Puede estar en un servidor, en la nube, en GitHub/GitLab, etc.</li>
+							<li><strong>Workspace</strong>: Lugar de trabajo para nuestro proyecto. Básicamente es la <em>carpeta</em> o <em>directorio</em> donde están nuestros programas. Mediante el repositorio remoto es como vamos a compartir el código con nuestros colegas.</li>
+							<li><strong>Comando</strong>: Son instrucciones que se dan a un software de la computadora, por ejemplo Git.</li>
+							<li><strong>Hash</strong>: Un hash es una función que dada una entrada de información, devuelve una cadena de longitud fija. Es altamente usado para realizar verificaciones de integridad de la información y así comprobar que la misma no se haya corrompido. <strong>Los commits se identifican con un hash.</strong></li>
+						</ul>
+						<div class="r-stack">
+							<img class="fragment current-visible" src="https://placekitten.com/450/300" width="450" height="300">
+							<img class="fragment current-visible" src="https://placekitten.com/300/450" width="300" height="450">
+							<img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
+						  </div>
+
+					</section>
+
+
 
 					<section>
 						<h3>Estados en Git</h3>
