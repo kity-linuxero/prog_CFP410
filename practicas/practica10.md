@@ -358,3 +358,36 @@ Fast-forward
 
 - Ahora las ramas `master` y `fix_dia_semana` están juntas.
 - Compruebe con Git Graph los cambios.
+
+## Clonar un repositorio existente
+
+Como hemos visto en la clase teórica, hay dos formas de iniciar un repositorio en Git:
+- Crear uno desde cero (como hicimos en esta práctica anterior)
+- Clonar un repositorio existente.
+
+Para eso, vamos a crear un repositorio nuevo desde Github.
+
+Cree un repositorio llamado `prueba-curso`.
+- Visibilidad public
+- Add README file
+- Add `.gitignore` y seleccione el template Python.
+  - El archivo `.gitignore` será una lista de archivos, carpetas que nuestro repositorio deberá ignorar.
+  - Anteriormente hemos visto que, cuando importamos módulos se crea una carpeta llamada `__pycache__/` que el repositorio lo muestra como archivos sin seguimiento, pero que en realidad no forman parte de nuestro proyecto. Con `.gitignore` esto ya no será una molestia.
+
+
+Una vez en el repositorio, siga las instrucciones:
+
+![](./img/pr10_im13.png)
+
+ejecute el siguiente comando desde Git Bash:
+```bash
+git clone <contenido portapapeles>
+```
+
+Lo que le quedará algo así:
+
+```bash
+git clone https://github.com/kity-linuxero/prueba-curso.git
+```
+
+Esto clonará el repositorio de Github y lo descargará a su máquina. Por defecto la carpeta se llamará como el repositorio.
