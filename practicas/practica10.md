@@ -375,7 +375,7 @@ Cree un repositorio llamado `prueba-curso`.
   - Anteriormente hemos visto que, cuando importamos módulos se crea una carpeta llamada `__pycache__/` que el repositorio lo muestra como archivos sin seguimiento, pero que en realidad no forman parte de nuestro proyecto. Con `.gitignore` esto ya no será una molestia.
 
 
-Una vez en el repositorio, siga las instrucciones:
+Una vez en el repositorio, siga las instrucciones::
 
 ![](./img/pr10_im13.png)
 
