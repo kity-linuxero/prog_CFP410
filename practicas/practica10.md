@@ -180,18 +180,6 @@ Verifique con el complemento Git Graph
 Creemos un archivo llamado `mod.py` con el siguiente contenido:
 
 ```python
-from mod import mes
-
-print("¡Hola Git!\n")
-
-mes()
-
-print("¡Chau Git, hasta luego!")
-```
-
-Modifiquemos nuestro `programa.py` de la siguiente manera.
-
-```python
 import calendar
 import datetime
 
@@ -202,6 +190,21 @@ def mes():
     today = datetime.date.today()   
     print (calendar.month(today.year, today.month))
 ```
+
+Modifiquemos nuestro `programa.py` de la siguiente manera:
+
+```python
+from mod import mes
+
+print("¡Hola Git!\n")
+
+mes()
+
+print("¡Chau Git, hasta luego!")
+```
+
+
+
 
 #### Verifiquemos el estado del repositorio
 
