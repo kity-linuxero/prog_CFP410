@@ -28,15 +28,17 @@
 					<h2>Clase 12</h2>
 					<h3>Contenido de la clase</h3>
 					<ul>
-						<li>Introducción a Git</li>
+						<li>Git</li>
 
 							<ul>
-								<li><a href="clasePoo2.html#/poo1">Repaso</a></li>
+								<li><a href="claseGit.html#/git0">Introducción a Git</a></li>
 								
-								<li><a href="clasePoo2.html#/herencia">Herencia</a></li>
-								<li><a href="clasePoo2.html#/polimorfismo">Polimorfismo</a></li>
-								<li><a href="clasePoo2.html#/encapsulamiento">Encapsulamiento</a></li>
-								<li><a href="clasePoo2.html#/abstraccion">Abstracción</a></li>
+								<li><a href="claseGit.html#/conceptos1">Definiendo conceptos I</a></li>
+								<li><a href="claseGit.html#/working_git">Como se trabaja en Git (Ejemplos gráficos)</a></li>
+								<li><a href="claseGit.html#/conceptos2">Definiendo conceptos II</a></li>
+								<li><a href="claseGit.html#/estados_git">Estados y áreas de Git</a></li>
+								<li><a href="claseGit.html#/flujo_trabajo">Estados y áreas de Git</a></li>
+
 								
 
 							</ul>
@@ -51,7 +53,7 @@
 
 
 				<section>
-					<section id="poo">
+					<section id="git0">
 						<h3>Introducción a Git</h3>
 						
 					</section>
@@ -103,7 +105,7 @@
 
 					</section>
 
-					<section>
+					<section id="conceptos1">
 						<h3>Definiendo conceptos I</h3>
 						<p><small>Antes de seguir, es necesario definir algunos conceptos básicos:</small></p>
 						<small>
@@ -118,7 +120,7 @@
 
 					</section>
 
-					<section>
+					<section id="working_git">
 						<h3>Como se trabaja en Git</h3>
 						<p>Commits</p>
 						<img src="./static/git/Git_00.png">
@@ -180,7 +182,7 @@
 						<h2>¿Preguntas?</h2>
 					</section>
 
-					<section>
+					<section id="conceptos2">
 						<h3>Definiendo conceptos II</h3>
 
 						<small>
@@ -203,7 +205,7 @@
 
 
 
-					<section>
+					<section id="estados_git">
 						<h3>Estados en Git</h3>
 						<p><small>Nuestro repositorio Git tiene 3 fases o áreas:</small></p>
 						<small>
@@ -304,7 +306,7 @@
 						<p class="fragment"><small>* En algunas referencias puede ser que se encuentren como tres estados, ignorando el status <em>untracked</em>, ya que Git no tiene registros de su existencia.</small></p>
 					</section>
 
-					<section>
+					<section id="flujo_trabajo">
 						<h3>Flujo de trabajo en Git</h3>
 						<p><small>Por lo general, el flujo de trabajo en Git es el siguiente:</small></p>
 						<small>
@@ -453,9 +455,6 @@
 						</code></pre>
 
 
-						<a href="https://git-school.github.io/visualizing-git/#free" target="_blank">Algo visual para practicar.</a>
-						<a href="https://learngitbranching.js.org/?locale=es_AR&NODEMO=" target="_blank">LearnGit Branch</a>
-
 					</section>
 
 					<section>
@@ -465,7 +464,7 @@
 							git switch -c "Nombre_rama"
 						</code></pre>
 
-						<p><small>Anteriormente se usaba <code>git checkout -B nombre_rama</code> para crear un branch. Pero <code>checkout</code> fue dejado para cambiar entre <em>commits</em> y se implementó <code>switch</code> para cambiar entre ramas.</small></p>
+						<p><small>Anteriormente se usaba <code>git checkout -b nombre_rama</code> para crear un branch. Pero <code>checkout</code> fue dejado para cambiar entre <em>commits</em> y se implementó <code>switch</code> para cambiar entre ramas.</small></p>
 
 						<p>Cambiar entre una rama u otra</p>
 
@@ -493,6 +492,18 @@
 							git switch main
 							git merge develop
 						</code></pre>
+
+						<small>
+							<p>Herramientas gráficas para practicar:</p>
+							<ul>
+								<li><a href="https://learngitbranching.js.org/?locale=es_AR&NODEMO=" target="_blank">LearnGit Branch</a></li>
+								<li><a href="https://git-school.github.io/visualizing-git/#free" target="_blank">Visualizing Git.</a></li>
+							</ul>
+						</small>
+
+						
+
+						
 					</section>
 
 					<section>
@@ -529,7 +540,7 @@
 
 		
 
-					<section>
+				<!-- <section>
 					<section id="glosario1">
 						<h3>Glosario <small>(p1/3)</small></h3>
 						<ul>
@@ -573,7 +584,7 @@
 						</ul>
 
 					</section>
-				</section>
+				</section> -->
 
 
 
@@ -586,7 +597,7 @@
 
 				<section data-transition="zoom" data-background="./static/back.jpg"  data-background-color="#dddddd" data-background-size="contain">
 					<h3>¡Fin de la clase!</h3>
-					<a href="./clasePoo.html"> < Ir a clase anterior</a><br>
+					<a href="./clasePoo2.html"> < Ir a clase anterior</a><br>
 					<a href="https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/practica9.md" target="_blank"> Ir a la práctica 9</a><br>
 					
 

@@ -120,4 +120,8 @@ node_modules/
 # Mis Tests
 tests
 
+*__pycache__*
+.vscode*
+
+
 
