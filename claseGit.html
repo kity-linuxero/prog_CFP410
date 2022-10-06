@@ -27,26 +27,25 @@
 				<section id="indice">
 					<h2>Clase 12</h2>
 					<h3>Contenido de la clase</h3>
+					<small>
 					<ul>
-						<li>Git</li>
 
-							<ul>
 								<li><a href="claseGit.html#/git0">Introducción a Git</a></li>
 								
 								<li><a href="claseGit.html#/conceptos1">Definiendo conceptos I</a></li>
 								<li><a href="claseGit.html#/working_git">Como se trabaja en Git (Ejemplos gráficos)</a></li>
 								<li><a href="claseGit.html#/conceptos2">Definiendo conceptos II</a></li>
-								<li><a href="claseGit.html#/estados_git">Estados y áreas de Git</a></li>
-								<li><a href="claseGit.html#/flujo_trabajo">Estados y áreas de Git</a></li>
+								<li><a href="claseGit.html#/flujo_trabajo">Flujo de trabajo</a></li>
+								<li><a href="claseGit.html#/instalacion">Instalación de Git y herramientas gráficas</a></li>
+								<li><a href="claseGit.html#/init">Creando repo</a></li>
+								<li><a href="claseGit.html#/commits">Creando commits</a></li>
+								<li><a href="claseGit.html#/status">Estado del repo</a></li>
+								<li><a href="claseGit.html#/status">Branchs</a></li>
+								<li><a href="claseGit.html#/merge">Merge</a></li>
+							<li><a href="claseGit.html#/ejercicio">Ejercicio en clase</a></li>
 
-								
-
-							</ul>
-
-						
-						<li><a href="claseGit.html#/ejercicio">Ejercicio en clase</a></li>
-						<li><a href="clasePoo2.html#/glosario1">Glosario</a></li>
 					</ul>
+				</small>
 				</section>
 
 				
@@ -351,7 +350,7 @@
 						<h3>Usando Git</h3>
 					</section>
 
-					<section>
+					<section id="instalacion">
 						<h2>Instalación de Git</h2>
 						<p>La instalación de Git puede variar según tu sistema operativo.</p>
 						<small>
@@ -362,11 +361,11 @@
 						</ul>
 					</small>
 						<p><small>En el caso de la instalación en Windows, se incluye además el <em>Git Bash</em> que será donde se ejecutarán los comandos.</small></p>
-						<p><small>Hay muchas aplicaciones para realizar todos los pasos de git de forma gráfica. Por ejemplo Visual Studio Code provee herramientas básicas para trabajar con Git. <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows/MacOS), <a href="https://murmele.github.io/Gittyup/" target="_blank">Gittyup</a> (Linux, Windows, MacOS).</small></p>
+						<p><small>Hay muchas aplicaciones para realizar todos los pasos de git de forma gráfica. Por ejemplo Visual Studio Code provee herramientas básicas para trabajar con Git o mediante complementos, como <a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph" target="_blank">Git Graph</a>. <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows/MacOS), <a href="https://murmele.github.io/Gittyup/" target="_blank">Gittyup</a> (Linux, Windows, MacOS).</small></p>
 						<p><small>En lo que sigue, nos centraremos al uso de la consola, ya que es como se usa en el ámbito de los desarrolladores. Ocasionalmente nos apoyaremos en las herramientas gráficas para ilustrar alguna situación.</small></p>
 					</section>
 
-					<section>
+					<section id="init">
 						<h3>Creando un repositorio</h3>
 						<p>Como hemos dicho antes, hay dos formas de iniciar un repositorio:</p>
 						<ul>
@@ -400,7 +399,7 @@
 						</code></pre>
 					</section>
 
-					<section>
+					<section id="commits">
 						<h3>Creando commits</h3>
 						<p>Los archivos que estén en el staged area podrán pasar a ser un commit</p>
 
@@ -441,7 +440,7 @@
 
 					</section>
 
-					<section>
+					<section id="status">
 						<h3>Ver el estado del repositorio</h3>
 
 						<pre data-id="code-animation"><code class="bash" data-trim>
@@ -457,7 +456,7 @@
 
 					</section>
 
-					<section>
+					<section id="branchs">
 						<h3>Crear branchs</h3>
 						<p>Para crear ramas:</p>
 						<pre data-id="code-animation"><code class="bash" data-trim>
@@ -475,7 +474,7 @@
 
 					</section>
 
-					<section>
+					<section id="merge">
 						<h3>Mergear ramas</h3>
 						<small>
 						<p>Una de las características mas potentes de Git es poder fusionar (mergear) las distintas ramas.</p>
