@@ -1,4 +1,4 @@
-# Laboratorio 3
+# Laboratorio 4
 En este laboratorio usted aprenderá a:
 - Integrar Git con Github
 - Trabajo en equipo de desarrollo
