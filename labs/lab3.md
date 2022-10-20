@@ -343,6 +343,7 @@ Vea el código fuente de "aliens" [aquí](https://github.com/pygame/pygame/blob/
 
 ## Otras librerías que pueden ser útiles
 
+- `tkinter`(tk): Crear interfaces gráficas simples "desktop" en Python. [Doc](https://docs.python.org/es/3/library/tkinter.html)
 - `pysimplegui`: Crear interfaces gráficas "desktop" para nuestras aplicaciones. [Doc](https://www.pysimplegui.org/en/latest/)
 - `wxPython`: Crear interfaces gráficas para Python. [Doc](https://pypi.org/project/wxPython/)
 - `django`: _Framework_* para crear aplicaciones Web con Python. [Doc](https://docs.djangoproject.com/en/4.1/)
