@@ -18,6 +18,14 @@ Para este taller de GUI proponemos dos alternativas para realizar aplicaciones, 
 
 # Ejercicios
 
+Intente realizar los siguientes ejercicios para que algunos de ellos puedan estar en la muestra.
+
+Para ir practicando lo visto con git en las clases anteriores, cree un nuevo repositorio en su cuenta, llamado por ejemplo `tp2-cfp410` donde va a ir subiendo los ejercicios.
+
+Luego, comparta el repositorio con el profesor para que pueda ser evaluado y accesible para el día de la muestra.
+
+Realice los que mas pueda. Le servirá para tener un primer contacto con diseño de GUI simples.
+
 ## Generador de contraseñas
 
 
@@ -51,6 +59,21 @@ Desarrolle una aplicación con gui que permita realizar un sorteo, tipo "rifa" e
 Pistas:
 - Puede ayudarse de los  [Listbox](https://recursospython.com/guias-y-manuales/lista-listbox-en-tkinter/) de Tkinter para ir listando a las personas (opcional).
 - En la práctica 4, [ejercicio 10](https://recursospython.com/guias-y-manuales/lista-listbox-en-tkinter/) se realizó algo parecido, puede ver su código y modificarlo para adaptarlo.
+
+## Nombres de personas físicas en Argentina
+
+En [datos.gob.ar] se publican datos de relevancia de la República Argentina. Entre esos datos de acceso público, se encuentra la cantidad de personas registradas por nombre y por año.
+Por ejemplo, en este [link](https://infra.datos.gob.ar/catalog/otros/dataset/2/distribution/2.21/download/nombres-2015.csv) puede descargarse un _csv_ con los nombres ordenado por la cantidad de gente anotada en el año 2015.
+
+![](./img/names.png)
+
+Por ejemplo, puede verse que el nombre con mayor inscripciones fue _Benjamin_ con 3695, seguido por _Isabella_ con 3294.
+
+Desarrolle un programa que le pida al usuario su nombre y le informe la cantidad de gente anotada con su nombre y en que puesto está su nombre.
+
+Los datos se los puede descargar de [datos.gob.ar](https://datos.gob.ar/dataset/otros-nombres-personas-fisicas). Verá que en algunos archivos los nombres están agrupados en varios años. Elija el que mas le parezca, pero no olvide citar la fuente e informar en alguna parte del programa cual archivo se usó.
+
+Si bien en el pasado hemos usado archivos _csv_ para procesarlos y obtener datos, puede apoyarse de la librería [csv](https://docs.python.org/es/3/library/csv.html) para hacerle mas fácil la extracción de los datos.
 
 ## Juego
 
