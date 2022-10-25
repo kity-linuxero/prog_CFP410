@@ -1,5 +1,6 @@
 '''
-Desarrollado por Ivan
+Desarrollado por Ivan Koszarek
+
 '''
 def generador_contraseñas(cantidad):
     import string
