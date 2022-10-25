@@ -26,14 +26,6 @@ Luego, comparta el repositorio con el profesor para que pueda ser evaluado y acc
 
 Realice los que mas pueda. Le servirá para tener un primer contacto con diseño de GUI simples.
 
-## Generador de contraseñas
-
-
-En el [Lab1](https://github.com/kity-linuxero/prog_CFP410/blob/main/labs/lab1.md#ejercicio-2) hicimos un generador de contraseñas. Puede realizar una GUI para generar contraseñas y mostrarlas en pantalla.
-
-Pista:
-- [Ejercicio resuelto](https://github.com/kity-linuxero/prog_CFP410/tree/main/practicas/ejercicios_en_clase/gui/generador_passwd/)
-
 ## Saludo por GUI
 
 Desarrolle un programa que tome por un input el nombre de una persona y lo salude.
@@ -41,6 +33,21 @@ Desarrolle un programa que tome por un input el nombre de una persona y lo salud
 Pista:
 - [Ejercicio resuelto](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/ejercicios_en_clase/gui/saludo/saludo_gui.py)
 
+
+## Generador de contraseñas
+
+En el [Lab1](https://github.com/kity-linuxero/prog_CFP410/blob/main/labs/lab1.md#ejercicio-2) hicimos un generador de contraseñas. Puede realizar una GUI para generar contraseñas y mostrarlas en pantalla.
+
+Pista:
+- [Ejercicio resuelto](https://github.com/kity-linuxero/prog_CFP410/tree/main/practicas/ejercicios_en_clase/gui/generador_passwd/)
+
+
+## Descargador de contenido de YouTube
+En el Lab3, se vió como usar la librería `pytube` para descargar contenido de Youtube.
+En este ejercicio se pide hacer una interface gráfica para realizarlo.
+
+Pista:
+- [Ejercicio resuelto](https://github.com/kity-linuxero/prog_CFP410/tree/main/practicas/ejercicios_en_clase/gui/youtube-download/youtube_gui.py)
 
 ## Piedra, papel y tijera
 
