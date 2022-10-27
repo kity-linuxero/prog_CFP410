@@ -31,7 +31,7 @@ Realice los que mas pueda. Le servirá para tener un primer contacto con diseño
 Desarrolle un programa que tome por un input el nombre de una persona y lo salude.
 
 Pista:
-- [Ejercicio resuelto](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/ejercicios_en_clase/gui/saludo/saludo_gui.py)
+- [Ejercicio resuelto](https://github.com/kity-linuxero/prog_CFP410/blob/main/practicas/ejercicios_en_clase/gui/saludo/gui_saludo.py)
 
 
 ## Generador de contraseñas
@@ -69,7 +69,7 @@ Pistas:
 
 ## Nombres de personas físicas en Argentina
 
-En [datos.gob.ar] se publican datos de relevancia de la República Argentina. Entre esos datos de acceso público, se encuentra la cantidad de personas registradas por nombre y por año.
+En [datos.gob.ar](datos.gob.ar) se publican datos de relevancia de la República Argentina. Entre esos datos de acceso público, se encuentra la cantidad de personas registradas por nombre y por año.
 Por ejemplo, en este [link](https://infra.datos.gob.ar/catalog/otros/dataset/2/distribution/2.21/download/nombres-2015.csv) puede descargarse un _csv_ con los nombres ordenado por la cantidad de gente anotada en el año 2015.
 
 ![](./img/names.png)
