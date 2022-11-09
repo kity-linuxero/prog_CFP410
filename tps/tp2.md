@@ -82,15 +82,48 @@ Los datos se los puede descargar de [datos.gob.ar](https://datos.gob.ar/dataset/
 
 Si bien en el pasado hemos usado archivos _csv_ para procesarlos y obtener datos, puede apoyarse de la librería [csv](https://docs.python.org/es/3/library/csv.html) para hacerle mas fácil la extracción de los datos.
 
-## Juego
+# Compilar nuestros programas
 
-(WIP)
+El fin de todo programa es ejecutarse en una computadora y muchas veces es deseable ejecutar el programa fuera de nuestro entorno de desarrollo, para que un tercero pueda probar el programa o pueda ser corrido en un ambiente real.
+
+Python es un lenguaje _interpretado_, eso quiere decir que, en vez de compilar su código para ejecutarse, el intérprete se encarga de ejecutar línea por línea el código y el programa así corre en la computadora.
+Pero en algún momento vamos a necesitar ejecutar nuestros programas en una computadora que no tenga el intérprete de Python instalado, para eso vamos a necesitar _compilar_ nuestro programa.
+
+Compilar un programa es básicamente, convertir el código fuente a lenguaje de máquina. Una vez compilado el programa no será posible hacer cambios en el código. Si hace falta hacer un cambio hay que volver a compilar el programa.
+
+Es importante destacar que, al momento de compilar un programa debemos tener en cuenta la plataforma y el hardware en la cual vamos a compilar el programa para que luego sea ejecutado. Es decir, el mismo programa que puede correr en una determinada versión de Windows de 64 bits, y no será posible correr en otro sistema operativo como MacOS o GNU/Linux.
+Tampoco es el mismo programa compilado el que se ejecurá para una versión de GNU/Linux para una [arquitectura x86_64](https://es.wikipedia.org/wiki/X86-64) y para una GNU/Linux con [arquitectura ARM](https://es.wikipedia.org/wiki/Arquitectura_ARM).
+
+## Compilando nuestros programas
+
+Una forma de compilar nuestros programas escritos en Python es con la librería [pyinstaller](https://pyinstaller.org/en/stable/index.html).
+
+Para instalar la librería:
+```bash
+pip install -U pyinstaller
+```
+Compilar nuestro programa
+```bash
+pyinstaller -F mi_programa.py
+```
+
+> El parámetro `-F` se usa para que nuestro programa se empaque en un solo archivo.
+
+Una vez compilado el programa, se generarán dos carpetas:
+ - `build`: Se guardarán los archivos temporales durante la compilación
+ - `dist`: Es la carpeta que mas nos interesa porque se guardará nuestro programa compilado. Si ejecutamos `pyinstaller` con el parámetro `-F` la carpeta tendrá solo un archivo que será el ejecutable de nuestro programa, de otra manera tendrá una carpeta con muchos archivos que serán necesarios para la ejecución del programa.
+
+
+
+
+
+
+
+
 
 #### Documentación adicional:
 - [Introducción a Tkinter](https://recursospython.com/guias-y-manuales/introduccion-a-tkinter/)
 - [Mas recursos Tkinter](https://recursospython.com/tag/tkinter/)
-- [Documentación Arcade](https://api.arcade.academy/en/latest/get_started.html)
-- [Cómo hacer un juego con PYGAME en 10 minutos](https://openwebinars.net/blog/como-hacer-un-juego-con-pygame-en-10-minutos/)
-- Juego de [plataforma](https://api.arcade.academy/en/latest/examples/index.html#platformers) (estilo Mario Bross)
-- Juego de [naves](https://api.arcade.academy/en/latest/examples/index.html#shooting-with-sprites) (estilo Space Invaders)
+
+
 
