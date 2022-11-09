@@ -1,30 +1,11 @@
 import tkinter as tk
-from tkinter import StringVar, ttk, messagebox, filedialog
+from tkinter import StringVar, ttk, messagebox, filedialog, font, Button
 from pytube import YouTube
-from yt_core import download_audio, download_video
+from yt_core import download_audio, download_video, DurationError, RICK_VIDEO
+from custom_checkbox import Checkbox
 
 ANCHO=400
 ALTO=240
-
-
-class Checkbox(ttk.Checkbutton):
-    '''
-    Define un checkbox para elegir bajar solo el audio.
-    '''
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.variable = tk.BooleanVar(self)
-        self.configure(variable=self.variable)
-    
-    def checked(self):
-        return self.variable.get()
-    
-    def check(self):
-        self.variable.set(True)
-    
-    def uncheck(self):
-        self.variable.set(False)
-
 
 class Aplicacion(ttk.Frame):
 
@@ -34,53 +15,34 @@ class Aplicacion(ttk.Frame):
         # Tag URL video
 
         self.tag_url = ttk.Label(
-            parent, text="URL video:")
-        self.tag_url.grid()
+            parent, text="URL video:",font=("Arial", 18))
+        self.tag_url.grid(pady=10)
         
         self.folder_name = './'
 
-        #self.tag_url.place(x=20, y=20)
-
         #Entry Box
         self.input_urlVar = StringVar()
-        self.input_url = ttk.Entry(parent,width=50,textvariable=self.input_urlVar)
+        self.input_url = ttk.Entry(parent,width=50,textvariable=self.input_urlVar, font=("Arial", 10))
         self.input_url.grid(padx=10)
+        self.input_urlVar.set(RICK_VIDEO)
         
-
-
-        
-        # No es necesario crear una variable.
-        #self.checkbox_audio = Checkbox(parent).(text="Solo audio:", command=self.check_clicked).grid(row=1,column=0)
-
         self.checkbox = Checkbox(parent,
              text="Solo audio", command=self.check_clicked)
 
-        self.checkbox.grid()
-        # self.checkbox.place(x=240, y=35)
+        self.checkbox.grid(pady=5)
 
-        # self.checkbutton1=tk.Checkbutton(self,text="C1")
-        # self.checkbutton1.grid(row=3,column=3)
-
-        #self.place(width=self.ANCHO, height=self.ALTO)
-
-
-
+        #myFont = font(family='Helvetica')
         
         # Botón elegir carpeta
-        self.saveEntry = ttk.Button(parent,text="Elegir carpeta",command=self.openLocation)
-        self.saveEntry.grid()
+        self.saveEntry = Button(parent,width=40,text="Elegir carpeta",command=self.openLocation, bg='#0052cc', fg='white', font=('Arial',12))
+        
+        self.saveEntry.grid(pady=5)
 
         # Boton de descarga
-        self.boton_descargar = ttk.Button(
-            parent, text="Descargar", command=self.descargar).grid(pady=5)
+        self.boton_descargar = Button(
+            parent,width=40, text="Descargar", command=self.descargar, bg='green', fg='white', font=('Arial',12)
+            ).grid(pady=5)
 
-        # Status bar
-        self.statusvar = StringVar()
-        self.statusvar.set("Ready")
-        self.sbar = ttk.Label(parent, textvariable=self.statusvar, relief=tk.SUNKEN, anchor="w")
-        
-        self.sbar.pack(side=tk.BOTTOM, fill=tk.X)
-        
 
     def check_clicked(self):
         print(self.checkbox.checked())
@@ -98,36 +60,28 @@ class Aplicacion(ttk.Frame):
         
 
     def descargar(self):
-        try:
-
-
-            
+        try:          
             link = self.input_urlVar.get()
 
-            print(link)
-
-            #self.status.set("Descargando!...")
+            print(f"CARPETA: {self.folder_name}")
 
             if self.checkbox.checked():
-                download_audio(link)
+                download_audio(link, self.folder_name)
             else:
-                download_video(link)
-
-            
-            messagebox.showinfo("Error", "Descargado!")
+                download_video(link, self.folder_name)
+            messagebox.showinfo("Joya!", "¡Video Descargado!")
+        except DurationError:
+            messagebox.showerror("Error", "Video demasiado largo.")
         except Exception as e:
-            #self.status.set("ERROR en la descarga")
             messagebox.showerror("Error", "ERROR en la descarga!")
             print(e)
-        #self.status.set("Descargado, chabon!...")
-
 
 # Programa
 if __name__ == '__main__':
     ventana = tk.Tk()
     ventana.title("Descargador de Videos de YT del CFP")
     ventana.config(width=ANCHO, height=ALTO)
-    ventana.geometry(f"{ANCHO}x{ALTO}")
+    #ventana.geometry(f"{ANCHO}x{ALTO}")
     ventana.columnconfigure(0,weight=1)#set all content in center.
 
     app = Aplicacion(ventana)
