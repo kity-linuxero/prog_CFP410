@@ -29,7 +29,8 @@ class Aplicacion(ttk.Frame):
         self.input_urlVar.set(RICK_VIDEO)
         
         self.checkbox = Checkbox(parent,
-             text="Solo audio", command=self.check_clicked).grid(pady=5)
+             text="Solo audio", command=self.check_clicked)
+        self.checkbox.grid(pady=5)
        
         # Botón elegir carpeta
         self.saveEntry = Button(parent,width=40,text="Elegir carpeta",command=self.openLocation, bg='#0052cc', fg='white', font=('Arial',12)).grid(padx=5)
