@@ -1,8 +1,7 @@
 from pytube import YouTube
 
 CARPETA = "./"
-RICK_VIDEO = 'https://www.youtube.com/watch?v=mCdA4bJAGGk'
-
+RICK_VIDEO = 'https://www.youtube.com/watch?v=GtL1huin9EE'
 
 class DurationError(Exception):
     pass
@@ -41,5 +40,4 @@ def download_audio(link, path='./'):
 
 
 if __name__ == '__main__':
-    
     download_video(RICK_VIDEO, CARPETA)
