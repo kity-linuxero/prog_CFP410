@@ -122,7 +122,7 @@ Vea mas documentación sobre [SemVer](https://semver.org/lang/es/) y sepa como v
 ## Librería Faker
 
 En este Lab, veremos la utilización de la librería [Faker](https://faker.readthedocs.io/en/master/).
-Según su documentación, Faker se describe como  un paquete de Python que genera datos falsos. Ya sea que necesite iniciar una base de datos, crear documentos, completar su persistencia para realizar pruebas de estrés o anonimizar los datos tomados de un servicio de producción, Faker es para usted.
+Según su documentación, Faker se describe como un paquete de Python que genera datos falsos. Ya sea que necesite iniciar una base de datos, crear documentos, completar su persistencia para realizar pruebas de estrés o anonimizar los datos tomados de un servicio de producción, Faker es para usted.
 
 Es decir, Faker es una librería que nos genera datos falsos según le pidamos.
 
