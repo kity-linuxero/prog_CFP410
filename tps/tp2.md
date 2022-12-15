@@ -107,6 +107,13 @@ Compilar nuestro programa
 pyinstaller -F mi_programa.py
 ```
 
+ó
+```bash
+python -m PyInstaller -F mi_programa.py
+```
+
+(Prestar atención a las mayúsculas/minúsculas)
+
 > El parámetro `-F` se usa para que nuestro programa se empaque en un solo archivo.
 
 Una vez compilado el programa, se generarán dos carpetas:
